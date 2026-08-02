@@ -6,8 +6,9 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Set;
+use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 
 class DeveloperForm
@@ -15,45 +16,112 @@ class DeveloperForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+        ->columns(1)
             ->components([
-                TextInput::make('name')
-                    ->required()
-                    ->live()
-                    ->afterStateUpdated(function ($state, Set $set) {
-                        $set('slug', Str::slug($state));
-                    }),
 
-                TextInput::make('slug')
-                    ->disabled()
-                    ->dehydrated()
-                    ->unique(ignoreRecord: true),
-                FileUpload::make('logo')
-                    ->image()
-                    ->directory('developers/logos'),
-                FileUpload::make('cover_image')
-                    ->image()
-                    ->directory('developers/covers'),
-                Textarea::make('description')
-                    ->default(null)
-                    ->columnSpanFull(),
-                TextInput::make('meta_title')
-                    ->default(null),
-                Textarea::make('meta_description')
-                    ->default(null)
-                    ->columnSpanFull(),
-                TextInput::make('meta_keywords')
-                    ->default(null),
-                TextInput::make('website')
-                    ->url()
-                    ->default(null),
-                Toggle::make('is_featured')
-                    ->required(),
-                Toggle::make('is_active')
-                    ->required(),
-                TextInput::make('display_order')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
+                Section::make('General Information')
+                ->columnSpanFull()
+
+                    ->schema([
+
+                        TextInput::make('name')
+                            ->label('Developer Name')
+                            ->required()
+                            ->maxLength(255)
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(function (?string $state, Set $set) {
+                                if (filled($state)) {
+                                    $set('slug', Str::slug($state));
+                                }
+                            }),
+
+                        TextInput::make('slug')
+                            ->required()
+                            ->disabled()
+                            ->dehydrated()
+                            ->unique(ignoreRecord: true)
+                            ->maxLength(255)
+                            ->helperText('Auto-generated from the developer name. You can edit it if needed.'),
+
+                          
+
+                        TextInput::make('website')
+                            ->label('Website')
+                            ->url()
+                            ->maxLength(255)
+                            ->placeholder('https://www.example.com'),
+
+                    ]),
+
+                Section::make('Media')
+                    ->schema([
+
+                        FileUpload::make('logo')
+                            ->label('Logo')
+                            ->image()
+                            ->imageEditor()
+                            ->directory('developers/logos')
+                            ->maxSize(2048)
+                            ->helperText('Recommended size: 300 × 300 px'),
+
+                        FileUpload::make('cover_image')
+                            ->label('Cover Image')
+                            ->image()
+                            ->imageEditor()
+                            ->directory('developers/covers')
+                            ->maxSize(4096)
+                            ->helperText('Recommended size: 1920 × 800 px'),
+
+                    ]),
+
+                Section::make('Description')
+                    ->schema([
+
+                        Textarea::make('description')
+                            ->rows(6)
+                            ->placeholder('Write a brief description about the developer...'),
+
+                    ]),
+
+                Section::make('SEO')
+                    ->schema([
+
+                        TextInput::make('meta_title')
+                            ->label('Meta Title')
+                            ->maxLength(60)
+                            ->helperText('Recommended: 50–60 characters'),
+
+                        Textarea::make('meta_description')
+                            ->label('Meta Description')
+                            ->rows(3)
+                            ->maxLength(160)
+                            ->helperText('Recommended: 150–160 characters'),
+
+                        TextInput::make('meta_keywords')
+                            ->label('Meta Keywords')
+                            ->placeholder('luxury, dubai, developer, apartments'),
+
+                    ]),
+
+                Section::make('Settings')
+                    ->schema([
+
+                        Toggle::make('is_featured')
+                            ->label('Featured')
+                            ->default(false),
+
+                        Toggle::make('is_active')
+                            ->label('Active')
+                            ->default(true),
+
+                        TextInput::make('display_order')
+                            ->label('Display Order')
+                            ->numeric()
+                            ->default(0)
+                            ->minValue(0)
+                            ->helperText('Lower numbers appear first.'),
+
+                    ]),
             ]);
     }
 }

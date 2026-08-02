@@ -18,7 +18,12 @@ class DeveloperResource extends Resource
 {
     protected static ?string $model = Developer::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice2;
+
+    protected static ?string $navigationLabel = 'Developers';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Property Management';
+        protected static ?int $navigationSort = 1;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -34,9 +39,7 @@ class DeveloperResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

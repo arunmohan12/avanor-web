@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 
 class DevelopersTable
@@ -15,38 +16,47 @@ class DevelopersTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('display_order')
             ->columns([
+                ImageColumn::make('logo')
+                    ->label('Logo')
+                    ->circular()
+                    ->defaultImageUrl(url('/images/no-image.png')),
+
                 TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
-                    ImageColumn::make('logo')
-                    ->searchable(),
-                ImageColumn::make('cover_image'),
-                TextColumn::make('meta_title')
-                    ->searchable(),
-                TextColumn::make('meta_keywords')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable()
+                    ->weight('bold'),
+
                 TextColumn::make('website')
-                    ->searchable(),
+                    ->searchable()
+                    ->url(fn ($record) => $record->website)
+                    ->openUrlInNewTab()
+                    ->placeholder('-'),
+
                 IconColumn::make('is_featured')
+                    ->label('Featured')
                     ->boolean(),
+
                 IconColumn::make('is_active')
+                    ->label('Active')
                     ->boolean(),
+
                 TextColumn::make('display_order')
-                    ->numeric()
+                    ->label('Order')
                     ->sortable(),
+
                 TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->label('Created')
+                    ->date('d M Y')
+                    ->sortable(),
             ])
             ->filters([
-                //
+                TernaryFilter::make('is_active')
+                    ->label('Active'),
+
+                TernaryFilter::make('is_featured')
+                    ->label('Featured'),
             ])
             ->recordActions([
                 EditAction::make(),

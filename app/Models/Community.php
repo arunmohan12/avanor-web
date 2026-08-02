@@ -13,6 +13,7 @@ class Community extends Model
         'slug',
         'latitude',
         'longitude',
+        'area',
         'is_active',
     ];
 
