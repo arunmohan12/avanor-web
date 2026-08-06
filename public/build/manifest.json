@@ -123,6 +123,15 @@
       "assets/aed-Regular-lH271UDw.otf"
     ]
   },
+  "resources/css/vendor/home.css": {
+    "file": "assets/home-B8CBtEVU.css",
+    "name": "home",
+    "names": [
+      "home.css"
+    ],
+    "src": "resources/css/vendor/home.css",
+    "isEntry": true
+  },
   "resources/fonts/aed-Regular.otf": {
     "file": "assets/aed-Regular-lH271UDw.otf",
     "src": "resources/fonts/aed-Regular.otf"

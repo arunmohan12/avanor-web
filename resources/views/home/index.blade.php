@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @push('styles')
-    @vite('resources/css/pages/home.css')
+    @vite('resources/css/vendor/home.css')
 @endpush
 
 @section('content')
