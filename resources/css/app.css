@@ -18,13 +18,7 @@
     --font-optima: "Optima LT Pro", serif;
 }
 
-@font-face {
-    font-family: 'AEDCurrencySymbol';
-    src: url('./fonts/aed-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+
 
 body {
     font-family: var(--font-primary);
@@ -50,6 +44,8 @@ body {
 .brand-black{
     color:#000000;
 }
+
+
 /* Large screens only */
 @media (min-width: 1200px) {
     .header-custom {

@@ -18,19 +18,19 @@
         <div class="swiper th-slider" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1500":{"slidesPerView":"3"}},"spaceBetween":"24","grabCursor":"true","slideToClickedSlide":"true"}'>
 
             <div class="swiper-wrapper">
-            @foreach ($featuredProperties as $property)
+                @foreach ($featuredProperties as $property)
 
                 <div class="swiper-slide">
                     <div class="property-card3 style-border">
                         <div class="property-card-thumb ">
-                        <img
-                        src="{{ $property->thumbnail
+                            <img
+                                src="{{ $property->thumbnail
                             ? Storage::disk('public')->url($property->thumbnail)
                             : asset('assets/img/property/property3-1.png') }}"
-                        alt="{{ $property->title }}"
-                    >                        </div>
+                                alt="{{ $property->title }}">
+                        </div>
                         <div class="property-card-details">
-                            <h4 class="property-card-title avanor-property-card-title"><a  href="property-details.html"> {{ $property->title }}</a></h4>
+                            <h4 class="property-card-title avanor-property-card-title"><a href="property-details.html"> {{ $property->title }}</a></h4>
                             <p class="property-card-location"><i class="far fa-map-marker-alt me-2"></i>Inner Circular Lamar Street, Houston, Texas</p>
                             <div class="property-card-meta">
                                 <span><img src="assets/img/icon/property-icon1-1.svg" alt="img">Bed 4</span>
@@ -38,9 +38,19 @@
                                 <span><img src="assets/img/icon/property-icon1-3.svg" alt="img">1500 sqft</span>
                             </div>
                             <div class="property-btn-wrap">
-                            <h4 class="property-card-title avanor-property-card-title">{{ $property->price}}</h4>
+                                <div class="property-author-wrap">
+                                    @php
+                                    $formattedPrice = $property->formatted_price;
+                                    $priceWithoutAed = str_replace('AED ', '', $formattedPrice);
+                                    @endphp
+
+                                    <h4 class="property-card-title avanor-property-card-title">
+                                        <span class="aed-symbol">AED</span>
+                                        {{ $priceWithoutAed }}
+                                    </h4>
+                                </div>
                                 <div class="btn-wrap">
-                                    <a href="property-details.html" class="th-btn style-border2 th-btn-icon">Details</a>
+                                    <a href="property-details.html" class="th-btn style-border2 ">Details</a>
                                 </div>
                             </div>
                         </div>
@@ -48,18 +58,18 @@
                     </div>
                 </div>
 
-               
 
-               
+
+
 
                 @endforeach
 
-                
 
-                
+
+
 
             </div>
-            
+
         </div>
     </div>
 

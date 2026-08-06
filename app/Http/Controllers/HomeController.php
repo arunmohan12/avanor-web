@@ -35,7 +35,8 @@ class HomeController extends Controller
                 'id',
                 'title',
                 'slug',
-                'thumbnail'
+                'thumbnail',
+                'price'
             )
             ->where('is_active', true)
             ->where('is_featured', true)

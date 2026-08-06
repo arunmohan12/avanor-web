@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Support\PriceFormatter;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Property extends Model
 {
@@ -99,5 +101,12 @@ class Property extends Model
     public function scopeFeatured($query)
     {
         return $query->where('is_featured', true);
+    }
+
+    protected function formattedPrice(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => PriceFormatter::aed($this->price),
+        );
     }
 }
