@@ -1,7 +1,18 @@
 <?php
 
+use App\Http\Controllers\DeveloperController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::view('/test', 'welcome')->name('welcome');
+
+
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
+Route::get('/properties', [PropertyController::class, 'index'])
+    ->name('properties.index');
+
+    Route::get('/developers/{developer:slug}', [DeveloperController::class, 'show'])
+        ->name('developers.show');

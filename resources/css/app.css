@@ -1,9 +1,142 @@
-@import 'tailwindcss';
+@import "@fontsource/lato/300.css";
+@import "@fontsource/lato/400.css";
+@import "@fontsource/lato/700.css";
+@import "@fontsource/lato/900.css";
+@import "./fonts.css";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+@import "./vendor/bootstrap.min.css";
+@import "./vendor/fontawesome.min.css";
+@import "./vendor/magnific-popup.min.css";
+@import "./vendor/swiper-bundle.min.css";
+@import "./vendor/jquery.datetimepicker.min.css";
+@import "./vendor/style.css";
+@import "./vendor/contactbanner.css";
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+
+:root {
+    --font-primary: "Lato", sans-serif;
+    --font-optima: "Optima LT Pro", serif;
+}
+
+@font-face {
+    font-family: 'AEDCurrencySymbol';
+    src: url('./fonts/aed-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: var(--font-primary);
+}
+
+.bg-brandlight{
+    background-color: var(--brand-light);
+}
+.bg-branddark{
+    background-color: var(--brand-dark);
+}
+.bg-light{
+    background: var(--brand-light);
+}
+.brand-light{
+   color:#f4ebe6;
+   
+}
+.brand-dark{
+ color:#062e49;
+}
+
+.brand-black{
+    color:#000000;
+}
+/* Large screens only */
+@media (min-width: 1200px) {
+    .header-custom {
+        margin-left: 80px !important;
+        margin-right: 80px !important;
+        /* margin-top: -7px; */
+    }
+}
+
+/* Everything below 1200px */
+@media (max-width: 1199.98px) {
+    .header-custom {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: -7px;
+    }
+}
+
+.header-logo a {
+    position: relative;
+    display: inline-block;
+}
+
+.header-logo img {
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.logo-light {
+    opacity: 1;
+}
+
+.logo-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* Sticky */
+.sticky-wrapper.sticky .logo-light {
+    opacity: 0;
+    transform: translateY(-2px);
+}
+
+.sticky-wrapper.sticky .logo-dark {
+    opacity: 1;
+    transform: translateY(0);
+}
+.menu-area{
+    margin-bottom: -15px;
+    margin-top: -15px;
+}
+.avanor-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 8px 15px;
+    background: #f5f5f5;
+    border-radius: 18px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+
+}
+
+.avanor-breadcrumb a {
+    color: #4b5563;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.avanor-breadcrumb a:hover {
+    color: #111827;
+}
+
+.avanor-breadcrumb .active {
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.breadcrumb-separator {
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+.aed-symbol {
+    font-family: "AEDCurrencySymbol", sans-serif;
 }

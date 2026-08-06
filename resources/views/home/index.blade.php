@@ -10,13 +10,7 @@
 
     @include('home.sections.hero')
 
-    @include('home.sections.search')
 
-    @include('home.sections.featured-projects')
-
-    @include('home.sections.featured-properties')
-
-    @include('home.sections.developers')
 
 @endsection
 

@@ -53,25 +53,25 @@ class DeveloperForm
 
                     ]),
 
-                Section::make('Media')
+                    Section::make('Media')
                     ->schema([
-
+                
                         FileUpload::make('logo')
-                            ->label('Logo')
-                            ->image()
-                            ->imageEditor()
+                            ->disk('public')              // ← Add this
                             ->directory('developers/logos')
-                            ->maxSize(2048)
-                            ->helperText('Recommended size: 300 × 300 px'),
-
-                        FileUpload::make('cover_image')
-                            ->label('Cover Image')
+                            ->visibility('public')        // ← Add this
                             ->image()
                             ->imageEditor()
+                            ->maxSize(2048),
+                
+                        FileUpload::make('cover_image')
+                            ->disk('public')              // ← Add this
                             ->directory('developers/covers')
-                            ->maxSize(4096)
-                            ->helperText('Recommended size: 1920 × 800 px'),
-
+                            ->visibility('public')        // ← Add this
+                            ->image()
+                            ->imageEditor()
+                            ->maxSize(4096),
+                
                     ]),
 
                 Section::make('Description')

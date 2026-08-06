@@ -1,0 +1,40 @@
+.banner-contact {
+    position: fixed;
+    right: 0px;
+    bottom: 60px;
+    z-index: 9999999999;
+    display: flex
+    ;
+    align-items: center;
+    gap: 20px;
+    }
+    
+    #contact-main {
+    display: flex
+    ;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 10px;
+    }
+    .contact-item {
+    background: var(--brand-dark);
+    /* backdrop-filter: blur(10px); */
+    width: 80px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px 0 0 25px;
+    border-right: none;
+    /* border-top: 1px solid #ffffff99; */
+    border-left: 1px solid #ffffff99;
+    border-bottom: 1px solid #ffffff99;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;  /* Smooth transition on all properties */
+    }
+    
+    .contact-item:hover {
+    background: #ffffff20; /* Slight background change on hover */
+    transform: scale(1.1);   /* Slight scaling effect on hover */
+    }

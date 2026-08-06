@@ -19,17 +19,12 @@ class CommunitiesTable
                     ->searchable(),
                 TextColumn::make('name')
                     ->searchable(),
-          
+
                 IconColumn::make('is_active')
                     ->boolean(),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                IconColumn::make('is_featured')
+                    ->boolean(),
+
             ])
             ->filters([
                 //

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Developer extends Model
 
@@ -32,5 +33,16 @@ class Developer extends Model
     // {
     //     return $this->hasMany(Property::class);
     // }
+
+    protected static function booted(): void
+{
+    static::saved(function () {
+        Cache::forget('menu_developers');
+    });
+
+    static::deleted(function () {
+        Cache::forget('menu_developers');
+    });
+}
 }
 

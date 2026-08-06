@@ -15,10 +15,17 @@ class Community extends Model
         'longitude',
         'area',
         'is_active',
+        'thumbnail',
+        'hero',
+        'is_featured',
     ];
 
     public function emirate(): BelongsTo
     {
         return $this->belongsTo(Emirate::class);
     }
+    public function properties()
+{
+    return $this->hasMany(Property::class);
+}
 }

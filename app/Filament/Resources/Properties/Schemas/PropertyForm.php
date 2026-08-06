@@ -132,13 +132,22 @@ class PropertyForm
                     ->schema([
 
                         FileUpload::make('thumbnail')
+                            ->label('Thumbnail')
                             ->image()
-                            ->directory('properties/thumbnails'),
+                            ->disk('public')
+                            ->directory('properties/thumbnails')
+                            ->visibility('public')
+                            ->imageEditor(),
+                         
 
+                            
                         FileUpload::make('cover_image')
+                        ->label('Cover')
                             ->image()
-                            ->directory('properties/covers'),
-
+                            ->disk('public')
+                            ->directory('properties/covers')
+                            ->visibility('public')
+                            ->imageEditor(),
                     ]),
 
                 Section::make('Description')
