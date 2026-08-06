@@ -132,6 +132,15 @@
     "src": "resources/css/vendor/home.css",
     "isEntry": true
   },
+  "resources/css/vendor/property-search.css": {
+    "file": "assets/property-search-D8d0usYK.css",
+    "name": "property-search",
+    "names": [
+      "property-search.css"
+    ],
+    "src": "resources/css/vendor/property-search.css",
+    "isEntry": true
+  },
   "resources/fonts/aed-Regular.otf": {
     "file": "assets/aed-Regular-lH271UDw.otf",
     "src": "resources/fonts/aed-Regular.otf"
