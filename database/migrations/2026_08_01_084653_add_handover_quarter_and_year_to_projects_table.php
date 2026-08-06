@@ -8,19 +8,31 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('projects', function (Blueprint $table) {
-            $table->string('handover_quarter')->nullable();
-            $table->unsignedSmallInteger('handover_year')->nullable();
-        });
+        if (! Schema::hasColumn('projects', 'handover_quarter')) {
+            Schema::table('projects', function (Blueprint $table) {
+                $table->string('handover_quarter')->nullable();
+            });
+        }
+
+        if (! Schema::hasColumn('projects', 'handover_year')) {
+            Schema::table('projects', function (Blueprint $table) {
+                $table->unsignedSmallInteger('handover_year')->nullable();
+            });
+        }
     }
 
     public function down(): void
     {
-        Schema::table('projects', function (Blueprint $table) {
-            $table->dropColumn([
-                'handover_quarter',
-                'handover_year',
-            ]);
-        });
+        if (Schema::hasColumn('projects', 'handover_quarter')) {
+            Schema::table('projects', function (Blueprint $table) {
+                $table->dropColumn('handover_quarter');
+            });
+        }
+
+        if (Schema::hasColumn('projects', 'handover_year')) {
+            Schema::table('projects', function (Blueprint $table) {
+                $table->dropColumn('handover_year');
+            });
+        }
     }
 };
