@@ -92,7 +92,7 @@
     "src": "node_modules/@fontsource/lato/files/lato-latin-ext-900-normal.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-vLvpPOAQ.css",
+    "file": "assets/app-C6YoHbyX.css",
     "name": "app",
     "names": [
       "app.css"
@@ -121,6 +121,8 @@
       "assets/optima_lt_pro_i4-DPP4vEV9.woff2",
       "assets/optima_lt_pro_i7-PDqk5eIp.woff2",
       "assets/aed-Regular-lH271UDw.otf",
+      "assets/fa-brands-400-bXOfNbY_.woff2",
+      "assets/fa-brands-400-Bn4Hcap8.ttf",
       "assets/fa-regular-400-CNKpUNax.woff2",
       "assets/fa-regular-400-BGMZlDC4.ttf"
     ]
@@ -146,6 +148,14 @@
   "resources/fonts/aed-Regular.otf": {
     "file": "assets/aed-Regular-lH271UDw.otf",
     "src": "resources/fonts/aed-Regular.otf"
+  },
+  "resources/fonts/fontawesome/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-Bn4Hcap8.ttf",
+    "src": "resources/fonts/fontawesome/fa-brands-400.ttf"
+  },
+  "resources/fonts/fontawesome/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-bXOfNbY_.woff2",
+    "src": "resources/fonts/fontawesome/fa-brands-400.woff2"
   },
   "resources/fonts/fontawesome/fa-regular-400.ttf": {
     "file": "assets/fa-regular-400-BGMZlDC4.ttf",
