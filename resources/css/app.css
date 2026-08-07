@@ -94,8 +94,8 @@ body {
         height: 76px !important;
     }
     .menu-area {
-        margin-bottom: -24px;
-        margin-top: -24px;
+        margin-bottom: -26px;
+    margin-top: -26px;
     }
 }
 /* Sticky */
@@ -152,4 +152,544 @@ body {
 }
 .btn-prop-details{
     font-size: 12px;
+}
+
+
+
+
+/* ========================================
+   Avanor Footer
+======================================== */
+
+.avanor-footer {
+    background: var(--brand-dark);
+    color: rgba(255, 255, 255, 0.65);
+    font-family: var(--font-optima);
+}
+
+.avanor-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
+    gap: 70px;
+
+    padding: 85px 0 70px;
+
+    align-items: start;
+}
+
+
+/* Brand */
+
+.avanor-footer-logo {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.avanor-footer-logo img {
+    width: 165px;
+    height: auto;
+}
+
+.avanor-footer-brand p {
+    max-width: 320px;
+
+    margin: 0 0 15px;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.58);
+    font-family: var(--font-optima);
+}
+
+
+/* Headings */
+
+.avanor-footer-column h4 {
+    margin: 0 0 28px;
+
+    color: #fff;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--font-optima);
+}
+
+
+/* Links */
+
+.avanor-footer-links,
+.avanor-footer-contact {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.avanor-footer-links li {
+    margin-bottom: 15px;
+}
+
+.avanor-footer-links a {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 14px;
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.avanor-footer-links a:hover {
+    color: var(--brand-light);
+}
+
+
+/* Contact */
+
+.avanor-footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.avanor-footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.avanor-footer-contact i {
+    width: 20px;
+
+    margin-top: 3px;
+
+    color: var(--brand-light);
+    font-size: 16px;
+}
+
+.avanor-footer-contact span,
+.avanor-footer-contact a {
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    text-decoration: none;
+}
+
+.avanor-footer-contact a:hover {
+    color: var(--brand-light);
+}
+
+
+/* Contact Button */
+
+.avanor-footer-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 28px;
+
+    color: var(--brand-light);
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+    padding-bottom: 5px;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.avanor-footer-contact-btn:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+
+/* Social */
+
+.avanor-footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avanor-footer-socials a {
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.avanor-footer-socials a:hover {
+    background: var(--brand-light);
+    border-color: var(--brand-light);
+    color: var(--brand-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* Bottom */
+
+.avanor-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.avanor-footer-bottom-inner {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.avanor-footer-bottom p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 14px;
+}
+
+.avanor-footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.avanor-footer-legal a {
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 14px;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.avanor-footer-legal a:hover {
+    color: var(--brand-light);
+}
+
+@media (max-width: 991px) {
+
+    .avanor-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px 60px;
+
+        padding: 70px 0 60px;
+    }
+
+}
+@media (max-width: 767px) {
+
+    /* =========================
+       FOOTER MOBILE
+    ========================== */
+
+    .avanor-footer {
+        background: var(--brand-dark);
+    }
+
+    .avanor-footer .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .avanor-footer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 35px;
+
+        padding: 55px 0 40px;
+    }
+
+
+    /* =========================
+       BRAND SECTION
+    ========================== */
+
+    .avanor-footer-brand {
+        grid-column: 1 / -1;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+
+        margin-bottom: 38px;
+        padding-bottom: 38px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .avanor-footer-logo {
+        display: block;
+        margin: 0 auto 25px;
+    }
+
+    .avanor-footer-logo img {
+        width: 190px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .avanor-footer-brand p {
+        max-width: 360px;
+
+        margin: 0 auto 26px;
+
+        color: rgba(255, 255, 255, 0.7);
+
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+
+    /* =========================
+       SOCIAL ICONS
+    ========================== */
+
+    .avanor-footer-socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 12px;
+        width: 100%;
+    }
+
+    .avanor-footer-socials a {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 50%;
+
+        color: #fff;
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       EXPLORE / DISCOVER
+    ========================== */
+
+    .avanor-footer-column {
+        min-width: 0;
+    }
+
+    .avanor-footer-column:not(.avanor-footer-contact-column) {
+        padding-bottom: 40px;
+    }
+
+    .avanor-footer-column h4 {
+        margin: 0 0 25px;
+
+        color: #fff;
+
+        font-size: 19px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    .avanor-footer-links {
+        padding: 0;
+        margin: 0;
+    }
+
+    .avanor-footer-links li {
+        margin-bottom: 18px;
+    }
+
+    .avanor-footer-links li:last-child {
+        margin-bottom: 0;
+    }
+
+    .avanor-footer-links a {
+        color: rgba(255, 255, 255, 0.67);
+
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* left column alignment */
+    .avanor-footer-grid > .avanor-footer-column:nth-of-type(2) {
+        text-align: center;
+    }
+
+    /* right column alignment */
+    .avanor-footer-grid > .avanor-footer-column:nth-of-type(3) {
+        text-align: center;
+    }
+
+
+    /* =========================
+       CONTACT SECTION
+    ========================== */
+
+    .avanor-footer-contact-column {
+        grid-column: 1 / -1;
+
+        margin-top: 5px;
+        padding-top: 38px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .avanor-footer-contact-column h4 {
+        margin-bottom: 28px;
+
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .avanor-footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: max-content;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        gap: 20px;
+    }
+
+    .avanor-footer-contact li {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        align-items: center;
+
+        gap: 16px;
+
+        text-align: left;
+    }
+
+    .avanor-footer-contact i {
+        width: 28px;
+
+        margin: 0;
+
+        color: #fff;
+
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .avanor-footer-contact span,
+    .avanor-footer-contact a {
+        color: rgba(255, 255, 255, 0.72);
+
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .avanor-footer-contact-btn {
+        margin-top: 28px;
+    }
+
+
+    /* =========================
+       BOTTOM COPYRIGHT
+    ========================== */
+
+    .avanor-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .avanor-footer-bottom-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 16px;
+
+        min-height: auto;
+
+        padding: 25px 0 30px;
+
+        text-align: center;
+    }
+
+    .avanor-footer-bottom p {
+        margin: 0;
+
+        color: rgba(255, 255, 255, 0.65);
+
+        font-size: 13px;
+        line-height: 1.5;
+
+        text-align: center;
+    }
+
+    .avanor-footer-legal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 12px;
+
+        flex-wrap: wrap;
+    }
+
+    .avanor-footer-legal a {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 13px;
+    }
+
+    .avanor-footer-legal a + a::before {
+        content: "•";
+
+        margin-right: 12px;
+
+        color: rgba(255, 255, 255, 0.5);
+    }
 }

@@ -7,7 +7,7 @@
 
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="#">
+                          <a href="{{ url('/') }}">
                                 <img   class="logo-white"  src="{{ asset('assets/img/' . (trim($__env->yieldContent('logo')) ?: 'logo-white2.svg')) }}" alt="Avanor">
                                 <img class="logo-dark"         src="{{ asset('assets/img/' . (trim($__env->yieldContent('logo_secondary')) ?: 'logo-dark.svg')) }}"
                                 alt="Avanor">
@@ -19,26 +19,26 @@
                     <div class="col-auto">
                         <nav class="main-menu d-none d-lg-inline-block">
                             <ul>
-                                <li><a href="#">PROPERTIES</a>
+                                <li><a href="javascript:void(0)">PROPERTIES</a>
 
 
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">DEVELOPERS</a>
+                                    <a href="javascript:void(0)">DEVELOPERS</a>
 
                                     <ul class="sub-menu">
                                         @foreach ($developers as $developer)
                                         <li>
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 {{ $developer['name'] }}
                                             </a>
                                         </li>
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="#">COMMUNITIES</a></li>
-                                <li><a href="#">ABOUT</a></li>
-                                <li><a href="#">CONTACT</a></li>
+                                <li><a href="javascript:void(0)">COMMUNITIES</a></li>
+                                <li><a href="javascript:void(0)">ABOUT</a></li>
+                                <li><a href="javascript:void(0)">CONTACT</a></li>
                             </ul>
                         </nav>
                     </div>

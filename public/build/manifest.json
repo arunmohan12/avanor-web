@@ -92,7 +92,7 @@
     "src": "node_modules/@fontsource/lato/files/lato-latin-ext-900-normal.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-B1hSaezC.css",
+    "file": "assets/app-vLvpPOAQ.css",
     "name": "app",
     "names": [
       "app.css"
@@ -126,7 +126,7 @@
     ]
   },
   "resources/css/vendor/home.css": {
-    "file": "assets/home-DPMqzdTe.css",
+    "file": "assets/home-DquWVv6o.css",
     "name": "home",
     "names": [
       "home.css"
@@ -172,9 +172,15 @@
     "src": "resources/fonts/optima_lt_pro_n7.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BH7blCN_.js",
+    "file": "assets/app-Bb8wg3je.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/pages/home.js": {
+    "file": "assets/home-Bc3nXpzj.js",
+    "name": "home",
+    "src": "resources/js/pages/home.js",
     "isEntry": true
   }
 }

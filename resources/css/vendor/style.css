@@ -97,6 +97,7 @@ Version: 1.0.0
 
   --brand-dark:#030920;
   --brand-gold:#b59350;
+  --brand-dark-shade:#03092094;
 
   --theme-color3: #423A2F;
   --title-color: #0D0D0C;
@@ -20986,6 +20987,7 @@ span.select2-selection.select2-selection--single:focus {
   margin-bottom: -0.5em;
   color: var(--theme-color);
   font-family: var(--font-optima);
+  text-align: justify;
 }
 
 @media (max-width: 767px) {

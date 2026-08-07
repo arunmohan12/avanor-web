@@ -127,11 +127,24 @@
 </section>
 
 
+<section class="space-top space-bottom avanor-blog-section">
+@include('partials.blogs-section')
 
+</section>
+
+
+<footer class="footer-wrapper footer-default bg-theme">
+@include('partials.footer')
+</footer>
 
 
 <script>
     window.avanorDevelopers = @json($developers);
 </script>
+
+
 @endsection
 
+@push('scripts')
+    @vite('resources/js/pages/home.js')
+@endpush

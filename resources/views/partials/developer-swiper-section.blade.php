@@ -6,9 +6,11 @@
                 @foreach ($developers as $developer)
 
                 <div class="swiper-slide">
-
-                    <a
-                        href="{{ route('developers.show', $developer['slug']) }}"
+             
+                    <!-- <a
+                        href="{{ route('developers.show', $developer['slug']) }}" -->
+                                            <a
+                        href="javascript:void(0)"
                         class="client-card">
                         <img
                             src="{{ $developer['logo']

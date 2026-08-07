@@ -30,7 +30,7 @@
                                 alt="{{ $property->title }}">
                         </div>
                         <div class="property-card-details">
-                            <h4 class="property-card-title avanor-property-card-title"><a href="property-details.html"> {{ $property->title }}</a></h4>
+                            <h4 class="property-card-title avanor-property-card-title"><a href="javascript:void(0)"> {{ $property->title }}</a></h4>
                             <p class="property-card-location"><i class="far fa-map-marker-alt me-2"></i>Inner Circular Lamar Street, Houston, Texas</p>
                             <div class="property-card-meta">
                                 <span><img src="assets/img/icon/property-icon1-1.svg" alt="img">Bed 4</span>

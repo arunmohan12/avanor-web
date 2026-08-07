@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Community;
 use App\Models\Property;
-
+use App\Models\Blog;
 use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
@@ -30,7 +30,7 @@ class HomeController extends Controller
             ->get();
 
 
-            $featuredProperties = Property::query()
+        $featuredProperties = Property::query()
             ->select(
                 'id',
                 'title',
@@ -44,9 +44,39 @@ class HomeController extends Controller
             ->limit(12)
             ->get();
 
+        $blogs = Blog::query()
+            ->where('is_active', true)
+            ->whereNotNull('published_at')
+            ->where('published_at', '<=', now())
+            ->orderByDesc('published_at')
+            ->limit(8)
+            ->get([
+                'id',
+                'title',
+                'slug',
+                'thumbnail',
+                'excerpt',
+                'published_at',
+                'is_featured',
+                'category',
+            ]);
+
+        $featuredBlog = $blogs->firstWhere('is_featured', true)
+            ?? $blogs->first();
+
+        $latestBlogs = $blogs
+            ->reject(
+                fn($blog) =>
+                $featuredBlog && $blog->id === $featuredBlog->id
+            )
+            ->take(8)
+            ->values();
+
         return view('home', [
             'featuredCommunities' => $featuredCommunities,
+            'latestBlogs' =>$latestBlogs,
             'featuredProperties'  => $featuredProperties,
+            'featuredBlog' => $featuredBlog,
 
         ]);
     }

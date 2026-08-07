@@ -14,8 +14,7 @@
                         <div class="service-card-icon">
                             <img src="assets/img/icon/service-icon5-1.svg" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="property-details.html">Property Valuation</a></h3>
-                        <p class="box-text">Expert legal advice and support throughout the real estate process.</p>
+                        <h3 class="box-title"><a href="javascript:void(0)">Property Valuation</a></h3>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-4">
@@ -23,8 +22,7 @@
                         <div class="service-card-icon">
                             <img src="assets/img/icon/service-icon5-2.svg" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="property-details.html">Legal Assistance</a></h3>
-                        <p class="box-text">Professional interior design consultations and staging services.</p>
+                        <h3 class="box-title"><a href="javascript:void(0)">Legal Assistance</a></h3>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-4">
@@ -32,8 +30,7 @@
                         <div class="service-card-icon">
                             <img src="assets/img/icon/service-icon5-3.svg" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="property-details.html">Mortgage Services</a></h3>
-                        <p class="box-text">Competitive mortgage rates and Other most personalized financing options.</p>
+                        <h3 class="box-title"><a href="javascript:void(0)">Mortgage Services</a></h3>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-4">
@@ -41,8 +38,7 @@
                         <div class="service-card-icon">
                             <img src="assets/img/icon/service-icon5-4.svg" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="property-details.html">Home Inspection</a></h3>
-                        <p class="box-text">Thorough home inspections to identify more potential issues.</p>
+                        <h3 class="box-title"><a href="javascript:void(0)">Home Inspection</a></h3>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-4">
@@ -50,8 +46,7 @@
                         <div class="service-card-icon">
                             <img src="assets/img/icon/service-icon5-5.svg" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="property-details.html">Escrow Services</a></h3>
-                        <p class="box-text">Efficient title and escrow services for smooth transactions.</p>
+                        <h3 class="box-title"><a href="javascript:void(0)">Escrow Services</a></h3>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-4">
@@ -59,8 +54,7 @@
                         <div class="service-card-icon">
                             <img src="assets/img/icon/service-icon5-6.svg" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="property-details.html">Property Management</a></h3>
-                        <p class="box-text">Professional property more management services for landlords.</p>
+                        <h3 class="box-title"><a href="javascript:void(0)">Property Management</a></h3>
                     </div>
                 </div>
             </div>

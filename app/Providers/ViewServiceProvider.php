@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Services\MenuService;
+use App\Models\SiteSetting;
+use Illuminate\Support\Facades\Cache;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -36,6 +38,20 @@ class ViewServiceProvider extends ServiceProvider
 
         View::composer('partials.property-search', function ($view) use ($menuService) {
             $view->with($menuService->propertySearch());
+        });
+
+
+        View::composer('*', function ($view) {
+
+            $siteSettings = Cache::remember(
+                'site_settings',
+                now()->addHours(12),
+                fn () => SiteSetting::query()
+                    ->first()
+                    ?->toArray()
+            );
+        
+            $view->with('siteSettings', $siteSettings);
         });
     }
 }

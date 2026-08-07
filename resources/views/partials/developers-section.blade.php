@@ -5,14 +5,14 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-6">
                 <div class="title-area">
-                    <span class="sub-title-dark">SIGNATURE COLLECTIONS</span>
-                    <h2 class="sec-title brand-light">Exclusive Property Picks </h2>
+                    <span class="sub-title-dark">OUR PARTNERS</span>
+                    <h2 class="sec-title brand-light">Top Developers </h2>
                 </div>
             </div>
             <div class="col-lg-6 d-none d-lg-flex justify-content-end">
 
                 <a
-                    href="{{ route('properties.index') }}"
+                    href="   javascript:void(0)"
                     class=" show-allproperties-btn "> VIEW ALL </a>
 
             </div>
@@ -22,8 +22,12 @@
 
             @foreach (array_slice($developers, 0, 10) as $developer)
 
-            <a
+            <!-- <a
                 href="{{ route('developers.show', $developer['slug']) }}"
+                class="avanor-developer-card"
+                data-index="{{ $loop->index }}"> -->
+                <a
+                href="javascript:void(0)"
                 class="avanor-developer-card"
                 data-index="{{ $loop->index }}">
                 <img
