@@ -104,14 +104,34 @@
 </section>
 
 
-<div class="space-top position-relative overflow-hidden bg-brandlight" data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.webp')}}">
+<div class="space-top position-relative overflow-hidden bg-brandlight mt-60" data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.png')}}">
 @include('partials.reachoutbanner')
 </div>
-<!--==============================
-Client Area  
-==============================-->
-<div class="client-area-1 space " data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.webp')}}">
 
+<div class="client-area-1 space " data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.png')}}">
 @include('partials.developer-swiper-section')
 </div>
+
+<section class="space bg-branddark ">
+@include('partials.service-section')
+</section>
+
+
+<section class="why-sec2 space overflow-hidden ">
+@include('partials.approach-section')
+</section>
+
+
+<section class="space avanor-developers-section">
+@include('partials.developers-section')
+</section>
+
+
+
+
+
+<script>
+    window.avanorDevelopers = @json($developers);
+</script>
 @endsection
+

@@ -180,7 +180,7 @@
 .community-btn {
     position: relative;
     background: var(--brand-light);
-    color: var(--brand-dark);
+    color: var(--brand-gold);
     margin-bottom: -6px;
     font-size: 12px;
 }
@@ -192,7 +192,7 @@
     bottom: 0;
     width: 100%;
     height: 1px;
-    background: var(--brand-dark);
+    background: var(--brand-gold);
     transition: transform .35s ease;
 }
 
@@ -213,7 +213,7 @@
 .show-allproperties-btn {
     position: relative;
     background-color: var(--brand-dark);
-    color: var(--brand-light);
+    color: var(--brand-gold);
     margin-bottom: -6px;
     font-size: 12px;
 }
@@ -225,7 +225,7 @@
     bottom: 0;
     width: 100%;
     height: 1px;
-    background: var(--brand-light);
+    background: var(--brand-gold);
     transition: transform .35s ease;
 }
 
@@ -425,4 +425,178 @@
 .avanor-property-card-title :hover{
 
 color: var(--brand-dark) ;
+}
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .th-hero-wrapper.hero-3 {
+        height: 300px;
+        min-height: unset;
+        overflow: hidden;
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+@media (max-width: 767px) {
+    .counter-card-wrap {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 30px 15px;
+    }
+
+    .counter-card.style4 {
+        width: 100% !important;
+        margin: 0;
+    }
+
+    .counter-card.style4 .box-icon img {
+        width: 42px;
+        height: auto;
+    }
+}
+
+
+
+/* ========================================
+   Featured Developers
+======================================== */
+
+.avanor-developers-section {
+    background: var(--brand-dark);
+    padding-bottom: 100px;
+}
+
+
+
+/* GRID */
+
+.avanor-developers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: #fff;
+}
+
+.avanor-developer-card {
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    border-right: 1px solid #00000021;
+    border-bottom: 1px solid #00000021;
+
+    background: #fff;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Remove right border every fifth item */
+.avanor-developer-card:nth-child(5n) {
+    border-right: none;
+}
+
+/* Remove bottom border from last row */
+.avanor-developer-card:nth-last-child(-n + 5) {
+    border-bottom: none;
+}
+
+.avanor-developer-card img {
+    display: block;
+    max-width: 150px;
+    max-height: 65px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.avanor-developer-card:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 991px) {
+
+    .avanor-developers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .avanor-developer-card {
+        border-right: 1px solid #00000021;
+        border-bottom: 1px solid #00000021;
+    }
+
+    .avanor-developer-card:nth-child(3n) {
+        border-right: none;
+    }
+
+    .avanor-developer-card:nth-last-child(-n + 5) {
+        border-bottom: 1px solid #eadbc5;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .avanor-developers-section {
+        padding-bottom: 60px;
+    }
+
+    .avanor-developers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .avanor-developer-card {
+        height: 115px;
+        padding: 22px;
+        border-right: 1px solid #00000021;
+        border-bottom: 1px solid #00000021;
+    }
+
+    .avanor-developer-card:nth-child(3n) {
+        border-right: 1px solid #eadbc5;
+    }
+
+    .avanor-developer-card:nth-child(2n) {
+        border-right: none;
+    }
+
+    .avanor-developer-card:nth-last-child(-n + 2) {
+        border-bottom: none;
+    }
+
+    .avanor-developer-card img {
+        max-width: 110px;
+        max-height: 48px;
+    }
+}
+
+
+.avanor-developer-card {
+    perspective: 800px;
+}
+
+.avanor-developer-card .developer-logo-brand {
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.avanor-developer-card.is-flipping .developer-logo-brand{
+    opacity: 0;
+    transform: rotateY(90deg) scale(.92);
 }

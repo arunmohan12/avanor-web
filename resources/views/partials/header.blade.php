@@ -8,7 +8,7 @@
                     <div class="col-auto">
                         <div class="header-logo">
                             <a href="#">
-                                <img     src="{{ asset('assets/img/' . (trim($__env->yieldContent('logo')) ?: 'logo-white2.svg')) }}" alt="Avanor">
+                                <img   class="logo-white"  src="{{ asset('assets/img/' . (trim($__env->yieldContent('logo')) ?: 'logo-white2.svg')) }}" alt="Avanor">
                                 <img class="logo-dark"         src="{{ asset('assets/img/' . (trim($__env->yieldContent('logo_secondary')) ?: 'logo-dark.svg')) }}"
                                 alt="Avanor">
 

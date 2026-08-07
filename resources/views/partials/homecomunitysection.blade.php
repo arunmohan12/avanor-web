@@ -6,7 +6,7 @@
 
             <div class="title-area ">
 
-                <span class="sub-title brand-black">
+                <span class="sub-title ">
                     EXPLORE COMMUNITIES
                 </span>
 

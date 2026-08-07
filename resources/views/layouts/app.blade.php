@@ -31,7 +31,7 @@
     <script src="{{ asset('assets/js/swiper-bundle.min.js') }}" defer></script>
     <script src="{{ asset('assets/js/threesixty.min.js') }}" defer></script>
     <script src="{{ asset('assets/js/panolens.min.js') }}" defer></script>
-    <script src="{{ asset('assets/js/map-place-active.js') }}" defer></script>
+    <!-- <script src="{{ asset('assets/js/map-place-active.js') }}" defer></script> -->
     <script src="{{ asset('assets/js/main.js') }}" defer></script>
 
     @stack('scripts')

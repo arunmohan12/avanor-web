@@ -88,15 +88,15 @@ Version: 1.0.0
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
 :root {
-  --theme-color: #062e49;
+  --theme-color: #030920;
   --theme-color2: #EED26E;
 
   /* --brand-light:#f4ebe6; */
-  
+  --theme-color2: #fff;
   --brand-light:#fff;
 
-  --brand-dark:#062e49;
-  --brand-gold:#c9a96e;
+  --brand-dark:#030920;
+  --brand-gold:#b59350;
 
   --theme-color3: #423A2F;
   --title-color: #0D0D0C;
@@ -4919,7 +4919,7 @@ textarea.is-invalid {
   font-size: 14px;
   font-weight: 400;
   font-family: var(--font-optima);
-  color: var(--brand-light);
+  color: var(--brand-gold);
   margin-bottom: 28px;
   line-height: 1;
   padding: 8px 0px;
@@ -4930,7 +4930,7 @@ textarea.is-invalid {
   font-size: 14px;
   font-weight: 400;
   font-family: var(--font-optima);
-  color: var(--brand-light);
+  color: var(--brand-gold);
   margin-bottom: 28px;
   line-height: 1;
   padding: 8px 0px;
@@ -4941,7 +4941,7 @@ textarea.is-invalid {
   position: absolute;
   height: 1px;
   width: 32px;
-  background: var(--brand-light);
+  background: var(--brand-gold);
 }
 .sub-title-dark:before {
   top: 0;
@@ -4963,7 +4963,7 @@ textarea.is-invalid {
   position: absolute;
   height: 1px;
   width: 32px;
-  background: var(--black-color);
+  background: var(--brand-gold);
 }
 .sub-title:before {
   top: 0;
@@ -5047,9 +5047,9 @@ textarea.is-invalid {
 
 .sub-title3 {
   color: var(--theme-color);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  font-family: var(--title-font);
+  font-family: var(--font-optima);
   text-transform: uppercase;
   position: relative;
   margin-bottom: 23px;
@@ -5089,11 +5089,11 @@ textarea.is-invalid {
 }
 
 .sub-title3.text-theme2:after, .sub-title3.text-theme2:before {
-  background: var(--theme-color2);
+  background: var(--brand-gold);
 }
 
 .sub-title3.text-theme3:after, .sub-title3.text-theme3:before {
-  background: var(--theme-color3);
+  background: var(--brand-gold);
 }
 
 .sub-title3.after-none:after {
@@ -6015,7 +6015,7 @@ hr.title-line {
 }
 
 .text-theme2 {
-  color: var(--theme-color2) !important;
+  color: var(--brand-gold) !important;
 }
 
 .text-theme3 {
@@ -19876,10 +19876,10 @@ span.select2-selection.select2-selection--single:focus {
 /* Medium devices */
 @media (max-width: 991px) {
   .counter-card .box-number {
-    font-size: 36px;
+    font-size: 20px;
   }
   .counter-card .box-text {
-    font-size: 16px;
+    font-size: 12px !important;
   }
 }
 
@@ -20973,7 +20973,7 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .why-feature-list .why-feature-list-wrap .feature-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   margin-top: 4px;
   color: var(--theme-color);
@@ -20985,6 +20985,7 @@ span.select2-selection.select2-selection--single:focus {
 .why-feature-list .why-feature-list-wrap .feature-text {
   margin-bottom: -0.5em;
   color: var(--theme-color);
+  font-family: var(--font-optima);
 }
 
 @media (max-width: 767px) {
@@ -29326,7 +29327,7 @@ margin-bottom: 13px;;
 /* Service Area 5 ---------------------------------- */
 .service-card.style5 {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
+  /* border-radius: 24px; */
   text-align: center;
   padding: 40px;
   /* Medium devices */
@@ -29339,7 +29340,7 @@ margin-bottom: 13px;;
   height: 72px;
   line-height: 68px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
   text-align: center;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -29358,7 +29359,7 @@ margin-bottom: 13px;;
 
 .service-card.style5 .box-title a {
   color: var(--white-color);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
 

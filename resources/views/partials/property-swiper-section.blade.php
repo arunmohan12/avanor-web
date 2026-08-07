@@ -50,7 +50,7 @@
                                     </h4>
                                 </div>
                                 <div class="btn-wrap">
-                                    <a href="property-details.html" class="th-btn style-border2 ">Details</a>
+                                    <a href="javascript:void(0)" class="th-btn style-border2 btn-prop-details">Details</a>
                                 </div>
                             </div>
                         </div>
