@@ -150,6 +150,15 @@
     "src": "resources/css/vendor/about.css",
     "isEntry": true
   },
+  "resources/css/vendor/contact.css": {
+    "file": "assets/contact-DV3-jSP-.css",
+    "name": "contact",
+    "names": [
+      "contact.css"
+    ],
+    "src": "resources/css/vendor/contact.css",
+    "isEntry": true
+  },
   "resources/css/vendor/home.css": {
     "file": "assets/home-DSUZImrT.css",
     "name": "home",
