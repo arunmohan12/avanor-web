@@ -1,0 +1,140 @@
+.header-layout3 .sticky-wrapper.sticky {
+    background: var(--brand-light);
+}
+
+.header-layout3 {
+    background: var(--brand-light);
+}
+
+
+.main-menu a {
+
+    color: var(--brand-dark);
+}
+
+.main-menu > ul > li > a:hover {
+
+    color: var(--brand-dark-shade) ;
+}
+.sec-title{
+    font-size: 48px ;
+}
+
+
+.avanor-terms-page {
+    background: #fff;
+}
+
+.avanor-terms-header {
+    max-width: 850px;
+    margin-bottom: 55px;
+}
+
+.avanor-terms-header .sec-title {
+    margin-bottom: 15px;
+}
+
+.avanor-terms-updated {
+    margin: 0;
+
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* Content */
+
+.avanor-terms-content {
+    max-width: 950px;
+}
+
+.avanor-terms-block {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+
+    border-bottom: 1px solid rgba(20, 20, 20, 0.12);
+}
+
+.avanor-terms-block:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.avanor-terms-block h2 {
+    margin-bottom: 14px;
+
+    color: var(--brand-dark);
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.avanor-terms-block p {
+    margin-bottom: 12px;
+
+    color: #5d5d5d;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.avanor-terms-block p:last-child {
+    margin-bottom: 0;
+}
+
+.avanor-terms-block a {
+    color: var(--brand-dark);
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+
+    transition: color 0.3s ease;
+}
+
+.avanor-terms-block a:hover {
+    color: var(--brand-light);
+}
+
+
+/* Contact */
+
+.avanor-terms-contact {
+    padding: 30px;
+
+    background: var(--brand-light);
+
+    border-bottom: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .avanor-terms-header {
+        margin-bottom: 40px;
+    }
+
+    .avanor-terms-header .sec-title {
+        font-size: 34px;
+    }
+
+    .avanor-terms-block {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+
+    .avanor-terms-block h2 {
+        font-size: 21px;
+    }
+
+    .avanor-terms-block p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .avanor-terms-contact {
+        padding: 24px 20px;
+    }
+}

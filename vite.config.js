@@ -11,7 +11,8 @@ export default defineConfig({
                 'resources/js/pages/home.js',
                 'resources/css/vendor/property-search.css',
                 'resources/css/vendor/about.css',
-                
+                'resources/css/vendor/privacy.css',
+                'resources/css/vendor/terms.css',
                 'resources/js/pages/contact.js',
                 
                 'resources/js/app.js'],

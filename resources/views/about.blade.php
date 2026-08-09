@@ -109,7 +109,7 @@
                 </div>
                 <div class="col-auto">
                     <div class="sec-btn">
-                        <a href="contact.html" class="th-btn style-border btn-cta">BOOK A CONSULTATION</a>
+                        <a href="javascript:void(0)" class="th-btn style-border btn-cta">BOOK A CONSULTATION</a>
                     </div>
                 </div>
             </div>

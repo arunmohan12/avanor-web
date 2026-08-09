@@ -139,8 +139,10 @@
                 </p>
 
                 <div class="avanor-footer-legal">
-                    <a href="javascript:void(0)">Privacy Policy</a>
-                    <a href="javascript:void(0)">Terms & Conditions</a>
+                    <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
+                    <a href="{{ route('terms-and-conditions') }}">
+                        Terms & Conditions
+                    </a>
                 </div>
 
             </div>

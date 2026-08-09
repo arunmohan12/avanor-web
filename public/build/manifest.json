@@ -170,6 +170,15 @@
     "src": "resources/css/vendor/home.css",
     "isEntry": true
   },
+  "resources/css/vendor/privacy.css": {
+    "file": "assets/privacy-D2NdGuIa.css",
+    "name": "privacy",
+    "names": [
+      "privacy.css"
+    ],
+    "src": "resources/css/vendor/privacy.css",
+    "isEntry": true
+  },
   "resources/css/vendor/property-search.css": {
     "file": "assets/property-search-DvRDaCBr.css",
     "name": "property-search",
@@ -177,6 +186,15 @@
       "property-search.css"
     ],
     "src": "resources/css/vendor/property-search.css",
+    "isEntry": true
+  },
+  "resources/css/vendor/terms.css": {
+    "file": "assets/terms-B_ixWolK.css",
+    "name": "terms",
+    "names": [
+      "terms.css"
+    ],
+    "src": "resources/css/vendor/terms.css",
     "isEntry": true
   },
   "resources/fonts/aed-Regular.otf": {
