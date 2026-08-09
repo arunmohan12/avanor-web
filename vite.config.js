@@ -9,6 +9,9 @@ export default defineConfig({
                 'resources/css/vendor/home.css',
                 'resources/js/pages/home.js',
                 'resources/css/vendor/property-search.css',
+                'resources/css/vendor/about.css',
+                'resources/js/pages/contact.js',
+                
                 'resources/js/app.js'],
             refresh: true,
             fonts: [

@@ -28,10 +28,13 @@ class ViewServiceProvider extends ServiceProvider
                 'partials.header',
                 'partials.footer',
                 'home',
+                'about',
+                'contact'
             ],
             function ($view) use ($menuService) {
                 $view->with([
                     'developers' => $menuService->developers(),
+                    'navigation' => $menuService->navigation(),
                 ]);
             }
         );

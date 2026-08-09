@@ -118,7 +118,7 @@ body {
     gap: 18px;
     padding: 8px 15px;
     background: #f5f5f5;
-    border-radius: 18px;
+    border-radius: 9px;
     margin-bottom: 24px;
     margin-top: 24px;
 
@@ -693,3 +693,7 @@ body {
         color: rgba(255, 255, 255, 0.5);
     }
 }
+.btn-cta{
+    font-size: 12px;
+}
+

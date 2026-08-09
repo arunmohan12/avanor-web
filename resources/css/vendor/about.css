@@ -1,0 +1,227 @@
+.header-layout3 .sticky-wrapper.sticky {
+    background: var(--brand-light);
+}
+
+.header-layout3 {
+    background: var(--brand-light);
+}
+
+
+.main-menu a {
+
+    color: var(--brand-dark);
+}
+
+.main-menu > ul > li > a:hover {
+
+    color: var(--brand-dark-shade) ;
+}
+.text-theme{
+    text-align: justify;
+}
+.about-title{
+    text-align: center;
+}
+
+.about-title-mb-adjust{
+margin-bottom: calc(var(--section-title-space) - var(--section-title-space));
+}
+.sec-title {
+font-family: var( --font-primary);
+}
+.about-hero-text{
+    font-size: 15px;
+}
+
+.icon-box img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.box-text {
+font-family: var(--font-primary);
+}
+.text-light{
+    font-family: var(--font-primary);
+}
+
+.why-choos-mb{
+    margin-bottom: 40px !important;
+}
+
+
+
+
+
+
+
+/* ========================================
+   About SEO Section
+======================================== */
+
+.avanor-seo-about-section {
+    background: #fff;
+}
+
+.avanor-seo-about-content {
+    max-width: 590px;
+}
+
+.avanor-seo-about-content .sec-title {
+    margin-bottom: 28px;
+    line-height: 1.15;
+}
+
+.avanor-seo-about-content p {
+    margin-bottom: 22px;
+
+    color: #5b5b5b;
+    font-size: 16px;
+    line-height: 1.8;
+
+    text-align: justify;
+}
+
+.avanor-seo-about-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Cards */
+
+.avanor-seo-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    border-top: 1px solid rgba(20, 20, 20, 0.14);
+    border-left: 1px solid rgba(20, 20, 20, 0.14);
+}
+
+.avanor-seo-card {
+    min-height: 290px;
+
+    padding: 26px 26px;
+
+    border-right: 1px solid rgba(20, 20, 20, 0.14);
+    border-bottom: 1px solid rgba(20, 20, 20, 0.14);
+
+    background: #fff;
+
+    transition:
+        background-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.avanor-seo-card:hover {
+    background: var(--brand-light);
+}
+
+.avanor-seo-card-number {
+    display: block;
+
+    margin-bottom: 26px;
+
+    color: rgba(20, 20, 20, 0.45);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.avanor-seo-card h3 {
+    margin-bottom: 18px;
+
+    color: var(--brand-dark);
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+
+}
+
+.avanor-seo-card p {
+    margin: 0;
+
+    color: #5f5f5f;
+
+    font-size: 15px;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+
+/* Tablet */
+
+@media (max-width: 991px) {
+
+    .avanor-seo-about-content {
+        max-width: 100%;
+    }
+
+    .avanor-seo-card {
+        min-height: 260px;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .avanor-seo-about-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .avanor-seo-about-content .sec-title {
+        font-size: 34px;
+        margin-bottom: 22px;
+    }
+
+    .avanor-seo-about-content p {
+        font-size: 15px;
+        line-height: 1.75;
+
+        text-align: left;
+    }
+
+    .avanor-seo-card-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 10px;
+    }
+
+    .avanor-seo-card {
+        min-height: auto;
+
+        padding: 28px 24px;
+    }
+
+    .avanor-seo-card-number {
+        margin-bottom: 22px;
+    }
+
+    .avanor-seo-card h3 {
+        font-size: 21px;
+        margin-bottom: 14px;
+    }
+
+}
+
+.fnt-sm{
+    font-size: 15px;
+}
+
+.btn-cta {
+    font-size: 12px;
+}
+
+.column-mt{
+    margin-top: calc(var(--bs-gutter-y) - var(--bs-gutter-y));
+}
+
+.th-btn:hover{
+    border: 1px solid var(--brand-dark);
+}

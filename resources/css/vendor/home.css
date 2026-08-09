@@ -118,6 +118,10 @@
     font-weight: 900 !important;
         white-space:nowrap;
 }
+
+.th-btn:hover{
+    border: 1px solid var(--brand-dark);
+}
 @media (max-width:991px){
 
     .property-search-form{
@@ -301,10 +305,6 @@
 
 }
 
-.btn-cta{
-    font-size: 12px;
-}
-
 
 .button-group {
     display: flex;
@@ -359,7 +359,7 @@
 
     .sec-title-font44 {
         font-size: 32px;
-        line-height: 1.15;
+        line-height: 1.50;
     }
 }
 .btn-outline-dark {
@@ -624,7 +624,7 @@ color: var(--brand-dark) ;
 .avanor-blog-featured {
     display: grid;
     grid-template-columns: 1.05fr 1fr;
-    gap: 38px;
+    gap:  var( --content-spacing);
     align-items: start;
 }
 
@@ -671,10 +671,10 @@ color: var(--brand-dark) ;
 }
 
 .avanor-blog-featured-content h3 {
-    margin: 0 0 26px;
+    margin: 0 0  var( --content-spacing);
 
     color: var(--brand-dark);
-    font-size: clamp(30px, 2.3vw, 42px);
+    font-size: 30px;
     line-height: 1.02;
     font-weight: 700;
 font-family: var(--font-optima);
@@ -682,7 +682,7 @@ font-family: var(--font-optima);
 
 .avanor-blog-date {
     display: block;
-    margin-bottom: 26px;
+    margin-bottom:  var( --content-spacing);
 
     color: #666;
     font-size: 14px;
@@ -691,7 +691,7 @@ font-family: var(--font-optima);
 .avanor-blog-featured-content p {
     max-width: 680px;
 
-    margin-bottom: 28px;
+    margin-bottom:  var( --content-spacing);
 
     color: #3d3d3d;
     font-size: 16px;
@@ -780,11 +780,11 @@ font-family: var(--font-optima);
     }
 
     .avanor-blog-featured-image {
-        margin-bottom: 25px;
+        margin-bottom:  var( --content-spacing);
     }
 
     .avanor-blog-featured-content h3 {
-        font-size: 30px;
+        font-size: 25px;
         margin-bottom: 18px;
     }
 
@@ -795,7 +795,7 @@ font-family: var(--font-optima);
 
     .avanor-blog-list {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 26px;
         margin-top: 45px;
     }
 
@@ -810,7 +810,7 @@ font-family: var(--font-optima);
     }
 
     .avanor-blog-small h4 {
-        font-size: 12px;
+        font-size: 14px !important;
         margin-bottom: 10px;
     }
 }
@@ -831,7 +831,7 @@ font-family: var(--font-optima);
 }
 
 .avanor-blog-swiper {
-    margin-top: 65px;
+    margin-top:  var( --content-spacing);
     overflow: hidden;
 }
 

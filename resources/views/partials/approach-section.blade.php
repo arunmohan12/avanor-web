@@ -4,7 +4,7 @@
                 <div class="col-xl-12">
                     <div class="title-area mb-40">
                         <span class="sub-title">OUR APPROACH</span>
-                        <h2 class="sec-title text-theme">Property Search, Made Personal</h2>
+                        <h2 class="title-area  text-theme">Property Search, Made Personal</h2>
                         <p class="sec-text text-theme">Every property journey starts differently. Whether you're looking for a home, an investment, or an off-plan opportunity, we begin by understanding your priorities and guide you toward properties that genuinely match them.</p>
                     </div>
                     <ul class="why-feature-list">

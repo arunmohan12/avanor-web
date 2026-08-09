@@ -14,5 +14,8 @@ Route::get('/', [HomeController::class, 'index'])
 Route::get('/properties', [PropertyController::class, 'index'])
     ->name('properties.index');
 
-    Route::get('/developers/{developer:slug}', [DeveloperController::class, 'show'])
+Route::get('/developers/{developer:slug}', [DeveloperController::class, 'show'])
         ->name('developers.show');
+
+Route::view('/about', 'about')->name('about');
+Route::view('/contact', 'contact')->name('contact');

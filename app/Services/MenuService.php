@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services;
+use App\Models\Menu;
 
 use App\Models\Community;
 use App\Models\Developer;
@@ -9,6 +10,29 @@ use Illuminate\Support\Facades\Cache;
 
 class MenuService
 {
+
+
+    public function navigation(): array
+    {
+        return Cache::remember(
+            'main_navigation',
+            now()->addHours(12),
+            function () {
+                return Menu::query()
+                    ->whereNull('parent_id')
+                    ->where('is_active', true)
+                    ->with([
+                        'children' => fn ($query) => $query
+                            ->where('is_active', true)
+                            ->orderBy('display_order'),
+                    ])
+                    ->orderBy('display_order')
+                    ->get()
+                    ->toArray();
+            }
+        );
+    }
+
     public function propertySearch(): array
     {
         return Cache::remember(

@@ -7,10 +7,25 @@
 
                     <div class="col-auto">
                         <div class="header-logo">
-                          <a href="{{ url('/') }}">
-                                <img   class="logo-white"  src="{{ asset('assets/img/' . (trim($__env->yieldContent('logo')) ?: 'logo-white2.svg')) }}" alt="Avanor">
-                                <img class="logo-dark"         src="{{ asset('assets/img/' . (trim($__env->yieldContent('logo_secondary')) ?: 'logo-dark.svg')) }}"
-                                alt="Avanor">
+                            <a href="{{ url('/') }}">
+
+                                {{-- Primary Logo --}}
+                                <img
+                                    class="logo-white"
+                                    src="{{ asset(
+        'assets/img/' .
+        (trim($__env->yieldContent('logo')) ?: 'logo-white2.svg')
+    ) }}"
+                                    alt="Avanor">
+
+                                {{-- Secondary / Sticky Logo --}}
+                                <img
+                                    class="logo-dark"
+                                    src="{{ asset(
+        'assets/img/' .
+        (trim($__env->yieldContent('logo_secondary')) ?: 'logo-dark.svg')
+    ) }}"
+                                    alt="Avanor">
 
                             </a>
                         </div>
@@ -18,28 +33,55 @@
 
                     <div class="col-auto">
                         <nav class="main-menu d-none d-lg-inline-block">
+
                             <ul>
-                                <li><a href="javascript:void(0)">PROPERTIES</a>
 
+                                @foreach ($navigation as $menu)
 
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0)">DEVELOPERS</a>
+                                @php
+                                $hasChildren = !empty($menu['children']);
+
+                                $href = $menu['route_name']
+                                ? route($menu['route_name'])
+                                : ($menu['url'] ?: 'javascript:void(0)');
+                                @endphp
+
+                                <li class="{{ $hasChildren ? 'menu-item-has-children' : '' }}">
+
+                                    <a href="{{ $href }}">
+                                        {{ strtoupper($menu['label']) }}
+                                    </a>
+
+                                    @if ($hasChildren)
 
                                     <ul class="sub-menu">
-                                        @foreach ($developers as $developer)
+
+                                        @foreach ($menu['children'] as $child)
+
+                                        @php
+                                        $childHref = $child['route_name']
+                                        ? route($child['route_name'])
+                                        : ($child['url'] ?: 'javascript:void(0)');
+                                        @endphp
+
                                         <li>
-                                            <a href="javascript:void(0)">
-                                                {{ $developer['name'] }}
+                                            <a href="{{ $childHref }}">
+                                                {{ $child['label'] }}
                                             </a>
                                         </li>
+
                                         @endforeach
+
                                     </ul>
+
+                                    @endif
+
                                 </li>
-                                <li><a href="javascript:void(0)">COMMUNITIES</a></li>
-                                <li><a href="javascript:void(0)">ABOUT</a></li>
-                                <li><a href="javascript:void(0)">CONTACT</a></li>
+
+                                @endforeach
+
                             </ul>
+
                         </nav>
                     </div>
 

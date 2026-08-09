@@ -25,7 +25,7 @@
                         BOOK A CONSULTATION
                     </a>
 
-                    <a href="{{ route('properties.index') }}" class="th-btn btn-outline-dark">
+                    <a href="{{ route('properties.index') }}" class="th-btn btn-cta btn-outline-dark">
                         BROWSE PROPERTIES
                     </a>
 

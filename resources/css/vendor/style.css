@@ -94,6 +94,7 @@ Version: 1.0.0
   /* --brand-light:#f4ebe6; */
   --theme-color2: #fff;
   --brand-light:#fff;
+  --brand-border:#0000001a;
 
   --brand-dark:#030920;
   --brand-gold:#b59350;
@@ -136,6 +137,7 @@ Version: 1.0.0
   --section-title-space: 60px;
   --ripple-ani-duration: 5s;
   --th-body-background: #ffffff;
+  --content-spacing: 26px;
 }
 
 /*------------------- 1.5. Typography -------------------*/
@@ -2544,7 +2546,6 @@ textarea.style2 {
   background: transparent;
   border: 1px solid rgba(221, 232, 221, 0.5);
   color: var(--gray-color);
-  border-radius: 50px;
 }
 
 .form-group.style-border3 select::-webkit-input-placeholder, .form-group.style-border3 textarea::-webkit-input-placeholder, .form-group.style-border3 input::-webkit-input-placeholder {
@@ -2570,7 +2571,6 @@ textarea.style2 {
 }
 
 .form-group.style-border3 textarea {
-  border-radius: 24px;
 }
 
 .form-group.style-border3 option {
@@ -3966,6 +3966,10 @@ textarea.is-invalid {
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
+  transition:
+  background-color 0.35s ease,
+  border-color 0.35s ease,
+  color 0.35s ease;
 }
 
 .th-btn i {
@@ -5119,7 +5123,7 @@ textarea.is-invalid {
 }
 
 .sec-text {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.777;
   /* Extra small devices */
 }
@@ -5172,6 +5176,8 @@ textarea.is-invalid {
   margin-bottom: calc(var(--section-title-space) - 11px);
   position: relative;
   z-index: 2;
+  font-family: var(--font-optima);
+  font-weight: 400;
 }
 
 .title-area .sec-title {
@@ -5544,6 +5550,7 @@ hr.title-line {
 .box-text {
   margin-bottom: -0.5em;
   font-family: var(--font-optima);
+  font-size: 14px;
 }
 
 .btn-group {
@@ -5876,7 +5883,7 @@ hr.title-line {
 }
 
 .bg-title-dark {
-  background-color: var(--title-dark) !important;
+  background-color: var(--brand-dark) !important;
 }
 
 .gradient-body {
@@ -17204,7 +17211,7 @@ span.select2-selection.select2-selection--single:focus {
   display: flex;
   gap: 16px;
   border: 1px solid #97AE97;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   padding: 24px 24px 18px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -17287,19 +17294,18 @@ span.select2-selection.select2-selection--single:focus {
 
 /* Contact Page 1---------------------------------- */
 .about-contact-grid.style2 {
-  background: var(--theme-color);
-  border-radius: 8px;
+  background: var(--brand-light);
 }
 
 .about-contact-grid.style2 .about-contact-icon {
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  line-height: 70px;
-  font-size: 32px;
-  color: var(--white-color);
+  border: 1px solid var(--brand-dark-shade);
+  line-height: 40px;
+  font-size: 20px;
+  color: var(--brand-dark);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   /* Extra small devices */
@@ -17317,25 +17323,25 @@ span.select2-selection.select2-selection--single:focus {
 .about-contact-grid.style2 .about-contact-details-title {
   font-size: 20px;
   font-weight: 600;
-  color: var(--white-color);
+  color: var(--brand-dark);
 }
 
 .about-contact-grid.style2 .about-contact-details-text {
-  color: var(--light-color);
+  color: var(--brand-dark);
 }
 
 .about-contact-grid.style2 .about-contact-details-text a {
-  color: var(--light-color);
+  color: var(--brand-dark);
 }
 
 .about-contact-grid.style2 .about-contact-details-text a:hover {
-  color: var(--theme-color2);
+  color: var(---brand-dark-shade);
 }
 
 .about-contact-grid.style2:hover .about-contact-icon {
-  background: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--theme-color);
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: var(--brand-light);
 }
 
 /* Contact Page 1.1---------------------------------- */
@@ -20552,7 +20558,7 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .checklist.style4 li {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   color: var(--theme-color);
   gap: 10px;
@@ -20929,7 +20935,7 @@ span.select2-selection.select2-selection--single:focus {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0 40px;
+  gap: 0 var( --content-spacing);
   padding-top: 40px;
   /* Small devices */
 }
@@ -20939,9 +20945,9 @@ span.select2-selection.select2-selection--single:focus {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
+  gap: var( --content-spacing);
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: var( --content-spacing);
 }
 
 .why-feature-list .why-feature-list-wrap:after {
@@ -20979,8 +20985,8 @@ span.select2-selection.select2-selection--single:focus {
   margin-top: 4px;
   color: var(--theme-color);
   border-bottom: 1px solid var(--th-border-color);
-  padding-bottom: 22px;
-  margin-bottom: 21px;
+  padding-bottom: 13px;
+  margin-bottom: 13px;
 }
 
 .why-feature-list .why-feature-list-wrap .feature-text {
@@ -20995,7 +21001,7 @@ span.select2-selection.select2-selection--single:focus {
     grid-template-columns: repeat(1, 1fr);
   }
   .why-feature-list .why-feature-list-wrap {
-    gap: 20px;
+    gap: 26px;
   }
 }
 
@@ -21354,10 +21360,10 @@ span.select2-selection.select2-selection--single:focus {
 
 /* Service Area 4 ---------------------------------- */
 .service-card.style4 .service-card-icon {
-  width: 96px;
-  height: 96px;
-  line-height: 93px;
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  /* border-radius: 50%; */
   border: 1px solid var(--light-color);
   text-align: center;
   -webkit-transition: 0.4s;
@@ -21377,7 +21383,7 @@ span.select2-selection.select2-selection--single:focus {
 
 .service-card.style4 .box-title a {
   color: var(--white-color);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -21407,7 +21413,7 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .service-card.style4:hover .service-card-icon {
-  background: var(--light-color);
+  background: var(--brand-light);
 }
 
 .service-card.style4:hover .service-card-icon img {
@@ -26199,6 +26205,7 @@ span.select2-selection.select2-selection--single:focus {
 .space-top {
   padding-top: var(--section-space);
 }
+
 
 .space,
 .space-bottom {

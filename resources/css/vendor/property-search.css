@@ -40,7 +40,7 @@ background-color: var(--brand-light);
 
 .property-filter-box {
     background: var(--brand-light);
-    border: 1px solid var(--brand-dark);
+    border: 1px solid rgba(0, 0, 0, 0.101);
     padding: 24px;
     
 }
@@ -63,7 +63,7 @@ background-color: var(--brand-light);
 
 .clear-filters {
     font-size: 15px;
-    color: #555;
+    color: #555555df;
     text-decoration: underline;
 }
 
@@ -107,7 +107,7 @@ background-color: var(--brand-light);
 .property-active-filters {
     margin-top: 24px;
     padding-top: 24px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.101);
 }
 
 .active-filter-list {
@@ -319,10 +319,10 @@ color: var(--brand-light)
     width: 100%;
     height: 35px;
     padding: 0 16px 0 18px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(0, 0, 0, 0.101);
     border-radius: 0;
-    background: var(--brand-dark);
-    color: var(--brand-light);
+    background: var(--brand-light);
+    color: var(--brand-dark);
     font-family: inherit;
     font-size: 16px;
     font-weight: 400;
