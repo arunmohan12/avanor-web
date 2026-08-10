@@ -2312,7 +2312,7 @@ input {
   color: var(--body-color);
   background-color: var(--gray-color);
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   width: 100%;
   font-family: var(--body-font);
   -webkit-transition: 0.4s ease-in-out;
@@ -8748,15 +8748,18 @@ ol.wp-block-rss {
 
 .widget-property-contact .widget_text {
   color: var(--white-color);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 15px;
+  text-transform: uppercase;
+text-align: center;
+font-family: var(--font-optima);
   /* Large devices */
 }
 
 @media (max-width: 1199px) {
   .widget-property-contact .widget_text {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -8767,7 +8770,6 @@ ol.wp-block-rss {
 .widget-property-contact .widget-property-contact-form .form-group input {
   border: 1px solid rgba(255, 255, 255, 0.5);
   background: transparent;
-  border-radius: 50px;
   color: var(--white-color);
   height: 44px;
 }
@@ -17210,7 +17212,7 @@ span.select2-selection.select2-selection--single:focus {
   display: -ms-flexbox;
   display: flex;
   gap: 16px;
-  border: 1px solid #97AE97;
+  border: 1px solid var(--brand-border);
   /* border-radius: 16px; */
   padding: 24px 24px 18px;
   -webkit-transition: 0.4s;
@@ -17252,7 +17254,7 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .about-contact-grid:hover {
-  box-shadow: 0px 15px 30px rgba(176, 198, 176, 0.5);
+  box-shadow: 0px 15px 30px var(--brand-border);
   border-color: transparent;
 }
 
@@ -24219,15 +24221,32 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .property-page-single .page-title {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 400;
   letter-spacing: 0.02em;
   color: var(--theme-color);
+  font-family: var(--font-optima);
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 22px;
+  margin-bottom: 28px;
 }
+.property-page-single .page-title::after {
+  content: "";
+  position: absolute;
 
+  left: 0;
+  bottom: 0;
+
+  width: 95px;
+  height: 4px;
+
+  background: var(--brand-dark);
+  border-radius: 2px;
+}
 .property-page-single p {
   color: var(--theme-color);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 32px;
 }
 

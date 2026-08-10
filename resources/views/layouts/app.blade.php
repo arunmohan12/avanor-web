@@ -34,6 +34,9 @@
     <!-- <script src="{{ asset('assets/js/map-place-active.js') }}" defer></script> -->
     <script src="{{ asset('assets/js/main.js') }}" defer></script>
 
+    <footer class="footer-wrapper footer-default bg-theme">
+@include('partials.footer')
+</footer>
     @stack('scripts')
     @livewireScripts
 </body>

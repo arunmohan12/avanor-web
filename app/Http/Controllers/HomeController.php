@@ -6,7 +6,7 @@ use App\Models\Community;
 use App\Models\Property;
 use App\Models\Blog;
 use Illuminate\Contracts\View\View;
-
+use App\Models\HomeSetting;
 class HomeController extends Controller
 {
     public function index(): View
@@ -63,7 +63,7 @@ class HomeController extends Controller
 
         $featuredBlog = $blogs->firstWhere('is_featured', true)
             ?? $blogs->first();
-
+            $homeSettings = HomeSetting::query()->first();
         $latestBlogs = $blogs
             ->reject(
                 fn($blog) =>
@@ -77,7 +77,7 @@ class HomeController extends Controller
             'latestBlogs' =>$latestBlogs,
             'featuredProperties'  => $featuredProperties,
             'featuredBlog' => $featuredBlog,
-
+            'homeSettings' => $homeSettings,
         ]);
     }
 }

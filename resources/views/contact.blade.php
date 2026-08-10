@@ -144,9 +144,7 @@
 <div class="client-area-1 space " data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.png')}}">
 @include('partials.developer-swiper-section')
 </div>
-<footer class="footer-wrapper footer-default bg-theme">
-    @include('partials.footer')
-</footer>
+
 @endsection
 
 @push('scripts')

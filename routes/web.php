@@ -21,6 +21,8 @@ Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 Route::view('/privacy-policy', 'privacy')
     ->name('privacy-policy');
-
-    Route::view('/terms-and-conditions', 'termsandconditions')
+Route::view('/terms-and-conditions', 'termsandconditions')
     ->name('terms-and-conditions');
+
+    Route::view('/property-details', 'properties.propertydetails')
+    ->name('property-details');

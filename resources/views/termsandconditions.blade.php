@@ -214,8 +214,6 @@
 </section>
 
 
-<footer class="footer-wrapper footer-default bg-theme">
-@include('partials.footer')
-</footer>
+
 
 @endsection

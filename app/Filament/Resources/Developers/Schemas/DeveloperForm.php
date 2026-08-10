@@ -57,17 +57,17 @@ class DeveloperForm
                     ->schema([
                 
                         FileUpload::make('logo')
-                            ->disk('public')              // ← Add this
+                            ->disk('s3')              // ← Add this
                             ->directory('developers/logos')
-                            ->visibility('public')        // ← Add this
+                            ->visibility('private')
                             ->image()
                             ->imageEditor()
                             ->maxSize(2048),
                 
                         FileUpload::make('cover_image')
-                            ->disk('public')              // ← Add this
+                            ->disk('s3')              // ← Add this
                             ->directory('developers/covers')
-                            ->visibility('public')        // ← Add this
+                            ->visibility('private')
                             ->image()
                             ->imageEditor()
                             ->maxSize(4096),

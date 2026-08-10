@@ -26,16 +26,18 @@
                 href="{{ route('developers.show', $developer['slug']) }}"
                 class="avanor-developer-card"
                 data-index="{{ $loop->index }}"> -->
-                <a
+            <a
                 href="javascript:void(0)"
                 class="avanor-developer-card"
                 data-index="{{ $loop->index }}">
                 <img
                     src="{{ $developer['logo']
-                    ? \Illuminate\Support\Facades\Storage::disk('public')->url($developer['logo'])
-                    : asset('assets/img/default-developer-logo.webp') }}"
+        ? \App\Support\MediaUrl::get($developer['logo'])
+        : asset('assets/img/default-developer-logo.webp') }}"
                     alt="{{ $developer['name'] }}"
-                    class="developer-logo-brand">
+                    class="developer-logo-brand"
+                    loading="lazy"
+                    decoding="async">
             </a>
 
             @endforeach

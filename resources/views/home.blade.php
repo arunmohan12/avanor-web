@@ -24,9 +24,33 @@
     
 </div> -->
 
-<div class="th-hero-wrapper hero-3 " id="hero" data-bg-src="{{ asset('assets/img/banner-hom.webp') }}">
-    <video class="hero-video" id="video" src="{{ asset('assets/videos/hero-video.mp4') }}" loop="" muted="" autoplay="">
-    </video>
+@php
+    $heroVideo = $homeSettings?->hero_video
+        ? \App\Support\MediaUrl::get($homeSettings->hero_video)
+        : asset('assets/videos/hero-video-old.mp4');
+
+    $heroPoster = $homeSettings?->hero_poster
+        ? \App\Support\MediaUrl::get($homeSettings->hero_poster)
+        : asset('assets/img/banner-hom.webp');
+@endphp
+
+<div
+    class="th-hero-wrapper hero-3"
+    id="hero"
+    style="background-image: url('{{ $heroPoster }}')"
+>
+
+    <video
+        class="hero-video"
+        id="video"
+        src="{{ $heroVideo }}"
+        poster="{{ $heroPoster }}"
+        loop
+        muted
+        autoplay
+        playsinline
+        preload="metadata"
+    ></video>
 
 </div>
 
@@ -133,15 +157,20 @@
 </section>
 
 
-<footer class="footer-wrapper footer-default bg-theme">
-@include('partials.footer')
-</footer>
 
+@php
+    $developersForJs = collect($developers)->map(function ($developer) {
+        $developer['logo_url'] = !empty($developer['logo'])
+            ? \App\Support\MediaUrl::get($developer['logo'])
+            : asset('assets/img/default-developer-logo.webp');
+
+        return $developer;
+    })->values();
+@endphp
 
 <script>
-    window.avanorDevelopers = @json($developers);
+    window.avanorDevelopers = @json($developersForJs);
 </script>
-
 
 @endsection
 

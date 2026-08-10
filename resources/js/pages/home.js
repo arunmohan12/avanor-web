@@ -21,9 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const developer =
                     developers[(offset + index) % developers.length];
 
-                img.src = developer.logo
-                    ? `/storage/${developer.logo}`
-                    : '/assets/img/default-developer-logo.webp';
+                    img.src = developer.logo_url;
 
                 img.alt = developer.name;
 

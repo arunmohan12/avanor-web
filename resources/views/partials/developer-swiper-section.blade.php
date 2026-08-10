@@ -13,11 +13,12 @@
                         href="javascript:void(0)"
                         class="client-card">
                         <img
-                            src="{{ $developer['logo']
-                    ? \Illuminate\Support\Facades\Storage::disk('public')->url($developer['logo'])
-                    : asset('assets/img/default-developer-logo.webp') }}"
-                            alt="{{ $developer['name'] }}"
-                            loading="lazy">
+    src="{{ $developer['logo']
+        ? \App\Support\MediaUrl::get($developer['logo'])
+        : asset('assets/img/default-developer-logo.webp') }}"
+    alt="{{ $developer['name'] }}"
+    loading="lazy"
+    decoding="async">
                     </a>
 
                 </div>
