@@ -17,7 +17,9 @@
     --font-optima: "Optima LT Pro", serif;
 }
 
-
+.sticky-wrapper.sticky .main-menu > ul > li > .avanor-footer-contact-btn:hover{
+color: var(--brand-dark-shade) !important;
+}
 
 body {
     font-family: var(--font-primary);
@@ -697,3 +699,282 @@ body {
     font-size: 12px;
 }
 
+/* ========================================
+   Avanor Mobile / Tablet Menu
+======================================== */
+
+.avanor-mobile-menu {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    visibility: hidden;
+    opacity: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.avanor-mobile-menu.is-open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.avanor-mobile-menu-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: min(420px, 100%);
+    height: 100dvh;
+
+    padding: 22px 26px 32px;
+
+    background: #fff;
+
+    overflow-y: auto;
+
+    transform: translateX(100%);
+
+    transition: transform 0.35s ease;
+}
+
+.avanor-mobile-menu.is-open .avanor-mobile-menu-panel {
+    transform: translateX(0);
+}
+
+
+/* Top */
+
+.avanor-mobile-menu-top {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 85px;
+
+    margin-bottom: 20px;
+}
+
+.avanor-mobile-menu-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.avanor-mobile-menu-logo img {
+    width: 145px;
+    height: auto;
+}
+
+.avanor-mobile-menu-close {
+    position: absolute;
+    top: 10px;
+    right: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--brand-dark);
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* Navigation */
+
+.avanor-mobile-nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.avanor-mobile-nav > ul > li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.avanor-mobile-menu-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 58px;
+}
+
+.avanor-mobile-menu-row > a {
+    flex: 1;
+
+    color: var(--brand-dark);
+
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    text-decoration: none;
+}
+
+.avanor-mobile-submenu-toggle {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    color: #69717d;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.has-children.is-open .avanor-mobile-submenu-toggle {
+    transform: rotate(180deg);
+}
+
+
+/* Submenu */
+
+.avanor-mobile-submenu {
+    display: none;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0 0 14px 14px;
+}
+
+.has-children.is-open .avanor-mobile-submenu {
+    display: block;
+}
+
+.avanor-mobile-submenu li {
+    margin-bottom: 10px;
+}
+
+.avanor-mobile-submenu li:last-child {
+    margin-bottom: 0;
+}
+
+.avanor-mobile-submenu a {
+    color: #66707c;
+
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+
+/* Contact */
+
+.avanor-mobile-menu-contact {
+    margin-top: 34px;
+    padding-top: 24px;
+
+    border-top: 1px solid #dfe3e8;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.avanor-mobile-menu-contact a {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    color: #536072;
+
+    font-size: 15px;
+
+    text-decoration: none;
+}
+
+.avanor-mobile-menu-contact i {
+    width: 20px;
+
+    color: #536072;
+
+    font-size: 17px;
+}
+
+
+/* Open button */
+
+.avanor-mobile-menu-open {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    color: var(--brand-dark);
+
+    font-size: 22px;
+}
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .avanor-mobile-menu-panel {
+        width: 410px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .avanor-mobile-menu-panel {
+        width: 100%;
+        padding: 18px 22px 28px;
+    }
+
+    .avanor-mobile-menu-logo img {
+        width: 135px;
+    }
+
+}
+/* Default - top of page */
+.avanor-mobile-menu-open {
+    color: var(--brand-light);
+    transition: color 0.3s ease;
+}
+
+/* After header becomes sticky */
+.sticky-wrapper.sticky .avanor-mobile-menu-open {
+    color: var(--brand-dark);
+}
+
+.avanor-mobile-menu-open i {
+    color: inherit;
+}

@@ -18,8 +18,8 @@
     gap: 10px;
     }
     .contact-item {
-    background: var(--brand-dark);
-    /* backdrop-filter: blur(10px); */
+    background: #03092076;
+    backdrop-filter: blur(10px);
     width: 50px;
     height: 35px;
     display: flex;
@@ -28,8 +28,8 @@
     border-radius: 25px 0 0 25px;
     border-right: none;
     /* border-top: 1px solid #ffffff99; */
-    border-left: 1px solid #ffffff99;
-    border-bottom: 1px solid #ffffff99;
+    /* border-left: 1px solid #ffffff99; */
+    /* border-bottom: 1px solid #ffffff99; */
     cursor: pointer;
     transition: all 0.3s ease-in-out;  /* Smooth transition on all properties */
     }

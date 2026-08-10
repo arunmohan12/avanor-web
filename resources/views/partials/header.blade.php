@@ -1,3 +1,6 @@
+@include('partials.mobile-menu')
+
+
 <header class="th-header header-layout3">
     <div class="sticky-wrapper">
         <div class="menu-area">
@@ -83,6 +86,16 @@
                             </ul>
 
                         </nav>
+
+                        {{-- Mobile / Tablet Menu Button --}}
+            <button
+                type="button"
+                class="avanor-mobile-menu-open d-lg-none"
+                id="avanorMobileMenuOpen"
+                aria-label="Open menu"
+            >
+                <i class="far fa-bars"></i>
+            </button>
                     </div>
 
                 </div>

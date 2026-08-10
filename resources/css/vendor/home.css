@@ -56,6 +56,17 @@
     background-color: var(--brand-dark);
 }
 
+
+/* .main-menu a {
+
+    color: var(--brand-dark);
+} */
+
+.main-menu > ul > li > a:hover {
+
+    color: var(--brand-dark-shade) ;
+}
+
 .tab-content{
     background-color: var(--white-color);
     margin-top: 18px;
@@ -435,7 +446,7 @@ color: var(--brand-dark) ;
 /* Mobile */
 @media (max-width: 767px) {
     .th-hero-wrapper.hero-3 {
-        height: 300px;
+        height: 250px;
         min-height: unset;
         overflow: hidden;
     }

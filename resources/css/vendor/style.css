@@ -19855,6 +19855,7 @@ span.select2-selection.select2-selection--single:focus {
 
 .counter-card .box-number .counter-number {
   color: var(--title-color);
+  font-family: var(--font-optima);
 }
 
 .counter-card .box-text {
