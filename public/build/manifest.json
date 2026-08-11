@@ -106,7 +106,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-DGYDcegy.css",
+    "file": "assets/app-CWIMhY_8.css",
     "name": "app",
     "names": [
       "app.css"
@@ -188,6 +188,15 @@
     "src": "resources/css/vendor/property-search.css",
     "isEntry": true
   },
+  "resources/css/vendor/propertydetails.css": {
+    "file": "assets/propertydetails-4vnE7DYG.css",
+    "name": "propertydetails",
+    "names": [
+      "propertydetails.css"
+    ],
+    "src": "resources/css/vendor/propertydetails.css",
+    "isEntry": true
+  },
   "resources/css/vendor/terms.css": {
     "file": "assets/terms-B_ixWolK.css",
     "name": "terms",
@@ -264,9 +273,18 @@
     ]
   },
   "resources/js/pages/home.js": {
-    "file": "assets/home-Bc3nXpzj.js",
+    "file": "assets/home-Byr1Zstd.js",
     "name": "home",
     "src": "resources/js/pages/home.js",
     "isEntry": true
+  },
+  "resources/js/pages/propertydetails.js": {
+    "file": "assets/propertydetails-BBG7GzR1.js",
+    "name": "propertydetails",
+    "src": "resources/js/pages/propertydetails.js",
+    "isEntry": true,
+    "css": [
+      "assets/propertydetails-DjMxu4j7.css"
+    ]
   }
 }
