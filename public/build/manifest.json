@@ -106,7 +106,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-CWIMhY_8.css",
+    "file": "assets/app-D9H6IOXl.css",
     "name": "app",
     "names": [
       "app.css"
@@ -152,6 +152,15 @@
     "src": "resources/css/vendor/about.css",
     "isEntry": true
   },
+  "resources/css/vendor/blog.css": {
+    "file": "assets/blog-x1XGuNl0.css",
+    "name": "blog",
+    "names": [
+      "blog.css"
+    ],
+    "src": "resources/css/vendor/blog.css",
+    "isEntry": true
+  },
   "resources/css/vendor/contact.css": {
     "file": "assets/contact-DV3-jSP-.css",
     "name": "contact",
@@ -162,7 +171,7 @@
     "isEntry": true
   },
   "resources/css/vendor/home.css": {
-    "file": "assets/home-0jRDaiyS.css",
+    "file": "assets/home-DjcT4dzO.css",
     "name": "home",
     "names": [
       "home.css"
@@ -180,7 +189,7 @@
     "isEntry": true
   },
   "resources/css/vendor/property-search.css": {
-    "file": "assets/property-search-DvRDaCBr.css",
+    "file": "assets/property-search-BYQl8_aw.css",
     "name": "property-search",
     "names": [
       "property-search.css"
@@ -189,7 +198,7 @@
     "isEntry": true
   },
   "resources/css/vendor/propertydetails.css": {
-    "file": "assets/propertydetails-4vnE7DYG.css",
+    "file": "assets/propertydetails-B2fNFfho.css",
     "name": "propertydetails",
     "names": [
       "propertydetails.css"
