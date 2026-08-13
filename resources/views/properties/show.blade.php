@@ -861,7 +861,7 @@ $hasProjectDescription = filled($property->project?->description);
                                     ===================================== --}}
                                 @if (filled($property->map_url))
 
-                                <div class="col-lg-12 space-top">
+                                <div class="col-lg-12 minus-text-area">
 
                                     <div class="title-area mb-0">
 

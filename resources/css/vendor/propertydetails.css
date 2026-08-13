@@ -323,6 +323,30 @@
     .mobile-second-content {
         order: 4;
     }
+    .minus-text-area{
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    @media (max-width: 767px) {
+
+        .avanor-property-hero,
+        .avanor-property-hero .swiper,
+        .avanor-property-hero .swiper-wrapper,
+        .avanor-property-hero .swiper-slide {
+            height: 60vh !important;
+        }
+    
+        .avanor-property-hero .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    
+    }
 
 }
 
