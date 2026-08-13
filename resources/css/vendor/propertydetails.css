@@ -330,20 +330,21 @@
 
 
 
-    @media (max-width: 767px) {
-        .avanor-property-gallery,
-        .avanor-property-gallery .swiper-wrapper,
-        .avanor-property-gallery .swiper-slide {
-            height: auto !important;
-        }
-    
-        .avanor-property-gallery .swiper-slide img {
-            width: 100%;
-            height: auto !important;
-            display: block;
-            object-fit: contain;
-        }
+@media (max-width: 767px) {
+
+    .avanor-property-gallery .swiper-slide img {
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+        transform: scale(1.03);
+        transform-origin: center;
+        display: block;
     }
+    .avanor-property-gallery-next,
+    .avanor-property-gallery-prev {
+        display: none !important;
+    }
+}
 
 .project-about-heading{
     font-size: 24px;
