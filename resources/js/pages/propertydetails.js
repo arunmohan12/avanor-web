@@ -16,6 +16,8 @@ if (propertyGallery) {
 
         slidesPerView: 1,
 
+        autoHeight: true,
+
         navigation: {
             nextEl: '.avanor-property-gallery-next',
             prevEl: '.avanor-property-gallery-prev',
@@ -24,6 +26,16 @@ if (propertyGallery) {
         pagination: {
             el: '.avanor-property-gallery-pagination',
             clickable: true,
+        },
+
+        breakpoints: {
+            0: {
+                autoHeight: true,
+            },
+
+            768: {
+                autoHeight: false,
+            },
         },
     });
 }
