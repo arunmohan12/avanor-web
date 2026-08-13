@@ -333,16 +333,26 @@
 @media (max-width: 767px) {
 
     .avanor-property-gallery .swiper-slide img {
-        width: 100%;
+        /* width: 100%;
         height: auto !important;
         object-fit: contain;
         transform: scale(1.03);
         transform-origin: center;
-        display: block;
+        display: block; */
+
+        display: none !important;
+    }
+
+    .avanor-property-hero{
+        display: none !important;
     }
     .avanor-property-gallery-next,
     .avanor-property-gallery-prev {
         display: none !important;
+    }
+
+    .avanor-breadcrumb{
+        margin-top: 70px;
     }
 }
 
