@@ -13,8 +13,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use App\Filament\Resources\Properties\RelationManagers\ImagesRelationManager;
-
+use App\Filament\Resources\Properties\RelationManagers\SectionsRelationManager;
 class PropertyResource extends Resource
 {
     protected static ?string $model = Property::class;
@@ -35,13 +34,13 @@ class PropertyResource extends Resource
         return PropertiesTable::configure($table);
     }
 
+
     public static function getRelations(): array
     {
         return [
-            ImagesRelationManager::class,
+            SectionsRelationManager::class,
         ];
     }
-
     public static function getPages(): array
     {
         return [

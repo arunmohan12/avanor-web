@@ -10,6 +10,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class CommunityForm
 {
@@ -49,27 +50,31 @@ class CommunityForm
                             ->label('Area')
                             ->maxLength(255),
 
+                        TextInput::make('display_order')
+                            ->label('Display Order')
+                            ->numeric()
+                            ->default(0)
+                            ->minValue(0),
+
                     ])
                     ->columns(2),
 
                 Section::make('Images')
                     ->schema([
 
-                        FileUpload::make('thumbnail')
+                        SpatieMediaLibraryFileUpload::make('thumbnail')
                             ->label('Thumbnail')
+                            ->collection('thumbnail')
                             ->image()
-                            ->disk('public')
-                            ->directory('communities/thumbnails')
-                            ->visibility('public')
-                            ->imageEditor(),
+                            ->imageEditor()
+                            ->maxSize(4096),
 
-                        FileUpload::make('hero')
+                        SpatieMediaLibraryFileUpload::make('hero')
                             ->label('Hero Image')
+                            ->collection('hero')
                             ->image()
-                            ->disk('public')
-                            ->directory('communities/heroes')
-                            ->visibility('public')
-                            ->imageEditor(),
+                            ->imageEditor()
+                            ->maxSize(6144),
 
                     ])
                     ->columns(2),

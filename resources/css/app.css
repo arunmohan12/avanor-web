@@ -150,7 +150,7 @@ font-family: var(--font-optima);
 }
 
 .aed-symbol {
-    font-family: "AEDCurrencySymbol", sans-serif;
+    font-family: "AEDCurrencySymbol", sans-serif !important;
 }
 .btn-prop-details{
     font-size: 12px;
@@ -977,4 +977,7 @@ font-family: var(--font-optima);
 
 .avanor-mobile-menu-open i {
     color: inherit;
+}
+.fa-regular, .far ,.fa-light, .fal ,.fa-solid, .fas{
+    font-family: Font Awesome\ 6 Pro !important;
 }

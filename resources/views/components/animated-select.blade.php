@@ -60,6 +60,7 @@
     <div
         class="animated-select-menu"
         x-show="open"
+        data-lenis-prevent
         x-transition:enter="animated-select-enter"
         x-transition:enter-start="animated-select-enter-start"
         x-transition:enter-end="animated-select-enter-end"

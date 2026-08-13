@@ -280,6 +280,10 @@
 .community-grid-row .card-thumb {
     height: 100%;
 }
+.community-grid-row .destination-card .card-thumb {
+    height: 350px;
+    overflow: hidden;
+}
 
 .community-grid-row .card-thumb img {
     width: 100%;
@@ -406,7 +410,7 @@
     width: 0;
     height: 1px;
     background-color: var(--brand-light);
-    transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Image animation */
@@ -415,7 +419,7 @@
 }
 
 .destination-card .card-thumb img {
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Hover */
@@ -890,3 +894,83 @@ font-family: var(--font-optima);
 
 
 
+.property-card3 .property-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.property-card3 .property-card-meta span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.property-card3 .property-card-meta span:first-child {
+    justify-content: flex-start;
+    padding-right: 20px;
+    border-right: 1px solid rgba(28, 45, 55, 0.2);
+}
+
+.property-card3 .property-card-meta span:last-child {
+    justify-content: flex-end;
+    padding-left: 20px;
+}
+
+.property-card3 {
+    position: relative;
+}
+
+.property-card3 .property-card-details {
+    position: relative;
+    z-index: 2;
+}
+
+.property-card3 .property-card-title a {
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+}
+.property-card3::before,
+.property-card3::after {
+    pointer-events: none;
+}
+.property-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.property-btn-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.property-btn-wrap .btn-wrap {
+    position: relative;
+    width: auto;
+    flex: 0 0 auto;
+}
+
+.property-slider2 .swiper-slide {
+    transform: none !important;
+    backface-visibility: visible !important;
+}
+.service-card-icon{
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-card.style5 {
+    border: 0px;
+    padding: 10px 
+}
+/* .property-slider2 {
+    max-width: 94%;
+    margin: 0 auto;
+} */
+
+/* .property-slider2 .property-card-thumb {
+    height:400px;
+} */

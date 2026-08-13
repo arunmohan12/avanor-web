@@ -5,10 +5,19 @@
 
 <title>@yield('title', 'Avanor')</title>
 
-<meta name="description" content="@yield('meta_description', '')">
-<meta name="keywords" content="@yield('meta_keywords', '')">
+@if (trim($__env->yieldContent('meta_description')))
+    <meta
+        name="description"
+        content="@yield('meta_description')"
+    >
+@endif
 
-
+@if (trim($__env->yieldContent('meta_keywords')))
+    <meta
+        name="keywords"
+        content="@yield('meta_keywords')"
+    >
+@endif
 
 <!-- <meta name="theme-color" content="#ffffff"> -->
 

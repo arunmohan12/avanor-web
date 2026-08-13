@@ -70,9 +70,20 @@
                             'community' => $community->id,
                         ]) }}">
 
+                        @php
+                        $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
+                        $community->getFirstMedia('thumbnail'),
+                        'thumbnail_avif'
+                        );
+                        @endphp
+
+                        @if ($thumbnailUrl)
                         <img
-                            src="{{ Storage::disk('public')->url($community->thumbnail) }}"
-                            alt="{{ $community->name }}">
+                            src="{{ $thumbnailUrl }}"
+                            alt="{{ $community->name }}"
+                            loading="lazy"
+                            decoding="async">
+                        @endif
 
                     </a>
 
@@ -128,11 +139,26 @@
                             'community' => $community->id,
                         ]) }}">
 
-                        <img
-                            src="{{ Storage::disk('public')->url($community->thumbnail) }}"
-                            alt="{{ $community->name }}">
+                        <a href="{{ route('properties.index', [
+                            'community' => $community->id,
+                        ]) }}">
 
-                    </a>
+                            @php
+                            $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
+                            $community->getFirstMedia('thumbnail'),
+                            'thumbnail_avif'
+                            );
+                            @endphp
+
+                            @if ($thumbnailUrl)
+                            <img
+                                src="{{ $thumbnailUrl }}"
+                                alt="{{ $community->name }}"
+                                loading="lazy"
+                                decoding="async">
+                            @endif
+
+                        </a>
 
                 </div>
 

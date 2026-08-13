@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\Projects\Schemas;
 
 use App\Enums\ProjectStatus;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -13,6 +12,7 @@ use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 use Filament\Schemas\Components\Utilities\Get;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class ProjectForm
 {
@@ -27,10 +27,82 @@ class ProjectForm
                     ->schema([
 
                         Select::make('developer_id')
-                            ->relationship('developer', 'name')
-                            ->searchable()
-                            ->preload()
-                            ->required(),
+    ->label('Developer')
+    ->relationship('developer', 'name')
+    ->searchable()
+    ->preload()
+    ->required(),
+
+Select::make('emirate_id')
+    ->label('Emirate')
+    ->relationship('emirate', 'name')
+    ->searchable()
+    ->preload()
+    ->required()
+    ->live()
+    ->afterStateUpdated(function (Set $set) {
+        $set('community_id', null);
+        $set('location', null);
+    }),
+
+Select::make('community_id')
+    ->label('Community')
+    ->options(function (Get $get) {
+
+        $emirateId = $get('emirate_id');
+
+        if (! $emirateId) {
+            return [];
+        }
+
+        return \App\Models\Community::query()
+            ->where('emirate_id', $emirateId)
+            ->where('is_active', true)
+            ->orderBy('name')
+            ->pluck('name', 'id');
+    })
+    ->searchable()
+    ->nullable()
+    ->live()
+    ->placeholder('Select community (optional)')
+    ->afterStateUpdated(function ($state, Set $set) {
+
+        if (! $state) {
+            $set('location', null);
+            return;
+        }
+
+        $community = \App\Models\Community::find($state);
+
+        if (filled($community?->area)) {
+            $set('location', $community->area);
+        } else {
+            $set('location', null);
+        }
+    }),
+
+TextInput::make('location')
+    ->label('Location')
+    ->maxLength(255)
+    ->disabled(function (Get $get) {
+
+        $communityId = $get('community_id');
+
+        if (! $communityId) {
+            return false;
+        }
+
+        $community = \App\Models\Community::find($communityId);
+
+        return filled($community?->area);
+    })
+    ->dehydrated(),
+                    
+                
+
+                        TextInput::make('map_url')
+                            ->label('Google Maps URL')
+                            ->url(),
 
                         TextInput::make('name')
                             ->label('Project Name')
@@ -51,40 +123,6 @@ class ProjectForm
 
                     ]),
 
-                Section::make('Location')
-                    ->columns(1)
-                    ->schema([
-
-                        Select::make('emirate_id')
-                            ->relationship('emirate', 'name')
-                            ->required()
-                            ->live()
-                            ->afterStateUpdated(function (Set $set) {
-                                $set('community_id', null);
-                            }),
-
-                        Select::make('community_id')
-                            ->label('Community')
-                            ->options(function (Get $get) {
-
-                                $emirateId = $get('emirate_id');
-
-                                if (!$emirateId) {
-                                    return [];
-                                }
-
-                                return \App\Models\Community::where('emirate_id', $emirateId)
-                                    ->pluck('name', 'id');
-                            })
-                            ->searchable()
-                            ->nullable()
-                            ->placeholder('Select community (optional)'),
-
-                        TextInput::make('map_url')
-                            ->label('Google Maps URL')
-                            ->url(),
-
-                    ]),
 
                 Section::make('Pricing')
                     ->schema([
@@ -114,18 +152,22 @@ class ProjectForm
                     ]),
 
                 Section::make('Media')
-                    ->columns(1)
+                    ->columns(2)
                     ->schema([
 
-                        FileUpload::make('thumbnail')
+                        SpatieMediaLibraryFileUpload::make('thumbnail')
+                            ->label('Thumbnail')
+                            ->collection('thumbnail')
                             ->image()
                             ->imageEditor()
-                            ->directory('projects/thumbnails'),
+                            ->maxSize(4096),
 
-                        FileUpload::make('cover_image')
+                        SpatieMediaLibraryFileUpload::make('cover')
+                            ->label('Cover Image')
+                            ->collection('cover')
                             ->image()
                             ->imageEditor()
-                            ->directory('projects/covers'),
+                            ->maxSize(6144),
 
                     ]),
 

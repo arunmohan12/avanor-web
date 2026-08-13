@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'About Us')
-@section('logo', 'logo-white2.svg')
+@section('logo', 'logo-dark.svg')
 
 @push('styles')
 @vite('resources/css/vendor/propertydetails.css')
@@ -102,337 +102,68 @@
                     <div class="page-content">
 
                         <h2 class="page-title">Golf Trails at Emaar South</h2>
-                        <p class="mb-30">voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
-                        <p class="mb-30"> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
+                        <p>voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
 
-                        <section class="space avanor-property-facts">
-                            <div class="container">
+                        <section class=" avanor-property-facts">
+                            <div class="avanor-property-facts-grid">
 
-                                <div class="avanor-property-facts-grid">
+                                <div class="avanor-property-fact-card">
+                                    <span class="avanor-property-fact-label">
+                                        Starting Price
+                                    </span>
 
-                                    <div class="avanor-property-fact-card">
-                                        <span class="avanor-property-fact-label">
-                                            Starting Price
-                                        </span>
-
-                                        <h3 class="avanor-property-fact-value">
-                                            AED 1,250,000
-                                        </h3>
-                                    </div>
+                                    <h3 class="avanor-property-fact-value">
+                                        AED 1,250,000
+                                    </h3>
+                                </div>
 
 
-                                    <div class="avanor-property-fact-card">
-                                        <span class="avanor-property-fact-label">
-                                            Unit Type
-                                        </span>
+                                <div class="avanor-property-fact-card">
+                                    <span class="avanor-property-fact-label">
+                                        Unit Type
+                                    </span>
 
-                                        <h3 class="avanor-property-fact-value">
-                                            1 - 3 BR Apartments
-                                        </h3>
-                                    </div>
-
-
-                                    <div class="avanor-property-fact-card">
-                                        <span class="avanor-property-fact-label">
-                                            Unit Type
-                                        </span>
-
-                                        <h3 class="avanor-property-fact-value">
-                                            3 BR Townhouses
-                                        </h3>
-                                    </div>
+                                    <h3 class="avanor-property-fact-value">
+                                        1 - 3 BR Apartments
+                                    </h3>
+                                </div>
 
 
-                                    <div class="avanor-property-fact-card">
-                                        <span class="avanor-property-fact-label">
-                                            Handover Date
-                                        </span>
+                                <div class="avanor-property-fact-card">
+                                    <span class="avanor-property-fact-label">
+                                        Unit Type
+                                    </span>
 
-                                        <h3 class="avanor-property-fact-value">
-                                            Q4 2030
-                                        </h3>
-                                    </div>
+                                    <h3 class="avanor-property-fact-value">
+                                        3 BR Townhouses
+                                    </h3>
+                                </div>
 
 
-                                    <div class="avanor-property-fact-card">
-                                        <span class="avanor-property-fact-label">
-                                            Payment Plan
-                                        </span>
+                                <div class="avanor-property-fact-card">
+                                    <span class="avanor-property-fact-label">
+                                        Handover Date
+                                    </span>
 
-                                        <h3 class="avanor-property-fact-value">
-                                            80/20
-                                        </h3>
-                                    </div>
+                                    <h3 class="avanor-property-fact-value">
+                                        Q4 2030
+                                    </h3>
+                                </div>
 
+
+                                <div class="avanor-property-fact-card">
+                                    <span class="avanor-property-fact-label">
+                                        Payment Plan
+                                    </span>
+
+                                    <h3 class="avanor-property-fact-value">
+                                        80/20
+                                    </h3>
                                 </div>
 
                             </div>
                         </section>
-                        <h2 class="page-title mb-20">Property Overview</h2>
-                        <ul class="property-grid-list">
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-1.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">ID NO.</h4>
-                                    <p class="property-grid-list-text">#1234</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-2.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Type</h4>
-                                    <p class="property-grid-list-text">Residencial</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-3.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Room</h4>
-                                    <p class="property-grid-list-text">6</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-4.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Bedroom</h4>
-                                    <p class="property-grid-list-text">4</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-5.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Bath</h4>
-                                    <p class="property-grid-list-text">2</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-6.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Purpose</h4>
-                                    <p class="property-grid-list-text">For Rent</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-7.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Sqft</h4>
-                                    <p class="property-grid-list-text">4000</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-8.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Parking</h4>
-                                    <p class="property-grid-list-text">Yes</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-9.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Elevator</h4>
-                                    <p class="property-grid-list-text">Yes</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="property-grid-list-icon">
-                                    <img src="assets/img/icon/property-single-icon1-10.svg" alt="img">
-                                </div>
-                                <div class="property-grid-list-details">
-                                    <h4 class="property-grid-list-title">Wifi</h4>
-                                    <p class="property-grid-list-text">Yes</p>
-                                </div>
-                            </li>
-                        </ul>
 
-                        <h3 class="page-title mt-50 mb-30">From Our Gallery</h3>
-                        <div class="row gy-4">
-                            <div class="col-xl-5">
-                                <div class="property-gallery-card">
-                                    <div class="property-gallery-card-img">
-                                        <img class="w-100" src="assets/img/property/property_inner_6.jpg" alt="img">
-                                    </div>
-                                    <a class="icon-btn popup-image" href="assets/img/property/property_inner_6.jpg"><i class="fal fa-magnifying-glass-plus"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-7">
-                                <div class="property-gallery-card">
-                                    <div class="property-gallery-card-img">
-                                        <img class="w-100" src="assets/img/property/property_inner_7.jpg" alt="img">
-                                    </div>
-                                    <a class="icon-btn popup-image" href="assets/img/property/property_inner_7.jpg"><i class="fal fa-magnifying-glass-plus"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-7">
-                                <div class="property-gallery-card">
-                                    <div class="property-gallery-card-img">
-                                        <img class="w-100" src="assets/img/property/property_inner_8.jpg" alt="img">
-                                    </div>
-                                    <a class="icon-btn popup-image" href="assets/img/property/property_inner_8.jpg"><i class="fal fa-magnifying-glass-plus"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-5">
-                                <div class="property-gallery-card">
-                                    <div class="property-gallery-card-img">
-                                        <img class="w-100" src="assets/img/property/property_inner_9.jpg" alt="img">
-                                    </div>
-                                    <a class="icon-btn popup-image" href="assets/img/property/property_inner_9.jpg"><i class="fal fa-magnifying-glass-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="page-title mt-50 mb-25">Features & amenities</h3>
-                        <div class="row gy-3">
-                            <div class="col-xxl-3 col-sm-6">
-                                <div class="checklist">
-                                    <ul>
-                                        <li><i class="far fa-square-check"></i>Airconditioning</li>
-                                        <li><i class="far fa-square-check"></i>Balcony</li>
-                                        <li><i class="far fa-square-check"></i>Garage</li>
-                                        <li><i class="far fa-square-check"></i>Landscaping</li>
-                                        <li><i class="far fa-square-check"></i>Outdoor Kitchen</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-xxl-3 col-sm-6">
-                                <div class="checklist">
-                                    <ul>
-                                        <li><i class="far fa-square-check"></i>Barbeque</li>
-                                        <li><i class="far fa-square-check"></i>Recreation</li>
-                                        <li><i class="far fa-square-check"></i>Microwave</li>
-                                        <li><i class="far fa-square-check"></i>Basketball</li>
-                                        <li><i class="far fa-square-check"></i>Fireplace</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-xxl-3 col-sm-6">
-                                <div class="checklist">
-                                    <ul>
-                                        <li><i class="far fa-square-check"></i>24x7 Seccurity</li>
-                                        <li><i class="far fa-square-check"></i>Indoor Game</li>
-                                        <li><i class="far fa-square-check"></i>Pool</li>
-                                        <li><i class="far fa-square-check"></i>Tanis Courts</li>
-                                        <li><i class="far fa-square-check"></i>Internet</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-xxl-3 col-sm-6">
-                                <div class="checklist">
-                                    <ul>
-                                        <li><i class="far fa-square-check"></i>Jaguzzi</li>
-                                        <li><i class="far fa-square-check"></i>Modern Kitchen</li>
-                                        <li><i class="far fa-square-check"></i>Refrigerator</li>
-                                        <li><i class="far fa-square-check"></i>Window Coverings</li>
-                                        <li><i class="far fa-square-check"></i>Washer</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="page-title mt-45 mb-30">Location</h3>
-                        <div class="location-map">
-                            <div class="contact-map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.7310056272386!2d89.2286059153658!3d24.00527418490799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b97badc6151%3A0x30b048c9fb2129bc!2sAngfuztheme!5e0!3m2!1sen!2sbd!4v1651028958211!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-                            <div class="location-map-address">
-                                <div class="thumb">
-                                    <img src="assets/img/property/property_inner_1.jpg" alt="img">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="title">Address:</h4>
-                                    <p class="text">Brooklyn, New York 11233, United States</p>
-                                    <h4 class="title">Post Code:</h4>
-                                    <p class="text">12345</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-lg-auto">
-                                <h3 class="page-title mt-50 mb-30">Floor Plan</h3>
-                            </div>
-                            <div class="col-lg-auto">
-                                <ul class="nav nav-tabs property-tab mt-50" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="floor-tab1" data-bs-toggle="tab" data-bs-target="#floor-tab1-pane" type="button" role="tab" aria-controls="floor-tab1-pane" aria-selected="true">First Floor</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="floor-tab2" data-bs-toggle="tab" data-bs-target="#floor-tab2-pane" type="button" role="tab" aria-controls="floor-tab2-pane" aria-selected="false">Second Floor</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="floor-tab3" data-bs-toggle="tab" data-bs-target="#floor-tab3-pane" type="button" role="tab" aria-controls="floor-tab3-pane" aria-selected="false">Third Floor</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="floor-tab4" data-bs-toggle="tab" data-bs-target="#floor-tab4-pane" type="button" role="tab" aria-controls="floor-tab4-pane" aria-selected="false">Top Garden </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="floor-tab1-pane" role="tabpanel" aria-labelledby="floor-tab1" tabindex="0">
-                                <div class="property-grid-plan">
-                                    <div class="property-grid-thumb">
-                                        <img src="assets/img/property/property_inner_10.jpg" alt="img">
-                                    </div>
-                                    <div class="property-grid-details">
-                                        <h4 class="property-grid-title">First Floor </h4>
-                                        <p class="property-grid-text">doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="floor-tab2-pane" role="tabpanel" aria-labelledby="floor-tab2" tabindex="0">
-                                <div class="property-grid-plan">
-                                    <div class="property-grid-thumb">
-                                        <img src="assets/img/property/property_inner_10.jpg" alt="img">
-                                    </div>
-                                    <div class="property-grid-details">
-                                        <h4 class="property-grid-title">Second Floor </h4>
-                                        <p class="property-grid-text">doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="floor-tab3-pane" role="tabpanel" aria-labelledby="floor-tab3" tabindex="0">
-                                <div class="property-grid-plan">
-                                    <div class="property-grid-thumb">
-                                        <img src="assets/img/property/property_inner_10.jpg" alt="img">
-                                    </div>
-                                    <div class="property-grid-details">
-                                        <h4 class="property-grid-title">Third Floor </h4>
-                                        <p class="property-grid-text">doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="floor-tab4-pane" role="tabpanel" aria-labelledby="floor-tab4" tabindex="0">
-                                <div class="property-grid-plan">
-                                    <div class="property-grid-thumb">
-                                        <img src="assets/img/property/property_inner_10.jpg" alt="img">
-                                    </div>
-                                    <div class="property-grid-details">
-                                        <h4 class="property-grid-title">Top Garden </h4>
-                                        <p class="property-grid-text">doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="page-title mt-50 mb-30">Property Video</h3>
-                        <div class="video-box2 mb-30">
-                            <img src="assets/img/property/property_inner_3.jpg" alt="img">
-                            <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style4 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -467,55 +198,238 @@
                             <button class="th-btn style-white th-btn-icon mt-15 avanor-register-btn">REGISTER YOUR INTEREST</button>
                         </form>
                     </div>
-                    <div class="widget  ">
-                        <h3 class="widget_title">Featured Listing</h3>
-                        <div class="recent-post-wrap">
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Exploring The Green Spaces Of Realar Residence</a></h4>
-                                    <div class="recent-post-meta">
-                                        <a href="blog.html"><i class="far fa-calendar"></i>22/6/2025</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Harmony With Nature Of Realar Residence</a></h4>
-                                    <div class="recent-post-meta">
-                                        <a href="blog.html"><i class="far fa-calendar"></i>25/6/2025</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Exploring The Green Spaces Of Realar Residence</a></h4>
-                                    <div class="recent-post-meta">
-                                        <a href="blog.html"><i class="far fa-calendar"></i>27/6/2025</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget widget_banner  " data-bg-src="assets/img/widget/widget-banner.png">
-                        <div class="widget-banner text-center">
-                            <h3 class="title">Need Help? We Are Here To Help You</h3>
-                            <div class="logo"><img src="assets/img/logo.svg" alt="img"></div>
-                            <h4 class="subtitle">You Get Online support</h4>
-                            <h5 class="link"><a href="tel:256214203215">+256 214 203 215</a></h5>
-                            <a href="blog-details.html" class="th-btn style-border th-btn-icon">Read More</a>
-                        </div>
-                    </div>
+
+
                 </aside>
             </div>
+            <div class="col-xxl-12">
+                <div class="overflow-hidden space" id="about-sec">
+
+                    <div class="container">
+
+                        <div class="about-page-wrap">
+                            <div class="row gy-40 property-detail-row  justify-content-between align-items-center">
+
+                                <div class="col-lg-6">
+                                    <div class="img-box3">
+                                        <div class="img1">
+                                            <img src="assets/img/property/rhrbvdewfwuiiko2qlmk.avif" alt="About">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div>
+                                        <span class="sub-title-dark">
+                                            LIVING IN THE MARINA VIEWS
+                                        </span>
+                                    </div>
+
+                                    <p class="text-theme">
+                                        Choose between masterfully detailed and expansive 1-, 2-, 3- and 4-bedroom apartments with panoramic windows offering endless water and outdoor living space views. Designed to be a contemporary residential oasis which offers tranquil surroundings and exciting nearby attractions. Has a landscaped amenity platform featuring a variety of world-class amenities.
+                                    </p>
+                                </div>
+
+
+                                <div class="col-lg-6 ">
+                                    <div class="title-area mb-0">
+                                        <div>
+                                            <span class="sub-title-dark">
+                                                LIVING IN THE MARINA VIEWS
+                                            </span>
+                                        </div>
+
+                                        <p class="mb-0 text-theme">
+                                            You are the center of our process. Your needs, your wants,
+                                            and your goals. Full transparency is our goal. We stay connected while
+                                            building your home.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 ">
+                                    <div class="img-box3">
+                                        <div class="img1">
+                                            <img src="assets/img/property/rhrbvdewfwuiiko2qlmk.avif" alt="About">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="title-area mb-0">
+                                        <div>
+                                            <span class="sub-title-dark project-about-heading">
+                                                ABOUT PROJECT
+                                            </span>
+                                        </div>
+
+                                        <p class="mb-0 text-theme">
+                                            Choose between masterfully detailed and expansive 1-, 2-, 3- and 4-bedroom apartments with panoramic windows offering endless water and outdoor living space views. Designed to be a contemporary residential oasis which offers tranquil surroundings and exciting nearby attractions. Has a landscaped amenity platform featuring a variety of world-class amenities.
+
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-12">
+                                    <div class="title-area mb-0">
+                                        <div>
+                                            <span class="sub-title-dark project-about-heading">
+                                                GALLERY
+                                            </span>
+                                        </div>
+
+
+                                        <div class="slider-area property-slider1">
+                                            <div class="swiper th-slider mb-4" id="propertySlider" data-slider-options='{"effect":"fade","loop":true,"thumbs":{"swiper":".property-thumb-slider"},"autoplayDisableOnInteraction":"true"}'>
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="property-slider-img">
+                                                            <img src="{{ asset('assets/img/property/CHEVALIA_ESTATE_GRAND_POLO_IMAGE15.webp') }}" alt="img">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="swiper-slide">
+                                                        <div class="property-slider-img">
+                                                            <img src="{{ asset('assets/img/property/CHEVALIA_ESTATE_GRAND_POLO_IMAGE8.webp') }}" alt="img">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="property-slider-img">
+                                                            <img src="{{ asset('assets/img/property/CHEVALIA_ESTATE_GRAND_POLO_IMAGE20.webp') }}" alt="img">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="property-slider-img">
+                                                            <img src="{{ asset('assets/img/property/CHEVALIA_ESTATE_GRAND_POLO_IMAGE23.webp') }}" alt="img">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="swiper th-slider property-thumb-slider" data-slider-options='{"effect":"slide","loop":true,"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}},"autoplayDisableOnInteraction":"true"}'>
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="property-slider-img">
+                                                            <img src="{{ asset('assets/img/property/CHEVALIA_ESTATE_GRAND_POLO_IMAGE15.webp') }}" alt="Image">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="swiper-slide">
+                                                        <div class="property-slider-img">
+                                                            <img src="{{ asset('assets/img/property/CHEVALIA_ESTATE_GRAND_POLO_IMAGE8.webp') }}" alt="Image">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="property-slider-img">
+                                                            <img src="{{ asset('assets/img/property/CHEVALIA_ESTATE_GRAND_POLO_IMAGE20.webp') }}" alt="Image">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="property-slider-img">
+                                                            <img src="{{ asset('assets/img/property/CHEVALIA_ESTATE_GRAND_POLO_IMAGE23.webp') }}" alt="Image">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <button data-slider-prev="#propertySlider" class="slider-arrow style3 slider-prev"> <i class="far fa-chevron-left"></i></button>
+                                            <button data-slider-next="#propertySlider" class="slider-arrow style3 slider-next"> <i class="far fa-chevron-right"></i></button>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="title-area mb-0">
+                                                <div>
+                                                    <span class="sub-title-dark project-about-heading">
+                                                        Amenities
+                                                    </span>
+                                                </div>
+
+                                                <div class="row gy-3">
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <div class="checklist">
+                                                            <ul>
+                                                                <li><i class="far fa-square-check"></i>Airconditioning</li>
+                                                                <li><i class="far fa-square-check"></i>Balcony</li>
+                                                                <li><i class="far fa-square-check"></i>Garage</li>
+                                                                <li><i class="far fa-square-check"></i>Landscaping</li>
+                                                                <li><i class="far fa-square-check"></i>Outdoor Kitchen</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <div class="checklist">
+                                                            <ul>
+                                                                <li><i class="far fa-square-check"></i>Barbeque</li>
+                                                                <li><i class="far fa-square-check"></i>Recreation</li>
+                                                                <li><i class="far fa-square-check"></i>Microwave</li>
+                                                                <li><i class="far fa-square-check"></i>Basketball</li>
+                                                                <li><i class="far fa-square-check"></i>Fireplace</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <div class="checklist">
+                                                            <ul>
+                                                                <li><i class="far fa-square-check"></i>24x7 Seccurity</li>
+                                                                <li><i class="far fa-square-check"></i>Indoor Game</li>
+                                                                <li><i class="far fa-square-check"></i>Pool</li>
+                                                                <li><i class="far fa-square-check"></i>Tanis Courts</li>
+                                                                <li><i class="far fa-square-check"></i>Internet</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <div class="checklist">
+                                                            <ul>
+                                                                <li><i class="far fa-square-check"></i>Jaguzzi</li>
+                                                                <li><i class="far fa-square-check"></i>Modern Kitchen</li>
+                                                                <li><i class="far fa-square-check"></i>Refrigerator</li>
+                                                                <li><i class="far fa-square-check"></i>Window Coverings</li>
+                                                                <li><i class="far fa-square-check"></i>Washer</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 space-top">
+                                            <div class="title-area mb-0">
+                                                <div>
+                                                    <span class="sub-title-dark project-about-heading">
+                                                        LOCATION
+                                                    </span>
+                                                </div>
+
+                                                <div class="location-map">
+                                                    <div class="contact-map">
+                                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.7310056272386!2d89.2286059153658!3d24.00527418490799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b97badc6151%3A0x30b048c9fb2129bc!2sAngfuztheme!5e0!3m2!1sen!2sbd!4v1651028958211!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
+                                                    </div>
+                                                    <div class="location-map-address">
+                                                        <div class="thumb">
+                                                            <img src="assets/img/property/property_inner_1.jpg" alt="img">
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h4 class="title">Address:</h4>
+                                                            <p class="text">Brooklyn, New York 11233, United States</p>
+                                                            <h4 class="title">Post Code:</h4>
+                                                            <p class="text">12345</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
     </div>
 </section>

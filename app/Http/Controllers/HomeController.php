@@ -7,6 +7,7 @@ use App\Models\Property;
 use App\Models\Blog;
 use Illuminate\Contracts\View\View;
 use App\Models\HomeSetting;
+
 class HomeController extends Controller
 {
     public function index(): View
@@ -25,7 +26,7 @@ class HomeController extends Controller
                     $query->where('is_active', true);
                 },
             ])
-            ->orderBy('name')
+            ->orderBy('display_order')
             ->limit(6)
             ->get();
 
@@ -33,11 +34,18 @@ class HomeController extends Controller
         $featuredProperties = Property::query()
             ->select(
                 'id',
+                'developer_id',
+                'project_id',
                 'title',
                 'slug',
-                'thumbnail',
                 'price'
             )
+            ->with([
+                'developer:id,name',
+                'unitTypes',
+                'project:id,starting_price,location',
+                'media',
+            ])
             ->where('is_active', true)
             ->where('is_featured', true)
             ->orderBy('display_order')
@@ -63,7 +71,7 @@ class HomeController extends Controller
 
         $featuredBlog = $blogs->firstWhere('is_featured', true)
             ?? $blogs->first();
-            $homeSettings = HomeSetting::query()->first();
+        $homeSettings = HomeSetting::query()->first();
         $latestBlogs = $blogs
             ->reject(
                 fn($blog) =>
@@ -74,7 +82,7 @@ class HomeController extends Controller
 
         return view('home', [
             'featuredCommunities' => $featuredCommunities,
-            'latestBlogs' =>$latestBlogs,
+            'latestBlogs' => $latestBlogs,
             'featuredProperties'  => $featuredProperties,
             'featuredBlog' => $featuredBlog,
             'homeSettings' => $homeSettings,

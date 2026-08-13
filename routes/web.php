@@ -26,3 +26,7 @@ Route::view('/terms-and-conditions', 'termsandconditions')
 
     Route::view('/property-details', 'properties.propertydetails')
     ->name('property-details');
+
+
+    Route::get('/properties/{slug}', [PropertyController::class, 'show'])
+    ->name('properties.show');

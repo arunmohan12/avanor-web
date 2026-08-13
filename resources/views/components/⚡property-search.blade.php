@@ -10,7 +10,8 @@ use Livewire\WithPagination;
 new class extends Component
 {
     use WithPagination;
-
+    protected string $paginationTheme = 'bootstrap';
+    
     #[Url(as: 'property_type', except: '', history: true)]
     public string $propertyType = '';
 
@@ -298,26 +299,81 @@ new class extends Component
                 previousPage
             ">
 
-            <div class="property-result-count">
-                Showing {{ $properties->firstItem() ?? 0 }}
-                –
-                {{ $properties->lastItem() ?? 0 }}
-                of
-                {{ $properties->total() }}
-                properties
-            </div>
 
-            {{-- Temporary property output --}}
-            <pre class="property-debug-output">{{ json_encode(
-                $properties->items(),
-                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
-            ) }}</pre>
 
-            @if ($properties->hasPages())
-            <div class="property-pagination">
-                {{ $properties->links() }}
+            <div class="th-sort-bar">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md">
+                        <p class="woocommerce-result-count"> Showing {{ $properties->firstItem() ?? 0 }}
+                            –
+                            {{ $properties->lastItem() ?? 0 }}
+                            of
+                            {{ $properties->total() }}
+                            properties
+                        </p>
+                    </div>
+
+                    <div class="col-md-auto">
+                        <div class="sorting-filter-wrap">
+
+                            <div class="nav" role=tablist>
+                                <a class="active" href="#" id="tab-shop-list" data-bs-toggle="tab" data-bs-target="#tab-list" role="tab" aria-controls="tab-grid" aria-selected="false"><i class="fa-light fa-grid-2"></i></a>
+                                <a href="#" id="tab-shop-grid" data-bs-toggle="tab" data-bs-target="#tab-grid" role="tab" aria-controls="tab-grid" aria-selected="true"><i class="fa-solid fa-list"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            @endif
+            <div class="row gy-4">
+
+                <div class="tab-content" id="nav-tabContent">
+
+                    <div class="tab-pane fade active show" id="tab-list">
+                        <div class="row gy-40">
+                            @forelse ($properties as $property)
+
+                            @include('properties.card-list', [
+                            'property' => $property
+                            ])
+
+                            @empty
+
+                            <div class="col-12">
+                                <p>No properties found.</p>
+                            </div>
+
+                            @endforelse
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-grid" role="tabpanel" aria-labelledby="tab-shop-grid">
+
+                        @forelse ($properties as $property)
+
+                        @include('properties.card-grid', [
+                        'property' => $property
+                        ])
+
+                        @empty
+
+                        <div class="col-12">
+                            <p>No properties found.</p>
+                        </div>
+
+                        @endforelse
+                    </div>
+                    
+
+                </div>
+
+                @if ($properties->hasPages())
+    <div class="mt-60 text-center">
+        {{ $properties->links() }}
+    </div>
+@endif
+
+            </div>
 
         </div>
 

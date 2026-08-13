@@ -14,6 +14,7 @@ export default defineConfig({
                 'resources/css/vendor/about.css',
                 'resources/css/vendor/privacy.css',
                 'resources/css/vendor/terms.css',
+                'resources/css/vendor/blog.css',
                 'resources/js/pages/contact.js',
                 'resources/js/pages/propertydetails.js',
                 'resources/js/app.js'],

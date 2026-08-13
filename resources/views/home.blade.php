@@ -128,7 +128,7 @@
 </section>
 
 
-<div class="space-top position-relative overflow-hidden bg-brandlight mt-60" data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.png')}}">
+<div class="position-relative overflow-hidden bg-brandlight mt-60" data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.png')}}">
 @include('partials.reachoutbanner')
 </div>
 

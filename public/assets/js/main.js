@@ -267,6 +267,9 @@
             loop: settings.loop !== false,
             speed: settings.speed || 1000,
             autoplay: settings.autoplay || { delay: 6000, disableOnInteraction: false },
+            preventClicks: false,
+            preventClicksPropagation: false,
+            touchStartPreventDefault: false,
             navigation: {
                 prevEl: prevArrow.get(0),
                 nextEl: nextArrow.get(0),

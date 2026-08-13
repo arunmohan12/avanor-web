@@ -35,7 +35,7 @@ class PropertySearchService
         if (filled($filters['bedrooms'] ?? null)) {
             $bedrooms = (string) $filters['bedrooms'];
 
-            if (str_ends_with($bedrooms, '+')) {
+            if (str_ends_with($bedrooms, '+')) { 
                 $query->where(
                     'bedrooms',
                     '>=',
@@ -50,12 +50,12 @@ class PropertySearchService
             $this->applyPriceFilter(
                 $query,
                 (string) $filters['price']
-            );
+            );    
         }
 
         return $query
             ->latest('id')
-            ->paginate(12);
+            ->paginate(9);
     }
 
     private function applyPriceFilter(
