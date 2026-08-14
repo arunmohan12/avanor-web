@@ -31,7 +31,7 @@ route('properties.show', $property->slug)
 $displayPrice = $property->price ?: $property->project?->starting_price;
 
 $propertySchema = [
-'@context' => 'https://schema.org',
+chr(64) . 'context' => 'https://schema.org',
 '@type' => 'RealEstateListing',
 'name' => $property->title,
 'description' => $property->meta_description
@@ -62,7 +62,7 @@ $propertySchema['offers'] = [
 'url' => route('properties.show', $property->slug),
 ];
 }
-@endphp
+@endphp    
 
 @push('structured-data')
 <script type="application/ld+json">

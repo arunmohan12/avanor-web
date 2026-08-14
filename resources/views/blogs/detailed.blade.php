@@ -9,7 +9,7 @@
     );
 
     $articleSchema = [
-        '@context' => 'https://schema.org',
+        chr(64) . 'context' => 'https://schema.org',
         '@type' => 'BlogPosting',
         'headline' => $blog->title,
         'description' => $blog->meta_description ?: $blog->excerpt,
@@ -19,6 +19,12 @@
             '@type' => 'WebPage',
             '@id' => route('blogs.show', $blog->slug),
         ],
+        'author' => [
+        '@type' => 'Organization',
+        'name' => 'Avanor Capital',
+        'url' => url('/'),
+    ],
+
         'publisher' => [
             '@type' => 'Organization',
             'name' => 'Avanor Capital',
@@ -31,7 +37,7 @@
     }
 
     $breadcrumbSchema = [
-        '@context' => 'https://schema.org',
+        chr(64) . 'context' => 'https://schema.org',
         '@type' => 'BreadcrumbList',
         'itemListElement' => [
             [

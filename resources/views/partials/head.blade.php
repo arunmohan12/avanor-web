@@ -47,7 +47,7 @@
 
 <script type="application/ld+json">
 {!! json_encode([
-    '@context' => 'https://schema.org',
+    chr(64) . 'context' => 'https://schema.org',
     '@type' => 'Organization',
     '@id' => url('/') . '/#organization',
     'name' => 'Avanor Capital',
@@ -58,7 +58,7 @@
 
 <script type="application/ld+json">
 {!! json_encode([
-    '@context' => 'https://schema.org',
+    chr(64) . 'context' => 'https://schema.org',
     '@type' => 'WebSite',
     '@id' => url('/') . '/#website',
     'url' => url('/'),
