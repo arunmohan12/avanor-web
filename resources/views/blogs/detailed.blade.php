@@ -158,7 +158,7 @@
 
         </div>
 
-        @php
+
 
         <div class="th-blog blog-single mb-0">
                     <div class="blog-img ">
