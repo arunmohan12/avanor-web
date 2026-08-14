@@ -8,6 +8,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
 <title>@yield('title', 'Avanor Capital')</title>
 
+<meta property="og:title" content="@yield('title', 'Avanor Capital')">
+@if (! app()->environment('production'))
+    <meta name="robots" content="noindex, nofollow">
+@endif
 @if (trim($__env->yieldContent('meta_description')))
     <meta
         name="description"
@@ -22,8 +26,50 @@
     >
 @endif
 
-<!-- <meta name="theme-color" content="#ffffff"> -->
+@if (trim($__env->yieldContent('canonical')))
+    <link rel="canonical" href="@yield('canonical')">
+@endif
 
+
+@if (trim($__env->yieldContent('meta_description')))
+    <meta property="og:description" content="@yield('meta_description')">
+@endif
+
+@if (trim($__env->yieldContent('canonical')))
+    <meta property="og:url" content="@yield('canonical')">
+@endif
+
+<meta property="og:type" content="@yield('og_type', 'website')">
+
+@if (trim($__env->yieldContent('og_image')))
+    <meta property="og:image" content="@yield('og_image')">
+@endif
+
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'Organization',
+    '@id' => url('/') . '/#organization',
+    'name' => 'Avanor Capital',
+    'url' => url('/'),
+    'logo' => asset('assets/img/logo-dark.svg'),
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'WebSite',
+    '@id' => url('/') . '/#website',
+    'url' => url('/'),
+    'name' => 'Avanor Capital',
+    'publisher' => [
+        '@id' => url('/') . '/#organization',
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+
+@stack('structured-data')
 
 @vite([
     'resources/css/app.css',

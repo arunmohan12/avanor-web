@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://avanorcap.com/sitemap.xml

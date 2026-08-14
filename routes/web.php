@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SitemapController;
 
 
 Route::view('/test', 'welcome')->name('welcome');
@@ -34,3 +35,5 @@ Route::get('/blogs', [BlogController::class, 'index'])
 
 Route::get('/properties/{slug}', [PropertyController::class, 'show'])
     ->name('properties.show');
+    Route::get('/sitemap.xml', [SitemapController::class, 'index'])
+    ->name('sitemap');

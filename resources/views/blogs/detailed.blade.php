@@ -2,23 +2,106 @@
 
 @section('logo', 'logo-dark.svg')
 
+@php
+    $featuredImageUrl = \App\Support\MediaUrl::fromMedia(
+        $blog->getFirstMedia('featured_image'),
+        'featured_image_avif'
+    );
+
+    $articleSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BlogPosting',
+        'headline' => $blog->title,
+        'description' => $blog->meta_description ?: $blog->excerpt,
+        'datePublished' => optional($blog->published_at)->toIso8601String(),
+        'dateModified' => optional($blog->updated_at)->toIso8601String(),
+        'mainEntityOfPage' => [
+            '@type' => 'WebPage',
+            '@id' => route('blogs.show', $blog->slug),
+        ],
+        'publisher' => [
+            '@type' => 'Organization',
+            'name' => 'Avanor Capital',
+            'url' => url('/'),
+        ],
+    ];
+
+    if ($featuredImageUrl) {
+        $articleSchema['image'] = [$featuredImageUrl];
+    }
+
+    $breadcrumbSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => route('home'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Blogs',
+                'item' => route('blogs'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 3,
+                'name' => $blog->title,
+                'item' => route('blogs.show', $blog->slug),
+            ],
+        ],
+    ];
+@endphp
+
 @section(
-'title',
-$blog->meta_title ?: $blog->title . ' | Avanor'
+    'title',
+    $blog->meta_title ?: $blog->title . ' | Avanor Capital'
 )
 
 @section(
-'meta_description',
-$blog->meta_description ?: $blog->excerpt
+    'meta_description',
+    $blog->meta_description ?: $blog->excerpt
 )
 
 @section(
-'meta_keywords',
-$blog->meta_keywords
+    'meta_keywords',
+    $blog->meta_keywords
 )
+
+@section(
+    'canonical',
+    route('blogs.show', $blog->slug)
+)
+
+@section('og_type', 'article')
+
+@if ($featuredImageUrl)
+    @section('og_image', $featuredImageUrl)
+@endif
+
+@push('structured-data')
+
+<script type="application/ld+json">
+{!! json_encode(
+    $articleSchema,
+    JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+) !!}
+</script>
+
+<script type="application/ld+json">
+{!! json_encode(
+    $breadcrumbSchema,
+    JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+) !!}
+</script>
+
+@endpush
 
 @push('styles')
-@vite('resources/css/vendor/blog.css')
+    @vite('resources/css/vendor/blog.css')
 @endpush
 
 @section('content')
@@ -70,11 +153,7 @@ $blog->meta_keywords
         </div>
 
         @php
-$featuredImageUrl = \App\Support\MediaUrl::fromMedia(
-$blog->getFirstMedia('featured_image'),
-'featured_image_avif'
-);
-@endphp
+
         <div class="th-blog blog-single mb-0">
                     <div class="blog-img ">
                         @if ($featuredImageUrl)

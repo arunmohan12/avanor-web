@@ -4,7 +4,7 @@
                 <div class="col-lg-8">
                     <div class="title-area text-center ">
                         <span class="sub-title3 text-theme2 justify-content-center ">OUR SERVICES</span>
-                        <h2 class="sec-title text-white">We're committed to discovering the perfect property for you</h2>
+                        <h2 class="sec-title text-white">We're Committed to Discovering the Perfect Property For You</h2>
                     </div>
                 </div>
             </div>

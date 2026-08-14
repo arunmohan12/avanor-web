@@ -1,18 +1,81 @@
 @extends('layouts.app')
+@php
+$propertyImageUrl = \App\Support\MediaUrl::fromMedia(
+$property->getFirstMedia('cover'),
+'cover_avif'
+);
+@endphp
 
+@if ($propertyImageUrl)
+@section('og_image', $propertyImageUrl)
+@endif
 @section(
-    'title',
-    $property->meta_title ?: $property->title . ' | Avanor'
+'title',
+$property->meta_title ?: $property->title . ' | Avanor Capital'
 )
 
 @section(
-    'meta_description',
-    $property->meta_description ?: \Illuminate\Support\Str::limit(
-        strip_tags($property->description),
-        155
-    )
+'meta_description',
+$property->meta_description ?: \Illuminate\Support\Str::limit(
+strip_tags($property->description),
+155
+)
 )
 @section('meta_keywords', $property->meta_keywords)
+@section(
+'canonical',
+route('properties.show', $property->slug)
+)
+
+@php
+$displayPrice = $property->price ?: $property->project?->starting_price;
+
+$propertySchema = [
+'@context' => 'https://schema.org',
+'@type' => 'RealEstateListing',
+'name' => $property->title,
+'description' => $property->meta_description
+?: \Illuminate\Support\Str::limit(
+strip_tags($property->description),
+155
+),
+'url' => route('properties.show', $property->slug),
+];
+
+if ($propertyImageUrl) {
+$propertySchema['image'] = [$propertyImageUrl];
+}
+
+if ($property->project?->location) {
+$propertySchema['address'] = [
+'@type' => 'PostalAddress',
+'addressLocality' => $property->project->location,
+'addressCountry' => 'AE',
+];
+}
+
+if ($displayPrice) {
+$propertySchema['offers'] = [
+'@type' => 'Offer',
+'priceCurrency' => 'AED',
+'price' => $displayPrice,
+'url' => route('properties.show', $property->slug),
+];
+}
+@endphp
+
+@push('structured-data')
+<script type="application/ld+json">
+    {
+        !!json_encode(
+            $propertySchema,
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+        ) !!
+    }
+</script>
+@endpush
+
+@section('og_type', 'website')
 @section('logo', 'logo-dark.svg')
 
 @push('styles')
@@ -66,51 +129,51 @@ $hasProjectDescription = filled($property->project?->description);
 
     <div class="swiper avanor-property-gallery">
 
-    <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
 
-{{-- COVER IMAGE --}}
-@if ($coverMedia)
+            {{-- COVER IMAGE --}}
+            @if ($coverMedia)
 
-    @php
-        $coverUrl = \App\Support\MediaUrl::fromMedia(
+            @php
+            $coverUrl = \App\Support\MediaUrl::fromMedia(
             $coverMedia,
             'cover_avif'
-        );
-    @endphp
+            );
+            @endphp
 
-    <div class="swiper-slide">
-        <img
-            src="{{ $coverUrl }}"
-            alt="{{ $property->title }}"
-            class="avanor-property-hero-image"
-            fetchpriority="high">
-    </div>
+            <div class="swiper-slide">
+                <img
+                    src="{{ $coverUrl }}"
+                    alt="{{ $property->title }}"
+                    class="avanor-property-hero-image"
+                    fetchpriority="high">
+            </div>
 
-@endif
+            @endif
 
 
-{{-- FIRST 2 GALLERY IMAGES ONLY --}}
-@foreach ($heroGalleryImages as $image)
+            {{-- FIRST 2 GALLERY IMAGES ONLY --}}
+            @foreach ($heroGalleryImages as $image)
 
-    @php
-        $imageUrl = \App\Support\MediaUrl::fromMedia(
+            @php
+            $imageUrl = \App\Support\MediaUrl::fromMedia(
             $image,
             'gallery_avif'
-        );
-    @endphp
+            );
+            @endphp
 
-    <div class="swiper-slide">
-        <img
-            src="{{ $imageUrl }}"
-            alt="{{ $property->title }}"
-            class="avanor-property-hero-image"
-            loading="lazy"
-            decoding="async">
-    </div>
+            <div class="swiper-slide">
+                <img
+                    src="{{ $imageUrl }}"
+                    alt="{{ $property->title }}"
+                    class="avanor-property-hero-image"
+                    loading="lazy"
+                    decoding="async">
+            </div>
 
-@endforeach
+            @endforeach
 
-</div>
+        </div>
 
         @if ($galleryImages->count() > 1)
 
