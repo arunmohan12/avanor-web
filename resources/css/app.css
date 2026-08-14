@@ -1008,3 +1008,6 @@ body {
 .fas {
     font-family: Font Awesome\ 6 Pro !important;
 }
+.iti__selected-dial-code{
+    color: var(--brand-dark);
+}

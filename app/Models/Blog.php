@@ -1,17 +1,19 @@
 <?php
-
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Image\Enums\Fit;
 
-class Blog extends Model
+class Blog extends Model implements HasMedia
 {
+    use InteractsWithMedia;
+
     protected $fillable = [
         'title',
         'slug',
         'category',
-        'thumbnail',
-        'featured_image',
         'excerpt',
         'content',
         'published_at',
@@ -29,6 +31,31 @@ class Blog extends Model
         'is_active' => 'boolean',
     ];
 
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('thumbnail')
+            ->singleFile()
+            ->useDisk('s3');
+
+        $this->addMediaCollection('featured_image')
+            ->singleFile()
+            ->useDisk('s3');
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this->addMediaConversion('thumbnail_avif')
+            ->format('avif')
+            ->fit(Fit::Crop, 600, 400)
+            ->performOnCollections('thumbnail')
+            ->nonQueued();
+
+        $this->addMediaConversion('featured_image_avif')
+            ->format('avif')
+            ->fit(Fit::Crop, 1400, 800)
+            ->performOnCollections('featured_image')
+            ->nonQueued();
+    }
     public function scopeActive($query)
     {
         return $query->where('is_active', true);

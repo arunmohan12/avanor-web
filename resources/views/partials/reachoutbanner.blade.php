@@ -21,7 +21,7 @@
 
                 <div class="button-group">
 
-                    <a href="javascript:void(0)" class="th-btn btn-cta style4">
+                    <a href="{{route('contact')}}" class="th-btn btn-cta style4">
                         BOOK A CONSULTATION
                     </a>
 

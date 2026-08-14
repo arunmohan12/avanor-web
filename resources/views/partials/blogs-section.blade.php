@@ -12,62 +12,66 @@
             <div class="col-lg-6 d-none d-lg-flex justify-content-end">
 
                 <a
-                    href="javascript:void(0)"
+                    href="{{route('blogs')}}"
                     class=" community-btn"> See What’s New</a>
 
             </div>
         </div>
-        
+
         {{-- Featured Blog --}}
         @if ($featuredBlog)
 
-            <div class="avanor-blog-featured">
+        <div class="avanor-blog-featured">
 
-                <div class="avanor-blog-featured-image">
+            <div class="avanor-blog-featured-image">
 
-                    <img
-                        src="{{ $featuredBlog->thumbnail
-                            ? Storage::disk('public')->url($featuredBlog->thumbnail)
-                            : asset('assets/img/blog/blog-main.webp') }}"
-                        alt="{{ $featuredBlog->title }}"
-                    >
+                @php
+                $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
+                $featuredBlog->getFirstMedia('thumbnail'),
+                'thumbnail_avif'
+                ) ?? asset('assets/img/blog/blog-main.webp');
+                @endphp
 
-                    @if ($featuredBlog->category)
-                        <span class="avanor-blog-category">
-                            {{ $featuredBlog->category }}
-                        </span>
+                <img
+                    src="{{ $thumbnailUrl }}"
+                    alt="{{ $featuredBlog->title }}">
 
-                        
-                    @endif
+                @if ($featuredBlog->category)
+                <span class="avanor-blog-category">
+                    {{ $featuredBlog->category }}
+                </span>
 
 
-                </div>
+                @endif
 
-                <div class="avanor-blog-featured-content">
-
-                    <h3>
-                        {{ $featuredBlog->title }}
-                    </h3>
-
-                    @if ($featuredBlog->published_at)
-                        <span class="avanor-blog-date">
-                            {{ $featuredBlog->published_at->format('F d, Y') }}
-                        </span>
-                    @endif
-
-                    @if ($featuredBlog->excerpt)
-                        <p>
-                            {{ $featuredBlog->excerpt }}
-                        </p>
-                    @endif
-
-                    <a href="javascript:void(0)" class="avanor-blog-read">
-                        Continue Reading
-                    </a>
-
-                </div>
 
             </div>
+
+            <div class="avanor-blog-featured-content">
+
+                <h3>
+                    {{ $featuredBlog->title }}
+                </h3>
+
+                @if ($featuredBlog->published_at)
+                <span class="avanor-blog-date">
+                    {{ $featuredBlog->published_at->format('F d, Y') }}
+                </span>
+                @endif
+
+                @if ($featuredBlog->excerpt)
+                <p>
+                    {{ $featuredBlog->excerpt }}
+                </p>
+                @endif
+
+                <a href="{{ route('blogs.show', $featuredBlog->slug) }}" class="avanor-blog-read">
+                    Continue Reading
+                </a>
+
+            </div>
+
+        </div>
 
         @endif
 
@@ -75,9 +79,9 @@
         {{-- Latest Blogs Slider --}}
         @if ($latestBlogs->isNotEmpty())
 
-            <div
-                class="swiper th-slider avanor-blog-swiper"
-                data-slider-options='{
+        <div
+            class="swiper th-slider avanor-blog-swiper"
+            data-slider-options='{
                     "breakpoints": {
                         "0": {
                             "slidesPerView": 1.15
@@ -95,49 +99,57 @@
                     "spaceBetween": 30,
                     "grabCursor": true,
                     "autoplay": false
-                }'
-            >
+                }'>
 
-                <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
 
-                    @foreach ($latestBlogs as $blog)
+                @foreach ($latestBlogs as $blog)
 
-                        <div class="swiper-slide">
+                @php
+                $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
+                $blog->getFirstMedia('thumbnail'),
+                'thumbnail_avif'
+                ) ?? asset('assets/img/blog/blog-main.webp');
+                @endphp
 
-                            <article class="avanor-blog-small">
+                <div class="swiper-slide">
 
-                                <img
-                                    src="{{ $blog->thumbnail
-                                        ? Storage::disk('public')->url($blog->thumbnail)
-                                        : asset('assets/img/blog/blog-main.webp') }}"
-                                    alt="{{ $blog->title }}"
-                                    loading="lazy"
-                                >
+                    <article class="avanor-blog-small">
+                    <a href="{{route('blogs.show',$blog->slug)}}">
+                        <img
+                            src="{{ $thumbnailUrl }}"
+                            alt="{{ $blog->title }}"
+                            loading="lazy"
+                            decoding="async">
+                    </a>
 
-                                <div>
+                        <div>
 
-                                    <h4>
-                                        {{ $blog->title }}
-                                    </h4>
-
-                                    @if ($blog->published_at)
-                                        <span>
-                                            {{ $blog->published_at->format('F d, Y') }}
-                                        </span>
-                                    @endif
-
-                                </div>
-
-                            </article>
+                        <a href="{{route('blogs.show',$blog->slug)}}">
+                            <h4>
+                                {{ $blog->title }}
+                            </h4>
+                        </a>
+                            @if ($blog->published_at)
+                            <span>
+                                {{ $blog->published_at->format('F d, Y') }}
+                            </span>
+                            @endif
 
                         </div>
 
-                    @endforeach
+                    </article>
 
                 </div>
 
+                @endforeach
+
             </div>
 
-        @endif
+        </div>
+
+    </div>
+
+    @endif
 
     </div>

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\Blogs\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -12,6 +11,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Support\Str;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class BlogForm
 {
@@ -59,11 +59,17 @@ class BlogForm
                     ->schema([
 
                         RichEditor::make('content')
-                            ->label('Blog Content')
-                            ->required()
-                            ->extraInputAttributes([
-                                'style' => 'min-height: 400px;',
+                            ->label('Content')
+                            ->fileAttachmentsDisk('blog_public')
+                            ->fileAttachmentsDirectory('rich-editor')
+                            ->fileAttachmentsVisibility('public')
+                            ->fileAttachmentsAcceptedFileTypes([
+                                'image/jpeg',
+                                'image/png',
+                                'image/webp',
                             ])
+                            ->fileAttachmentsMaxSize(4096)
+                            ->resizableImages()
                             ->columnSpanFull(),
 
                     ]),
@@ -71,22 +77,18 @@ class BlogForm
                 Section::make('Media')
                     ->schema([
 
-                        FileUpload::make('thumbnail')
+                        SpatieMediaLibraryFileUpload::make('thumbnail')
                             ->label('Thumbnail')
-                            ->disk('public')
-                            ->directory('blogs/thumbnails')
-                            ->visibility('public')
+                            ->collection('thumbnail')
                             ->image()
                             ->imageEditor()
                             ->maxSize(2048)
                             ->helperText('Recommended size: 600 × 400 px')
                             ->columnSpanFull(),
 
-                        FileUpload::make('featured_image')
+                        SpatieMediaLibraryFileUpload::make('featured_image')
                             ->label('Featured Image')
-                            ->disk('public')
-                            ->directory('blogs/featured')
-                            ->visibility('public')
+                            ->collection('featured_image')
                             ->image()
                             ->imageEditor()
                             ->maxSize(4096)
