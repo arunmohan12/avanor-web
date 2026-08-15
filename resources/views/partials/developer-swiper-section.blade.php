@@ -10,7 +10,7 @@
                     <!-- <a
                         href="{{ route('developers.show', $developer['slug']) }}" -->
                                             <a
-                        href="javascript:void(0)"
+                        href="{{ route('developers.show', $developer['slug']) }}"
                         class="client-card">
                         <img
     src="{{ $developer['logo']

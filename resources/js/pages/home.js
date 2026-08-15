@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.alt = developer.name;
 
                 // card.href = `/developers/${developer.slug}`;
-                card.href = `javascript:void(0)`;
+                card.href = `/developers/${developer.slug}`;
 
                 card.classList.remove('is-flipping');
             }, 300);

@@ -27,7 +27,7 @@
                 class="avanor-developer-card"
                 data-index="{{ $loop->index }}"> -->
             <a
-                href="javascript:void(0)"
+                href="{{ route('developers.show', $developer['slug']) }}"
                 class="avanor-developer-card"
                 data-index="{{ $loop->index }}">
                 <img
