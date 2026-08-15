@@ -29,7 +29,8 @@ class ViewServiceProvider extends ServiceProvider
                 'partials.footer',
                 'home',
                 'about',
-                'contact'
+                'contact',
+                'developers.partners'
             ],
             function ($view) use ($menuService) {
                 $view->with([

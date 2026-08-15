@@ -6,9 +6,9 @@ use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\LeadController;
 
 
-Route::view('/test', 'welcome')->name('welcome');
 
 
 Route::get('/', [HomeController::class, 'index'])
@@ -16,7 +16,7 @@ Route::get('/', [HomeController::class, 'index'])
 Route::get('/properties', [PropertyController::class, 'index'])
     ->name('properties.index');
 
-Route::get('/developers/{developer:slug}', [DeveloperController::class, 'show'])
+    Route::get('/developers/{slug}', [DeveloperController::class, 'show'])
     ->name('developers.show');
 
 Route::view('/about', 'about')->name('about');
@@ -37,3 +37,16 @@ Route::get('/properties/{slug}', [PropertyController::class, 'show'])
     ->name('properties.show');
     Route::get('/sitemap.xml', [SitemapController::class, 'index'])
     ->name('sitemap');
+
+    Route::get('/developer', [DeveloperController::class, 'index'])
+    ->name('developer.index');
+
+    Route::post('/leads', [LeadController::class, 'store'])
+    ->name('leads.store');
+
+    Route::view('/enquiry', 'leads.form')
+    ->name('leads.form');
+
+    Route::post('/enquiry', [LeadController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('leads.store');

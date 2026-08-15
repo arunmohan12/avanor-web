@@ -1,0 +1,184 @@
+.avanor-lead-form {
+    width: 100%;
+
+    padding: 34px;
+
+    background: #fff;
+
+    border: 1px solid rgba(3, 9, 32, 0.10);
+}
+
+.avanor-lead-form-header {
+    margin-bottom: 28px;
+}
+
+.avanor-lead-kicker {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--brand-gold);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+.avanor-lead-form-header h3 {
+    margin: 0 0 10px;
+
+    color: var(--brand-dark);
+
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.avanor-lead-form-header p {
+    margin: 0;
+
+    color: #66707c;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* Fields */
+
+.avanor-lead-field {
+    margin-bottom: 18px;
+}
+
+.avanor-lead-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--brand-dark);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .3px;
+}
+
+.avanor-lead-field input {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(3, 9, 32, .16);
+    border-radius: 0;
+
+    background: #fff;
+
+    color: var(--brand-dark);
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.avanor-lead-field input:focus {
+    border-color: var(--brand-dark);
+
+    box-shadow: 0 0 0 2px rgba(3, 9, 32, .05);
+}
+
+
+/* Button */
+
+.avanor-lead-submit {
+    width: 100%;
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 8px;
+
+    padding: 12px 20px;
+
+    border: 0;
+
+    background: var(--brand-dark);
+
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background-color .3s ease,
+        transform .3s ease;
+}
+
+.avanor-lead-submit:hover {
+    background: var(--brand-gold);
+
+    color: #fff;
+
+    transform: translateY(-1px);
+}
+
+
+/* Messages */
+
+.avanor-lead-success {
+    margin-bottom: 20px;
+    padding: 13px 15px;
+
+    background: #f3f7f3;
+
+    border: 1px solid #dbe8db;
+
+    color: #355936;
+
+    font-size: 13px;
+}
+
+.avanor-lead-error {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #b42318;
+
+    font-size: 11px;
+}
+
+
+/* Consent */
+
+.avanor-lead-consent {
+    margin: 14px 0 0;
+
+    color: #8a919b;
+
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 767px) {
+
+    .avanor-lead-form {
+        padding: 26px 22px;
+    }
+
+    .avanor-lead-form-header h3 {
+        font-size: 24px;
+    }
+}

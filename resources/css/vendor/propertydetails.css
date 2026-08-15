@@ -400,3 +400,48 @@
     object-fit: contain;
     display: block;
 }
+.widget-property-contact-form .iti {
+    width: 100%;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.widget-property-contact-form .iti__tel-input {
+    width: 100% !important;
+}
+.widget-property-contact-form .iti {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.widget-property-contact-form .iti__tel-input {
+    width: 100% !important;
+}
+
+.widget-property-contact-form .iti__country-selector {
+    z-index: 99999 !important;
+    transform-origin: top;
+    animation: avanorCountryDropdownIn 0.18s ease-out;
+}
+
+.widget-property-contact-form .iti__country-list {
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+}
+
+@keyframes avanorCountryDropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scaleY(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}

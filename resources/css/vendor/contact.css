@@ -148,3 +148,6 @@
     color: var(--brand-dark);
     border: 1px solid var(--brand-dark);
 }
+.iti__selected-dial-code {
+color: var(--brand-light);
+}

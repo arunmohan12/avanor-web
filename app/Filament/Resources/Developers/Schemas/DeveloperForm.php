@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Developers\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
@@ -73,14 +74,21 @@ class DeveloperForm
                             ->maxSize(4096),
                 
                     ]),
-
-                Section::make('Description')
+                    Section::make('Developer Description')
+                    ->description('Add detailed information about the developer, communities, property types, investment highlights, and background.')
                     ->schema([
-
-                        Textarea::make('description')
-                            ->rows(6)
-                            ->placeholder('Write a brief description about the developer...'),
-
+                
+                        RichEditor::make('description')
+                        ->label('Description')
+                        ->toolbarButtons([
+                            ['bold', 'italic', 'underline', 'strike', 'link'],
+                            ['h2', 'h3', 'h4', 'h5','h6'],
+                            ['blockquote', 'bulletList', 'orderedList'],
+                            ['undo', 'redo'],
+                        ])
+                        ->placeholder('Write detailed information about the developer...')
+                        ->columnSpanFull(),
+                
                     ]),
 
                 Section::make('SEO')

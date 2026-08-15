@@ -167,83 +167,91 @@
                             our Experts
                         </p>
 
-                        <form
-                            action="#"
-                            method="POST"
-                            class="widget-property-contact-form">
+                        @if (session('lead_success'))
+    <div class="alert alert-success mb-3">
+        {{ session('lead_success') }}
+    </div>
+@endif
 
-                            @csrf
+@if ($errors->any())
+    <div class="alert alert-danger mb-3">
+        {{ $errors->first() }}
+    </div>
+@endif
 
-                            <input
-                                type="hidden"
-                                name="property_id"
-                                value="">
+<form
+    action="{{ route('leads.store') }}"
+    method="POST"
+    class="widget-property-contact-form">
 
+    @csrf
 
-                            <div class="form-group">
+    <input
+        type="hidden"
+        name="property_id"
+        value="{{ $property->id ?? '' }}">
 
-                                <input
-                                    type="text"
-                                    name="first_name"
-                                    class="form-control style-border"
-                                    placeholder="FIRST NAME">
+    <input
+        type="hidden"
+        name="developer_id"
+        value="{{ $property->developer_id ?? '' }}">
 
-                            </div>
+    <input
+        type="hidden"
+        name="source"
+        value="property_form">
 
+    <input
+        type="hidden"
+        name="page_url"
+        value="{{ url()->current() }}">
 
-                            <div class="form-group">
+    <div class="form-group">
+        <input
+            type="text"
+            name="name"
+            class="form-control style-border"
+            placeholder="FULL NAME"
+            value="{{ old('name') }}"
+            required>
+    </div>
 
-                                <input
-                                    type="text"
-                                    name="last_name"
-                                    class="form-control style-border"
-                                    placeholder="LAST NAME">
+    <div class="form-group">
+        <input
+            type="email"
+            name="email"
+            class="form-control style-border"
+            placeholder="EMAIL ADDRESS"
+            value="{{ old('email') }}">
+    </div>
 
-                            </div>
+    <div class="form-group">
+        <input
+            type="text"
+            name="budget"
+            class="form-control style-border"
+            placeholder="PREFERRED BUDGET (E.G AED 2M - 5M)"
+            value="{{ old('budget') }}">
+    </div>
 
+    <div class="form-group style-border3 col-md-12">
+        <input
+            type="tel"
+            id="contact_phone"
+            name="phone"
+            class="form-control"
+            placeholder="Phone Number*"
+            value="{{ old('phone') }}"
+            required>
+    </div>
 
-                            <div class="form-group">
+    <button
+        type="submit"
+        class="th-btn style-white th-btn-icon mt-15 avanor-register-btn">
+        REGISTER YOUR INTEREST
+    </button>
 
-                                <input
-                                    type="email"
-                                    name="email"
-                                    class="form-control style-border"
-                                    placeholder="EMAIL ADDRESS">
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <input
-                                    type="text"
-                                    name="budget"
-                                    class="form-control style-border"
-                                    placeholder="PREFERRED BUDGET (E.G AED 2M - 5M)">
-
-                            </div>
-
-
-                            <div class="form-group style-border3 col-md-12">
-
-                                <input
-                                    type="tel"
-                                    id="contact_phone"
-                                    name="phone"
-                                    class="form-control"
-                                    placeholder="Phone Number*"
-                                    required>
-
-                            </div>
-
-
-                            <button
-                                type="submit"
-                                class="th-btn style-white th-btn-icon mt-15 avanor-register-btn">
-                                REGISTER YOUR INTEREST
-                            </button>
-
-                        </form>
+</form>
 
                     </div>
 

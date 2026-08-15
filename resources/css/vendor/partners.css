@@ -1,0 +1,166 @@
+.header-layout3 .sticky-wrapper.sticky {
+    background: var(--brand-light);
+}
+
+.header-layout3 {
+    background: var(--brand-light);
+}
+
+
+.main-menu a {
+
+    color: var(--brand-dark);
+}
+
+.main-menu > ul > li > a:hover {
+
+    color: var(--brand-dark-shade) ;
+}
+.title-area{
+    font-size: 36px;
+}
+
+.title-area {
+    margin-bottom: calc(var(--section-title-space) - 30px);
+font-family: var(--font-optima);
+}
+.sec-text{
+    font-size: 18px;
+    font-family: var(--font-optima);
+}
+
+
+
+/* GRID */
+.avanor-developers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: #fff;
+    margin-top: 0px;
+}
+
+.avanor-developer-card {
+    height: 145px;
+    padding: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 34px;
+
+    border-right: 1px solid #00000021;
+    border-bottom: 1px solid #00000021;
+
+    background: #fff;
+
+    perspective: 800px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Remove right border every 5th item */
+.avanor-developer-card:nth-child(5n) {
+    border-right: none;
+}
+
+/* Logo */
+.avanor-developer-card img {
+    display: block;
+
+    max-width: 190px;
+    max-height: 85px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.avanor-developer-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Flip */
+.avanor-developer-card.is-flipping .developer-logo-brand {
+    opacity: 0;
+    transform: rotateY(90deg) scale(.92);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+    .avanor-developers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .avanor-developer-card {
+        height: 135px;
+        padding: 24px;
+
+        border-right: 1px solid #00000021;
+        border-bottom: 1px solid #00000021;
+    }
+
+    .avanor-developer-card:nth-child(5n) {
+        border-right: 1px solid #00000021;
+    }
+
+    .avanor-developer-card:nth-child(3n) {
+        border-right: none;
+    }
+
+    .avanor-developer-card img {
+        max-width: 165px;
+        max-height: 72px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+    .avanor-developers-section {
+        padding-bottom: 60px;
+    }
+
+    .avanor-developers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        background: #fff;
+    }
+
+    .avanor-developer-card {
+        height: 130px;
+        padding: 20px;
+
+        border-right: 1px solid #00000021 !important;
+        border-bottom: 1px solid #00000021 !important;
+    }
+
+    .avanor-developer-card:nth-child(3n) {
+        border-right: 1px solid #00000021 !important;
+    }
+
+    .avanor-developer-card:nth-child(2n) {
+        border-right: none !important;
+    }
+
+    .avanor-developer-card img {
+        max-width: 145px;
+        max-height: 62px;
+    }
+}

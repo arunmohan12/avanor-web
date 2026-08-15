@@ -27,6 +27,17 @@
     "file": "assets/instrument-sans-600-normal-B9e8oLYv.woff",
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
+  "_pagination-DjMxu4j7.css": {
+    "file": "assets/pagination-DjMxu4j7.css",
+    "src": "_pagination-DjMxu4j7.css"
+  },
+  "_pagination-ci0HWf1E.js": {
+    "file": "assets/pagination-ci0HWf1E.js",
+    "name": "pagination",
+    "css": [
+      "assets/pagination-DjMxu4j7.css"
+    ]
+  },
   "node_modules/@fontsource/lato/files/lato-latin-300-normal.woff": {
     "file": "assets/lato-latin-300-normal-CINZtfFB.woff",
     "src": "node_modules/@fontsource/lato/files/lato-latin-300-normal.woff"
@@ -106,7 +117,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-NxIBg4BN.css",
+    "file": "assets/app-kHFQOBPf.css",
     "name": "app",
     "names": [
       "app.css"
@@ -143,6 +154,15 @@
       "assets/fa-regular-400-BGMZlDC4.ttf"
     ]
   },
+  "resources/css/components/leadform.css": {
+    "file": "assets/leadform-CnqWP5rJ.css",
+    "name": "leadform",
+    "names": [
+      "leadform.css"
+    ],
+    "src": "resources/css/components/leadform.css",
+    "isEntry": true
+  },
   "resources/css/vendor/about.css": {
     "file": "assets/about-CwnTAifb.css",
     "name": "about",
@@ -153,7 +173,7 @@
     "isEntry": true
   },
   "resources/css/vendor/blog.css": {
-    "file": "assets/blog-BINXymS9.css",
+    "file": "assets/blog-BZGZWOUx.css",
     "name": "blog",
     "names": [
       "blog.css"
@@ -162,7 +182,7 @@
     "isEntry": true
   },
   "resources/css/vendor/contact.css": {
-    "file": "assets/contact-DV3-jSP-.css",
+    "file": "assets/contact-BZNkKWWG.css",
     "name": "contact",
     "names": [
       "contact.css"
@@ -170,13 +190,31 @@
     "src": "resources/css/vendor/contact.css",
     "isEntry": true
   },
+  "resources/css/vendor/devdetails.css": {
+    "file": "assets/devdetails-BEsduk17.css",
+    "name": "devdetails",
+    "names": [
+      "devdetails.css"
+    ],
+    "src": "resources/css/vendor/devdetails.css",
+    "isEntry": true
+  },
   "resources/css/vendor/home.css": {
-    "file": "assets/home-DjcT4dzO.css",
+    "file": "assets/home-D8Af5Hi-.css",
     "name": "home",
     "names": [
       "home.css"
     ],
     "src": "resources/css/vendor/home.css",
+    "isEntry": true
+  },
+  "resources/css/vendor/partners.css": {
+    "file": "assets/partners-Cov3Cw5C.css",
+    "name": "partners",
+    "names": [
+      "partners.css"
+    ],
+    "src": "resources/css/vendor/partners.css",
     "isEntry": true
   },
   "resources/css/vendor/privacy.css": {
@@ -198,7 +236,7 @@
     "isEntry": true
   },
   "resources/css/vendor/propertydetails.css": {
-    "file": "assets/propertydetails-DofQ8ok3.css",
+    "file": "assets/propertydetails-Dfr2j2CD.css",
     "name": "propertydetails",
     "names": [
       "propertydetails.css"
@@ -281,19 +319,37 @@
       "assets/flags@2x-QBzdwbZ8.webp"
     ]
   },
+  "resources/js/pages/devdetails.js": {
+    "file": "assets/devdetails-Disd1HoJ.js",
+    "name": "devdetails",
+    "src": "resources/js/pages/devdetails.js",
+    "isEntry": true,
+    "imports": [
+      "_pagination-ci0HWf1E.js"
+    ],
+    "css": [
+      "assets/devdetails-3uTim8v3.css"
+    ]
+  },
   "resources/js/pages/home.js": {
     "file": "assets/home-Byr1Zstd.js",
     "name": "home",
     "src": "resources/js/pages/home.js",
     "isEntry": true
   },
+  "resources/js/pages/partners.js": {
+    "file": "assets/partners-B2F2Cqps.js",
+    "name": "partners",
+    "src": "resources/js/pages/partners.js",
+    "isEntry": true
+  },
   "resources/js/pages/propertydetails.js": {
-    "file": "assets/propertydetails-XBpf2pO5.js",
+    "file": "assets/propertydetails-s2ATJn4F.js",
     "name": "propertydetails",
     "src": "resources/js/pages/propertydetails.js",
     "isEntry": true,
-    "css": [
-      "assets/propertydetails-DjMxu4j7.css"
+    "imports": [
+      "_pagination-ci0HWf1E.js"
     ]
   }
 }

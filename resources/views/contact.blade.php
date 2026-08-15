@@ -100,35 +100,96 @@
                     <span class="sub-title">CONNECT WITH US</span>
                     <h2 class="sec-title text-white">Book Business Solutions</h2>
                 </div>
-                <form action="mail.php" method="POST" class="appointment-form ajax-contact me-xl-5">
-                    <div class="row">
-                        <div class="form-group style-border3 col-md-6">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name*">
-                            <i class="fal fa-user"></i>
-                        </div>
-                        <div class="form-group style-border3 col-md-6">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email*">
-                            <i class="fal fa-envelope"></i>
-                        </div>
-                        <div class="form-group style-border3 col-md-12">
-                            <input
-                                type="tel"
-                                id="contact_phone"
-                                name="phone"
-                                class="form-control"
-                                placeholder="Phone Number*"
-                                required>
-                        </div>
-                        <div class="col-12 form-group style-border3">
-                            <i class="far fa-comments"></i>
-                            <textarea placeholder="Type Your Message" class="form-control"></textarea>
-                        </div>
-                        <div class="col-12 form-btn mt-4">
-                            <button class="th-btn style-border btn-cta">SUBMIT MESSAGE <span class="btn-icon"></span></button>
-                        </div>
-                    </div>
-                    <p class="form-messages mb-0 mt-3"></p>
-                </form>
+                @if (session('lead_success'))
+    <div class="alert alert-success mb-4">
+        {{ session('lead_success') }}
+    </div>
+@endif
+
+@if ($errors->any())
+    <div class="alert alert-danger mb-4">
+        {{ $errors->first() }}
+    </div>
+@endif
+
+<form
+    action="{{ route('leads.store') }}"
+    method="POST"
+    class="appointment-form me-xl-5">
+
+    @csrf
+
+    <input
+        type="hidden"
+        name="source"
+        value="contact_form">
+
+    <input
+        type="hidden"
+        name="page_url"
+        value="{{ url()->current() }}">
+
+    <div class="row">
+
+        <div class="form-group style-border3 col-md-6">
+            <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="name"
+                placeholder="Your Name*"
+                value="{{ old('name') }}"
+                required>
+
+            <i class="fal fa-user"></i>
+        </div>
+
+        <div class="form-group style-border3 col-md-6">
+            <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="email"
+                placeholder="Your Email*"
+                value="{{ old('email') }}">
+
+            <i class="fal fa-envelope"></i>
+        </div>
+
+        <div class="form-group style-border3 col-md-12">
+            <input
+                type="tel"
+                id="contact_phone"
+                name="phone"
+                class="form-control"
+                placeholder="Phone Number*"
+                value="{{ old('phone') }}"
+                required>
+        </div>
+
+        <div class="col-12 form-group style-border3">
+            <i class="far fa-comments"></i>
+
+            <textarea
+                name="message"
+                placeholder="Type Your Message"
+                class="form-control">{{ old('message') }}</textarea>
+        </div>
+
+        <div class="col-12 form-btn mt-4">
+            <button
+                type="submit"
+                class="th-btn style-border btn-cta">
+
+                SUBMIT MESSAGE
+                <span class="btn-icon"></span>
+
+            </button>
+        </div>
+
+    </div>
+
+</form>
             </div>
             <div class="col-lg-2">
 
@@ -139,10 +200,10 @@
 </div>
 
 <div class="space position-relative overflow-hidden bg-brandlight mt-60" data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.png')}}">
-@include('partials.reachoutbanner')
+    @include('partials.reachoutbanner')
 </div>
 <div class="client-area-1 space " data-bg-src="{{ asset('assets/img/hero/lightbrand-banner.png')}}">
-@include('partials.developer-swiper-section')
+    @include('partials.developer-swiper-section')
 </div>
 
 @endsection

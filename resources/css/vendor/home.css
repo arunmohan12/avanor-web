@@ -974,3 +974,19 @@ font-family: var(--font-optima);
 /* .property-slider2 .property-card-thumb {
     height:400px;
 } */
+
+.sec-text {
+font-size: 16px ;
+font-family: var(--font-optima);
+}
+.avanor-blog-featured-content p {
+    font-family: var(--font-optima);
+}
+.avanor-blog-small h4 {
+font-family: var(--font-optima);
+}
+
+.title-area {
+    margin-bottom: calc(var(--section-title-space) - 26px);
+
+}

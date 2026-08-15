@@ -11,6 +11,7 @@
 @import "./vendor/jquery.datetimepicker.min.css";
 @import "./vendor/style.css";
 @import "./vendor/contactbanner.css";
+@import "./components/leadform.css";
 
 :root {
     --font-primary: "Lato", sans-serif;
