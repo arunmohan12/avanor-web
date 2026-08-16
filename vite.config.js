@@ -22,7 +22,14 @@ export default defineConfig({
                 'resources/js/pages/propertydetails.js',
                 'resources/js/pages/devdetails.js',
                 'resources/js/pages/partners.js',
-                'resources/js/app.js'],
+                'resources/js/app.js',
+            
+
+                
+                'resources/css/landingpages/the-heights.css',
+                'resources/js/landingpages/the-heights.js',
+            
+            ],
             refresh: true,
             fonts: [
                 bunny('Instrument Sans', {

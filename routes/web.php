@@ -7,8 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LeadController;
-
-
+use App\Http\Controllers\LandingPageController;
 
 
 Route::get('/', [HomeController::class, 'index'])
@@ -50,3 +49,31 @@ Route::get('/properties/{slug}', [PropertyController::class, 'show'])
     Route::post('/enquiry', [LeadController::class, 'store'])
     ->middleware('throttle:10,1')
     ->name('leads.store');
+
+
+    //landing pages
+
+    Route::get('/landing/{slug}', [LandingPageController::class, 'show'])
+    ->name('landing.show');
+
+    Route::post(
+        '/landing-leads',
+        [LeadController::class, 'storeLanding']
+    )->name('landing.leads.store');
+
+    Route::get('/thank-you', function () {
+        return view('landingpages.thank-you');
+    })->name('landing.thank-you');
+
+
+    Route::domain('theheights.avanorcap.com')->group(function () {
+
+        Route::get('/', function (LandingPageController $controller) {
+    
+            return $controller->show(
+                'salva-at-the-heights'
+            );
+    
+        });
+    
+    });

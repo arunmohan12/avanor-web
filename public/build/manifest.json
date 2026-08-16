@@ -163,6 +163,44 @@
     "src": "resources/css/components/leadform.css",
     "isEntry": true
   },
+  "resources/css/landingpages/the-heights.css": {
+    "file": "assets/the-heights-CYbmtpXT.css",
+    "name": "the-heights",
+    "names": [
+      "the-heights.css"
+    ],
+    "src": "resources/css/landingpages/the-heights.css",
+    "isEntry": true,
+    "assets": [
+      "assets/lato-latin-ext-300-normal-CYtq150c.woff2",
+      "assets/lato-latin-ext-300-normal-DXIyH3e5.woff",
+      "assets/lato-latin-300-normal-BP2wSCML.woff2",
+      "assets/lato-latin-300-normal-CINZtfFB.woff",
+      "assets/lato-latin-ext-400-normal-CK4GAP86.woff2",
+      "assets/lato-latin-ext-400-normal-NoO0okhb.woff",
+      "assets/lato-latin-400-normal-BEhtfm5r.woff2",
+      "assets/lato-latin-400-normal-B11PyLys.woff",
+      "assets/lato-latin-ext-700-normal-C6gwlRgY.woff2",
+      "assets/lato-latin-ext-700-normal-oVW-9CSr.woff",
+      "assets/lato-latin-700-normal-BUGMgin4.woff2",
+      "assets/lato-latin-700-normal-DAdL7O4w.woff",
+      "assets/lato-latin-ext-900-normal-BhetttCG.woff2",
+      "assets/lato-latin-ext-900-normal-CjTVdnWO.woff",
+      "assets/lato-latin-900-normal-C3uaq3BA.woff2",
+      "assets/lato-latin-900-normal-CZBfLiEO.woff",
+      "assets/optima_lt_pro_n4-CR_umPCx.woff2",
+      "assets/optima_lt_pro_n7-DjMDkqcH.woff2",
+      "assets/optima_lt_pro_i4-DPP4vEV9.woff2",
+      "assets/optima_lt_pro_i7-PDqk5eIp.woff2",
+      "assets/aed-Regular-lH271UDw.otf",
+      "assets/fa-brands-400-bXOfNbY_.woff2",
+      "assets/fa-brands-400-Bn4Hcap8.ttf",
+      "assets/fa-light-300-Bj03O0ql.woff2",
+      "assets/fa-light-300-BLDdpYoG.ttf",
+      "assets/fa-regular-400-CNKpUNax.woff2",
+      "assets/fa-regular-400-BGMZlDC4.ttf"
+    ]
+  },
   "resources/css/vendor/about.css": {
     "file": "assets/about-CwnTAifb.css",
     "name": "about",
@@ -302,6 +340,15 @@
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
+  },
+  "resources/js/landingpages/the-heights.js": {
+    "file": "assets/the-heights-5clrzL7r.js",
+    "name": "the-heights",
+    "src": "resources/js/landingpages/the-heights.js",
+    "isEntry": true,
+    "imports": [
+      "_pagination-ci0HWf1E.js"
+    ]
   },
   "resources/js/pages/contact.js": {
     "file": "assets/contact-DxpwulyU.js",

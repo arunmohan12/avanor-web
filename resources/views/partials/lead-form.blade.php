@@ -44,8 +44,8 @@
     <form
         id="{{ $formId }}"
         method="POST"
-        action="{{ route('leads.store') }}"
-        class="avanor-lead-form-element"
+        action="{{ $action ?? route('leads.store') }}"
+                class="avanor-lead-form-element"
     >
 
         @csrf
