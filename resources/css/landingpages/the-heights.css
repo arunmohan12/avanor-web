@@ -19254,3 +19254,75 @@ body.landing-popup-open {
     min-width: 260px;
     padding: 0 32px;
 }
+
+
+/* Popup width / spacing */
+.landing-lead-popup-dialog {
+    width: min(560px, 100%);
+    padding: 50px 52px 44px;
+}
+
+/* Heading */
+.avanor-lead-form-header h3 {
+    font-size: clamp(34px, 4vw, 46px);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+/* Description */
+.avanor-lead-form-header p {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 460px;
+}
+
+/* Fields */
+.avanor-lead-field {
+    margin-bottom: 20px;
+}
+
+.avanor-lead-field input {
+    height: 56px;
+}
+
+/* Phone plugin should fill full width */
+.iti {
+    width: 100%;
+}
+
+.iti input {
+    width: 100% !important;
+}
+
+/* Submit */
+.avanor-lead-submit {
+    min-height: 58px;
+    margin-top: 6px;
+}
+
+/* Consent */
+.avanor-lead-consent {
+    margin-top: 24px;
+    font-size: 11px;
+    line-height: 1.65;
+    color: #9299a5;
+}
+@media (max-width: 575px) {
+
+    .landing-lead-popup-dialog {
+        padding: 38px 22px 28px;
+    }
+
+    .avanor-lead-form-header h3 {
+        font-size: 32px;
+    }
+
+    .avanor-lead-form-header p {
+        font-size: 14px;
+    }
+
+    .avanor-lead-field input {
+        height: 52px;
+    }
+
+}

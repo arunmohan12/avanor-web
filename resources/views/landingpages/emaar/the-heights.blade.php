@@ -1159,7 +1159,7 @@ $property->slug
                                     ===================================== --}}
                                     @if (filled($property->map_url))
 
-                                    <div class="col-lg-12 minus-text-area">
+                                    <div class="col-lg-12 minus-text-area" id="location">
 
                                         <div class="title-area mb-0">
 

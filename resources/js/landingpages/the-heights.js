@@ -1,10 +1,12 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import intlTelInput from 'intl-tel-input';
+import 'intl-tel-input/styles';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import '../pages/contact.js';
 const propertyGallery = document.querySelector('.avanor-property-gallery');
 
 if (propertyGallery) {
@@ -186,6 +188,37 @@ document.addEventListener('DOMContentLoaded', () => {
         ) {
             closePopup();
         }
+    });
+
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const phoneInputs = document.querySelectorAll(
+        'input[type="tel"]'
+    );
+
+    phoneInputs.forEach((input) => {
+
+        if (input.dataset.intlInitialized === 'true') {
+            return;
+        }
+
+        intlTelInput(input, {
+            initialCountry: 'ae',
+            separateDialCode: true,
+            preferredCountries: [
+                'ae',
+                'in',
+                'sa',
+                'qa',
+                'kw',
+                'om',
+            ],
+        });
+
+        input.dataset.intlInitialized = 'true';
     });
 
 });

@@ -168,7 +168,7 @@
                 id="{{ $formId }}-phone"
                 name="phone"
                 value="{{ old('phone') }}"
-                placeholder="+971"
+                placeholder=""
                 autocomplete="tel"
                 required
             >

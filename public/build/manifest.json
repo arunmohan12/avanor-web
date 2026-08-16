@@ -164,7 +164,7 @@
     "isEntry": true
   },
   "resources/css/landingpages/the-heights.css": {
-    "file": "assets/the-heights-CYbmtpXT.css",
+    "file": "assets/the-heights-pVqd_N-F.css",
     "name": "the-heights",
     "names": [
       "the-heights.css"
@@ -342,16 +342,18 @@
     "isEntry": true
   },
   "resources/js/landingpages/the-heights.js": {
-    "file": "assets/the-heights-5clrzL7r.js",
+    "file": "assets/the-heights-DF0YbQMK.js",
     "name": "the-heights",
     "src": "resources/js/landingpages/the-heights.js",
     "isEntry": true,
     "imports": [
+      "resources/js/pages/contact.js",
+      "resources/js/pages/contact.js",
       "_pagination-ci0HWf1E.js"
     ]
   },
   "resources/js/pages/contact.js": {
-    "file": "assets/contact-DxpwulyU.js",
+    "file": "assets/contact-DwUZbRJI.js",
     "name": "contact",
     "src": "resources/js/pages/contact.js",
     "isEntry": true,
