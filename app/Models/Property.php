@@ -91,7 +91,12 @@ class Property extends Model implements HasMedia
             ->width(1280)
             ->quality(70)
             ->nonQueued();
-    
+            $this
+            ->addMediaConversion('thumbnail_avif')
+            ->format('avif')
+            ->fit(Fit::Crop, 800, 600)
+            ->performOnCollections('thumbnail')
+            ->nonQueued();
 
     }
     protected $fillable = [

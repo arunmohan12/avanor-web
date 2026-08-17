@@ -6105,3 +6105,6 @@ body.landing-popup-open {
         }
     }
 }
+li {
+    list-style: none;
+}

@@ -71,7 +71,7 @@ Route::get('/properties/{slug}', [PropertyController::class, 'show'])
         Route::get('/', function (LandingPageController $controller) {
     
             return $controller->show(
-                'intoducing-the-heights-country-club-wellness-starting-from-6m'
+                'the-heights-by-emaar'
             );
     
         });
