@@ -4,14 +4,124 @@ import {
     Pagination
 } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 import intlTelInput from 'intl-tel-input';
 import 'intl-tel-input/styles';
 
 import '../pages/contact.js';
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const galleryElement =
+        document.getElementById('landingGalleryMain');
+
+    if (!galleryElement) {
+        return;
+    }
+
+    const prevButton =
+        document.getElementById('landingGalleryPrev');
+
+    const nextButton =
+        document.getElementById('landingGalleryNext');
+
+    const thumbnails =
+        document.querySelectorAll('[data-gallery-index]');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Main Slider
+    |--------------------------------------------------------------------------
+    */
+
+    const gallerySwiper = new Swiper(galleryElement, {
+
+        slidesPerView: 1,
+
+        speed: 600,
+
+        loop: true,
+
+        grabCursor: true,
+
+        allowTouchMove: true,
+
+        simulateTouch: true,
+
+        on: {
+
+            slideChange(swiper) {
+
+                const index = swiper.realIndex;
+
+                thumbnails.forEach((thumbnail) => {
+
+                    thumbnail.classList.toggle(
+                        'is-active',
+                        Number(thumbnail.dataset.galleryIndex) === index
+                    );
+
+                });
+
+            },
+
+        },
+
+    });
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Previous
+    |--------------------------------------------------------------------------
+    */
+
+    prevButton?.addEventListener('click', (event) => {
+
+        event.preventDefault();
+
+        gallerySwiper.slidePrev();
+
+    });
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Next
+    |--------------------------------------------------------------------------
+    */
+
+    nextButton?.addEventListener('click', (event) => {
+
+        event.preventDefault();
+
+        gallerySwiper.slideNext();
+
+    });
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Thumbnail Click
+    |--------------------------------------------------------------------------
+    */
+
+    thumbnails.forEach((thumbnail) => {
+
+        thumbnail.addEventListener('click', () => {
+
+            const index =
+                Number(thumbnail.dataset.galleryIndex);
+
+            gallerySwiper.slideToLoop(index);
+
+        });
+
+    });
+
+});
 
 const propertyGallery = document.querySelector('.avanor-property-gallery');
 

@@ -27,16 +27,13 @@
     "file": "assets/instrument-sans-600-normal-B9e8oLYv.woff",
     "src": "_instrument-sans-600-normal-B9e8oLYv.woff"
   },
+  "_pagination-CvENHLNb.js": {
+    "file": "assets/pagination-CvENHLNb.js",
+    "name": "pagination"
+  },
   "_pagination-DjMxu4j7.css": {
     "file": "assets/pagination-DjMxu4j7.css",
     "src": "_pagination-DjMxu4j7.css"
-  },
-  "_pagination-ci0HWf1E.js": {
-    "file": "assets/pagination-ci0HWf1E.js",
-    "name": "pagination",
-    "css": [
-      "assets/pagination-DjMxu4j7.css"
-    ]
   },
   "node_modules/@fontsource/lato/files/lato-latin-300-normal.woff": {
     "file": "assets/lato-latin-300-normal-CINZtfFB.woff",
@@ -163,13 +160,13 @@
     "src": "resources/css/components/leadform.css",
     "isEntry": true
   },
-  "resources/css/landingpages/the-heights.css": {
-    "file": "assets/the-heights-ZYU19DOu.css",
-    "name": "the-heights",
+  "resources/css/landingpages/the-heightsv2.css": {
+    "file": "assets/the-heightsv2-DY4mfxzI.css",
+    "name": "the-heightsv2",
     "names": [
-      "the-heights.css"
+      "the-heightsv2.css"
     ],
-    "src": "resources/css/landingpages/the-heights.css",
+    "src": "resources/css/landingpages/the-heightsv2.css",
     "isEntry": true,
     "assets": [
       "assets/lato-latin-ext-300-normal-CYtq150c.woff2",
@@ -347,14 +344,14 @@
     "isEntry": true
   },
   "resources/js/landingpages/the-heights.js": {
-    "file": "assets/the-heights-DF0YbQMK.js",
+    "file": "assets/the-heights-DiK7Znjh.js",
     "name": "the-heights",
     "src": "resources/js/landingpages/the-heights.js",
     "isEntry": true,
     "imports": [
       "resources/js/pages/contact.js",
       "resources/js/pages/contact.js",
-      "_pagination-ci0HWf1E.js"
+      "_pagination-CvENHLNb.js"
     ]
   },
   "resources/js/pages/contact.js": {
@@ -374,15 +371,16 @@
     ]
   },
   "resources/js/pages/devdetails.js": {
-    "file": "assets/devdetails-Disd1HoJ.js",
+    "file": "assets/devdetails-D6xM8ArH.js",
     "name": "devdetails",
     "src": "resources/js/pages/devdetails.js",
     "isEntry": true,
     "imports": [
-      "_pagination-ci0HWf1E.js"
+      "_pagination-CvENHLNb.js"
     ],
     "css": [
-      "assets/devdetails-3uTim8v3.css"
+      "assets/devdetails-3uTim8v3.css",
+      "assets/pagination-DjMxu4j7.css"
     ]
   },
   "resources/js/pages/home.js": {
@@ -398,12 +396,15 @@
     "isEntry": true
   },
   "resources/js/pages/propertydetails.js": {
-    "file": "assets/propertydetails-s2ATJn4F.js",
+    "file": "assets/propertydetails-bGRgfXaf.js",
     "name": "propertydetails",
     "src": "resources/js/pages/propertydetails.js",
     "isEntry": true,
     "imports": [
-      "_pagination-ci0HWf1E.js"
+      "_pagination-CvENHLNb.js"
+    ],
+    "css": [
+      "assets/pagination-DjMxu4j7.css"
     ]
   }
 }

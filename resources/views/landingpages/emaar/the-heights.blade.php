@@ -331,7 +331,7 @@ $property->slug
 
     <section class="space space-extra-bottom">
 
-        <div class="container custom-container">
+        <div class="landing-gallery-container">
 
             <div class="row gx-30">
 
@@ -963,249 +963,6 @@ $property->slug
 
                                     @endif
 
-
-
-                                    {{-- =====================================
-                                     GALLERY
-                                            ===================================== --}}
-                                    @if ($galleryImages->isNotEmpty())
-
-                                    <div class="col-lg-12" id="gallery">
-
-                                        <div class="title-area mb-0">
-
-                                            <div>
-                                                <span class="sub-title-dark project-about-heading">
-                                                    GALLERY
-                                                </span>
-                                            </div>
-
-                                            <div class="slider-area property-slider1">
-
-                                                {{-- MAIN GALLERY --}}
-                                                <div
-                                                    class="swiper th-slider mb-4"
-                                                    id="propertySlider"
-                                                    data-slider-options='{ "effect":"fade","loop":true,"thumbs":{"swiper":".property-thumb-slider" },"autoplayDisableOnInteraction":"true"}'>
-
-                                                    <div class="swiper-wrapper">
-
-                                                        @foreach ($galleryImages as $image)
-
-                                                        <div class="swiper-slide">
-
-                                                            <div class="property-slider-img gallery-swiper">
-
-                                                                <img
-                                                                    src="{{ \App\Support\MediaUrl::fromMedia(
-                                            $image,
-                                            'gallery_avif'
-                                        ) }}"
-                                                                    alt="{{ $property->title }}"
-                                                                    loading="lazy"
-                                                                    decoding="async">
-
-                                                            </div>
-
-                                                        </div>
-
-                                                        @endforeach
-
-                                                    </div>
-
-                                                </div>
-
-
-                                                {{-- THUMBNAILS --}}
-                                                @if ($galleryImages->count() > 1)
-
-                                                <div
-                                                    class="swiper th-slider property-thumb-slider "
-                                                    data-slider-options='{
-                            "effect":"slide",
-                            "loop":true,
-                            "breakpoints":{
-                                "0":{
-                                    "slidesPerView":2
-                                },
-                                "576":{
-                                    "slidesPerView":2
-                                },
-                                "768":{
-                                    "slidesPerView":3
-                                },
-                                "992":{
-                                    "slidesPerView":3
-                                },
-                                "1200":{
-                                    "slidesPerView":4
-                                }
-                            },
-                            "autoplayDisableOnInteraction":"true"
-                        }'>
-
-                                                    <div class="swiper-wrapper">
-
-                                                        @foreach ($galleryImages as $image)
-
-                                                        <div class="swiper-slide">
-
-                                                            <div class="property-slider-img gallery-swiper-thumbnail">
-
-                                                                <img
-                                                                    src="{{ \App\Support\MediaUrl::fromMedia( $image, 'gallery_avif' ) }}"
-                                                                    alt="{{ $property->title }}"
-                                                                    loading="lazy"
-                                                                    decoding="async">
-
-                                                            </div>
-
-                                                        </div>
-
-                                                        @endforeach
-
-                                                    </div>
-
-                                                </div>
-
-
-                                                <button
-                                                    data-slider-prev="#propertySlider"
-                                                    class="slider-arrow style3 slider-prev">
-                                                    <i class="far fa-chevron-left"></i>
-                                                </button>
-
-
-                                                <button
-                                                    data-slider-next="#propertySlider"
-                                                    class="slider-arrow style3 slider-next">
-                                                    <i class="far fa-chevron-right"></i>
-                                                </button>
-
-                                                @endif
-
-                                            </div>
-
-                                        </div>
-                                        <div class="landing-section-cta">
-
-
-                                            <button
-                                                type="button"
-                                                class="landing-plan-button"
-                                                data-lead-popup-open
-                                                data-request-type="gallery">
-                                                DOWNLOAD GALLERY
-                                            </button>
-
-                                        </div>
-                                    </div>
-
-                                    @endif
-
-
-
-                                    {{-- =====================================
-                                        AMENITIES
-                                    ===================================== --}}
-                                    @if ($amenities->isNotEmpty())
-
-                                    <div class="col-lg-12">
-
-                                        <div class="title-area mb-0">
-
-                                            <div>
-
-                                                <span class="sub-title-dark project-about-heading">
-                                                    Amenities
-                                                </span>
-
-                                            </div>
-
-
-                                            <div class="row gy-3">
-
-                                                @foreach ($amenities as $amenity)
-
-                                                <div class="col-xxl-3 col-sm-6">
-
-                                                    <div class="checklist">
-
-                                                        <ul>
-                                                            <li>
-                                                                <i class="{{ $amenity->icon ?: 'far fa-square-check' }}"></i>
-                                                                {{ $amenity->name }}
-                                                            </li>
-                                                        </ul>
-
-                                                    </div>
-
-                                                </div>
-
-                                                @endforeach
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    @endif
-
-
-
-                                    {{-- =====================================
-                                        LOCATION
-                                    ===================================== --}}
-                                    @if (filled($property->map_url))
-
-                                    <div class="col-lg-12 minus-text-area" id="location">
-
-                                        <div class="title-area mb-0">
-
-                                            <div>
-
-                                                <span class="sub-title-dark project-about-heading">
-                                                    LOCATION
-                                                </span>
-
-                                            </div>
-
-
-                                            <div class="location-map">
-
-                                                <div class="contact-map">
-
-                                                    <iframe
-                                                        src="{{ $property->map_url }}"
-                                                        allowfullscreen
-                                                        loading="lazy"
-                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="landing-section-cta">
-
-
-                                                <button
-                                                    type="button"
-                                                    class="landing-plan-button"
-                                                    data-lead-popup-open
-                                                    data-request-type="location-details">
-                                                    GET LOCATION DETAILS
-                                                </button>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    @endif
-
-
                                 </div>
 
                             </div>
@@ -1225,7 +982,225 @@ $property->slug
 
     </section>
 
+    <section class="landing-gallery-section" id="gallery">
 
+        <div class="landing-gallery-container">
+
+            <div class="landing-gallery-heading">
+                <span class="sub-title-dark project-about-heading">
+                    GALLERY
+                </span>
+            </div>
+
+            @if ($galleryImages->isNotEmpty())
+
+            {{-- MAIN SLIDER --}}
+            <div
+                class="swiper landing-gallery-main"
+                id="landingGalleryMain">
+
+                <div class="swiper-wrapper">
+
+                    @foreach ($galleryImages as $image)
+
+                    <div class="swiper-slide">
+
+                        <div class="landing-gallery-main-image">
+
+                            <img
+                                src="{{ \App\Support\MediaUrl::fromMedia(
+                                    $image,
+                                    'gallery_avif'
+                                ) }}"
+                                alt="{{ $property->title }}"
+                                loading="lazy"
+                                decoding="async">
+
+                        </div>
+
+                    </div>
+
+                    @endforeach
+
+                </div>
+
+
+                @if ($galleryImages->count() > 1)
+
+                <button
+                    type="button"
+                    class="landing-gallery-arrow landing-gallery-prev"
+                    id="landingGalleryPrev"
+                    aria-label="Previous image">
+
+                    <i class="far fa-chevron-left"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="landing-gallery-arrow landing-gallery-next"
+                    id="landingGalleryNext"
+                    aria-label="Next image">
+
+                    <i class="far fa-chevron-right"></i>
+
+                </button>
+
+                @endif
+
+            </div>
+
+
+            {{-- THUMBNAILS --}}
+            @if ($galleryImages->count() > 1)
+
+            <div class="landing-gallery-thumbs">
+
+                @foreach ($galleryImages as $image)
+
+                <button
+                    type="button"
+                    class="landing-gallery-thumb {{ $loop->first ? 'is-active' : '' }}"
+                    data-gallery-index="{{ $loop->index }}">
+
+                    <img
+                        src="{{ \App\Support\MediaUrl::fromMedia(
+                                $image,
+                                'gallery_avif'
+                            ) }}"
+                        alt="{{ $property->title }}"
+                        loading="lazy"
+                        decoding="async">
+
+                </button>
+
+                @endforeach
+
+            </div>
+
+            @endif
+
+            @endif
+
+
+            <div class="landing-section-cta">
+
+
+                <button
+                    type="button"
+                    class="landing-plan-button"
+                    data-lead-popup-open
+                    data-request-type="gallery">
+                    DOWNLOAD GALLERY
+                </button>
+
+            </div>
+
+
+
+            {{-- =====================================
+                                        AMENITIES
+                                    ===================================== --}}
+            @if ($amenities->isNotEmpty())
+
+            <div class="col-lg-12">
+
+                <div class="title-area mb-0">
+
+                    <div>
+
+                        <span class="sub-title-dark project-about-heading">
+                            Amenities
+                        </span>
+
+                    </div>
+
+
+                    <div class="row gy-3">
+
+                        @foreach ($amenities as $amenity)
+
+                        <div class="col-xxl-3 col-sm-6">
+
+                            <div class="checklist">
+
+                                <ul>
+                                    <li>
+                                        <i class="{{ $amenity->icon ?: 'far fa-square-check' }}"></i>
+                                        {{ $amenity->name }}
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        @endforeach
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            @endif
+
+
+
+            {{-- =====================================
+                                        LOCATION
+                                    ===================================== --}}
+            @if (filled($property->map_url))
+
+            <div class="col-lg-12 minus-text-area" id="location">
+
+                <div class="title-area mb-0">
+
+                    <div>
+
+                        <span class="sub-title-dark project-about-heading">
+                            LOCATION
+                        </span>
+
+                    </div>
+
+
+                    <div class="location-map">
+
+                        <div class="contact-map">
+
+                            <iframe
+                                src="{{ $property->map_url }}"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        </div>
+
+                    </div>
+
+                    <div class="landing-section-cta">
+
+
+                        <button
+                            type="button"
+                            class="landing-plan-button"
+                            data-lead-popup-open
+                            data-request-type="location-details">
+                            GET LOCATION DETAILS
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            @endif
+        </div>
+    </section>
 
 
 
@@ -1590,12 +1565,10 @@ $property->slug
     </footer>
 
     <!-- Legacy Template Scripts -->
-    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}" defer></script>
+    <!-- <script src="{{ asset('assets/js/swiper-bundle.min.js') }}" defer></script>
 
     <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}" defer></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
-    <script src="{{ asset('assets/js/jquery-ui.min.js') }}" defer></script>
-    <script src="{{ asset('assets/js/main.js') }}" defer></script>
+    <script src="{{ asset('assets/js/main.js') }}" defer></script> -->
 </main>
 
 @endsection

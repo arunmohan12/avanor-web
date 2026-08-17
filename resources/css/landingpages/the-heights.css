@@ -1,3 +1,4 @@
+
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 @import "@fontsource/lato/300.css";
@@ -6,7 +7,7 @@
 @import "@fontsource/lato/900.css";
 
 @import "../fonts.css";
- @import "../vendor/fontawesome.min.css"; 
+ /* @import "../vendor/fontawesome.min.css";  */
 
 
 @font-face {
@@ -28,7 +29,6 @@
     src: url("../../fonts/fontawesome/fa-solid-900.woff2")
         format("woff2");
 }
-
 :root {
     --font-primary: "Lato", sans-serif;
     --font-optima: "Optima LT Pro", serif;
@@ -9751,4 +9751,262 @@ border: white
     border: 1px solid rgba(255, 255, 255, 0.55);
 
     pointer-events: none;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.landing-gallery-section {
+    width: 100%;
+    padding: 0px 0;
+    background: #fff;
+}
+
+.landing-gallery-container {
+    width: min(1400px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.landing-gallery-heading {
+    margin-bottom: 30px;
+}
+
+
+/* MAIN SLIDER */
+
+.landing-gallery-main {
+    position: relative;
+
+    width: 100%;
+    overflow: hidden;
+}
+
+.landing-gallery-main .swiper-slide {
+    width: 100%;
+}
+
+.landing-gallery-main-image {
+    width: 100%;
+    height: clamp(420px, 55vw, 720px);
+
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+.landing-gallery-main-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* ARROWS */
+
+.landing-gallery-arrow {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.landing-gallery-arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: #fff;
+}
+
+.landing-gallery-prev {
+    left: 24px;
+}
+
+.landing-gallery-next {
+    right: 24px;
+}
+
+
+.landing-gallery-thumbs {
+    display: grid;
+
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    gap: 14px;
+
+    width: 100%;
+
+    margin-top: 18px;
+}
+
+.landing-gallery-thumb {
+    width: 100%;
+    height: 110px;
+
+    padding: 0;
+
+    border: 2px solid transparent;
+
+    background: transparent;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    opacity: 0.6;
+
+    transition:
+        opacity 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.landing-gallery-thumb img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+.landing-gallery-thumb:hover {
+    opacity: 0.85;
+}
+
+.landing-gallery-thumb.is-active {
+    opacity: 1;
+    border-color: var(--brand-light);
+}
+
+/* TABLET */
+
+@media (max-width: 991px) {
+
+    .landing-gallery-section {
+        padding: 0px 0;
+    }
+
+    .landing-gallery-container {
+        width: min(100% - 40px, 1400px);
+    }
+
+    .landing-gallery-main-image {
+        height: 480px;
+    }
+
+    .landing-gallery-thumb {
+        height: 100px;
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    .landing-gallery-thumbs {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+}
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+    .landing-gallery-section {
+        padding: 5px 0;
+    }
+
+    .landing-gallery-container {
+        width: calc(100% - 32px);
+    }
+
+    .landing-gallery-heading {
+        margin-bottom: 20px;
+    }
+
+    .landing-gallery-main-image {
+        height: 300px;
+    }
+
+    .landing-gallery-main-image img {
+        object-fit: cover;
+    }
+
+    .landing-gallery-arrow {
+        width: 42px;
+        height: 42px;
+
+        font-size: 15px;
+    }
+
+    .landing-gallery-prev {
+        left: 12px;
+    }
+
+    .landing-gallery-next {
+        right: 12px;
+    }
+
+    .landing-gallery-thumb {
+        height: 78px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .landing-gallery-thumbs {
+        display: flex;
+
+        gap: 8px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .landing-gallery-thumbs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .landing-gallery-thumb {
+        flex: 0 0 110px;
+
+        height: 75px;
+    }
+
 }

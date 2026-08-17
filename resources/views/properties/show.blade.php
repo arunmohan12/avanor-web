@@ -202,35 +202,6 @@ $hasProjectDescription = filled($property->project?->description);
 
 
 
-{{-- =========================================================
-    BREADCRUMB
-========================================================= --}}
-<section>
-
-    <div class="container mt-10 mb-10">
-
-        <x-breadcrumb
-            :items="array_values(array_filter([
-                [
-                    'label' => 'Home',
-                    'url' => route('home'),
-                ],
-
-                $property->developer
-                    ? [
-                        'label' => $property->developer->name,
-                    ]
-                    : null,
-
-                [
-                    'label' => $property->title,
-                ],
-            ]))" />
-
-    </div>
-
-</section>
-
 
 
 <section class="space-bottom space-extra-bottom">
@@ -541,8 +512,8 @@ $hasProjectDescription = filled($property->project?->description);
                             <div class="row gy-40 property-detail-row justify-content-between align-items-center">
 
                                 {{-- =====================================
-    DYNAMIC CONTENT SECTIONS
-===================================== --}}
+                                 DYNAMIC CONTENT SECTIONS
+                                    ===================================== --}}
                                 @foreach ($activeSections as $section)
 
                                 @php
@@ -745,8 +716,8 @@ $hasProjectDescription = filled($property->project?->description);
 
 
                                 {{-- =====================================
-    GALLERY
-===================================== --}}
+                            GALLERY
+                ===================================== --}}
                                 @if ($galleryImages->isNotEmpty())
 
                                 <div class="col-lg-12">
