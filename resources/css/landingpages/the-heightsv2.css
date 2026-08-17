@@ -5860,7 +5860,7 @@ border: white
 
     color: #fff;
 
-    font-size: clamp(34px, 3vw, 52px);
+    font-size: 40px;
     font-weight: 500;
     line-height: 1.15;
 }
@@ -5981,7 +5981,7 @@ border: white
 .avanor-property-slide-title {
     margin: 0 0 18px;
 
-    font-size: clamp(42px, 5vw, 76px);
+    font-size: 40px;
     line-height: 1.05;
 
     font-family: "Optima LT Pro", serif;
@@ -6072,12 +6072,12 @@ border: white
     .avanor-property-slide-title {
         margin-bottom: 10px;
 
-        font-size: 32px;
+        font-size: 20px;
         line-height: 1.1;
     }
 
     .avanor-property-slide-description {
-        margin-bottom: 18px;
+        margin-bottom: 14px;
 
         font-size: 14px;
         line-height: 1.5;

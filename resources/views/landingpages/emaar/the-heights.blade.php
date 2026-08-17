@@ -239,7 +239,7 @@ $property->slug
 
                         sizes="100vw"
 
-                        alt="{{ $property->title }}"
+                        alt=" {{ $property->project?->name ?? $property->title }}"
 
                         class="avanor-property-hero-image"
 
@@ -303,13 +303,13 @@ $property->slug
 
                         sizes="100vw"
 
-                        alt="{{ $property->title }}"
+                        alt=" {{ $property->project?->name ?? $property->title }}"
 
                         class="avanor-property-hero-image"
 
                         loading="lazy"
                         decoding="async">
-                        <div class="avanor-property-hero-overlay"></div>
+                    <div class="avanor-property-hero-overlay"></div>
                     <div class="avanor-property-slide-content-landing">
 
                         <span class="avanor-property-slide-eyebrow">
@@ -317,7 +317,7 @@ $property->slug
                         </span>
 
                         <h1 class="avanor-property-slide-title">
-                            {{ $property->title }}
+                            {{ $property->project?->name ?? $property->title }}
                         </h1>
 
                         <p class="avanor-property-slide-description">
@@ -755,7 +755,7 @@ $property->slug
 
                                                 <img
                                                     src="{{ $sectionImageUrl }}"
-                                                    alt="{{ $section->title ?: $property->title }}"
+                                                    alt=" {{ $property->project?->name ?? $property->title }}"
                                                     loading="lazy"
                                                     decoding="async">
 
@@ -846,7 +846,7 @@ $property->slug
 
                                                 <img
                                                     src="{{ $sectionImageUrl }}"
-                                                    alt="{{ $section->title ?: $property->title }}"
+                                                    alt=" {{ $property->project?->name ?? $property->title }}"
                                                     loading="lazy"
                                                     decoding="async">
 
@@ -934,7 +934,7 @@ $property->slug
 
                                                     <img
                                                         src="{{ asset('assets/img/landing/masterplan.webp') }}"
-                                                          alt="{{ $property->title }}"
+                                                        alt=" {{ $property->project?->name ?? $property->title }}"
                                                         class="landing-plan-image">
 
                                                     <span class="landing-plan-overlay"></span>
@@ -980,7 +980,7 @@ $property->slug
 
                                                     <img
                                                         src="{{ asset('assets/img/landing/fp1.webp') }}"
-                                                          alt="{{ $property->title }}"
+                                                        alt=" {{ $property->project?->name ?? $property->title }}"
                                                         class="landing-plan-image">
 
                                                     <span class="landing-plan-overlay"></span>
@@ -1107,7 +1107,7 @@ $property->slug
                                (max-width: 1200px) 90vw,
                                1400px"
 
-                                 alt="{{ $property->title }}"
+                                alt=" {{ $property->project?->name ?? $property->title }}"
                                 loading="lazy"
                                 decoding="async">
 
@@ -1165,7 +1165,7 @@ $property->slug
                         $image,
                         'gallery_thumb_avif'
                     ) }}"
-                        alt="{{ $property->title }}"
+                        alt=" {{ $property->project?->name ?? $property->title }}"
                         loading="lazy"
                         decoding="async">
 
@@ -1386,7 +1386,7 @@ $property->slug
 
             {{-- CENTER TOP --}}
             <div class="wellness-item wellness-main">
-                <img src="{{ asset('assets/img/property/heightswellness1.avif') }}" alt="">
+                <img src="{{ asset('assets/img/property/heightswellness1.avif') }}" alt=" {{ $property->project?->name ?? $property->title }}">
                 <div class="wellness-caption">WELLNESS CENTRE</div>
             </div>
 
@@ -1395,12 +1395,12 @@ $property->slug
             <div class="wellness-right-top">
 
                 <div class="wellness-item">
-                    <img src="{{ asset('assets/img/property/heightswellness2.avif') }}" alt="">
+                    <img src="{{ asset('assets/img/property/heightswellness2.avif') }}" alt=" {{ $property->project?->name ?? $property->title }}">
                     <div class="wellness-caption">FITNESS AREA</div>
                 </div>
 
                 <div class="wellness-item">
-                    <img src="{{ asset('assets/img/property/heightswellness3.avif') }}" alt="">
+                    <img src="{{ asset('assets/img/property/heightswellness3.avif') }}" alt=" {{ $property->project?->name ?? $property->title }}">
                     <div class="wellness-caption">YOGA LAKE</div>
                 </div>
 
@@ -1409,14 +1409,14 @@ $property->slug
 
             {{-- BOTTOM CENTER --}}
             <div class="wellness-item wellness-bottom-center">
-                <img src="{{ asset('assets/img/property/heightswellness5.avif') }}" alt="">
+                <img src="{{ asset('assets/img/property/heightswellness5.avif') }}" alt=" {{ $property->project?->name ?? $property->title }}">
                 <div class="wellness-caption">PRIVATE BEACH</div>
             </div>
 
 
             {{-- BOTTOM RIGHT --}}
             <div class="wellness-item wellness-bottom-right">
-                <img src="{{ asset('assets/img/property/heightswellness4.avif') }}" alt="">
+                <img src="{{ asset('assets/img/property/heightswellness4.avif') }}" alt=" {{ $property->project?->name ?? $property->title }}">
                 <div class="wellness-caption">MEDITATION GARDEN</div>
             </div>
 
