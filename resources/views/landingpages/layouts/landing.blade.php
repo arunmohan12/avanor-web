@@ -82,7 +82,7 @@
     ===================================================== --}}
 
     @vite([
-        'resources/css/landingpages/the-heights.css',
+        'resources/css/landingpages/the-heightsv2.css',
         'resources/js/landingpages/the-heights.js',
     ])
 
