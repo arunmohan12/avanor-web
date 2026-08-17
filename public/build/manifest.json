@@ -114,7 +114,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-kHFQOBPf.css",
+    "file": "assets/app-DbvdnSW9.css",
     "name": "app",
     "names": [
       "app.css"
@@ -148,7 +148,9 @@
       "assets/fa-light-300-Bj03O0ql.woff2",
       "assets/fa-light-300-BLDdpYoG.ttf",
       "assets/fa-regular-400-CNKpUNax.woff2",
-      "assets/fa-regular-400-BGMZlDC4.ttf"
+      "assets/fa-regular-400-BGMZlDC4.ttf",
+      "assets/fa-solid-900-DwRLEG3Z.woff2",
+      "assets/fa-solid-900-DwYV3F36.ttf"
     ]
   },
   "resources/css/components/leadform.css": {
@@ -161,7 +163,7 @@
     "isEntry": true
   },
   "resources/css/landingpages/the-heightsv2.css": {
-    "file": "assets/the-heightsv2-BAyihunH.css",
+    "file": "assets/the-heightsv2-DLpNzGyA.css",
     "name": "the-heightsv2",
     "names": [
       "the-heightsv2.css"
@@ -196,7 +198,8 @@
       "assets/fa-light-300-BLDdpYoG.ttf",
       "assets/fa-regular-400-CNKpUNax.woff2",
       "assets/fa-regular-400-BGMZlDC4.ttf",
-      "assets/fa-solid-900-DwRLEG3Z.woff2"
+      "assets/fa-solid-900-DwRLEG3Z.woff2",
+      "assets/fa-solid-900-DwYV3F36.ttf"
     ]
   },
   "resources/css/vendor/about.css": {
@@ -316,6 +319,10 @@
   "resources/fonts/fontawesome/fa-regular-400.woff2": {
     "file": "assets/fa-regular-400-CNKpUNax.woff2",
     "src": "resources/fonts/fontawesome/fa-regular-400.woff2"
+  },
+  "resources/fonts/fontawesome/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-DwYV3F36.ttf",
+    "src": "resources/fonts/fontawesome/fa-solid-900.ttf"
   },
   "resources/fonts/fontawesome/fa-solid-900.woff2": {
     "file": "assets/fa-solid-900-DwRLEG3Z.woff2",

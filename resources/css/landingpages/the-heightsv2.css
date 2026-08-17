@@ -2361,7 +2361,7 @@ slider-area {
 .th-btn.th-btn-icon:after {
     content: '';
     position: relative;
-    background-image: url(../img/icon/arrow-right.svg);
+    /* background-image: url(../img/icon/arrow-right.svg); */
     background-size: 100% 100%;
     width: 16px;
     height: 16px;
@@ -4646,6 +4646,12 @@ text-align: justify;
     color: #081628;
 }
 
+.landing-thankyou-btn:hover{
+    background: transparent;
+    border: 1px solid var(--brand-light);
+
+    color:var(--brand-light);
+}
 .landing-thankyou-whatsapp {
     background: transparent;
 
@@ -5437,6 +5443,11 @@ body.landing-popup-open {
     justify-content: center;
 
     margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.cta-browse-project{
+    justify-content: start !important;
 }
 .landing-section-cta .landing-plan-button {
     width: auto;
@@ -5541,10 +5552,7 @@ body.landing-popup-open {
         transform: translateY(0);
     }
 }
-.landing-thankyou-btn:hover {
-background: transparent;
-border: white
-}
+
 .landing-enquiry-consent-error {
     display: block;
     margin-top: 10px;

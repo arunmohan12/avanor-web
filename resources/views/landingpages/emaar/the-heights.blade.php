@@ -133,7 +133,7 @@ $property->slug
             </a>
 
             <a href="#about">
-                About
+                Downloads
             </a>
 
             <a href="#gallery">
@@ -794,7 +794,18 @@ $property->slug
                                             @endif
 
                                         </div>
+                                        <div class="landing-section-cta cta-browse-project">
 
+
+                                            <button
+                                                type="button"
+                                                class="landing-plan-button"
+                                                data-lead-popup-open
+                                                data-request-type="location-details">
+                                                BROWSE MORE FROM THE HEIGHTS BY EMAAR
+                                            </button>
+
+                                        </div>
                                     </div>
 
                                     @endif
@@ -828,6 +839,18 @@ $property->slug
                                             </div>
 
                                             @endif
+
+                                        </div>
+                                        <div class="landing-section-cta cta-browse-project">
+
+
+                                            <button
+                                                type="button"
+                                                class="landing-plan-button"
+                                                data-lead-popup-open
+                                                data-request-type="location-details">
+                                                BROWSE MORE FROM THE HEIGHTS BY EMAAR
+                                            </button>
 
                                         </div>
 
@@ -901,7 +924,7 @@ $property->slug
 
 
 
-                                    <div class="landing-plan-container space">
+                                    <div class="landing-plan-container space" id="about">
 
                                         <div class="landing-plan-heading">
 
@@ -1298,7 +1321,7 @@ $property->slug
 
 
 
-    <section class="wellness-section">
+    <section class="wellness-section space-bottom">
 
         <div class="wellness-wrap">
 
