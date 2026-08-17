@@ -1,12 +1,18 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-import intlTelInput from 'intl-tel-input';
-import 'intl-tel-input/styles';
+import {
+    Navigation,
+    Pagination
+} from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import intlTelInput from 'intl-tel-input';
+import 'intl-tel-input/styles';
+
 import '../pages/contact.js';
+
 const propertyGallery = document.querySelector('.avanor-property-gallery');
 
 if (propertyGallery) {

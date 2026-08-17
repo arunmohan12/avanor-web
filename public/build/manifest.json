@@ -164,7 +164,7 @@
     "isEntry": true
   },
   "resources/css/landingpages/the-heights.css": {
-    "file": "assets/the-heights-D0QxHLl_.css",
+    "file": "assets/the-heights-ZYU19DOu.css",
     "name": "the-heights",
     "names": [
       "the-heights.css"
@@ -198,7 +198,8 @@
       "assets/fa-light-300-Bj03O0ql.woff2",
       "assets/fa-light-300-BLDdpYoG.ttf",
       "assets/fa-regular-400-CNKpUNax.woff2",
-      "assets/fa-regular-400-BGMZlDC4.ttf"
+      "assets/fa-regular-400-BGMZlDC4.ttf",
+      "assets/fa-solid-900-DwRLEG3Z.woff2"
     ]
   },
   "resources/css/vendor/about.css": {
@@ -318,6 +319,10 @@
   "resources/fonts/fontawesome/fa-regular-400.woff2": {
     "file": "assets/fa-regular-400-CNKpUNax.woff2",
     "src": "resources/fonts/fontawesome/fa-regular-400.woff2"
+  },
+  "resources/fonts/fontawesome/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-DwRLEG3Z.woff2",
+    "src": "resources/fonts/fontawesome/fa-solid-900.woff2"
   },
   "resources/fonts/optima_lt_pro_i4.woff2": {
     "file": "assets/optima_lt_pro_i4-DPP4vEV9.woff2",
