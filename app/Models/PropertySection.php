@@ -36,11 +36,48 @@ class PropertySection extends Model implements HasMedia
 
     public function registerMediaConversions(?Media $media = null): void
     {
-        $this
-            ->addMediaConversion('section_image_avif')
+        // Cover image
+        $this->addMediaConversion('cover_mobile_avif')
+            ->format('avif')
+            ->width(768)
+            ->quality(65)
+            ->nonQueued();
+    
+        $this->addMediaConversion('cover_tablet_avif')
+            ->format('avif')
+            ->width(1280)
+            ->quality(70)
+            ->nonQueued();
+    
+        $this->addMediaConversion('cover_avif')
+            ->format('avif')
+            ->width(1920)
+            ->quality(75)
+            ->nonQueued();
+    
+    
+        // Gallery images
+        $this->addMediaConversion('gallery_mobile_avif')
+            ->format('avif')
+            ->width(768)
+            ->quality(65)
+            ->nonQueued();
+    
+        $this->addMediaConversion('gallery_tablet_avif')
+            ->format('avif')
+            ->width(1280)
+            ->quality(70)
+            ->nonQueued();
+    
+        $this->addMediaConversion('gallery_avif')
+            ->format('avif')
+            ->width(1920)
+            ->quality(75)
+            ->nonQueued();
+            $this->addMediaConversion('section_image_avif')
             ->format('avif')
             ->width(1600)
-            ->performOnCollections('section_image')
+            ->quality(75)
             ->nonQueued();
     }
 

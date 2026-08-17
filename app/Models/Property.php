@@ -35,26 +35,64 @@ class Property extends Model implements HasMedia
     }
     public function registerMediaConversions(?Media $media = null): void
     {
-        $this
-            ->addMediaConversion('thumbnail_avif')
+        // Cover
+        $this->addMediaConversion('cover_mobile_avif')
             ->format('avif')
-            ->fit(Fit::Crop, 800, 600)
-            ->performOnCollections('thumbnail')
+            ->width(768)
+            ->quality(65)
             ->nonQueued();
     
-        $this
-            ->addMediaConversion('cover_avif')
+        $this->addMediaConversion('cover_tablet_avif')
             ->format('avif')
-            ->fit(Fit::Crop, 1920, 1000)
-            ->performOnCollections('cover')
+            ->width(1280)
+            ->quality(70)
             ->nonQueued();
     
-        $this
-            ->addMediaConversion('gallery_avif')
+        $this->addMediaConversion('cover_avif')
             ->format('avif')
             ->width(1920)
-            ->performOnCollections('gallery')
+            ->quality(75)
             ->nonQueued();
+    
+        // Gallery
+        $this->addMediaConversion('gallery_mobile_avif')
+            ->format('avif')
+            ->width(768)
+            ->quality(65)
+            ->nonQueued();
+    
+        $this->addMediaConversion('gallery_tablet_avif')
+            ->format('avif')
+            ->width(1280)
+            ->quality(70)
+            ->nonQueued();
+    
+        $this->addMediaConversion('gallery_thumb_avif')
+            ->format('avif')
+            ->width(400)
+            ->quality(60)
+            ->nonQueued();
+    
+        $this->addMediaConversion('gallery_avif')
+            ->format('avif')
+            ->width(1920)
+            ->quality(75)
+            ->nonQueued();
+    
+        // Section images
+        $this->addMediaConversion('section_image_mobile_avif')
+            ->format('avif')
+            ->width(768)
+            ->quality(65)
+            ->nonQueued();
+    
+        $this->addMediaConversion('section_image_tablet_avif')
+            ->format('avif')
+            ->width(1280)
+            ->quality(70)
+            ->nonQueued();
+    
+
     }
     protected $fillable = [
         'developer_id',

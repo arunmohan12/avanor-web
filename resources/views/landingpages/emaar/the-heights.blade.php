@@ -223,19 +223,62 @@ $property->slug
                 {{-- COVER IMAGE --}}
                 @if ($coverMedia)
 
-                @php
-                $coverUrl = \App\Support\MediaUrl::fromMedia(
-                $coverMedia,
-                'cover_avif'
-                );
-                @endphp
-
                 <div class="swiper-slide">
+
                     <img
-                        src="{{ $coverUrl }}"
+                        src="{{ \App\Support\MediaUrl::fromMedia(
+            $coverMedia,
+            'cover_avif'
+        ) }}"
+
+                        srcset="
+            {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_mobile_avif') }} 768w,
+            {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_tablet_avif') }} 1280w,
+            {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_avif') }} 1920w
+        "
+
+                        sizes="100vw"
+
                         alt="{{ $property->title }}"
+
                         class="avanor-property-hero-image"
-                        fetchpriority="high">
+
+                        fetchpriority="high"
+                        decoding="async">
+
+
+                    {{-- DARK OVERLAY --}}
+                    <div class="avanor-property-hero-overlay"></div>
+
+
+                    {{-- HERO CONTENT --}}
+                    <div class="avanor-property-slide-content-landing">
+
+                        <span class="avanor-property-slide-eyebrow">
+                            EMAAR PROPERTIES
+                        </span>
+
+                        <h1 class="avanor-property-slide-title">
+                            {{ $property->title }}
+                        </h1>
+
+                        <p class="avanor-property-slide-description">
+                            A refined residential community designed around wellness,
+                            nature and modern living.
+                        </p>
+
+                        <a
+                            href="#property-details"
+                            class="avanor-property-slide-btn" data-lead-popup-open>
+
+                            EXPLORE THE PROJECT
+
+                            <i class="far fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
                 </div>
 
                 @endif
@@ -244,25 +287,62 @@ $property->slug
                 {{-- FIRST 2 GALLERY IMAGES ONLY --}}
                 @foreach ($heroGalleryImages as $image)
 
-                @php
-                $imageUrl = \App\Support\MediaUrl::fromMedia(
-                $image,
-                'gallery_avif'
-                );
-                @endphp
-
                 <div class="swiper-slide">
+
                     <img
-                        src="{{ $imageUrl }}"
+                        src="{{ \App\Support\MediaUrl::fromMedia(
+                            $image,
+                            'gallery_avif'
+                        ) }}"
+
+                        srcset="
+                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_mobile_avif') }} 768w,
+                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_tablet_avif') }} 1280w,
+                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_avif') }} 1920w
+                        "
+
+                        sizes="100vw"
+
                         alt="{{ $property->title }}"
+
                         class="avanor-property-hero-image"
+
                         loading="lazy"
                         decoding="async">
+                        <div class="avanor-property-hero-overlay"></div>
+                    <div class="avanor-property-slide-content-landing">
+
+                        <span class="avanor-property-slide-eyebrow">
+                            EMAAR PROPERTIES
+                        </span>
+
+                        <h1 class="avanor-property-slide-title">
+                            {{ $property->title }}
+                        </h1>
+
+                        <p class="avanor-property-slide-description">
+                            A refined residential community designed around wellness,
+                            nature and modern living.
+                        </p>
+
+                        <a
+                            href="#property-details"
+                            class="avanor-property-slide-btn" data-lead-popup-open>
+
+                            EXPLORE THE PROJECT
+
+                            <i class="far fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
                 </div>
 
                 @endforeach
 
             </div>
+
 
             @if ($galleryImages->count() > 1)
 
@@ -270,14 +350,18 @@ $property->slug
                 type="button"
                 class="avanor-property-gallery-prev"
                 aria-label="Previous image">
+
                 <i class="far fa-chevron-left"></i>
+
             </button>
 
             <button
                 type="button"
                 class="avanor-property-gallery-next"
                 aria-label="Next image">
+
                 <i class="far fa-chevron-right"></i>
+
             </button>
 
             <div class="swiper-pagination avanor-property-gallery-pagination"></div>
@@ -850,7 +934,7 @@ $property->slug
 
                                                     <img
                                                         src="{{ asset('assets/img/landing/masterplan.webp') }}"
-                                                        alt="The Heights Master Plan"
+                                                          alt="{{ $property->title }}"
                                                         class="landing-plan-image">
 
                                                     <span class="landing-plan-overlay"></span>
@@ -896,7 +980,7 @@ $property->slug
 
                                                     <img
                                                         src="{{ asset('assets/img/landing/fp1.webp') }}"
-                                                        alt="The Heights Unit Plan"
+                                                          alt="{{ $property->title }}"
                                                         class="landing-plan-image">
 
                                                     <span class="landing-plan-overlay"></span>
@@ -1009,10 +1093,21 @@ $property->slug
 
                             <img
                                 src="{{ \App\Support\MediaUrl::fromMedia(
-                                    $image,
-                                    'gallery_avif'
-                                ) }}"
-                                alt="{{ $property->title }}"
+                            $image,
+                            'gallery_avif'
+                        ) }}"
+
+                                srcset="
+                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_mobile_avif') }} 768w,
+                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_tablet_avif') }} 1280w,
+                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_avif') }} 1920w
+                        "
+
+                                sizes="(max-width: 767px) 100vw,
+                               (max-width: 1200px) 90vw,
+                               1400px"
+
+                                 alt="{{ $property->title }}"
                                 loading="lazy"
                                 decoding="async">
 
@@ -1067,9 +1162,9 @@ $property->slug
 
                     <img
                         src="{{ \App\Support\MediaUrl::fromMedia(
-                                $image,
-                                'gallery_avif'
-                            ) }}"
+                        $image,
+                        'gallery_thumb_avif'
+                    ) }}"
                         alt="{{ $property->title }}"
                         loading="lazy"
                         decoding="async">
@@ -1081,7 +1176,6 @@ $property->slug
             </div>
 
             @endif
-
             @endif
 
 
