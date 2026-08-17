@@ -32,7 +32,7 @@
             </a>
 
             <a
-                href="https://wa.me/YOUR_NUMBER"
+                href="https://wa.me/+971589798257"
                 class="landing-thankyou-whatsapp"
                 target="_blank"
                 rel="noopener">

@@ -17444,9 +17444,13 @@ html {
 .landing-property-bar {
     position: fixed;
 
-    left: 0;
-    right: 0;
+    left: 50%;
     bottom: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    transform: translateX(-50%);
 
     z-index: 999;
 
@@ -17455,12 +17459,7 @@ html {
 
     transition:
         opacity 0.35s ease,
-        visibility 0.35s ease,
-        transform 0.35s ease;
-
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+        visibility 0.35s ease;
 }
 
 .landing-property-bar.is-hidden {
@@ -17471,7 +17470,7 @@ html {
 }
 
 .landing-property-bar-inner {
-    width: min(1400px, calc(100% - 48px));
+    width: 1400px;
     min-height: 100px;
 
     margin-inline: auto;
@@ -18408,14 +18407,33 @@ text-align: justify;
 }
 
 
-.landing-enquiry-consent > input {
-    position: absolute;
+.landing-enquiry-consent {
+    position: relative;
 
-    opacity: 0;
-    pointer-events: none;
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+
+    gap: 11px;
+    align-items: start;
 }
 
+.landing-enquiry-consent > input[type="checkbox"] {
+    position: absolute;
 
+    left: 0;
+    top: 2px;
+
+    width: 18px !important;
+    height: 18px !important;
+
+    margin: 0;
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
 .landing-enquiry-checkbox {
     position: relative;
 
@@ -18425,7 +18443,10 @@ text-align: justify;
     margin-top: 2px;
 
     border: 1px solid rgba(255, 255, 255, 0.55);
+
+    pointer-events: none;
 }
+
 
 
 .landing-enquiry-consent
@@ -19665,4 +19686,75 @@ body.landing-popup-open {
         transform: none;
     }
 
+}
+.landing-enquiry-field {
+    width: 100%;
+}
+
+.landing-enquiry-field input,
+.landing-enquiry-field .iti {
+    width: 100%;
+    height: 58px;
+    max-width: 100%;
+}
+
+.landing-enquiry-field .iti {
+    display: block;
+}
+
+.landing-enquiry-field .iti input {
+    width: 100% !important;
+    height: 58px !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+}
+
+.landing-enquiry-field .iti__selected-country {
+    height: 58px;
+}
+
+.landing-enquiry-submit button {
+    height: 58px;
+}
+.landing-thankyou {
+    opacity: 0;
+    transform: translateY(14px);
+
+    animation: landingThankYouFadeIn 0.65s ease forwards;
+}
+
+@keyframes landingThankYouFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.landing-thankyou-btn:hover {
+background: transparent;
+border: white
+}
+.landing-enquiry-consent-error {
+    display: block;
+    margin-top: 10px;
+
+    color: #ffb4b4;
+    font-size: 11px;
+}
+.landing-enquiry-checkbox {
+    position: relative;
+
+    width: 18px;
+    height: 18px;
+
+    margin-top: 2px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    pointer-events: none;
 }

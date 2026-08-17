@@ -535,7 +535,7 @@ $property->slug
                             </div>
                             @endif
                             <form
-                                action="{{ route('leads.store') }}"
+                                action="{{ route('landing.leads.store') }}"
                                 method="POST"
                                 class="widget-property-contact-form">
 
@@ -1433,7 +1433,7 @@ $property->slug
 
 
             <form
-                action="{{ route('leads.store') }}"
+                action="{{ route('landing.leads.store') }}"
                 method="POST"
                 class="landing-enquiry-form">
 
@@ -1513,7 +1513,7 @@ $property->slug
                             id="footer_phone"
                             name="phone"
                             value="{{ old('phone') }}"
-                            placeholder="+971 50 123 4567"
+                            placeholder="50 123 4567"
                             autocomplete="tel"
                             required>
 
@@ -1566,13 +1566,19 @@ $property->slug
                     <span>
                         I consent to being contacted regarding this property
                         enquiry and agree to the
-                        <a href="/privacy-policy" target="_blank">
+                        <a href="{{ route('terms-and-conditions') }}" target="_blank">
                             Privacy Policy
                         </a>
                         and
-                        <a href="/terms-and-conditions" target="_blank">
+                        <a href="{{ route('privacy-policy') }}" target="_blank">
                             Terms & Conditions
                         </a>.
+
+                        @error('consent')
+                        <span class="landing-enquiry-consent-error">
+                            {{ $message }}
+                        </span>
+                        @enderror
                     </span>
 
                 </label>
