@@ -17,11 +17,21 @@
     --font-primary: "Lato", sans-serif;
     --font-optima: "Optima LT Pro", serif;
 }
-
-
-
-* {
+html,
+body {
+    /* overflow-x: hidden; */
+}
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    /* overflow-x: hidden; */
 }
 
 
@@ -17241,24 +17251,17 @@ html {
 @media (max-width: 767px) {
 
     .avanor-property-gallery .swiper-slide img {
-        /* width: 100%;
+        width: 100%;
         height: auto !important;
         object-fit: contain;
         transform: scale(1.03);
         transform-origin: center;
-        display: block; */
+        display: block;
 
-        display: none !important;
     }
 
-    .avanor-property-hero {
-        display: none !important;
-    }
 
-    .avanor-property-gallery-next,
-    .avanor-property-gallery-prev {
-        display: none !important;
-    }
+
 
     .avanor-breadcrumb {
         margin-top: 70px;
@@ -18505,6 +18508,210 @@ text-align: justify;
     color: #ffd7d7;
 }
 
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .landing-enquiry-footer {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .landing-enquiry-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+
+        padding-left: 24px;
+        padding-right: 24px;
+
+        box-sizing: border-box;
+    }
+
+    .landing-enquiry-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .landing-enquiry-fields {
+        width: 100%;
+        max-width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .landing-enquiry-field {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .landing-enquiry-field input {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+    .landing-enquiry-field .iti {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .landing-enquiry-field .iti input {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .landing-enquiry-submit {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .landing-enquiry-submit button {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .landing-enquiry-consent {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 18px minmax(0, 1fr);
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .landing-enquiry-footer {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .landing-enquiry-container {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        padding-left: 18px;
+        padding-right: 18px;
+
+        box-sizing: border-box;
+    }
+
+    .landing-enquiry-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .landing-enquiry-fields {
+        width: 100%;
+        max-width: 100%;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 18px;
+    }
+
+    .landing-enquiry-field {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .landing-enquiry-field input {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+    .landing-enquiry-field .iti {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box;
+    }
+
+    .landing-enquiry-field .iti input {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box;
+    }
+
+    .landing-enquiry-submit {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .landing-enquiry-submit button {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .landing-enquiry-consent {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 18px minmax(0, 1fr);
+
+        overflow-wrap: anywhere;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .landing-enquiry-footer {
+        padding: 52px 0 44px;
+    }
+
+    .landing-enquiry-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .landing-enquiry-heading h2 {
+        font-size: 29px;
+    }
+
+    .landing-enquiry-heading p {
+        font-size: 13px;
+    }
+
+    .landing-enquiry-field input {
+        height: 52px;
+    }
+
+    .landing-enquiry-submit button {
+        height: 52px;
+    }
+
+}
 /* =====================================================
    THANK YOU PAGE
 ===================================================== */
@@ -18940,7 +19147,7 @@ body.landing-popup-open {
 }
 
 .landing-plan-container {
-    width: min(1380px, calc(100% - 48px));
+    width: min(1400px, calc(100% - 48px));
     margin-inline: auto;
 }
 
@@ -19205,7 +19412,7 @@ body.landing-popup-open {
     }
 
     .landing-plan-container {
-        width: calc(100% - 30px);
+        width: 100%;
     }
 
     .landing-plan-heading {
@@ -19241,72 +19448,7 @@ body.landing-popup-open {
 
 }
 
-.landing-section-cta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.landing-section-cta .landing-plan-button {
-    width: auto;
-    min-width: 260px;
-    padding: 0 32px;
-}
-
-
-/* Popup width / spacing */
-.landing-lead-popup-dialog {
-    width: min(560px, 100%);
-    padding: 50px 52px 44px;
-}
-
-/* Heading */
-.avanor-lead-form-header h3 {
-    font-size: clamp(34px, 4vw, 46px);
-    line-height: 1.05;
-    margin-bottom: 18px;
-}
-
-/* Description */
-.avanor-lead-form-header p {
-    font-size: 15px;
-    line-height: 1.7;
-    max-width: 460px;
-}
-
-/* Fields */
-.avanor-lead-field {
-    margin-bottom: 20px;
-}
-
-.avanor-lead-field input {
-    height: 56px;
-}
-
-/* Phone plugin should fill full width */
-.iti {
-    width: 100%;
-}
-
-.iti input {
-    width: 100% !important;
-}
-
-/* Submit */
-.avanor-lead-submit {
-    min-height: 58px;
-    margin-top: 6px;
-}
-
-/* Consent */
-.avanor-lead-consent {
-    margin-top: 24px;
-    font-size: 11px;
-    line-height: 1.65;
-    color: #9299a5;
-}
 @media (max-width: 575px) {
 
     .landing-lead-popup-dialog {
@@ -19323,6 +19465,204 @@ body.landing-popup-open {
 
     .avanor-lead-field input {
         height: 52px;
+    }
+
+}
+/* .landing-property-bar {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.landing-property-bar-inner {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+} */
+
+@media (max-width: 767px) {
+
+    .landing-property-bar-inner {
+        margin: 0;
+        padding: 10px 12px;
+    }
+
+    .landing-property-actions {
+        width: 100%;
+        max-width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .landing-property-btn {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+/* .landing-lead-popup {
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+.landing-lead-popup-backdrop {
+    width: 100%;
+    max-width: 100%;
+}
+
+.landing-lead-popup-dialog {
+    max-width: 100%;
+    box-sizing: border-box;
+} */
+
+@media (max-width: 575px) {
+
+    .landing-lead-popup {
+        padding: 12px;
+    }
+
+    .landing-lead-popup-dialog {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/* .avanor-lead-form,
+.avanor-lead-form-element,
+.avanor-lead-field,
+.avanor-lead-field input,
+.iti {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.swiper {
+    overflow: hidden;
+} */
+@media (max-width: 767px) {
+
+    .custom-container {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .custom-container > .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .custom-container > .row > [class*="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .wellness-copy {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .wellness-copy h2 {
+        font-size: 42px;
+        line-height: 1.25;
+    }
+
+    .wellness-copy p {
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .landing-lifestyle-features {
+        padding-bottom: 30px;
+    }
+
+
+}
+@media (max-width: 767px) {
+
+    .landing-plan-grid {
+        gap: 34px;
+    }
+
+    .landing-plan-card:last-child {
+        margin-bottom: 20px;
+    }
+    .minus-text-area{
+        margin-top: 30px;
+    }
+
+}
+.landing-section-cta {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+.landing-section-cta .landing-plan-button {
+    width: auto;
+    min-width: 240px;
+    max-width: 100%;
+
+    padding: 0 30px;
+}
+@media (max-width: 767px) {
+
+    .landing-section-cta {
+        margin-top: 24px;
+        padding-inline: 16px;
+    }
+
+    .landing-section-cta .landing-plan-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
+@media (max-width: 767px) {
+
+    .avanor-property-hero {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+
+        background: #f5f5f3;
+    }
+
+    .avanor-property-gallery,
+    .avanor-property-gallery .swiper-wrapper,
+    .avanor-property-gallery .swiper-slide {
+        width: 100%;
+        height: 100%;
+    }
+
+    .avanor-property-gallery .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .avanor-property-gallery .swiper-slide img {
+        width: 100%;
+        height: 100% !important;
+
+        object-fit: contain;
+        object-position: center;
+
+        display: block;
+        transform: none;
     }
 
 }
