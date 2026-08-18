@@ -8,6 +8,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\CommunityController;
 
 
 Route::get('/', [HomeController::class, 'index'])
@@ -39,6 +40,8 @@ Route::get('/properties/{slug}', [PropertyController::class, 'show'])
 
     Route::get('/developer', [DeveloperController::class, 'index'])
     ->name('developer.index');
+    Route::get('/communities', [CommunityController::class, 'index'])
+    ->name('communities.index');
 
     Route::post('/leads', [LeadController::class, 'store'])
     ->name('leads.store');

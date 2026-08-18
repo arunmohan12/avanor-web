@@ -12,7 +12,7 @@
             <div class="col-lg-6 d-none d-lg-flex justify-content-end">
 
                 <a
-                    href="   javascript:void(0)"
+                    href="{{route('developer.index')}}"
                     class=" show-allproperties-btn "> VIEW ALL </a>
 
             </div>

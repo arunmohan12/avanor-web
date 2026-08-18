@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 use App\Models\Developer;
 use App\Models\Property;
-
+use App\Models\Community;
 class DeveloperController extends Controller
 {
     public function index()
     {
     
-
+ 
 
         return view('developers.partners');
     }
@@ -29,12 +29,43 @@ class DeveloperController extends Controller
                 'media',
             ])
             ->latest()
-            ->limit(3)
+         
+            ->get();
+
+            $communities = Community::query()
+            ->select([
+                'id',
+                'name',
+                'slug',
+                'thumbnail',
+                'description',
+            ])
+            ->where('is_active', true)
+            ->where('is_featured', true)
+        
+            // Only communities having properties from this developer
+            ->whereHas('properties', function ($query) use ($developer) {
+                $query
+                    ->where('is_active', true)
+                    ->where('developer_id', $developer->id);
+            })
+        
+            // Count only this developer's active properties
+            ->withCount([
+                'properties' => function ($query) use ($developer) {
+                    $query
+                        ->where('is_active', true)
+                        ->where('developer_id', $developer->id);
+                },
+            ])
+        
+            ->orderBy('display_order')
             ->get();
 
         return view('developers.devdetails', compact(
             'developer',
-            'properties'
+            'properties',
+            'communities'
         ));
     }
 }

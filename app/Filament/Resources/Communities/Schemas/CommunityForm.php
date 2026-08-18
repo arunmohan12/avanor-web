@@ -11,6 +11,7 @@ use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\RichEditor;
 
 class CommunityForm
 {
@@ -58,7 +59,22 @@ class CommunityForm
 
                     ])
                     ->columns(2),
-
+                    Section::make('Commmunity Description')
+                    ->description('Add detailed information about the developer, communities, property types, investment highlights, and background.')
+                    ->schema([
+                
+                        RichEditor::make('description')
+                        ->label('Description')
+                        ->toolbarButtons([
+                            ['bold', 'italic', 'underline', 'strike', 'link'],
+                            ['h2', 'h3', 'h4', 'h5','h6'],
+                            ['blockquote', 'bulletList', 'orderedList'],
+                            ['undo', 'redo'],
+                        ])
+                        ->placeholder('Write detailed information about the developer...')
+                        ->columnSpanFull(),
+                
+                    ]),
                 Section::make('Images')
                     ->schema([
 
