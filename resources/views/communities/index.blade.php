@@ -20,7 +20,7 @@
             'url' => route('home'),
         ],
         [
-            'label' => 'Our Partners',
+            'label' => 'Top Communities',
         ],
     ]" />
     </div>
