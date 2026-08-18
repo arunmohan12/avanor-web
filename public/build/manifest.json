@@ -220,6 +220,15 @@
     "src": "resources/css/vendor/blog.css",
     "isEntry": true
   },
+  "resources/css/vendor/communities.css": {
+    "file": "assets/communities-vgEQFL7k.css",
+    "name": "communities",
+    "names": [
+      "communities.css"
+    ],
+    "src": "resources/css/vendor/communities.css",
+    "isEntry": true
+  },
   "resources/css/vendor/contact.css": {
     "file": "assets/contact-BZNkKWWG.css",
     "name": "contact",
@@ -230,7 +239,7 @@
     "isEntry": true
   },
   "resources/css/vendor/devdetails.css": {
-    "file": "assets/devdetails-BEsduk17.css",
+    "file": "assets/devdetails-BNZcXYFV.css",
     "name": "devdetails",
     "names": [
       "devdetails.css"
