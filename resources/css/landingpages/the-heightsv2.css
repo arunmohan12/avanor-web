@@ -1,33 +1,8 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
-
-@import "@fontsource/lato/300.css";
 @import "@fontsource/lato/400.css";
 @import "@fontsource/lato/700.css";
-@import "@fontsource/lato/900.css";
 
 @import "../fonts.css";
- @import "../vendor/fontawesome.min.css"; 
-
-
-@font-face {
-    font-family: "Font Awesome 5 Free";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-
-    src: url("../../fonts/fontawesome/fa-regular-400.woff2")
-        format("woff2");
-}
-
-@font-face {
-    font-family: "Font Awesome 5 Free";
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-
-    src: url("../../fonts/fontawesome/fa-solid-900.woff2")
-        format("woff2");
-}
+@import "../vendor/fontawesome.min.css";
 
 :root {
     --font-primary: "Lato", sans-serif;

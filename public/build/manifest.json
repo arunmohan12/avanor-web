@@ -178,7 +178,7 @@
     "isEntry": true
   },
   "resources/css/landingpages/the-heightsv2.css": {
-    "file": "assets/the-heightsv2-CRlC52sO.css",
+    "file": "assets/the-heightsv2-DPyghuYj.css",
     "name": "the-heightsv2",
     "names": [
       "the-heightsv2.css"
@@ -186,10 +186,6 @@
     "src": "resources/css/landingpages/the-heightsv2.css",
     "isEntry": true,
     "assets": [
-      "assets/lato-latin-ext-300-normal-CYtq150c.woff2",
-      "assets/lato-latin-ext-300-normal-DXIyH3e5.woff",
-      "assets/lato-latin-300-normal-BP2wSCML.woff2",
-      "assets/lato-latin-300-normal-CINZtfFB.woff",
       "assets/lato-latin-ext-400-normal-CK4GAP86.woff2",
       "assets/lato-latin-ext-400-normal-NoO0okhb.woff",
       "assets/lato-latin-400-normal-BEhtfm5r.woff2",
@@ -198,10 +194,6 @@
       "assets/lato-latin-ext-700-normal-oVW-9CSr.woff",
       "assets/lato-latin-700-normal-BUGMgin4.woff2",
       "assets/lato-latin-700-normal-DAdL7O4w.woff",
-      "assets/lato-latin-ext-900-normal-BhetttCG.woff2",
-      "assets/lato-latin-ext-900-normal-CjTVdnWO.woff",
-      "assets/lato-latin-900-normal-C3uaq3BA.woff2",
-      "assets/lato-latin-900-normal-CZBfLiEO.woff",
       "assets/optima_lt_pro_n4-CR_umPCx.woff2",
       "assets/optima_lt_pro_n7-DjMDkqcH.woff2",
       "assets/optima_lt_pro_i4-DPP4vEV9.woff2",
