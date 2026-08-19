@@ -3147,13 +3147,6 @@ slider-area {
    HEADER
 ===================================== */
 
-.landing-header {
-    width: 100%;
-
-    background: #ffffff;
-    position: relative;
-    z-index: 100;
-}
 
 .landing-header-inner {
     width: min(1240px, calc(100% - 48px));
@@ -3392,11 +3385,10 @@ slider-area {
     height: 70px;
 
     background: rgba(255, 255, 255, 0.65);
- 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(3px);
-}
 
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
 .landing-header-inner {
     width: min(1400px, calc(100% - 48px));
     height: 100%;
@@ -4312,7 +4304,7 @@ body.landing-popup-open {
 
     background: rgba(5, 12, 22, 0.72);
 
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(8px);
 }
 
