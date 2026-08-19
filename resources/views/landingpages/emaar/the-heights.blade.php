@@ -1339,12 +1339,7 @@ $property->slug
                 </h2>
 
                 <p>
-                    Envisioned as an exclusive retreat lifestyle, where green
-                    landscapes come together to form a vibrant and sustainable
-                    community. Inspired by nature-led living, the masterplan
-                    weaves meandering pathways, lush green spaces, tranquil
-                    courtyards, and cascading water features into a harmonious
-                    environment.
+                Imagined as an exclusive retreat-style community, The Heights brings together lush green landscapes to create a vibrant, sustainable way of living. Inspired by nature-led design, the masterplan flows through winding pathways, expansive green spaces, peaceful courtyards, and calming water features, forming a harmonious environment throughout.
                 </p>
 
 
