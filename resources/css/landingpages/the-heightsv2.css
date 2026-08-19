@@ -5401,6 +5401,7 @@ body.landing-popup-open {
         overflow-x: auto;
 
         scrollbar-width: none;
+        margin-top: -496px;
     }
 
     .landing-gallery-thumbs::-webkit-scrollbar {
