@@ -126,7 +126,7 @@ $property->slug
         </a>
         <nav class="landing-nav">
 
-       
+
 
             <a href="#property-details">
                 Property Details
@@ -147,9 +147,13 @@ $property->slug
         </nav>
         <div class="landing-header-actions">
 
+
+
             <a
-                href="https://wa.me/+971589798257"
-                class="landing-header-whatsapp"
+                href="https://wa.me/971589798257"
+                class="landing-header-whatsapp whatsapp-track"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="WhatsApp">
 
                 <img
@@ -1486,52 +1490,52 @@ $property->slug
 
     <footer class="landing-enquiry-footer" id="landingFooter">
 
-    <div class="landing-enquiry-container">
+        <div class="landing-enquiry-container">
 
-        <div class="landing-enquiry-grid">
+            <div class="landing-enquiry-grid">
 
-            {{-- LEFT CONTENT --}}
-            <div class="landing-enquiry-copy">
+                {{-- LEFT CONTENT --}}
+                <div class="landing-enquiry-copy">
 
-                <div class="landing-enquiry-heading">
+                    <div class="landing-enquiry-heading">
 
-                    <span class="landing-enquiry-eyebrow">
-                    REQUEST PROPERTY DETAILS
-                    </span>
+                        <span class="landing-enquiry-eyebrow">
+                            REQUEST PROPERTY DETAILS
+                        </span>
 
-                    <h2>
-                    Get Pricing, Availability & Project Details
-                    </h2>
+                        <h2>
+                            Get Pricing, Availability & Project Details
+                        </h2>
 
-                    <p>
-                    Speak with our property advisor for current availability, pricing, payment plans and complete project information for {{ $property->title }}.
-                    </p>
+                        <p>
+                            Speak with our property advisor for current availability, pricing, payment plans and complete project information for {{ $property->title }}.
+                        </p>
 
-                </div>
+                    </div>
 
-                @if (session('lead_success'))
+                    @if (session('lead_success'))
                     <div class="landing-enquiry-alert landing-enquiry-alert-success">
                         {{ session('lead_success') }}
                     </div>
-                @endif
+                    @endif
 
-                @if ($errors->any())
+                    @if ($errors->any())
                     <div class="landing-enquiry-alert landing-enquiry-alert-error">
                         {{ $errors->first() }}
                     </div>
-                @endif
+                    @endif
 
-            </div>
+                </div>
 
 
-            {{-- RIGHT FORM --}}
-            <div class="landing-enquiry-form-column">
+                {{-- RIGHT FORM --}}
+                <div class="landing-enquiry-form-column">
 
-                <div
-                    class="landing-enquiry-form-card"
-                    aria-label="Register Your Interest">
+                    <div
+                        class="landing-enquiry-form-card"
+                        aria-label="Register Your Interest">
 
-                    @include('partials.lead-form', [
+                        @include('partials.lead-form', [
                         'formId' => 'landing-footer-form',
                         'heading' => 'Register Your Interest',
                         'description' => 'Share your details and our property advisor will contact you with pricing, availability and project information.',
@@ -1540,18 +1544,45 @@ $property->slug
                         'propertyId' => $property->id,
                         'developerId' => $property->developer_id,
                         'action' => route('landing.leads.store'),
-                    ])
+                        ])
+
+                    </div>
 
                 </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </footer>
+    <div class="landing-footer-bottom">
+
+        <div class="landing-footer-bottom-inner">
+
+            <p class="landing-footer-copyright">
+                © {{ date('Y') }} Avanor Capital. All rights reserved.
+            </p>
+
+            <div class="landing-footer-legal-links">
+
+                <a href="{{ route('privacy-policy') }}">
+                    Privacy Policy
+                </a>
+
+                <a href="{{ route('terms-and-conditions') }}">
+                    Terms & Conditions
+                </a>
 
             </div>
 
         </div>
 
     </div>
-
-</footer>
-
     <!-- Legacy Template Scripts -->
     <!-- <script src="{{ asset('assets/js/swiper-bundle.min.js') }}" defer></script>
 
