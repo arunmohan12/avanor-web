@@ -3418,7 +3418,7 @@ slider-area {
 
     background: rgba(255, 255, 255, 0.65);
  
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(3px);
 }
 

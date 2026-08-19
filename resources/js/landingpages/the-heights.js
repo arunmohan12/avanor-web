@@ -8,7 +8,6 @@ import {
 import intlTelInput from 'intl-tel-input';
 import 'intl-tel-input/styles';
 
-import '../pages/contact.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
