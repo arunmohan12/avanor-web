@@ -5676,11 +5676,11 @@ body.landing-popup-open {
     }
 
     .avanor-property-slide-btn {
-        min-height: 46px;
+        min-height: 38px;
 
         padding: 0 20px;
 
-        font-size: 11px;
+        font-size: 10px;
     }
     @media (max-width: 767px) {
         .avanor-property-gallery-prev,

@@ -33,10 +33,7 @@ route('properties.show', $property->slug)
 )
 
 
-{{-- Ad landing page - do not index --}}
-@push('meta')
-<meta name="robots" content="noindex,follow">
-@endpush
+<meta name="robots" content="index,follow">
 
 
 {{-- =====================================================
@@ -205,6 +202,8 @@ $property->slug
                 href="#"
                 class="landing-mobile-contact " data-lead-popup-open>
                 Register Now
+
+                
             </a>
 
         </nav>
@@ -272,14 +271,26 @@ $property->slug
                         </p>
 
                         <a
-                            href="#property-details"
-                            class="avanor-property-slide-btn" data-lead-popup-open>
+                            href="https://wa.me/971589798257"
+                            class="avanor-property-slide-btn whatsapp-track" >
+                         
+           
+                           WHATSAPP  
 
-                            EXPLORE THE PROJECT
-
-                            <i class="far fa-arrow-right"></i>
+                           <i class="fab fa-whatsapp"></i>
 
                         </a>
+
+                        <a
+                            href="tel:+971589798257"
+                            class="avanor-property-slide-btn call-track" >
+                  
+                           CALL  
+
+                           <i class="far fa-phone"></i>
+
+                        </a>
+                     
 
                     </div>
 
@@ -330,12 +341,23 @@ $property->slug
                         </p>
 
                         <a
-                            href="#property-details"
-                            class="avanor-property-slide-btn" data-lead-popup-open>
+                            href="https://wa.me/971589798257"
+                            class="avanor-property-slide-btn whatsapp-track" >
+                         
+           
+                           WHATSAPP  
 
-                            EXPLORE THE PROJECT
+                           <i class="fab fa-whatsapp"></i>
 
-                            <i class="far fa-arrow-right"></i>
+                        </a>
+
+                        <a
+                            href="tel:+971589798257"
+                            class="avanor-property-slide-btn call-track" >
+                  
+                           CALL  
+
+                           <i class="far fa-phone"></i>
 
                         </a>
 
@@ -1583,11 +1605,6 @@ $property->slug
         </div>
 
     </div>
-    <!-- Legacy Template Scripts -->
-    <!-- <script src="{{ asset('assets/js/swiper-bundle.min.js') }}" defer></script>
-
-    <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}" defer></script>
-    <script src="{{ asset('assets/js/main.js') }}" defer></script> -->
 </main>
 
 @endsection

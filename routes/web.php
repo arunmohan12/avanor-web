@@ -59,6 +59,7 @@ Route::get('/properties/{slug}', [PropertyController::class, 'show'])
     Route::get('/landing/{slug}', [LandingPageController::class, 'show'])
     ->name('landing.show');
 
+
     Route::post(
         '/landing-leads',
         [LeadController::class, 'storeLanding']
