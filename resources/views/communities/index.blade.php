@@ -27,7 +27,7 @@
 </section>
 
 
-<section class="home-filter-section space-bottom filter-home-bottom">
+<section class="home-filter-section filter-home-bottom mb-40">
 
     <div class="container">
         <div class="row gx-80 gy-60">
@@ -39,9 +39,7 @@
                         distinct lifestyle, location advantage, and range of property opportunities.
                         From vibrant waterfront destinations and well-connected urban districts to
                         peaceful family neighborhoods and premium residential enclaves, Dubai offers
-                        areas suited to every way of living.</p>
-
-                    <p class="sec-text text-theme">
+                        areas suited to every way of living.
                         Explore each community to learn more about its lifestyle, nearby amenities,
                         residential projects, and investment appeal. Whether you are searching for
                         a new home or comparing locations for your next property investment, find

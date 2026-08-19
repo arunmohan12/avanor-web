@@ -1488,198 +1488,73 @@ $property->slug
     </div>
 
 
-    <footer
-        id="landingFooter"
-        class="landing-enquiry-footer">
+    <footer class="landing-enquiry-footer" id="landingFooter">
 
-        <div class="landing-enquiry-container">
+    <div class="landing-enquiry-container">
 
-            <div class="landing-enquiry-heading">
-                <span>PRIVATE ENQUIRY</span>
+        <div class="landing-enquiry-grid">
 
-                <h2>
-                    Register Your Interest
-                </h2>
+            {{-- LEFT CONTENT --}}
+            <div class="landing-enquiry-copy">
 
-                <p>
-                    Speak with our property advisor and receive complete details,
-                    availability and pricing for {{ $property->title }}.
-                </p>
-            </div>
+                <div class="landing-enquiry-heading">
 
+                    <span class="landing-enquiry-eyebrow">
+                    REQUEST PROPERTY DETAILS
+                    </span>
 
-            {{-- Success --}}
-            @if (session('lead_success'))
-            <div class="landing-enquiry-alert landing-enquiry-alert-success">
-                {{ session('lead_success') }}
-            </div>
-            @endif
+                    <h2>
+                    Get Pricing, Availability & Project Details
+                    </h2>
 
-
-            {{-- Validation --}}
-            @if ($errors->any())
-            <div class="landing-enquiry-alert landing-enquiry-alert-error">
-                {{ $errors->first() }}
-            </div>
-            @endif
-
-
-            <form
-                action="{{ route('landing.leads.store') }}"
-                method="POST"
-                class="landing-enquiry-form">
-
-                @csrf
-
-
-                {{-- Existing LeadController fields --}}
-
-                <input
-                    type="hidden"
-                    name="property_id"
-                    value="{{ $property->id }}">
-
-                <input
-                    type="hidden"
-                    name="developer_id"
-                    value="{{ $property->developer_id }}">
-
-                <input
-                    type="hidden"
-                    name="source"
-                    value="the_heights_landing_page">
-
-
-                {{-- Preserve campaign tracking --}}
-                <input
-                    type="hidden"
-                    name="utm_source"
-                    value="{{ request('utm_source') }}">
-
-                <input
-                    type="hidden"
-                    name="utm_medium"
-                    value="{{ request('utm_medium') }}">
-
-                <input
-                    type="hidden"
-                    name="utm_campaign"
-                    value="{{ request('utm_campaign') }}">
-
-                <input
-                    type="hidden"
-                    name="utm_content"
-                    value="{{ request('utm_content') }}">
-
-
-                <div class="landing-enquiry-fields">
-
-                    {{-- Name --}}
-                    <div class="landing-enquiry-field">
-
-                        <label for="footer_name">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="footer_name"
-                            name="name"
-                            value="{{ old('name') }}"
-                            placeholder="Enter your full name"
-                            autocomplete="name"
-                            required>
-
-                    </div>
-
-
-                    {{-- Phone --}}
-                    <div class="landing-enquiry-field">
-
-                        <label for="footer_phone">
-                            Phone Number
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="footer_phone"
-                            name="phone"
-                            value="{{ old('phone') }}"
-                            placeholder="50 123 4567"
-                            autocomplete="tel"
-                            required>
-
-                    </div>
-
-
-                    {{-- Email --}}
-                    <div class="landing-enquiry-field">
-
-                        <label for="footer_email">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            id="footer_email"
-                            name="email"
-                            value="{{ old('email') }}"
-                            placeholder="Enter your email"
-                            autocomplete="email">
-
-                    </div>
-
-
-                    {{-- Submit --}}
-                    <div class="landing-enquiry-submit">
-
-                        <button type="submit">
-                            ENQUIRE NOW
-
-                            <span aria-hidden="true">
-                                →
-                            </span>
-                        </button>
-
-                    </div>
+                    <p>
+                    Speak with our property advisor for current availability, pricing, payment plans and complete project information for {{ $property->title }}.
+                    </p>
 
                 </div>
 
+                @if (session('lead_success'))
+                    <div class="landing-enquiry-alert landing-enquiry-alert-success">
+                        {{ session('lead_success') }}
+                    </div>
+                @endif
 
-                {{-- Consent --}}
-                <label class="landing-enquiry-consent">
+                @if ($errors->any())
+                    <div class="landing-enquiry-alert landing-enquiry-alert-error">
+                        {{ $errors->first() }}
+                    </div>
+                @endif
 
-                    <input
-                        type="checkbox"
-                        required>
+            </div>
 
-                    <span class="landing-enquiry-checkbox"></span>
 
-                    <span>
-                        I consent to being contacted regarding this property
-                        enquiry and agree to the
-                        <a href="{{ route('terms-and-conditions') }}" target="_blank">
-                            Privacy Policy
-                        </a>
-                        and
-                        <a href="{{ route('privacy-policy') }}" target="_blank">
-                            Terms & Conditions
-                        </a>.
+            {{-- RIGHT FORM --}}
+            <div class="landing-enquiry-form-column">
 
-                        @error('consent')
-                        <span class="landing-enquiry-consent-error">
-                            {{ $message }}
-                        </span>
-                        @enderror
-                    </span>
+                <div
+                    class="landing-enquiry-form-card"
+                    aria-label="Register Your Interest">
 
-                </label>
+                    @include('partials.lead-form', [
+                        'formId' => 'landing-footer-form',
+                        'heading' => 'Register Your Interest',
+                        'description' => 'Share your details and our property advisor will contact you with pricing, availability and project information.',
+                        'buttonText' => 'Submit Enquiry',
+                        'source' => 'the_heights_footer',
+                        'propertyId' => $property->id,
+                        'developerId' => $property->developer_id,
+                        'action' => route('landing.leads.store'),
+                    ])
 
-            </form>
+                </div>
+
+            </div>
 
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
     <!-- Legacy Template Scripts -->
     <!-- <script src="{{ asset('assets/js/swiper-bundle.min.js') }}" defer></script>
