@@ -439,7 +439,7 @@ $property->slug
 
     </div>
 
-    <section class="space space-extra-bottom">
+    <section class="space ">
 
         <div class="landing-gallery-container">
 

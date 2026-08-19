@@ -3370,7 +3370,7 @@ slider-area {
 
         padding: 0 10px;
 
-        font-size: 10px;
+        font-size: 8px;
     }
 
 }
@@ -5401,7 +5401,7 @@ body.landing-popup-open {
         overflow-x: auto;
 
         scrollbar-width: none;
-        margin-top: -496px;
+        margin-top: -400px;
     }
 
     .landing-gallery-thumbs::-webkit-scrollbar {
@@ -5656,32 +5656,33 @@ body.landing-popup-open {
     }
 
     .avanor-property-slide-eyebrow {
-        margin-bottom: 8px;
+        margin-bottom: 5px;
 
-        font-size: 11px;
+        font-size: 8px;
         letter-spacing: 1.5px;
     }
 
     .avanor-property-slide-title {
         margin-bottom: 10px;
 
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.1;
     }
 
     .avanor-property-slide-description {
-        margin-bottom: 14px;
+        margin-bottom: 10px;
 
-        font-size: 14px;
+        font-size: 12px;
         line-height: 1.5;
     }
 
     .avanor-property-slide-btn {
-        min-height: 38px;
+        min-height: 30px;
 
         padding: 0 20px;
 
         font-size: 10px;
+        margin-top: 10px;
     }
     @media (max-width: 767px) {
         .avanor-property-gallery-prev,
