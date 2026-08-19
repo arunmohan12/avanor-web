@@ -5790,3 +5790,14 @@ li {
     }
 
 }
+
+@media (max-width: 767px) {
+    .landing-gallery-prev,
+    .landing-gallery-next,.landing-gallery-thumbs {
+        display: none !important;
+    }
+
+    .landing-gallery-main{
+        height: fit-content;
+    }
+}
