@@ -9,6 +9,7 @@
 <title>@yield('title', 'Avanor Capital')</title>
 
 <meta property="og:title" content="@yield('title', 'Avanor Capital')">
+<meta property="og:site_name" content="Avanor Capital">
 @if (! app()->environment('production'))
     <meta name="robots" content="noindex, nofollow">
 @endif

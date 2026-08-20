@@ -43,8 +43,8 @@ Route::get('/properties/{slug}', [PropertyController::class, 'show'])
     Route::get('/communities', [CommunityController::class, 'index'])
     ->name('communities.index');
 
-    Route::post('/leads', [LeadController::class, 'store'])
-    ->name('leads.store');
+    // Route::post('/leads', [LeadController::class, 'store'])
+    // ->name('leads.store');
 
     Route::view('/enquiry', 'leads.form')
     ->name('leads.showform');
