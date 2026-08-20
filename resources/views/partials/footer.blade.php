@@ -32,17 +32,15 @@
 
                     @foreach ($socials as $platform => $icon)
 
-                    @if (!empty($siteSettings[$platform]))
-
-                    <a
-                        href="{{ $siteSettings[$platform] }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="{{ ucfirst($platform) }}">
-                        <i class="{{ $icon }}"></i>
-                    </a>
-
-                    @endif
+                    @if (filled($siteSettings[$platform] ?? null))
+    <a
+        href="{{ $siteSettings[$platform] }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="{{ ucfirst($platform) }}">
+        <i class="{{ $icon }}"></i>
+    </a>
+@endif
 
                     @endforeach
 
@@ -57,9 +55,17 @@
                 <h4>Explore</h4>
 
                 <ul class="avanor-footer-links">
-                    <li><a href="javascript:void(0)">Properties</a></li>
-                    <li><a href="javascript:void(0)">Projects</a></li>
-                    <li><a href="javascript:void(0)">Communities</a></li>
+                    <li>
+                        <a href="{{ route('properties.index') }}">Properties</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('developer.index') }}">Developers</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('communities.index') }}">Communities</a>
+                    </li>
                     <li><a href="javascript:void(0)">Off-Plan</a></li>
                 </ul>
 
@@ -72,10 +78,10 @@
                 <h4>Discover</h4>
 
                 <ul class="avanor-footer-links">
-                    <li><a href="javascript:void(0)">About Us</a></li>
-                    <li><a href="javascript:void(0)">Developers</a></li>
-                    <li><a href="javascript:void(0)">UAE Insights</a></li>
-                    <li><a href="javascript:void(0)">Contact Us</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="javascript:void(0)">Projects</a></li>
+                    <li><a href="{{ route('blogs') }}">UAE Insights</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
 
             </div>
