@@ -7,26 +7,32 @@ $property->getFirstMedia('cover'),
 @endphp
 
 @if ($propertyImageUrl)
-@section('og_image', $propertyImageUrl)
+    @section('og_image', $propertyImageUrl)
 @endif
+
 @section(
-'title',
-$property->meta_title ?: $property->title . ' | Avanor Capital'
+    'title',
+    $property->meta_title
+        ?: $property->title . ' | Property for Sale in the UAE | Avanor Capital'
 )
 
 @section(
-'meta_description',
-$property->meta_description ?: \Illuminate\Support\Str::limit(
-strip_tags($property->description),
-155
-)
-)
-@section('meta_keywords', $property->meta_keywords)
-@section(
-'canonical',
-route('properties.show', $property->slug)
+    'meta_description',
+    $property->meta_description
+        ?: (
+            $property->description
+                ? \Illuminate\Support\Str::limit(
+                    trim(preg_replace('/\s+/', ' ', strip_tags($property->description))),
+                    155
+                )
+                : 'Explore ' . $property->title . ' including pricing, location, amenities and property details with Avanor Capital.'
+        )
 )
 
+@section(
+    'canonical',
+    route('properties.show', $property->slug)
+)
 @php
 $displayPrice = $property->price ?: $property->project?->starting_price;
 

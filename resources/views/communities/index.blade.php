@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Top Communities in UAE | Avanor Capital')
+@section('title', 'Best Communities in Dubai & the UAE | Avanor Capital')
+@section(
+    'meta_description',
+    'Explore sought-after communities across Dubai and the UAE. Compare lifestyle, location, amenities, projects and property opportunities with Avanor Capital.'
+)
+@section('canonical', route('communities.index'))
+@section('og_type', 'website')
 @section('logo', 'logo-dark.svg')
 
 @push('styles')
@@ -34,7 +40,7 @@
 
             <div class="col-xl-12">
                 <div class="title-area mb-40">
-                    <h2 class="title-area  text-theme">Explore Dubai’s Most Sought-After Communities </h2>
+                    <h1 class="title-area  text-theme">Explore Dubai’s Most Sought-After Communities </h1>
                     <p class="sec-text text-theme">Discover some of Dubai’s most desirable communities, each offering a
                         distinct lifestyle, location advantage, and range of property opportunities.
                         From vibrant waterfront destinations and well-connected urban districts to

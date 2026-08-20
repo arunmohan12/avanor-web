@@ -1,5 +1,11 @@
 @extends('layouts.app')
-@section('title', 'Property Search Results')
+@section('title', 'Properties for Sale in the UAE | Avanor Capital')
+@section(
+    'meta_description',
+    'Explore properties for sale across Dubai and the UAE, including apartments, villas and new developments from leading real estate developers.'
+)
+@section('canonical', route('properties.index'))
+@section('og_type', 'website')
 @section('logo_secondary', 'logo-white2.svg')
 
 @push('styles')

@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 
+@section('title', 'UAE Real Estate News & Insights | Avanor Capital')
+
+@section(
+'meta_description',
+'Read the latest UAE real estate news, market insights, investment trends and property updates from Avanor Capital.'
+)
+
+@section('canonical', route('blogs'))
+
+@section('og_type', 'website')
+
 @section('logo', 'logo-dark.svg')
 
 @push('styles')
@@ -30,8 +41,10 @@
 
     <div class="container filter-sizer">
         <div class="text-center">
-            <h1 class="hero-title brand-dark blog-heading">Real Estate Insights &</h1>
-            <h1 class="hero-title brand-dark blog-heading">Market Updates</h1>
+            <h1 class="hero-title brand-dark blog-heading">
+                <span>Real Estate Insights &</span>
+                <span>Market Updates</span>
+            </h1>
 
             <span class="sub-title-dark">
                 Latest UAE real estate news, trends and investment opportunities.
@@ -168,90 +181,90 @@
                         </p>
 
                         @if (session('lead_success'))
-    <div class="alert alert-success mb-3">
-        {{ session('lead_success') }}
-    </div>
-@endif
+                        <div class="alert alert-success mb-3">
+                            {{ session('lead_success') }}
+                        </div>
+                        @endif
 
-@if ($errors->any())
-    <div class="alert alert-danger mb-3">
-        {{ $errors->first() }}
-    </div>
-@endif
+                        @if ($errors->any())
+                        <div class="alert alert-danger mb-3">
+                            {{ $errors->first() }}
+                        </div>
+                        @endif
 
-<form
-    action="{{ route('leads.store') }}"
-    method="POST"
-    class="widget-property-contact-form">
+                        <form
+                            action="{{ route('leads.store') }}"
+                            method="POST"
+                            class="widget-property-contact-form">
 
-    @csrf
+                            @csrf
 
-    <input
-        type="hidden"
-        name="property_id"
-        value="{{ $property->id ?? '' }}">
+                            <input
+                                type="hidden"
+                                name="property_id"
+                                value="{{ $property->id ?? '' }}">
 
-    <input
-        type="hidden"
-        name="developer_id"
-        value="{{ $property->developer_id ?? '' }}">
+                            <input
+                                type="hidden"
+                                name="developer_id"
+                                value="{{ $property->developer_id ?? '' }}">
 
-    <input
-        type="hidden"
-        name="source"
-        value="property_form">
+                            <input
+                                type="hidden"
+                                name="source"
+                                value="property_form">
 
-    <input
-        type="hidden"
-        name="page_url"
-        value="{{ url()->current() }}">
+                            <input
+                                type="hidden"
+                                name="page_url"
+                                value="{{ url()->current() }}">
 
-    <div class="form-group">
-        <input
-            type="text"
-            name="name"
-            class="form-control style-border"
-            placeholder="FULL NAME"
-            value="{{ old('name') }}"
-            required>
-    </div>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="form-control style-border"
+                                    placeholder="FULL NAME"
+                                    value="{{ old('name') }}"
+                                    required>
+                            </div>
 
-    <div class="form-group">
-        <input
-            type="email"
-            name="email"
-            class="form-control style-border"
-            placeholder="EMAIL ADDRESS"
-            value="{{ old('email') }}">
-    </div>
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="form-control style-border"
+                                    placeholder="EMAIL ADDRESS"
+                                    value="{{ old('email') }}">
+                            </div>
 
-    <div class="form-group">
-        <input
-            type="text"
-            name="budget"
-            class="form-control style-border"
-            placeholder="PREFERRED BUDGET (E.G AED 2M - 5M)"
-            value="{{ old('budget') }}">
-    </div>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    name="budget"
+                                    class="form-control style-border"
+                                    placeholder="PREFERRED BUDGET (E.G AED 2M - 5M)"
+                                    value="{{ old('budget') }}">
+                            </div>
 
-    <div class="form-group style-border3 col-md-12">
-        <input
-            type="tel"
-            id="contact_phone"
-            name="phone"
-            class="form-control"
-            placeholder="Phone Number*"
-            value="{{ old('phone') }}"
-            required>
-    </div>
+                            <div class="form-group style-border3 col-md-12">
+                                <input
+                                    type="tel"
+                                    id="contact_phone"
+                                    name="phone"
+                                    class="form-control"
+                                    placeholder="Phone Number*"
+                                    value="{{ old('phone') }}"
+                                    required>
+                            </div>
 
-    <button
-        type="submit"
-        class="th-btn style-white th-btn-icon mt-15 avanor-register-btn">
-        REGISTER YOUR INTEREST
-    </button>
+                            <button
+                                type="submit"
+                                class="th-btn style-white th-btn-icon mt-15 avanor-register-btn">
+                                REGISTER YOUR INTEREST
+                            </button>
 
-</form>
+                        </form>
 
                     </div>
 

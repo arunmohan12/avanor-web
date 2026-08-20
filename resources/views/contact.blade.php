@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'About Us')
+@section('title', 'Contact Avanor Capital | UAE Real Estate')
+@section(
+    'meta_description',
+    'Contact Avanor Capital for property enquiries, investment opportunities and real estate guidance across Dubai and the UAE.'
+)
+@section('canonical', route('contact'))
+
 @section('logo', 'logo-dark.svg')
 
 @push('styles')
@@ -33,7 +39,7 @@
 
         <div class="title-area text-center">
             <span class="sub-title">GET IN TOUCH</span>
-            <h2 class="sec-title text-theme contact-title">Our Contact Information</h2>
+            <h1 class="sec-title text-theme contact-title">Our Contact Information</h1>
         </div>
         <div class="row gy-4 justify-content-center">
             <div class="col-xl-4 col-lg-6">

@@ -72,10 +72,7 @@
     $blog->meta_description ?: $blog->excerpt
 )
 
-@section(
-    'meta_keywords',
-    $blog->meta_keywords
-)
+
 
 @section(
     'canonical',

@@ -1,12 +1,12 @@
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>{{ url('/') }}</loc>
+        <loc>{{ url('/') }}/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
+    {{-- Blogs --}}
     <url>
         <loc>{{ route('blogs') }}</loc>
         <changefreq>daily</changefreq>
@@ -25,30 +25,68 @@
             <priority>0.7</priority>
         </url>
     @endforeach
-    @foreach ($properties as $property)
+
+
+    {{-- Properties --}}
     <url>
-        <loc>{{ route('properties.show', $property->slug) }}</loc>
+        <loc>{{ route('properties.index') }}</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-        @if ($property->updated_at)
-            <lastmod>{{ $property->updated_at->toAtomString() }}</lastmod>
-        @endif
+    @foreach ($properties as $property)
+        <url>
+            <loc>{{ route('properties.show', $property->slug) }}</loc>
 
+            @if ($property->updated_at)
+                <lastmod>{{ $property->updated_at->toAtomString() }}</lastmod>
+            @endif
+
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+    @endforeach
+
+
+    {{-- Communities --}}
+    <url>
+        <loc>{{ route('communities.index') }}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-@endforeach
+
+    @foreach ($communities as $community)
+        <url>
+            <loc>{{ route('communities.show', $community->slug) }}</loc>
+
+            @if ($community->updated_at)
+                <lastmod>{{ $community->updated_at->toAtomString() }}</lastmod>
+            @endif
+
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+    @endforeach
 
 
+    {{-- Developers --}}
+    <url>
+        <loc>{{ route('developer.index') }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
+    @foreach ($developers as $developer)
+        <url>
+            <loc>{{ route('developers.show', $developer->slug) }}</loc>
 
+            @if ($developer->updated_at)
+                <lastmod>{{ $developer->updated_at->toAtomString() }}</lastmod>
+            @endif
 
-<url>
-    <loc>{{ route('properties.index') }}</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-</url>
-
-
-
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+    @endforeach
 
 </urlset>

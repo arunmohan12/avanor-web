@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'About Us')
+@section('title', 'About Avanor Capital | UAE Real Estate')
+@section(
+    'meta_description',
+    'Learn more about Avanor Capital, our approach to UAE real estate, and how we help buyers and investors discover property opportunities across the market.'
+)
+@section('canonical', route('about'))
+
 @section('logo', 'logo-dark.svg')
 
 @push('styles')
