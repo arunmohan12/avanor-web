@@ -73,14 +73,4 @@ Route::get('/properties/{slug}', [PropertyController::class, 'show'])
     })->name('landing.thank-you');
 
 
-    Route::domain('theheights.avanorcap.com')->group(function () {
-
-        Route::get('/', function (LandingPageController $controller) {
-    
-            return $controller->show(
-                'the-heights-by-emaar'
-            );
-    
-        });
-    
-    });
+ 
