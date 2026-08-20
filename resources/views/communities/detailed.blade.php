@@ -113,7 +113,7 @@
             </div>
 
 
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
 
                 <aside class="community-new-launches">
 
@@ -220,7 +220,7 @@
 
                 </aside>
 
-            </div>
+            </div> -->
 
         </div>
 
