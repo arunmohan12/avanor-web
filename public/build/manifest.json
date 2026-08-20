@@ -178,7 +178,7 @@
     "isEntry": true
   },
   "resources/css/landingpages/the-heightsv2.css": {
-    "file": "assets/the-heightsv2-DPFGdINm.css",
+    "file": "assets/the-heightsv2-ebcA_-iJ.css",
     "name": "the-heightsv2",
     "names": [
       "the-heightsv2.css"
@@ -234,6 +234,15 @@
       "communities.css"
     ],
     "src": "resources/css/vendor/communities.css",
+    "isEntry": true
+  },
+  "resources/css/vendor/communitiesdetailed.css": {
+    "file": "assets/communitiesdetailed-DA5B_xv-.css",
+    "name": "communitiesdetailed",
+    "names": [
+      "communitiesdetailed.css"
+    ],
+    "src": "resources/css/vendor/communitiesdetailed.css",
     "isEntry": true
   },
   "resources/css/vendor/contact.css": {

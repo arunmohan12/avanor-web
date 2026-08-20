@@ -18,7 +18,8 @@ export default defineConfig({
                 'resources/css/vendor/partners.css',
                 'resources/css/components/leadform.css',
                 'resources/css/vendor/communities.css',
-           
+                'resources/css/vendor/communitiesdetailed.css',
+               
                'resources/css/vendor/devdetails.css',
                 'resources/js/pages/contact.js',
                 'resources/js/pages/propertydetails.js',

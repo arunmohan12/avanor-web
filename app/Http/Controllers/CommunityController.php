@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Community;
 use App\Models\Emirate;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 
@@ -55,5 +56,33 @@ class CommunityController extends Controller
             'communities',
             'emirates'
         ));
+    }
+
+
+    public function show(string $slug)
+    {
+        $community = Community::query()
+            ->with([
+                'emirate',
+            ])
+            ->withCount([
+                'properties' => function ($query) {
+                    $query->where('is_active', true);
+                },
+            ])
+            ->where('slug', $slug)
+            ->where('is_active', true)
+            ->firstOrFail();
+
+            $newLaunches = Project::query()
+    ->with('developer')
+    ->where('community_id', $community->id)
+    ->where('is_active', true)
+    // ->where('status', 'off-plan')
+    ->latest()
+    ->limit(4)
+    ->get();
+
+        return view('communities.detailed', compact('community','newLaunches'));
     }
 }

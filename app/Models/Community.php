@@ -25,6 +25,7 @@ class Community extends Model implements HasMedia
         'is_featured',
         'display_order',
         'description',
+        'hero',
     ];
 
     public function emirate(): BelongsTo

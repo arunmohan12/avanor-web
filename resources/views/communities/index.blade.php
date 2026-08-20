@@ -162,7 +162,7 @@
 
                     <h3 class="avanor-project-card-title">
 
-                        <a href="#">
+                        <a  href="{{ route('communities.show', $community->slug) }}">
                             {{ $community->name }}
                         </a>
 
@@ -196,7 +196,7 @@
 
 
                     <a
-                        href="#"
+                        href="{{ route('communities.show', $community->slug) }}"
                         class="avanor-community-card-button">
 
                         VIEW COMMUNITY

@@ -47,11 +47,14 @@ Route::get('/properties/{slug}', [PropertyController::class, 'show'])
     ->name('leads.store');
 
     Route::view('/enquiry', 'leads.form')
-    ->name('leads.form');
+    ->name('leads.showform');
 
     Route::post('/enquiry', [LeadController::class, 'store'])
     ->middleware('throttle:10,1')
     ->name('leads.store');
+
+    Route::get('/communities/{slug}', [CommunityController::class, 'show'])
+    ->name('communities.show');
 
 
     //landing pages

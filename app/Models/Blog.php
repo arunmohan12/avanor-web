@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -46,7 +48,15 @@ class Blog extends Model implements HasMedia
     {
         $this->addMediaConversion('thumbnail_avif')
             ->format('avif')
-            ->fit(Fit::Crop, 600, 400)
+            ->fit(Fit::Crop, 1200, 800)
+            ->quality(80)
+            ->performOnCollections('thumbnail')
+            ->nonQueued();
+
+        $this->addMediaConversion('thumbnail_mobile_avif')
+            ->format('avif')
+            ->fit(Fit::Crop, 700, 467)
+            ->quality(75)
             ->performOnCollections('thumbnail')
             ->nonQueued();
 

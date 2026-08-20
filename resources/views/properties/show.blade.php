@@ -204,7 +204,7 @@ $hasProjectDescription = filled($property->project?->description);
 
 
 
-<section class="space-bottom space-extra-bottom">
+<section class="space space-extra-bottom">
 
     <div class="container">
 
