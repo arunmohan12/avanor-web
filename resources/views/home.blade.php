@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section(
-'title',
-'Avanor Capital | Properties, Projects & Communities in the UAE'
+    'title',
+    'Find Your Place in Dubai | Avanor Capital'
 )
+
 @section(
-'meta_description',
-'Discover properties, new developments, leading developers and sought-after communities across the UAE with Avanor Capital.'
+    'meta_description',
+    'Discover standout properties, iconic developments and sought-after communities across Dubai and the UAE with Avanor Capital.'
 )
 @section(
 'canonical',
