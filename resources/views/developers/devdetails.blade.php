@@ -51,14 +51,13 @@ route('developers.show', $developer->slug)
 
 @section('logo', 'logo-white2.svg')
 
+
 @push('structured-data')
 <script type="application/ld+json">
-    {
-        !!json_encode(
-            $developerSchema,
-            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
-        ) !!
-    }
+{!! json_encode(
+    $developerSchema,
+    JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+) !!}
 </script>
 @endpush
 
