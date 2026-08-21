@@ -72,12 +72,10 @@ $propertySchema['offers'] = [
 
 @push('structured-data')
 <script type="application/ld+json">
-    {
-        !!json_encode(
-            $propertySchema,
-            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
-        ) !!
-    }
+{!! json_encode(
+    $propertySchema,
+    JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+) !!}
 </script>
 @endpush
 
