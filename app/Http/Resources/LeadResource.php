@@ -18,7 +18,7 @@ class LeadResource extends JsonResource
 
             'budget' => $this->budget,
             'message' => $this->message,
-
+            'status' => $this->status?->value,
             'source' => $this->source,
             'page_url' => $this->page_url,
 

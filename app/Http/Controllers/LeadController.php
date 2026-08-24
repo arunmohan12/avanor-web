@@ -7,33 +7,9 @@ namespace App\Http\Controllers;
 use App\Http\Resources\LeadResource;
 use App\Models\Lead;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class LeadController extends Controller
 {
-    public function index(): AnonymousResourceCollection
-    {
-        $leads = Lead::query()
-            ->with([
-                'developer:id,name',
-                'property:id,name',
-            ])
-            ->latest()
-            ->paginate(20);
-
-        return LeadResource::collection($leads);
-    }
-
-    public function showData(Lead $lead): LeadResource
-    {
-        $lead->load([
-            'developer:id,name',
-            'property:id,name',
-        ]);
-
-        return new LeadResource($lead);
-    }
-
     public function show(Lead $lead): LeadResource
     {
         $lead->load([

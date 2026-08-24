@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\UpdateLeadRequest;
 use App\Http\Resources\LeadResource;
 use App\Models\Lead;
 use Illuminate\Http\Request;
@@ -33,6 +34,22 @@ class LeadController extends Controller
     {
         $lead->load([
             'developer:id,name',
+        ]);
+
+        return new LeadResource($lead);
+    }
+
+    public function update(
+        UpdateLeadRequest $request,
+        Lead $lead,
+    ): LeadResource {
+        $lead->update(
+            $request->validated(),
+        );
+
+        $lead->load([
+            'developer:id,name',
+            'property:id,title',
         ]);
 
         return new LeadResource($lead);

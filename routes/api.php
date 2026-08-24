@@ -15,4 +15,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/leads/{lead}', [LeadController::class, 'show']);
     Route::post('/device-tokens', [DeviceTokenController::class, 'store']);
     Route::delete('/device-tokens', [DeviceTokenController::class, 'destroy']);
+
+    Route::patch(
+        '/leads/{lead}',
+        [LeadController::class, 'update'],
+    );
 });

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\LeadStatus;
 use Illuminate\Database\Eloquent\Model;
 
 class Lead extends Model
@@ -23,6 +24,7 @@ class Lead extends Model
         'page_url',
         'budget',
         'message',
+        'status',
     ];
 
     public function property()
@@ -33,5 +35,12 @@ class Lead extends Model
     public function developer()
     {
         return $this->belongsTo(Developer::class);
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'status' => LeadStatus::class,
+        ];
     }
 }

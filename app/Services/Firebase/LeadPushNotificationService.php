@@ -32,8 +32,8 @@ class LeadPushNotificationService
 
         $message = CloudMessage::new()
             ->withNotification([
-                'title' => 'New Lead Received',
-                'body' => 'A new enquiry has been received on Avanor.',
+                'title' => "New Lead: {$lead->name}",
+                'body' => $this->notificationBody($lead),
             ])
             ->withData([
                 'type' => 'lead',
@@ -81,5 +81,22 @@ class LeadPushNotificationService
 
             throw $exception;
         }
+    }
+
+    private function notificationBody(Lead $lead): string
+    {
+        if ($lead->property) {
+            return "Property: {$lead->property->title}";
+        }
+
+        if ($lead->developer) {
+            return "Developer: {$lead->developer->name}";
+        }
+
+        if ($lead->source) {
+            return "New enquiry from {$lead->source}";
+        }
+
+        return 'A new enquiry has been received on Avanor.';
     }
 }
