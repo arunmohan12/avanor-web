@@ -2,21 +2,20 @@
 
 namespace App\Filament\Resources\Properties\Schemas;
 
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Models\Community;
 use App\Models\Project;
-use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
-use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\Textarea;
 
 class PropertyForm
 {
@@ -29,7 +28,6 @@ class PropertyForm
                 Section::make('1. Hero & Gallery')
                     ->description('Manage the images used in the main property hero slider and gallery.')
                     ->schema([
-
 
                         SpatieMediaLibraryFileUpload::make('thumbnail')
                             ->label('Thumbnail')
@@ -62,11 +60,11 @@ class PropertyForm
 
                     ]),
 
-                    Section::make('2. Property Overview')
+                Section::make('2. Property Overview')
                     ->description('Main property information shown directly below the hero gallery.')
                     ->columns(2)
                     ->schema([
-                
+
                         TextInput::make('title')
                             ->label('Property Title')
                             ->required()
@@ -75,14 +73,14 @@ class PropertyForm
                                 $set('slug', Str::slug($state));
                             })
                             ->columnSpanFull(),
-                
+
                         TextInput::make('slug')
                             ->disabled()
                             ->dehydrated()
                             ->required()
                             ->unique(ignoreRecord: true)
                             ->columnSpanFull(),
-                
+
                         Select::make('project_id')
                             ->label('Project')
                             ->options(
@@ -98,29 +96,30 @@ class PropertyForm
                             ->placeholder('Select Project (Optional)')
                             ->columnSpanFull()
                             ->afterStateUpdated(function ($state, Set $set) {
-                
+
                                 if (! $state) {
                                     $set('unitTypes', []);
+
                                     return;
                                 }
-                
+
                                 $project = Project::query()
                                     ->with('unitTypes')
                                     ->find($state);
-                
+
                                 if (! $project) {
                                     return;
                                 }
-                
+
                                 $set('developer_id', $project->developer_id);
                                 $set('emirate_id', $project->emirate_id);
                                 $set('community_id', $project->community_id);
-                
+
                                 $set('starting_price', $project->starting_price);
                                 $set('handover_quarter', $project->handover_quarter);
                                 $set('handover_year', $project->handover_year);
                                 $set('payment_plan', $project->payment_plan);
-                
+
                                 $set(
                                     'unitTypes',
                                     $project->unitTypes
@@ -134,7 +133,7 @@ class PropertyForm
                                         ->toArray()
                                 );
                             }),
-                
+
                         Select::make('developer_id')
                             ->label('Developer')
                             ->relationship('developer', 'name')
@@ -143,7 +142,7 @@ class PropertyForm
                             ->required()
                             ->disabled(fn (Get $get) => filled($get('project_id')))
                             ->dehydrated(),
-                
+
                         Select::make('emirate_id')
                             ->label('Emirate')
                             ->relationship('emirate', 'name')
@@ -158,14 +157,14 @@ class PropertyForm
                                     $set('community_id', null);
                                 }
                             }),
-                
+
                         Select::make('community_id')
                             ->label('Community')
                             ->options(function (Get $get) {
                                 if (! $get('emirate_id')) {
                                     return [];
                                 }
-                
+
                                 return Community::query()
                                     ->where('emirate_id', $get('emirate_id'))
                                     ->where('is_active', true)
@@ -177,18 +176,18 @@ class PropertyForm
                             ->placeholder('Select Community (Optional)')
                             ->disabled(fn (Get $get) => filled($get('project_id')))
                             ->dehydrated(),
-                
+
                         // Select::make('property_type_id')
                         //     ->label('Property Type')
                         //     ->relationship('propertyType', 'name')
                         //     ->searchable()
                         //     ->preload()
                         //     ->required(),
-                
+
                         RichEditor::make('description')
                             ->label('Property Description')
                             ->columnSpanFull(),
-                
+
                     ]),
 
                 Section::make('3. Property Facts')
@@ -202,37 +201,37 @@ class PropertyForm
                             ->prefix('AED')
                             ->minValue(0),
 
-                            TextInput::make('starting_price')
+                        TextInput::make('starting_price')
                             ->label('Starting Price')
                             ->numeric()
                             ->prefix('AED')
                             ->afterStateHydrated(function ($state, Set $set, Get $get) {
-                        
+
                                 // Property already has its own price.
                                 if (filled($state)) {
                                     return;
                                 }
-                        
+
                                 $projectId = $get('project_id');
-                        
+
                                 if (! $projectId) {
                                     return;
                                 }
-                        
+
                                 $project = Project::find($projectId);
-                        
+
                                 if (filled($project?->starting_price)) {
                                     $set('starting_price', $project->starting_price);
                                 }
                             })
                             ->disabled(function (Get $get) {
-                        
+
                                 $projectId = $get('project_id');
-                        
+
                                 if (! $projectId) {
                                     return false;
                                 }
-                        
+
                                 // Disable only when project itself has a price.
                                 return filled(
                                     Project::find($projectId)?->starting_price
@@ -251,73 +250,73 @@ class PropertyForm
                         //     ->minValue(0),
 
                         Select::make('handover_quarter')
-                        ->label('Handover Quarter')
-                        ->options([
-                            'Q1' => 'Q1',
-                            'Q2' => 'Q2',
-                            'Q3' => 'Q3',
-                            'Q4' => 'Q4',
-                        ])
-                        ->afterStateHydrated(function ($state, Set $set, $record) {
-                    
-                            // Property already has its own value
-                            if (filled($state)) {
-                                return;
-                            }
-                    
-                            // Editing existing property: take from project
-                            if ($record?->project && filled($record->project->handover_quarter)) {
-                                $set(
-                                    'handover_quarter',
-                                    $record->project->handover_quarter
+                            ->label('Handover Quarter')
+                            ->options([
+                                'Q1' => 'Q1',
+                                'Q2' => 'Q2',
+                                'Q3' => 'Q3',
+                                'Q4' => 'Q4',
+                            ])
+                            ->afterStateHydrated(function ($state, Set $set, $record) {
+
+                                // Property already has its own value
+                                if (filled($state)) {
+                                    return;
+                                }
+
+                                // Editing existing property: take from project
+                                if ($record?->project && filled($record->project->handover_quarter)) {
+                                    $set(
+                                        'handover_quarter',
+                                        $record->project->handover_quarter
+                                    );
+                                }
+                            })
+                            ->disabled(function (Get $get) {
+
+                                $projectId = $get('project_id');
+
+                                if (! $projectId) {
+                                    return false;
+                                }
+
+                                return filled(
+                                    Project::find($projectId)?->handover_quarter
                                 );
-                            }
-                        })
-                        ->disabled(function (Get $get) {
-                    
-                            $projectId = $get('project_id');
-                    
-                            if (! $projectId) {
-                                return false;
-                            }
-                    
-                            return filled(
-                                Project::find($projectId)?->handover_quarter
-                            );
-                        })
-                        ->dehydrated(),
+                            })
+                            ->dehydrated(),
 
                         TextInput::make('handover_year')
-                        ->label('Handover Year')
-                        ->numeric()
-                        ->afterStateHydrated(function ($state, Set $set, $record) {
-                    
-                            // Property already has its own value
-                            if (filled($state)) {
-                                return;
-                            }
-                    
-                            // Editing existing property: take from project
-                            if ($record?->project && filled($record->project->handover_year)) {
-                                $set(
-                                    'handover_year',
-                                    $record->project->handover_year
+                            ->label('Handover Year')
+                            ->numeric()
+                            ->afterStateHydrated(function ($state, Set $set, $record) {
+
+                                // Property already has its own value
+                                if (filled($state)) {
+                                    return;
+                                }
+
+                                // Editing existing property: take from project
+                                if ($record?->project && filled($record->project->handover_year)) {
+                                    $set(
+                                        'handover_year',
+                                        $record->project->handover_year
+                                    );
+                                }
+                            })
+                            ->disabled(function (Get $get) {
+
+                                $projectId = $get('project_id');
+
+                                if (! $projectId) {
+                                    return false;
+                                }
+
+                                return filled(
+                                    Project::find($projectId)?->handover_year
                                 );
-                            }
-                        })
-                        ->disabled(function (Get $get) {
-                    
-                            $projectId = $get('project_id');
-                    
-                            if (! $projectId) {
-                                return false;
-                            }
-                    
-                            return filled(
-                                Project::find($projectId)?->handover_year
-                            );
-                        })
-                        ->dehydrated(),
+                            })
+                            ->dehydrated(),
 
                         TextInput::make('payment_plan')
                             ->label('Payment Plan')
@@ -362,8 +361,6 @@ class PropertyForm
 
                     ]),
 
-                
-
                 Section::make('4. Amenities')
                     ->description('Select the amenities and features available for this property.')
                     ->schema([
@@ -373,7 +370,7 @@ class PropertyForm
                             ->relationship(
                                 name: 'amenities',
                                 titleAttribute: 'name',
-                                modifyQueryUsing: fn($query) => $query
+                                modifyQueryUsing: fn ($query) => $query
                                     ->where('is_active', true)
                                     ->orderBy('display_order')
                                     ->orderBy('name')

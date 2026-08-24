@@ -20,9 +20,8 @@ class LandingPageController extends Controller
                 'sections',
             ])
             ->where('slug', $slug)
-          
-            ->firstOrFail();
 
+            ->firstOrFail();
 
         /*
         |--------------------------------------------------------------------------
@@ -39,7 +38,6 @@ class LandingPageController extends Controller
             )
             : null;
 
-
         /*
         |--------------------------------------------------------------------------
         | Gallery Images
@@ -55,7 +53,6 @@ class LandingPageController extends Controller
             $coverMedia !== null ||
             $heroGalleryImages->isNotEmpty();
 
-
         /*
         |--------------------------------------------------------------------------
         | Unit Types
@@ -64,7 +61,6 @@ class LandingPageController extends Controller
 
         $unitTypes = $property->unitTypes;
 
-
         /*
         |--------------------------------------------------------------------------
         | Amenities
@@ -72,7 +68,6 @@ class LandingPageController extends Controller
         */
 
         $amenities = $property->amenities;
-
 
         /*
         |--------------------------------------------------------------------------
@@ -84,7 +79,6 @@ class LandingPageController extends Controller
             ->where('is_active', true)
             ->sortBy('display_order')
             ->values();
-
 
         /*
         |--------------------------------------------------------------------------
@@ -100,7 +94,6 @@ class LandingPageController extends Controller
             filled($property->handover_year) ||
             filled($property->payment_plan);
 
-
         /*
         |--------------------------------------------------------------------------
         | Project Description
@@ -110,7 +103,6 @@ class LandingPageController extends Controller
         $hasProjectDescription =
             $property->project !== null &&
             filled($property->project->description);
-
 
         /*
         |--------------------------------------------------------------------------

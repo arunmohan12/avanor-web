@@ -15,7 +15,7 @@ class MenusTable
     {
         return $table
             ->columns([
-       
+
                 TextColumn::make('label')
                     ->searchable(),
                 TextColumn::make('url')
@@ -27,7 +27,7 @@ class MenusTable
                 TextColumn::make('display_order')
                     ->numeric()
                     ->sortable(),
-               
+
             ])
             ->filters([
                 //

@@ -2,14 +2,13 @@
 
 namespace App\Filament\Resources\Properties\Tables;
 
+use App\Support\PriceFormatter;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use App\Support\PriceFormatter;
 
 class PropertiesTable
 {
@@ -21,31 +20,27 @@ class PropertiesTable
                     ->label('Developer')
                     ->searchable()
                     ->sortable(),
-                    TextColumn::make('project.name')
+                TextColumn::make('project.name')
                     ->label('Project')
                     ->searchable()
                     ->sortable(),
-             
-                    TextColumn::make('community.name')
+
+                TextColumn::make('community.name')
                     ->label('Community')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('title')
                     ->searchable(),
 
-             
-             
-
                 TextColumn::make('price')
                     ->label('Price')
-                    ->formatStateUsing(fn($state) => PriceFormatter::aed($state))
+                    ->formatStateUsing(fn ($state) => PriceFormatter::aed($state))
                     ->sortable(),
 
                 IconColumn::make('is_featured')
                     ->boolean(),
                 IconColumn::make('is_active')
                     ->boolean(),
-
 
             ])
             ->filters([

@@ -13,20 +13,20 @@ return new class extends Migration
     {
         Schema::create('site_settings', function (Blueprint $table) {
             $table->id();
-        
+
             // Contact
             $table->string('phone')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('email')->nullable();
             $table->text('address')->nullable();
-        
+
             // Social Media
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('youtube')->nullable();
             $table->string('x')->nullable();
-        
+
             $table->timestamps();
         });
     }

@@ -41,7 +41,7 @@ return new class extends Migration
 
             $table->string('handover_quarter', 2)->nullable();
             $table->unsignedSmallInteger('handover_year')->nullable();
-            
+
             $table->string('thumbnail')->nullable();
             $table->string('cover_image')->nullable();
 

@@ -1,17 +1,15 @@
 <?php
 
 namespace App\Services;
-use App\Models\Menu;
 
 use App\Models\Community;
 use App\Models\Developer;
+use App\Models\Menu;
 use App\Models\PropertyType;
 use Illuminate\Support\Facades\Cache;
 
 class MenuService
 {
-
-
     public function navigation(): array
     {
         return Cache::remember(
@@ -46,7 +44,7 @@ class MenuService
                         ->where('is_active', true)
                         ->orderBy('name')
                         ->get(['id', 'name'])
-                        ->map(fn($item) => [
+                        ->map(fn ($item) => [
                             'id' => $item->id,
                             'name' => $item->name,
                         ])
@@ -55,7 +53,7 @@ class MenuService
                     'communities' => Community::query()
                         ->orderBy('name')
                         ->get(['id', 'name'])
-                        ->map(fn($item) => [
+                        ->map(fn ($item) => [
                             'id' => $item->id,
                             'name' => $item->name,
                         ])
@@ -81,8 +79,8 @@ class MenuService
                     ->where('is_active', true)
                     ->orderBy('display_order')
                     ->orderBy('name')
-                    ->get(['id', 'name', 'slug','logo'])
-                    ->map(fn($item) => [
+                    ->get(['id', 'name', 'slug', 'logo'])
+                    ->map(fn ($item) => [
                         'id' => $item->id,
                         'name' => $item->name,
                         'slug' => $item->slug,

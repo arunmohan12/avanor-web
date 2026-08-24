@@ -14,7 +14,7 @@ return new class extends Migration
                 ->after('is_featured');
         });
     }
-    
+
     public function down(): void
     {
         Schema::table('communities', function (Blueprint $table) {

@@ -2,9 +2,10 @@
 
 namespace App\Support;
 
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\MediaLibrary\Support\PathGenerator\PathGenerator;
-use Illuminate\Support\Str;
+
 class MediaPathGenerator implements PathGenerator
 {
     public function getPath(Media $media): string
@@ -14,12 +15,12 @@ class MediaPathGenerator implements PathGenerator
 
     public function getPathForConversions(Media $media): string
     {
-        return $this->basePath($media) . 'conversions/';
+        return $this->basePath($media).'conversions/';
     }
 
     public function getPathForResponsiveImages(Media $media): string
     {
-        return $this->basePath($media) . 'responsive-images/';
+        return $this->basePath($media).'responsive-images/';
     }
 
     private function basePath(Media $media): string
@@ -35,6 +36,7 @@ class MediaPathGenerator implements PathGenerator
         $modelName = Str::plural(
             strtolower(class_basename($model))
         );
-        
-        return "{$modelName}/{$model->getKey()}/{$media->collection_name}/";    }
+
+        return "{$modelName}/{$model->getKey()}/{$media->collection_name}/";
+    }
 }

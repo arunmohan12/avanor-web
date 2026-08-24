@@ -25,10 +25,11 @@ class MenuResource extends Resource
 
     protected static ?string $navigationLabel = 'Menu Management';
 
-protected static ?string $modelLabel = 'Menu';
+    protected static ?string $modelLabel = 'Menu';
 
-protected static ?string $pluralModelLabel = 'Menus';
-protected static string|UnitEnum|null $navigationGroup = 'Content Management';
+    protected static ?string $pluralModelLabel = 'Menus';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Content Management';
 
     public static function form(Schema $schema): Schema
     {

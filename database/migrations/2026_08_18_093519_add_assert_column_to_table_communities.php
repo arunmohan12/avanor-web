@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('communities', function (Blueprint $table) {
             $table->text('description')
-            ->nullable()
-            ->after('hero');
+                ->nullable()
+                ->after('hero');
         });
     }
 

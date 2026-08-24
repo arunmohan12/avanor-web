@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('home_settings', function (Blueprint $table) {
             $table->id();
-        
+
             $table->string('hero_video')->nullable();
             $table->string('hero_poster')->nullable();
-        
+
             $table->timestamps();
         });
     }

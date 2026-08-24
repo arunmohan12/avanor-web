@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Properties;
 use App\Filament\Resources\Properties\Pages\CreateProperty;
 use App\Filament\Resources\Properties\Pages\EditProperty;
 use App\Filament\Resources\Properties\Pages\ListProperties;
+use App\Filament\Resources\Properties\RelationManagers\SectionsRelationManager;
 use App\Filament\Resources\Properties\Schemas\PropertyForm;
 use App\Filament\Resources\Properties\Tables\PropertiesTable;
 use App\Models\Property;
@@ -13,15 +14,17 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use App\Filament\Resources\Properties\RelationManagers\SectionsRelationManager;
+
 class PropertyResource extends Resource
 {
     protected static ?string $model = Property::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
     protected static string|\UnitEnum|null $navigationGroup = 'Property Management';
 
     protected static ?int $navigationSort = 4;
+
     protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Schema $schema): Schema
@@ -34,13 +37,13 @@ class PropertyResource extends Resource
         return PropertiesTable::configure($table);
     }
 
-
     public static function getRelations(): array
     {
         return [
             SectionsRelationManager::class,
         ];
     }
+
     public static function getPages(): array
     {
         return [

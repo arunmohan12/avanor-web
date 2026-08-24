@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Community;
-use App\Models\Property;
 use App\Models\Blog;
-use Illuminate\Contracts\View\View;
+use App\Models\Community;
 use App\Models\HomeSetting;
+use App\Models\Property;
+use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
 {
@@ -29,7 +29,6 @@ class HomeController extends Controller
             ->orderBy('display_order')
             ->limit(6)
             ->get();
-
 
         $featuredProperties = Property::query()
             ->select(
@@ -74,8 +73,7 @@ class HomeController extends Controller
         $homeSettings = HomeSetting::query()->first();
         $latestBlogs = $blogs
             ->reject(
-                fn($blog) =>
-                $featuredBlog && $blog->id === $featuredBlog->id
+                fn ($blog) => $featuredBlog && $blog->id === $featuredBlog->id
             )
             ->take(8)
             ->values();
@@ -83,7 +81,7 @@ class HomeController extends Controller
         return view('home', [
             'featuredCommunities' => $featuredCommunities,
             'latestBlogs' => $latestBlogs,
-            'featuredProperties'  => $featuredProperties,
+            'featuredProperties' => $featuredProperties,
             'featuredBlog' => $featuredBlog,
             'homeSettings' => $homeSettings,
         ]);

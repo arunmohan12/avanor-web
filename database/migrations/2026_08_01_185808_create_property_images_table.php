@@ -29,6 +29,7 @@ return new class extends Migration
             $table->index(['property_id', 'display_order']);
         });
     }
+
     /**
      * Reverse the migrations.
      */

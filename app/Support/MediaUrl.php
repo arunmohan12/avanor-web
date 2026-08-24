@@ -18,6 +18,7 @@ class MediaUrl
             now()->addMinutes(60)
         );
     }
+
     public static function fromMedia(
         ?Media $media,
         ?string $conversion = null,
@@ -32,5 +33,4 @@ class MediaUrl
             $conversion ?? ''
         );
     }
-
 }

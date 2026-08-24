@@ -9,9 +9,13 @@ use Illuminate\View\Component;
 class PropertySearch extends Component
 {
     public array $propertyTypes;
+
     public array $communities;
+
     public array $developers;
+
     public array $bedrooms;
+
     public array $priceRanges;
 
     public function __construct(MenuService $menuService)

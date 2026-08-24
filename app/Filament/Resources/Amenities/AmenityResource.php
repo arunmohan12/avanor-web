@@ -8,10 +8,8 @@ use App\Filament\Resources\Amenities\Pages\ListAmenities;
 use App\Filament\Resources\Amenities\Schemas\AmenityForm;
 use App\Filament\Resources\Amenities\Tables\AmenitiesTable;
 use App\Models\Amenity;
-use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class AmenityResource extends Resource

@@ -10,7 +10,4 @@ class HomeSetting extends Model
         'hero_video',
         'hero_poster',
     ];
-
-
-    
 }

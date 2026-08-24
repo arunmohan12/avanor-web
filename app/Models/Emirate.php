@@ -15,7 +15,7 @@ class Emirate extends Model
     ];
 
     public function communities(): HasMany
-{
-    return $this->hasMany(Community::class);
-}
+    {
+        return $this->hasMany(Community::class);
+    }
 }

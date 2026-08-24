@@ -10,21 +10,21 @@ return new class extends Migration
     {
         Schema::create('amenities', function (Blueprint $table) {
             $table->id();
-    
+
             $table->string('name')->unique();
-    
+
             $table->string('icon')->nullable();
-    
+
             $table->boolean('is_active')
                 ->default(true);
-    
+
             $table->unsignedInteger('display_order')
                 ->default(0);
-    
+
             $table->timestamps();
         });
     }
-    
+
     public function down(): void
     {
         Schema::dropIfExists('amenities');

@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 
 class Developer extends Model
-
-{    
-    
+{
     protected $fillable = [
         'name',
         'slug',
@@ -35,14 +33,13 @@ class Developer extends Model
     // }
 
     protected static function booted(): void
-{
-    static::saved(function () {
-        Cache::forget('menu_developers');
-    });
+    {
+        static::saved(function () {
+            Cache::forget('menu_developers');
+        });
 
-    static::deleted(function () {
-        Cache::forget('menu_developers');
-    });
+        static::deleted(function () {
+            Cache::forget('menu_developers');
+        });
+    }
 }
-}
-

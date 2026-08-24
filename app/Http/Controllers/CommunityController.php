@@ -7,7 +7,6 @@ use App\Models\Emirate;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
-
 class CommunityController extends Controller
 {
     public function index(Request $request)
@@ -19,7 +18,7 @@ class CommunityController extends Controller
                 'id',
                 'name',
             ]);
-    
+
         $communities = Community::query()
             ->select([
                 'id',
@@ -30,15 +29,15 @@ class CommunityController extends Controller
                 'display_order',
             ])
             ->with('emirate')
-    
+
             ->withCount([
                 'properties' => function ($query) {
                     $query->where('is_active', true);
                 },
             ])
-    
+
             ->where('is_active', true)
-    
+
             ->when(
                 $request->filled('emirate'),
                 function ($query) use ($request) {
@@ -48,16 +47,15 @@ class CommunityController extends Controller
                     );
                 }
             )
-    
+
             ->orderBy('display_order')
             ->get();
-    
+
         return view('communities.index', compact(
             'communities',
             'emirates'
         ));
     }
-
 
     public function show(string $slug)
     {
@@ -74,15 +72,15 @@ class CommunityController extends Controller
             ->where('is_active', true)
             ->firstOrFail();
 
-            $newLaunches = Project::query()
-    ->with('developer')
-    ->where('community_id', $community->id)
-    ->where('is_active', true)
+        $newLaunches = Project::query()
+            ->with('developer')
+            ->where('community_id', $community->id)
+            ->where('is_active', true)
     // ->where('status', 'off-plan')
-    ->latest()
-    ->limit(4)
-    ->get();
+            ->latest()
+            ->limit(4)
+            ->get();
 
-        return view('communities.detailed', compact('community','newLaunches'));
+        return view('communities.detailed', compact('community', 'newLaunches'));
     }
 }

@@ -19,10 +19,12 @@ class CommunityResource extends Resource
     protected static ?string $model = Community::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
     protected static ?string $navigationLabel = 'Communities';
 
     protected static string|\UnitEnum|null $navigationGroup = 'Property Management';
-        protected static ?int $navigationSort = 1;
+
+    protected static ?int $navigationSort = 1;
 
     protected static ?string $recordTitleAttribute = 'name';
 

@@ -12,7 +12,7 @@ return new class extends Migration
             $table->string('location')->nullable()->after('community_id');
         });
     }
-    
+
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {

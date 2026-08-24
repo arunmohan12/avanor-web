@@ -3,16 +3,17 @@
 namespace App\Filament\Resources\Projects\Schemas;
 
 use App\Enums\ProjectStatus;
+use App\Models\Community;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
-use Filament\Schemas\Components\Utilities\Get;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class ProjectForm
 {
@@ -27,78 +28,77 @@ class ProjectForm
                     ->schema([
 
                         Select::make('developer_id')
-    ->label('Developer')
-    ->relationship('developer', 'name')
-    ->searchable()
-    ->preload()
-    ->required(),
+                            ->label('Developer')
+                            ->relationship('developer', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->required(),
 
-Select::make('emirate_id')
-    ->label('Emirate')
-    ->relationship('emirate', 'name')
-    ->searchable()
-    ->preload()
-    ->required()
-    ->live()
-    ->afterStateUpdated(function (Set $set) {
-        $set('community_id', null);
-        $set('location', null);
-    }),
+                        Select::make('emirate_id')
+                            ->label('Emirate')
+                            ->relationship('emirate', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->required()
+                            ->live()
+                            ->afterStateUpdated(function (Set $set) {
+                                $set('community_id', null);
+                                $set('location', null);
+                            }),
 
-Select::make('community_id')
-    ->label('Community')
-    ->options(function (Get $get) {
+                        Select::make('community_id')
+                            ->label('Community')
+                            ->options(function (Get $get) {
 
-        $emirateId = $get('emirate_id');
+                                $emirateId = $get('emirate_id');
 
-        if (! $emirateId) {
-            return [];
-        }
+                                if (! $emirateId) {
+                                    return [];
+                                }
 
-        return \App\Models\Community::query()
-            ->where('emirate_id', $emirateId)
-            ->where('is_active', true)
-            ->orderBy('name')
-            ->pluck('name', 'id');
-    })
-    ->searchable()
-    ->nullable()
-    ->live()
-    ->placeholder('Select community (optional)')
-    ->afterStateUpdated(function ($state, Set $set) {
+                                return Community::query()
+                                    ->where('emirate_id', $emirateId)
+                                    ->where('is_active', true)
+                                    ->orderBy('name')
+                                    ->pluck('name', 'id');
+                            })
+                            ->searchable()
+                            ->nullable()
+                            ->live()
+                            ->placeholder('Select community (optional)')
+                            ->afterStateUpdated(function ($state, Set $set) {
 
-        if (! $state) {
-            $set('location', null);
-            return;
-        }
+                                if (! $state) {
+                                    $set('location', null);
 
-        $community = \App\Models\Community::find($state);
+                                    return;
+                                }
 
-        if (filled($community?->area)) {
-            $set('location', $community->area);
-        } else {
-            $set('location', null);
-        }
-    }),
+                                $community = Community::find($state);
 
-TextInput::make('location')
-    ->label('Location')
-    ->maxLength(255)
-    ->disabled(function (Get $get) {
+                                if (filled($community?->area)) {
+                                    $set('location', $community->area);
+                                } else {
+                                    $set('location', null);
+                                }
+                            }),
 
-        $communityId = $get('community_id');
+                        TextInput::make('location')
+                            ->label('Location')
+                            ->maxLength(255)
+                            ->disabled(function (Get $get) {
 
-        if (! $communityId) {
-            return false;
-        }
+                                $communityId = $get('community_id');
 
-        $community = \App\Models\Community::find($communityId);
+                                if (! $communityId) {
+                                    return false;
+                                }
 
-        return filled($community?->area);
-    })
-    ->dehydrated(),
-                    
-                
+                                $community = Community::find($communityId);
+
+                                return filled($community?->area);
+                            })
+                            ->dehydrated(),
 
                         TextInput::make('map_url')
                             ->label('Google Maps URL')
@@ -123,7 +123,6 @@ TextInput::make('location')
 
                     ]),
 
-
                 Section::make('Pricing')
                     ->schema([
 
@@ -143,7 +142,7 @@ TextInput::make('location')
                         Select::make('handover_year')
                             ->options(
                                 collect(range(now()->year, now()->year + 10))
-                                    ->mapWithKeys(fn($year) => [$year => $year])
+                                    ->mapWithKeys(fn ($year) => [$year => $year])
                                     ->toArray()
                             )
                             ->searchable()

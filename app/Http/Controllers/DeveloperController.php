@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Community;
 use App\Models\Developer;
 use App\Models\Property;
-use App\Models\Community;
+
 class DeveloperController extends Controller
 {
     public function index()
     {
-    
- 
 
         return view('developers.partners');
     }
@@ -29,10 +29,10 @@ class DeveloperController extends Controller
                 'media',
             ])
             ->latest()
-         
+
             ->get();
 
-            $communities = Community::query()
+        $communities = Community::query()
             ->select([
                 'id',
                 'name',
@@ -42,15 +42,15 @@ class DeveloperController extends Controller
             ])
             ->where('is_active', true)
             ->where('is_featured', true)
-        
-            // Only communities having properties from this developer
+
+        // Only communities having properties from this developer
             ->whereHas('properties', function ($query) use ($developer) {
                 $query
                     ->where('is_active', true)
                     ->where('developer_id', $developer->id);
             })
-        
-            // Count only this developer's active properties
+
+        // Count only this developer's active properties
             ->withCount([
                 'properties' => function ($query) use ($developer) {
                     $query
@@ -58,7 +58,6 @@ class DeveloperController extends Controller
                         ->where('developer_id', $developer->id);
                 },
             ])
-        
             ->orderBy('display_order')
             ->get();
 

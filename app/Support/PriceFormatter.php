@@ -13,18 +13,18 @@ class PriceFormatter
         $price = (float) $price;
 
         if ($price >= 1_000_000_000) {
-            return 'AED ' . self::compact($price / 1_000_000_000) . ' B';
+            return 'AED '.self::compact($price / 1_000_000_000).' B';
         }
 
         if ($price >= 1_000_000) {
-            return 'AED ' . self::compact($price / 1_000_000) . ' M';
+            return 'AED '.self::compact($price / 1_000_000).' M';
         }
 
         if ($price >= 1_000) {
-            return 'AED ' . self::compact($price / 1_000) . ' K';
+            return 'AED '.self::compact($price / 1_000).' K';
         }
 
-        return 'AED ' . number_format($price, 0);
+        return 'AED '.number_format($price, 0);
     }
 
     public static function full(float|string|null $price): string
@@ -33,7 +33,7 @@ class PriceFormatter
             return 'Price on Request';
         }
 
-        return 'AED ' . number_format((float) $price, 2);
+        return 'AED '.number_format((float) $price, 2);
     }
 
     private static function compact(float $value): string

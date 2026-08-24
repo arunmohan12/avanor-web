@@ -17,7 +17,6 @@ class DevelopersTable
         return $table
             ->defaultSort('display_order')
             ->columns([
-               
 
                 TextColumn::make('name')
                     ->searchable()

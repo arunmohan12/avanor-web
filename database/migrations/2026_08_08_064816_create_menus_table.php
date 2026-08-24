@@ -13,19 +13,19 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-        
+
             $table->foreignId('parent_id')
                 ->nullable()
                 ->constrained('menus')
                 ->cascadeOnDelete();
-        
+
             $table->string('label');
             $table->string('url')->nullable();
             $table->string('route_name')->nullable();
-        
+
             $table->boolean('is_active')->default(true);
             $table->unsignedInteger('display_order')->default(0);
-        
+
             $table->timestamps();
         });
     }

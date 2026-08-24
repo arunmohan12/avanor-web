@@ -13,21 +13,21 @@ return new class extends Migration
     {
         Schema::create('communities', function (Blueprint $table) {
             $table->id();
-    
+
             $table->foreignId('emirate_id')
-                  ->constrained()
-                  ->cascadeOnDelete();
-    
+                ->constrained()
+                ->cascadeOnDelete();
+
             $table->string('name', 150);
             $table->string('slug');
-    
+
             $table->decimal('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7)->nullable();
-    
+
             $table->boolean('is_active')->default(true);
-    
+
             $table->timestamps();
-    
+
             $table->unique(['emirate_id', 'slug']);
         });
     }

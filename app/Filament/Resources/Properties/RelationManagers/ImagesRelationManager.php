@@ -2,13 +2,15 @@
 
 namespace App\Filament\Resources\Properties\RelationManagers;
 
-use Filament\Forms\Components\FileUpload;
+use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -22,8 +24,6 @@ class ImagesRelationManager extends RelationManager
     {
         return $schema
             ->components([
-
-
 
                 Toggle::make('is_featured')
                     ->label('Featured / Hero Image')
@@ -61,12 +61,12 @@ class ImagesRelationManager extends RelationManager
 
             ])
             ->headerActions([
-                \Filament\Actions\CreateAction::make()
+                CreateAction::make()
                     ->label('Add Gallery Image'),
             ])
             ->recordActions([
-                \Filament\Actions\EditAction::make(),
-                \Filament\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ]);
     }
 }

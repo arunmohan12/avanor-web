@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class PropertyType extends Model
 {
     protected $fillable = [
@@ -15,8 +16,7 @@ class PropertyType extends Model
     ];
 
     public function propertyUnitTypes(): HasMany
-{
-    return $this->hasMany(PropertyUnitType::class);
-}
-
+    {
+        return $this->hasMany(PropertyUnitType::class);
+    }
 }

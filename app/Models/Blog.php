@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Spatie\Image\Enums\Fit;
 
 class Blog extends Model implements HasMedia
 {
@@ -66,6 +66,7 @@ class Blog extends Model implements HasMedia
             ->performOnCollections('featured_image')
             ->nonQueued();
     }
+
     public function scopeActive($query)
     {
         return $query->where('is_active', true);

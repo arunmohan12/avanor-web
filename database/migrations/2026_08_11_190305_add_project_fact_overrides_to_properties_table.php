@@ -12,22 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('properties', function (Blueprint $table) {
-    
+
             $table->decimal('starting_price', 15, 2)
                 ->nullable()
                 ->after('price');
-    
+
             $table->string('handover_quarter', 2)
                 ->nullable()
                 ->after('starting_price');
-    
+
             $table->unsignedSmallInteger('handover_year')
                 ->nullable()
                 ->after('handover_quarter');
-    
+
         });
     }
-    
+
     public function down(): void
     {
         Schema::table('properties', function (Blueprint $table) {
@@ -42,5 +42,4 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-
 };

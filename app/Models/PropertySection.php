@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Spatie\Image\Enums\Fit;
+
 class PropertySection extends Model implements HasMedia
 {
     use InteractsWithMedia;
@@ -42,39 +42,38 @@ class PropertySection extends Model implements HasMedia
             ->width(768)
             ->quality(65)
             ->nonQueued();
-    
+
         $this->addMediaConversion('cover_tablet_avif')
             ->format('avif')
             ->width(1280)
             ->quality(70)
             ->nonQueued();
-    
+
         $this->addMediaConversion('cover_avif')
             ->format('avif')
             ->width(1920)
             ->quality(75)
             ->nonQueued();
-    
-    
+
         // Gallery images
         $this->addMediaConversion('gallery_mobile_avif')
             ->format('avif')
             ->width(768)
             ->quality(65)
             ->nonQueued();
-    
+
         $this->addMediaConversion('gallery_tablet_avif')
             ->format('avif')
             ->width(1280)
             ->quality(70)
             ->nonQueued();
-    
+
         $this->addMediaConversion('gallery_avif')
             ->format('avif')
             ->width(1920)
             ->quality(75)
             ->nonQueued();
-            $this->addMediaConversion('section_image_avif')
+        $this->addMediaConversion('section_image_avif')
             ->format('avif')
             ->width(1600)
             ->quality(75)

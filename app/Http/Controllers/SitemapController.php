@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
-use App\Models\Property;
-use App\Models\Project;
 use App\Models\Community;
 use App\Models\Developer;
+use App\Models\Project;
+use App\Models\Property;
+
 class SitemapController extends Controller
 {
     public function index()
@@ -33,7 +34,7 @@ class SitemapController extends Controller
             ->orderByDesc('updated_at')
             ->get(['slug', 'updated_at']);
 
-            $developers = Developer::query()
+        $developers = Developer::query()
             ->where('is_active', true)
             ->get([
                 'slug',

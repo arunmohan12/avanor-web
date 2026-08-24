@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+
 use App\Support\PriceFormatter;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Spatie\Image\Enums\Fit;
 
 class Property extends Model implements HasMedia
 {
@@ -33,6 +34,7 @@ class Property extends Model implements HasMedia
             ->addMediaCollection('gallery')
             ->useDisk('s3');
     }
+
     public function registerMediaConversions(?Media $media = null): void
     {
         // Cover
@@ -41,57 +43,57 @@ class Property extends Model implements HasMedia
             ->width(768)
             ->quality(65)
             ->nonQueued();
-    
+
         $this->addMediaConversion('cover_tablet_avif')
             ->format('avif')
             ->width(1280)
             ->quality(70)
             ->nonQueued();
-    
+
         $this->addMediaConversion('cover_avif')
             ->format('avif')
             ->width(1920)
             ->quality(75)
             ->nonQueued();
-    
+
         // Gallery
         $this->addMediaConversion('gallery_mobile_avif')
             ->format('avif')
             ->width(768)
             ->quality(65)
             ->nonQueued();
-    
+
         $this->addMediaConversion('gallery_tablet_avif')
             ->format('avif')
             ->width(1280)
             ->quality(70)
             ->nonQueued();
-    
+
         $this->addMediaConversion('gallery_thumb_avif')
             ->format('avif')
             ->width(400)
             ->quality(60)
             ->nonQueued();
-    
+
         $this->addMediaConversion('gallery_avif')
             ->format('avif')
             ->width(1920)
             ->quality(75)
             ->nonQueued();
-    
+
         // Section images
         $this->addMediaConversion('section_image_mobile_avif')
             ->format('avif')
             ->width(768)
             ->quality(65)
             ->nonQueued();
-    
+
         $this->addMediaConversion('section_image_tablet_avif')
             ->format('avif')
             ->width(1280)
             ->quality(70)
             ->nonQueued();
-            $this
+        $this
             ->addMediaConversion('thumbnail_avif')
             ->format('avif')
             ->fit(Fit::Crop, 800, 600)
@@ -99,6 +101,7 @@ class Property extends Model implements HasMedia
             ->nonQueued();
 
     }
+
     protected $fillable = [
         'developer_id',
         'project_id',
@@ -175,6 +178,7 @@ class Property extends Model implements HasMedia
     {
         return $this->belongsTo(PropertyType::class);
     }
+
     public function images()
     {
         return $this->hasMany(PropertyImage::class);
@@ -198,19 +202,22 @@ class Property extends Model implements HasMedia
     protected function formattedPrice(): Attribute
     {
         return Attribute::make(
-            get: fn() => PriceFormatter::aed($this->price),
+            get: fn () => PriceFormatter::aed($this->price),
         );
     }
+
     public function unitTypes(): HasMany
     {
         return $this->hasMany(PropertyUnitType::class)
             ->orderBy('display_order');
     }
+
     public function sections(): HasMany
     {
         return $this->hasMany(PropertySection::class)
             ->orderBy('display_order');
     }
+
     public function amenities(): BelongsToMany
     {
         return $this->belongsToMany(Amenity::class);

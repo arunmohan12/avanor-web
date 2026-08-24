@@ -14,7 +14,7 @@ return new class extends Migration
                 ->after('handover_year');
         });
     }
-    
+
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {

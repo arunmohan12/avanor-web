@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
-use App\Services\MenuService;
 use App\Models\SiteSetting;
+use App\Services\MenuService;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -30,7 +30,7 @@ class ViewServiceProvider extends ServiceProvider
                 'home',
                 'about',
                 'contact',
-                'developers.partners'
+                'developers.partners',
             ],
             function ($view) use ($menuService) {
                 $view->with([
@@ -44,7 +44,6 @@ class ViewServiceProvider extends ServiceProvider
             $view->with($menuService->propertySearch());
         });
 
-
         View::composer('*', function ($view) {
 
             $siteSettings = Cache::remember(
@@ -54,7 +53,7 @@ class ViewServiceProvider extends ServiceProvider
                     ->first()
                     ?->toArray()
             );
-        
+
             $view->with('siteSettings', $siteSettings);
         });
     }

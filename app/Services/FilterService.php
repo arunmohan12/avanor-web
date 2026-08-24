@@ -43,6 +43,7 @@ class FilterService
             ];
         });
     }
+
     private const CACHE_KEY = 'property_filters_v3';
 
     public function getFilters(): array
@@ -84,6 +85,7 @@ class FilterService
             }
         );
     }
+
     public function clear(): void
     {
         Cache::forget('property_filters_v1');
