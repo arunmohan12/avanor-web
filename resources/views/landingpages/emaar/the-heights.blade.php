@@ -1228,7 +1228,7 @@ $property->slug
             @endif
 
 
-            <div class="landing-section-cta">
+            <div class="landing-section-ct space">
 
 
                 <button
