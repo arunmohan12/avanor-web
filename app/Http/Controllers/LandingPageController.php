@@ -151,7 +151,12 @@ Log::info('LANDING PERFORMANCE', [
             'galleryImages',
             'unitTypes',
             'amenities',
-            'activeSections'
+            'activeSections',
+            'heroGalleryImages',
+            'hasHeroImages',
+            'propertyImageUrl',
+            'hasFacts',
+            'hasProjectDescription',
         ))->render();
 
         Log::info('LANDING VIEW PERFORMANCE', [
