@@ -4,11 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use App\Support\MediaUrl;
+use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class LandingPageController extends Controller
 {
     public function show(string $slug)
     {
+
+    $start = microtime(true);
+
+    $queryCount = 0;
+    $queryTime = 0;
+
+    DB::listen(function (QueryExecuted $query) use (&$queryCount, &$queryTime) {
+        $queryCount++;
+        $queryTime += $query->time;
+    });
+
         $property = Property::query()
             ->with([
                 'developer',
@@ -109,7 +123,12 @@ class LandingPageController extends Controller
         | View
         |--------------------------------------------------------------------------
         */
-
+Log::info('LANDING PERFORMANCE', [
+    'slug' => $slug,
+    'controller_ms' => round((microtime(true) - $start) * 1000, 2),
+    'query_count' => $queryCount,
+    'query_ms' => round($queryTime, 2),
+]);
         return view('landingpages.emaar.the-heights', compact(
             'property',
             'coverMedia',
