@@ -213,188 +213,78 @@ $property->slug
 
 <main>
 
-    @if ($hasHeroImages)
+    @if ($coverMedia)
 
-    <section class="avanor-property-hero" id="home">
+        <section class="avanor-property-hero" id="home">
 
-        <div class="swiper avanor-property-gallery">
+            <div class="avanor-property-hero-single">
 
-            <div class="swiper-wrapper">
+                <img
+                    src="{{ \App\Support\MediaUrl::fromMedia(
+                $coverMedia,
+                'cover_avif'
+            ) }}"
 
-                {{-- COVER IMAGE --}}
-                @if ($coverMedia)
+                    srcset="
+                {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_mobile_avif') }} 768w,
+                {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_tablet_avif') }} 1280w,
+                {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_avif') }} 1920w
+            "
 
-                <div class="swiper-slide">
+                    sizes="100vw"
 
-                    <img
-                        src="{{ \App\Support\MediaUrl::fromMedia(
-            $coverMedia,
-            'cover_avif'
-        ) }}"
+                    alt="{{ $property->project?->name ?? $property->title }}"
 
-                        srcset="
-            {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_mobile_avif') }} 768w,
-            {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_tablet_avif') }} 1280w,
-            {{ \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_avif') }} 1920w
-        "
+                    class="avanor-property-hero-image"
 
-                        sizes="100vw"
+                    fetchpriority="high"
+                    decoding="async">
 
-                        alt=" {{ $property->project?->name ?? $property->title }}"
-
-                        class="avanor-property-hero-image"
-
-                        fetchpriority="high"
-                        decoding="async">
+                {{-- DARK OVERLAY --}}
+                <div class="avanor-property-hero-overlay"></div>
 
 
-                    {{-- DARK OVERLAY --}}
-                    <div class="avanor-property-hero-overlay"></div>
+                {{-- HERO CONTENT --}}
+                <div class="avanor-property-slide-content-landing">
 
+            <span class="avanor-property-slide-eyebrow">
+                EMAAR PROPERTIES
+            </span>
 
-                    {{-- HERO CONTENT --}}
-                    <div class="avanor-property-slide-content-landing">
+                    <h1 class="avanor-property-slide-title">
+                        {{ $property->title }}
+                    </h1>
 
-                        <span class="avanor-property-slide-eyebrow">
-                            EMAAR PROPERTIES
-                        </span>
+                    <p class="avanor-property-slide-description">
+                        A refined residential community designed around wellness,
+                        nature and modern living.
+                    </p>
 
-                        <h1 class="avanor-property-slide-title">
-                            {{ $property->title }}
-                        </h1>
+                    <a
+                        href="https://wa.me/971589798257"
+                        class="avanor-property-slide-btn whatsapp-track">
 
-                        <p class="avanor-property-slide-description">
-                            A refined residential community designed around wellness,
-                            nature and modern living.
-                        </p>
+                        WHATSAPP
 
-                        <a
-                            href="https://wa.me/971589798257"
-                            class="avanor-property-slide-btn whatsapp-track" >
+                        <i class="fab fa-whatsapp"></i>
 
+                    </a>
 
-                           WHATSAPP
+                    <a
+                        href="tel:+971589798257"
+                        class="avanor-property-slide-btn call-track">
 
-                           <i class="fab fa-whatsapp"></i>
+                        CALL
 
-                        </a>
+                        <i class="far fa-phone"></i>
 
-                        <a
-                            href="tel:+971589798257"
-                            class="avanor-property-slide-btn call-track" >
-
-                           CALL
-
-                           <i class="far fa-phone"></i>
-
-                        </a>
-
-
-                    </div>
+                    </a>
 
                 </div>
-
-                @endif
-
-
-                {{-- FIRST 2 GALLERY IMAGES ONLY --}}
-                @foreach ($heroGalleryImages as $image)
-
-                <div class="swiper-slide">
-
-                    <img
-                        src="{{ \App\Support\MediaUrl::fromMedia(
-                            $image,
-                            'gallery_avif'
-                        ) }}"
-
-                        srcset="
-                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_mobile_avif') }} 768w,
-                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_tablet_avif') }} 1280w,
-                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_avif') }} 1920w
-                        "
-
-                        sizes="100vw"
-
-                        alt=" {{ $property->project?->name ?? $property->title }}"
-
-                        class="avanor-property-hero-image"
-
-                        loading="lazy"
-                        decoding="async">
-                    <div class="avanor-property-hero-overlay"></div>
-                    <div class="avanor-property-slide-content-landing">
-
-                        <span class="avanor-property-slide-eyebrow">
-                            EMAAR PROPERTIES
-                        </span>
-
-                        <h1 class="avanor-property-slide-title">
-                            {{ $property->project?->name ?? $property->title }}
-                        </h1>
-
-                        <p class="avanor-property-slide-description">
-                            A refined residential community designed around wellness,
-                            nature and modern living.
-                        </p>
-
-                        <a
-                            href="https://wa.me/971589798257"
-                            class="avanor-property-slide-btn whatsapp-track" >
-
-
-                           WHATSAPP
-
-                           <i class="fab fa-whatsapp"></i>
-
-                        </a>
-
-                        <a
-                            href="tel:+971589798257"
-                            class="avanor-property-slide-btn call-track" >
-
-                           CALL
-
-                           <i class="far fa-phone"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-                @endforeach
 
             </div>
 
-
-            @if ($galleryImages->count() > 1)
-
-            <button
-                type="button"
-                class="avanor-property-gallery-prev"
-                aria-label="Previous image">
-
-                <i class="far fa-chevron-left"></i>
-
-            </button>
-
-            <button
-                type="button"
-                class="avanor-property-gallery-next"
-                aria-label="Next image">
-
-                <i class="far fa-chevron-right"></i>
-
-            </button>
-
-            <div class="swiper-pagination avanor-property-gallery-pagination"></div>
-
-            @endif
-
-        </div>
-
-    </section>
+        </section>
 
     @endif
 
