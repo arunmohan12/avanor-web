@@ -93,14 +93,12 @@ $property->slug
 
 
 @push('structured-data')
-<script type="application/ld+json">
-    {
-        !!json_encode(
+    <script type="application/ld+json">
+        {!! json_encode(
             $propertySchema,
             JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
-        ) !!
-    }
-</script>
+        ) !!}
+    </script>
 @endpush
 
 
@@ -203,7 +201,7 @@ $property->slug
                 class="landing-mobile-contact " data-lead-popup-open>
                 Register Now
 
-                
+
             </a>
 
         </nav>
@@ -273,9 +271,9 @@ $property->slug
                         <a
                             href="https://wa.me/971589798257"
                             class="avanor-property-slide-btn whatsapp-track" >
-                         
-           
-                           WHATSAPP  
+
+
+                           WHATSAPP
 
                            <i class="fab fa-whatsapp"></i>
 
@@ -284,13 +282,13 @@ $property->slug
                         <a
                             href="tel:+971589798257"
                             class="avanor-property-slide-btn call-track" >
-                  
-                           CALL  
+
+                           CALL
 
                            <i class="far fa-phone"></i>
 
                         </a>
-                     
+
 
                     </div>
 
@@ -343,9 +341,9 @@ $property->slug
                         <a
                             href="https://wa.me/971589798257"
                             class="avanor-property-slide-btn whatsapp-track" >
-                         
-           
-                           WHATSAPP  
+
+
+                           WHATSAPP
 
                            <i class="fab fa-whatsapp"></i>
 
@@ -354,8 +352,8 @@ $property->slug
                         <a
                             href="tel:+971589798257"
                             class="avanor-property-slide-btn call-track" >
-                  
-                           CALL  
+
+                           CALL
 
                            <i class="far fa-phone"></i>
 
