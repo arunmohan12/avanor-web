@@ -1086,33 +1086,7 @@ $property->slug
 
 
             {{-- THUMBNAILS --}}
-            @if ($galleryImages->count() > 1)
 
-            <div class="landing-gallery-thumbs">
-
-                @foreach ($galleryImages as $image)
-
-                <button
-                    type="button"
-                    class="landing-gallery-thumb {{ $loop->first ? 'is-active' : '' }}"
-                    data-gallery-index="{{ $loop->index }}">
-
-                    <img
-                        src="{{ \App\Support\MediaUrl::fromMedia(
-                        $image,
-                        'gallery_thumb_avif'
-                    ) }}"
-                        alt=" {{ $property->project?->name ?? $property->title }}"
-                        loading="lazy"
-                        decoding="async">
-
-                </button>
-
-                @endforeach
-
-            </div>
-
-            @endif
             @endif
 
 
