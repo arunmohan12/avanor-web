@@ -129,18 +129,36 @@ Log::info('LANDING PERFORMANCE', [
     'query_count' => $queryCount,
     'query_ms' => round($queryTime, 2),
 ]);
-        return view('landingpages.emaar.the-heights', compact(
+//        return view('landingpages.emaar.the-heights', compact(
+//            'property',
+//            'coverMedia',
+//            'propertyImageUrl',
+//            'galleryImages',
+//            'heroGalleryImages',
+//            'hasHeroImages',
+//            'unitTypes',
+//            'amenities',
+//            'activeSections',
+//            'hasFacts',
+//            'hasProjectDescription',
+//        ));
+
+        $viewStart = microtime(true);
+
+        $html = view('landingpages.emaar.the-heights', compact(
             'property',
             'coverMedia',
-            'propertyImageUrl',
             'galleryImages',
-            'heroGalleryImages',
-            'hasHeroImages',
             'unitTypes',
             'amenities',
-            'activeSections',
-            'hasFacts',
-            'hasProjectDescription',
-        ));
+            'activeSections'
+        ))->render();
+
+        Log::info('LANDING VIEW PERFORMANCE', [
+            'view_ms' => round((microtime(true) - $viewStart) * 1000, 2),
+            'total_ms' => round((microtime(true) - $start) * 1000, 2),
+        ]);
+
+        return response($html);
     }
 }
