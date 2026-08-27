@@ -21,6 +21,7 @@ class DeveloperController extends Controller
             ->where('is_active', true)
             ->firstOrFail();
 
+
         $properties = Property::query()
             ->where('developer_id', $developer->id)
             ->where('is_active', true)
@@ -32,7 +33,7 @@ class DeveloperController extends Controller
 
             ->get();
 
-        $communities = Community::query()
+    $communities = Community::query()
             ->select([
                 'id',
                 'name',

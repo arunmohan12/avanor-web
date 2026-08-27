@@ -13,15 +13,7 @@ class LandingPageController extends Controller
     public function show(string $slug)
     {
 
-    $start = microtime(true);
 
-    $queryCount = 0;
-    $queryTime = 0;
-
-    DB::listen(function (QueryExecuted $query) use (&$queryCount, &$queryTime) {
-        $queryCount++;
-        $queryTime += $query->time;
-    });
 
         $property = Property::query()
             ->with([
@@ -123,47 +115,21 @@ class LandingPageController extends Controller
         | View
         |--------------------------------------------------------------------------
         */
-Log::info('LANDING PERFORMANCE', [
-    'slug' => $slug,
-    'controller_ms' => round((microtime(true) - $start) * 1000, 2),
-    'query_count' => $queryCount,
-    'query_ms' => round($queryTime, 2),
-]);
-//        return view('landingpages.emaar.the-heights', compact(
-//            'property',
-//            'coverMedia',
-//            'propertyImageUrl',
-//            'galleryImages',
-//            'heroGalleryImages',
-//            'hasHeroImages',
-//            'unitTypes',
-//            'amenities',
-//            'activeSections',
-//            'hasFacts',
-//            'hasProjectDescription',
-//        ));
 
-        $viewStart = microtime(true);
-
-        $html = view('landingpages.emaar.the-heights', compact(
+        return view('landingpages.emaar.the-heights', compact(
             'property',
             'coverMedia',
+            'propertyImageUrl',
             'galleryImages',
+            'heroGalleryImages',
+            'hasHeroImages',
             'unitTypes',
             'amenities',
             'activeSections',
-            'heroGalleryImages',
-            'hasHeroImages',
-            'propertyImageUrl',
             'hasFacts',
             'hasProjectDescription',
-        ))->render();
+        ));
 
-        Log::info('LANDING VIEW PERFORMANCE', [
-            'view_ms' => round((microtime(true) - $viewStart) * 1000, 2),
-            'total_ms' => round((microtime(true) - $start) * 1000, 2),
-        ]);
 
-        return response($html);
     }
 }
