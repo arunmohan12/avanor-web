@@ -2,25 +2,80 @@
 <html lang="en">
 
 <head>
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager - delayed for performance -->
     <script>
-        (function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event:'gtm.js'
+        window.dataLayer = window.dataLayer || [];
+
+        (function (w, d, s, l, i) {
+
+            let loaded = false;
+
+            const events = [
+                'pointerdown',
+                'touchstart',
+                'keydown',
+                'scroll'
+            ];
+
+            function loadGTM() {
+
+                if (loaded) {
+                    return;
+                }
+
+                loaded = true;
+
+                events.forEach(function (event) {
+                    w.removeEventListener(event, loadGTM);
+                });
+
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+
+                const script = d.createElement(s);
+
+                script.async = true;
+
+                script.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' +
+                    i +
+                    (l !== 'dataLayer' ? '&l=' + l : '');
+
+                d.head.appendChild(script);
+            }
+
+            /*
+             * Load immediately when the visitor interacts.
+             */
+            events.forEach(function (event) {
+                w.addEventListener(
+                    event,
+                    loadGTM,
+                    {
+                        once: true,
+                        passive: true
+                    }
+                );
             });
 
-            var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),
-                dl=l!='dataLayer' ? '&l='+l : '';
+            /*
+             * Otherwise load after the page has finished loading.
+             */
+            w.addEventListener('load', function () {
 
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                setTimeout(loadGTM, 4000);
 
-            f.parentNode.insertBefore(j,f);
+            }, { once: true });
 
-        })(window,document,'script','dataLayer','GTM-NCXCP87F');
+        })(
+            window,
+            document,
+            'script',
+            'dataLayer',
+            'GTM-NCXCP87F'
+        );
     </script>
     <!-- End Google Tag Manager -->
 
