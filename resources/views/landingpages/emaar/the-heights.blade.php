@@ -266,8 +266,7 @@ $property->slug
 
                         WHATSAPP
 
-                        <i class="fab fa-whatsapp"></i>
-
+                        <x-landing-icon name="whatsapp" />
                     </a>
 
                     <a
@@ -276,8 +275,7 @@ $property->slug
 
                         CALL
 
-                        <i class="far fa-phone"></i>
-
+                        <x-landing-icon name="phone" />
                     </a>
 
                 </div>
@@ -1065,7 +1063,9 @@ $property->slug
                     id="landingGalleryPrev"
                     aria-label="Previous image">
 
-                    <i class="far fa-chevron-left"></i>
+{{--                    <i class="far fa-chevron-left"></i>--}}
+
+                    <x-landing-icon name="chevron-left" />
 
                 </button>
 
@@ -1076,8 +1076,8 @@ $property->slug
                     id="landingGalleryNext"
                     aria-label="Next image">
 
-                    <i class="far fa-chevron-right"></i>
-
+{{--                    <i class="far fa-chevron-right"></i>--}}
+                    <x-landing-icon name="chevron-right" />
                 </button>
 
                 @endif
@@ -1127,20 +1127,30 @@ $property->slug
 
                         @foreach ($amenities as $amenity)
 
-                        <div class="col-xxl-3 col-sm-6">
+                            @php
+                                $amenityIcon = match ($amenity->icon) {
+                                    'fa-solid fa-child' => 'child',
+                                    'fa-solid fa-person-swimming' => 'swimming',
+                                    'fa-solid fa-dumbbell' => 'dumbbell',
+                                    'fa-solid fa-utensils' => 'utensils',
+                                    default => 'check',
+                                };
+                            @endphp
 
-                            <div class="checklist">
+                            <div class="col-xxl-3 col-sm-6">
 
-                                <ul>
-                                    <li>
-                                        <i class="{{ $amenity->icon ?: 'far fa-square-check' }}"></i>
-                                        {{ $amenity->name }}
-                                    </li>
-                                </ul>
+                                <div class="checklist">
+
+                                    <ul>
+                                        <li>
+                                            <x-landing-icon :name="$amenityIcon" />
+                                            {{ $amenity->name }}
+                                        </li>
+                                    </ul>
+
+                                </div>
 
                             </div>
-
-                        </div>
 
                         @endforeach
 
@@ -1234,54 +1244,56 @@ $property->slug
 
 
                 <ul class="landing-lifestyle-features">
+
                     <li>
-                        <span class="landing-feature-icon">
-                            <i class="far fa-spa"></i>
-                        </span>
+        <span class="landing-feature-icon">
+            <x-landing-icon name="spa" />
+        </span>
                         <span>Wellness Centre</span>
                     </li>
 
                     <li>
-                        <span class="landing-feature-icon">
-                            <i class="far fa-leaf"></i>
-                        </span>
+        <span class="landing-feature-icon">
+            <x-landing-icon name="leaf" />
+        </span>
                         <span>Meditation Garden</span>
                     </li>
 
                     <li>
-                        <span class="landing-feature-icon">
-                            <i class="far fa-water"></i>
-                        </span>
+        <span class="landing-feature-icon">
+            <x-landing-icon name="water" />
+        </span>
                         <span>Wellness Lake & Promenade</span>
                     </li>
 
                     <li>
-                        <span class="landing-feature-icon">
-                            <i class="far fa-umbrella-beach"></i>
-                        </span>
+        <span class="landing-feature-icon">
+            <x-landing-icon name="beach" />
+        </span>
                         <span>Private Beach</span>
                     </li>
 
                     <li>
-                        <span class="landing-feature-icon">
-                            <i class="far fa-dumbbell"></i>
-                        </span>
+        <span class="landing-feature-icon">
+            <x-landing-icon name="dumbbell" />
+        </span>
                         <span>Fitness Area</span>
                     </li>
 
                     <li>
-                        <span class="landing-feature-icon">
-                            <i class="far fa-water-ladder"></i>
-                        </span>
+        <span class="landing-feature-icon">
+            <x-landing-icon name="pool" />
+        </span>
                         <span>Yoga Lake</span>
                     </li>
 
                     <li>
-                        <span class="landing-feature-icon">
-                            <i class="far fa-users"></i>
-                        </span>
+        <span class="landing-feature-icon">
+            <x-landing-icon name="users" />
+        </span>
                         <span>Social Terrace</span>
                     </li>
+
                 </ul>
 
                 <a href="#register-interest" class="wellness-btn" data-lead-popup-open>

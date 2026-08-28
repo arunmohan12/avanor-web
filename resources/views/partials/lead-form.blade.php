@@ -214,7 +214,9 @@
         >
             {{ strtoupper($buttonText) }}
 
-            <i class="far fa-arrow-right"></i>
+{{--            <i class="far fa-arrow-right"></i>--}}
+
+            <x-landing-icon name="arrow-right" />
         </button>
 
 

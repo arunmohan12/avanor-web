@@ -42,13 +42,23 @@
     "file": "assets/intlTelInput-DmSsuaRf.css",
     "src": "_intlTelInput-DmSsuaRf.css"
   },
-  "_pagination-CvENHLNb.js": {
-    "file": "assets/pagination-CvENHLNb.js",
-    "name": "pagination"
+  "_pagination-BgpZXc1Z.js": {
+    "file": "assets/pagination-BgpZXc1Z.js",
+    "name": "pagination",
+    "imports": [
+      "_swiper-CBzJVZYk.js"
+    ],
+    "css": [
+      "assets/pagination-DjMxu4j7.css"
+    ]
   },
   "_pagination-DjMxu4j7.css": {
     "file": "assets/pagination-DjMxu4j7.css",
     "src": "_pagination-DjMxu4j7.css"
+  },
+  "_swiper-CBzJVZYk.js": {
+    "file": "assets/swiper-CBzJVZYk.js",
+    "name": "swiper"
   },
   "node_modules/@fontsource/lato/files/lato-latin-300-normal.woff": {
     "file": "assets/lato-latin-300-normal-CINZtfFB.woff",
@@ -178,7 +188,7 @@
     "isEntry": true
   },
   "resources/css/landingpages/the-heightsv2.css": {
-    "file": "assets/the-heightsv2-CBF7vI3n.css",
+    "file": "assets/the-heightsv2-Bf5_JmBm.css",
     "name": "the-heightsv2",
     "names": [
       "the-heightsv2.css"
@@ -198,15 +208,7 @@
       "assets/optima_lt_pro_n7-DjMDkqcH.woff2",
       "assets/optima_lt_pro_i4-DPP4vEV9.woff2",
       "assets/optima_lt_pro_i7-PDqk5eIp.woff2",
-      "assets/aed-Regular-lH271UDw.otf",
-      "assets/fa-brands-400-bXOfNbY_.woff2",
-      "assets/fa-brands-400-Bn4Hcap8.ttf",
-      "assets/fa-light-300-Bj03O0ql.woff2",
-      "assets/fa-light-300-BLDdpYoG.ttf",
-      "assets/fa-regular-400-CNKpUNax.woff2",
-      "assets/fa-regular-400-BGMZlDC4.ttf",
-      "assets/fa-solid-900-DwRLEG3Z.woff2",
-      "assets/fa-solid-900-DwYV3F36.ttf"
+      "assets/aed-Regular-lH271UDw.otf"
     ]
   },
   "resources/css/vendor/about.css": {
@@ -376,13 +378,13 @@
     "isEntry": true
   },
   "resources/js/landingpages/the-heights.js": {
-    "file": "assets/the-heights-CFjbDO0S.js",
+    "file": "assets/the-heights-Bxp5rZKA.js",
     "name": "the-heights",
     "src": "resources/js/landingpages/the-heights.js",
     "isEntry": true,
     "imports": [
       "_intlTelInput-B1L1M_hA.js",
-      "_pagination-CvENHLNb.js"
+      "_swiper-CBzJVZYk.js"
     ]
   },
   "resources/js/pages/contact.js": {
@@ -398,16 +400,16 @@
     ]
   },
   "resources/js/pages/devdetails.js": {
-    "file": "assets/devdetails-D6xM8ArH.js",
+    "file": "assets/devdetails-BGFceZmI.js",
     "name": "devdetails",
     "src": "resources/js/pages/devdetails.js",
     "isEntry": true,
     "imports": [
-      "_pagination-CvENHLNb.js"
+      "_swiper-CBzJVZYk.js",
+      "_pagination-BgpZXc1Z.js"
     ],
     "css": [
-      "assets/devdetails-3uTim8v3.css",
-      "assets/pagination-DjMxu4j7.css"
+      "assets/devdetails-3uTim8v3.css"
     ]
   },
   "resources/js/pages/home.js": {
@@ -423,15 +425,13 @@
     "isEntry": true
   },
   "resources/js/pages/propertydetails.js": {
-    "file": "assets/propertydetails-bGRgfXaf.js",
+    "file": "assets/propertydetails-Cx6h-Q1z.js",
     "name": "propertydetails",
     "src": "resources/js/pages/propertydetails.js",
     "isEntry": true,
     "imports": [
-      "_pagination-CvENHLNb.js"
-    ],
-    "css": [
-      "assets/pagination-DjMxu4j7.css"
+      "_swiper-CBzJVZYk.js",
+      "_pagination-BgpZXc1Z.js"
     ]
   }
 }
