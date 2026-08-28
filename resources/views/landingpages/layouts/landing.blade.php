@@ -30,6 +30,10 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
+    @hasSection('robots')
+        <meta name="robots" content="@yield('robots')">
+    @endif
+
     <title>
         @yield('title', 'Avanor Capital')
     </title>

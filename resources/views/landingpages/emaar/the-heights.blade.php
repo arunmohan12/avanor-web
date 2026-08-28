@@ -33,7 +33,7 @@ route('properties.show', $property->slug)
 )
 
 
-<meta name="robots" content="index,follow">
+@section('robots', 'index,follow')
 
 
 {{-- =====================================================
