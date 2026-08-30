@@ -4,16 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use App\Support\MediaUrl;
-use Illuminate\Database\Events\QueryExecuted;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 class LandingPageController extends Controller
 {
     public function show(string $slug)
     {
-
-
 
         $property = Property::query()
             ->with([
@@ -129,7 +124,6 @@ class LandingPageController extends Controller
             'hasFacts',
             'hasProjectDescription',
         ));
-
 
     }
 }

@@ -21,7 +21,6 @@ class DeveloperController extends Controller
             ->where('is_active', true)
             ->firstOrFail();
 
-
         $properties = Property::query()
             ->where('developer_id', $developer->id)
             ->where('is_active', true)
@@ -33,7 +32,7 @@ class DeveloperController extends Controller
 
             ->get();
 
-    $communities = Community::query()
+        $communities = Community::query()
             ->select([
                 'id',
                 'name',
@@ -44,14 +43,14 @@ class DeveloperController extends Controller
             ->where('is_active', true)
             ->where('is_featured', true)
 
-        // Only communities having properties from this developer
+            // Only communities having properties from this developer
             ->whereHas('properties', function ($query) use ($developer) {
                 $query
                     ->where('is_active', true)
                     ->where('developer_id', $developer->id);
             })
 
-        // Count only this developer's active properties
+            // Count only this developer's active properties
             ->withCount([
                 'properties' => function ($query) use ($developer) {
                     $query

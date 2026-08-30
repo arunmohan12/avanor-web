@@ -299,3 +299,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+/* =====================================================
+   AUTO OPEN LEAD POPUP
+   Opens once after 5 seconds
+===================================================== */
+
+let leadPopupOpened = false;
+
+document
+    .querySelectorAll('[data-lead-popup-open]')
+    .forEach((button) => {
+        button.addEventListener('click', () => {
+            leadPopupOpened = true;
+        });
+    });
+
+setTimeout(() => {
+
+    if (leadPopupOpened) {
+        return;
+    }
+
+    const popupTrigger = document.querySelector(
+        '[data-lead-popup-open]'
+    );
+
+    if (popupTrigger) {
+        leadPopupOpened = true;
+        popupTrigger.click();
+    }
+
+}, 5000);

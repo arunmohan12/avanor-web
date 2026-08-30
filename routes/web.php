@@ -68,15 +68,14 @@ Route::get('/thank-you', function () {
     return view('landingpages.thank-you');
 })->name('landing.thank-you');
 
+Route::domain('theheights.avanorcap.com')->group(function () {
 
-    Route::domain('theheights.avanorcap.com')->group(function () {
+    Route::get('/', function (LandingPageController $controller) {
 
-        Route::get('/', function (LandingPageController $controller) {
-    
-            return $controller->show(
-                'the-heights-by-emaar'
-            );
-    
-        });
-    
+        return $controller->show(
+            'the-heights-by-emaar'
+        );
+
     });
+
+});
