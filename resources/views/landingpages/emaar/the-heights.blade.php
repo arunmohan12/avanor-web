@@ -1571,7 +1571,7 @@ route('properties.show', $property->slug)
 
                         <div class="landing-faq-answer">
                             <p>
-                                The Heights by Emaar is currently an off-plan project, with expected handover is 2030, subject to the developer's construction schedule.
+                                The Heights by Emaar is currently an off-plan project, with expected handover is 2030.
                             </p>
                         </div>
 
