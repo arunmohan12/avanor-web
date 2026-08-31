@@ -42,23 +42,16 @@
     "file": "assets/intlTelInput-DmSsuaRf.css",
     "src": "_intlTelInput-DmSsuaRf.css"
   },
-  "_pagination-BgpZXc1Z.js": {
-    "file": "assets/pagination-BgpZXc1Z.js",
-    "name": "pagination",
-    "imports": [
-      "_swiper-CBzJVZYk.js"
-    ],
-    "css": [
-      "assets/pagination-DjMxu4j7.css"
-    ]
-  },
   "_pagination-DjMxu4j7.css": {
     "file": "assets/pagination-DjMxu4j7.css",
     "src": "_pagination-DjMxu4j7.css"
   },
-  "_swiper-CBzJVZYk.js": {
-    "file": "assets/swiper-CBzJVZYk.js",
-    "name": "swiper"
+  "_pagination-ci0HWf1E.js": {
+    "file": "assets/pagination-ci0HWf1E.js",
+    "name": "pagination",
+    "css": [
+      "assets/pagination-DjMxu4j7.css"
+    ]
   },
   "node_modules/@fontsource/lato/files/lato-latin-300-normal.woff": {
     "file": "assets/lato-latin-300-normal-CINZtfFB.woff",
@@ -188,7 +181,7 @@
     "isEntry": true
   },
   "resources/css/landingpages/the-heightsv2.css": {
-    "file": "assets/the-heightsv2-Bca-R2lu.css",
+    "file": "assets/the-heightsv2-DApEx8J8.css",
     "name": "the-heightsv2",
     "names": [
       "the-heightsv2.css"
@@ -378,13 +371,12 @@
     "isEntry": true
   },
   "resources/js/landingpages/the-heights.js": {
-    "file": "assets/the-heights-BGTruFU-.js",
+    "file": "assets/the-heights-CPvS7WnX.js",
     "name": "the-heights",
     "src": "resources/js/landingpages/the-heights.js",
     "isEntry": true,
     "imports": [
-      "_intlTelInput-B1L1M_hA.js",
-      "_swiper-CBzJVZYk.js"
+      "_intlTelInput-B1L1M_hA.js"
     ]
   },
   "resources/js/pages/contact.js": {
@@ -400,13 +392,12 @@
     ]
   },
   "resources/js/pages/devdetails.js": {
-    "file": "assets/devdetails-BGFceZmI.js",
+    "file": "assets/devdetails-Disd1HoJ.js",
     "name": "devdetails",
     "src": "resources/js/pages/devdetails.js",
     "isEntry": true,
     "imports": [
-      "_swiper-CBzJVZYk.js",
-      "_pagination-BgpZXc1Z.js"
+      "_pagination-ci0HWf1E.js"
     ],
     "css": [
       "assets/devdetails-3uTim8v3.css"
@@ -425,13 +416,12 @@
     "isEntry": true
   },
   "resources/js/pages/propertydetails.js": {
-    "file": "assets/propertydetails-Cx6h-Q1z.js",
+    "file": "assets/propertydetails-s2ATJn4F.js",
     "name": "propertydetails",
     "src": "resources/js/pages/propertydetails.js",
     "isEntry": true,
     "imports": [
-      "_swiper-CBzJVZYk.js",
-      "_pagination-BgpZXc1Z.js"
+      "_pagination-ci0HWf1E.js"
     ]
   }
 }

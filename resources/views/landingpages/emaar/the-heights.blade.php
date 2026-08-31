@@ -1007,7 +1007,7 @@ route('properties.show', $property->slug)
 
 
 
-        <section class="landing-gallery-section" id="gallery">
+        <section class="landing-gallery-section space-bottom" id="gallery">
 
             <div class="landing-gallery-container">
 
