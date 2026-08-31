@@ -1007,7 +1007,7 @@ route('properties.show', $property->slug)
 
 
 
-        <section class="landing-gallery-section space-bottom" id="gallery">
+        <section class="landing-gallery-section " id="gallery">
 
             <div class="landing-gallery-container">
 
@@ -1015,7 +1015,7 @@ route('properties.show', $property->slug)
 
                 @if ($galleryImages->isNotEmpty())
 
-                    <section class="landing-project-gallery" id="gallery">
+                    <section class="landing-project-gallery " id="gallery">
 
                         <div class="landing-project-gallery-heading">
 
