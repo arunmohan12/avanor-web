@@ -140,7 +140,7 @@ route('properties.show', $property->slug)
                     Property Details
                 </a>
 
-                <a href="#about">
+                <a href="#downloads">
                     Downloads
                 </a>
 
@@ -151,7 +151,7 @@ route('properties.show', $property->slug)
                 <a href="#location">
                     Location
                 </a>
-                <a href="#landingFooter">contact</a>
+                <a href="#contact">contact</a>
             </nav>
             <div class="landing-header-actions">
 
@@ -204,9 +204,19 @@ route('properties.show', $property->slug)
 
                 <a href="#about">About</a>
 
-                <a href="#gallery">Gallery</a>
+
 
                 <a href="#location">Location</a>
+
+                <a href="#downloads">
+                    Downloads
+                </a>
+
+                <a href="#gallery">
+                    Gallery
+                </a>
+
+                <a href="#contact">contact</a>
 
                 <a
                     href="#"
@@ -624,6 +634,150 @@ route('properties.show', $property->slug)
                     CONTENT AREA
                 ===================================================== --}}
 
+
+                    <div class="landing-plan-container space-top" id="downloads">
+
+                        <div class="landing-plan-heading">
+
+                                                         <span class="landing-plan-eyebrow">
+                                                            BED ROOM PLANS
+                                                             </span>
+
+                            <h2>
+                                BED ROOM PLANS & FLOOR LAYOUTS
+                            </h2>
+
+                            <p>
+                                Request detailed project layouts and unit plans for
+                                {{ $property->title }}.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-plan-grid-br">
+
+                            {{-- MASTER PLAN --}}
+                            <article class="landing-plan-card">
+
+                                <button
+                                    type="button"
+                                    class="landing-plan-image-wrap"
+                                    data-lead-popup-open
+                                    data-request-type="master_plan">
+
+                                    <img
+                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                        alt=" {{ $property->project?->name ?? $property->title }}"
+                                        class="landing-plan-image">
+
+                                    <span class="landing-plan-overlay"></span>
+
+                                    <span class="landing-plan-overlay-text">
+                                                        SHOW 3BR VILLA GROUND FlOOR PLAN
+                                                    </span>
+
+                                </button>
+
+                                <div class="landing-plan-card-footer">
+
+                                    <h3>
+                                        3 Bedroom Villa - Ground Floor
+                                    </h3>
+
+                                    <p>
+                                        BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
+
+                                    </p>
+
+
+
+                                </div>
+
+                            </article>
+
+
+                            {{-- UNIT PLAN --}}
+                            <article class="landing-plan-card">
+
+                                <button
+                                    type="button"
+                                    class="landing-plan-image-wrap"
+                                    data-lead-popup-open
+                                    data-request-type="unit_plan">
+
+                                    <img
+                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                        alt=" {{ $property->project?->name ?? $property->title }}"
+                                        class="landing-plan-image">
+
+                                    <span class="landing-plan-overlay"></span>
+
+                                    <span class="landing-plan-overlay-text">
+                                                          SHOW 3BR VILLA UPPER FlOOR PLAN
+                                                    </span>
+
+                                </button>
+
+                                <div class="landing-plan-card-footer">
+
+                                    <h3>
+                                        3 Bedroom Villa - Upper Floor
+                                    </h3>
+
+                                    <p>
+                                        BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
+
+                                    </p>
+
+
+
+                                </div>
+
+                            </article>
+
+                            <article class="landing-plan-card">
+
+                                <button
+                                    type="button"
+                                    class="landing-plan-image-wrap"
+                                    data-lead-popup-open
+                                    data-request-type="unit_plan">
+
+                                    <img
+                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                        alt=" {{ $property->project?->name ?? $property->title }}"
+                                        class="landing-plan-image">
+
+                                    <span class="landing-plan-overlay"></span>
+
+                                    <span class="landing-plan-overlay-text">
+                                                          SHOW 4 BR VILLA GROUND FlOOR PLAN
+                                                    </span>
+
+                                </button>
+
+                                <div class="landing-plan-card-footer">
+
+                                    <h3>
+                                        4 Bedroom Villa - Ground Floor
+                                    </h3>
+
+                                    <p>
+                                        BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
+
+                                    </p>
+
+
+
+                                </div>
+
+                            </article>
+                        </div>
+
+                    </div>
+
+
                     @if (
                     $activeSections->isNotEmpty() ||
                     $hasProjectDescription ||
@@ -720,7 +874,7 @@ route('properties.show', $property->slug)
                                                                     class="landing-plan-button"
                                                                     data-lead-popup-open
                                                                     data-request-type="location-details">
-                                                                    BROWSE MORE FROM THE HEIGHTS BY EMAAR
+                                                                    GET EARLY ACCESS
                                                                 </button>
 
                                                             </div>
@@ -767,7 +921,7 @@ route('properties.show', $property->slug)
                                                                     class="landing-plan-button"
                                                                     data-lead-popup-open
                                                                     data-request-type="location-details">
-                                                                    BROWSE MORE FROM THE HEIGHTS BY EMAAR
+                                                                    GET EARLY ACCESS
                                                                 </button>
 
                                                             </div>
@@ -844,9 +998,9 @@ route('properties.show', $property->slug)
 
                                                 <div class="landing-plan-heading">
 
-                                            <span class="landing-plan-eyebrow">
-                                                PROJECT PLANS
-                                            </span>
+                                                         <span class="landing-plan-eyebrow">
+                                                            PROJECT PLANS
+                                                             </span>
 
                                                     <h2>
                                                         MASTER PLAN & UNIT LAYOUTS
@@ -1680,7 +1834,7 @@ route('properties.show', $property->slug)
         </div>
 
 
-        <footer class="landing-enquiry-footer" id="landingFooter">
+        <footer class="landing-enquiry-footer" id="contact">
 
             <div class="landing-enquiry-container">
 

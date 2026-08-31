@@ -4371,7 +4371,12 @@ body.landing-popup-open {
     gap: 34px;
 }
 
+.landing-plan-grid-br {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
+    gap: 34px;
+}
 /* Card */
 
 .landing-plan-card {
@@ -4561,7 +4566,9 @@ body.landing-popup-open {
     .landing-plan-grid {
         gap: 24px;
     }
-
+    .landing-plan-grid-br {
+        gap: 24px;
+    }
     .landing-plan-image-wrap {
         height: 310px;
     }
@@ -4597,7 +4604,11 @@ body.landing-popup-open {
 
         gap: 28px;
     }
+    .landing-plan-grid-br {
+        grid-template-columns: 1fr;
 
+        gap: 28px;
+    }
     .landing-plan-image-wrap {
         height: 250px;
     }
@@ -4761,7 +4772,9 @@ body.landing-popup-open {
     .landing-plan-grid {
         gap: 34px;
     }
-
+    .landing-plan-grid-br {
+        gap: 34px;
+    }
     .landing-plan-card:last-child {
         margin-bottom: 20px;
     }
