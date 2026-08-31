@@ -364,7 +364,7 @@ route('properties.show', $property->slug)
                             <div class="page-content">
 
                                 <h2 class="page-title">
-                                    {{ $property->title }}
+                                  ABOUT  {{ $property->title }}
                                 </h2>
 
 
