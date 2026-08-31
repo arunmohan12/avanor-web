@@ -1011,52 +1011,125 @@ route('properties.show', $property->slug)
 
             <div class="landing-gallery-container">
 
-                <div class="landing-gallery-heading">
-                <span class="sub-title-dark project-about-heading">
-                    GALLERY
-                </span>
-                </div>
+
 
                 @if ($galleryImages->isNotEmpty())
 
-                    {{-- MAIN SLIDER --}}
-                    <div
-                        class="swiper landing-gallery-main"
-                        id="landingGalleryMain">
+                    <section class="landing-project-gallery" id="gallery">
 
-                        <div class="swiper-wrapper">
+                        <div class="landing-project-gallery-heading">
+
+            <span class="landing-project-gallery-eyebrow">
+                COMMUNITY RENDERS
+            </span>
+
+                            <h2>
+                                Project <em>Gallery</em>
+                            </h2>
+
+                            <span class="landing-project-gallery-line"></span>
+
+                        </div>
+
+
+                        <div
+                            class="landing-project-gallery-grid"
+                            id="landingProjectGallery">
 
                             @foreach ($galleryImages as $image)
 
-                                <div class="swiper-slide">
+                                @php
+                                    $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
+                                        $image,
+                                        'gallery_tablet_avif'
+                                    );
 
-                                    <div class="landing-gallery-main-image">
+                                    $fullImageUrl = \App\Support\MediaUrl::fromMedia(
+                                        $image,
+                                        'gallery_avif'
+                                    );
+                                @endphp
 
-                                        <img
-                                            src="{{ \App\Support\MediaUrl::fromMedia(
-                            $image,
-                            'gallery_avif'
-                        ) }}"
+                                <button
+                                    type="button"
+                                    class="landing-project-gallery-item"
+                                    data-gallery-index="{{ $loop->index }}"
+                                    data-gallery-src="{{ $fullImageUrl }}"
+                                    aria-label="Open gallery image {{ $loop->iteration }}">
 
-                                            srcset="
+                                    <img
+                                        src="{{ $thumbnailUrl }}"
+                                        srcset="
                             {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_mobile_avif') }} 768w,
-                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_tablet_avif') }} 1280w,
-                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_avif') }} 1920w
+                            {{ \App\Support\MediaUrl::fromMedia($image, 'gallery_tablet_avif') }} 1280w
                         "
+                                        sizes="
+                            (max-width: 767px) 100vw,
+                            (max-width: 991px) 50vw,
+                            33vw
+                        "
+                                        alt="{{ $property->project?->name ?? $property->title }} - Gallery image {{ $loop->iteration }}"
+                                        loading="lazy"
+                                        decoding="async">
 
-                                            sizes="(max-width: 767px) 100vw,
-                               (max-width: 1200px) 90vw,
-                               1400px"
+                                    <span class="landing-project-gallery-overlay"></span>
 
-                                            alt=" {{ $property->project?->name ?? $property->title }}"
-                                            loading="lazy"
-                                            decoding="async">
-
-                                    </div>
-
-                                </div>
+                                </button>
 
                             @endforeach
+
+                        </div>
+
+                    </section>
+
+
+                    {{-- =====================================================
+                        GALLERY LIGHTBOX
+                    ===================================================== --}}
+
+                    <div
+                        class="landing-gallery-lightbox"
+                        id="landingGalleryLightbox"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Project gallery"
+                        aria-hidden="true">
+
+                        <button
+                            type="button"
+                            class="landing-gallery-lightbox-close"
+                            id="landingGalleryLightboxClose"
+                            aria-label="Close gallery">
+                            ×
+                        </button>
+
+
+                        @if ($galleryImages->count() > 1)
+
+                            <button
+                                type="button"
+                                class="landing-gallery-lightbox-arrow landing-gallery-lightbox-prev"
+                                id="landingGalleryLightboxPrev"
+                                aria-label="Previous image">
+
+                                <x-landing-icon name="chevron-left"/>
+
+                            </button>
+
+                        @endif
+
+
+                        <div class="landing-gallery-lightbox-content">
+
+                            <img
+                                src=""
+                                alt=""
+                                id="landingGalleryLightboxImage">
+
+                            <div
+                                class="landing-gallery-lightbox-counter"
+                                id="landingGalleryLightboxCounter">
+                            </div>
 
                         </div>
 
@@ -1065,38 +1138,22 @@ route('properties.show', $property->slug)
 
                             <button
                                 type="button"
-                                class="landing-gallery-arrow landing-gallery-prev"
-                                id="landingGalleryPrev"
-                                aria-label="Previous image">
-
-                                {{--                    <i class="far fa-chevron-left"></i>--}}
-
-                                <x-landing-icon name="chevron-left"/>
-
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="landing-gallery-arrow landing-gallery-next"
-                                id="landingGalleryNext"
+                                class="landing-gallery-lightbox-arrow landing-gallery-lightbox-next"
+                                id="landingGalleryLightboxNext"
                                 aria-label="Next image">
 
-                                {{--                    <i class="far fa-chevron-right"></i>--}}
                                 <x-landing-icon name="chevron-right"/>
+
                             </button>
 
                         @endif
 
                     </div>
 
-
-                    {{-- THUMBNAILS --}}
-
                 @endif
 
 
-                <div class="landing-section-ct space">
+                <div class="landing-section-ct space-bottom">
 
 
                     <button

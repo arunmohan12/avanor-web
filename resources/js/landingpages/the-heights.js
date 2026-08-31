@@ -1,123 +1,6 @@
-import Swiper from 'swiper';
-
 
 import intlTelInput from 'intl-tel-input';
 import 'intl-tel-input/styles';
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const galleryElement =
-        document.getElementById('landingGalleryMain');
-
-    if (!galleryElement) {
-        return;
-    }
-
-    const prevButton =
-        document.getElementById('landingGalleryPrev');
-
-    const nextButton =
-        document.getElementById('landingGalleryNext');
-
-    const thumbnails =
-        document.querySelectorAll('[data-gallery-index]');
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Main Slider
-    |--------------------------------------------------------------------------
-    */
-
-    const gallerySwiper = new Swiper(galleryElement, {
-
-        slidesPerView: 1,
-
-        speed: 600,
-
-        loop: true,
-
-        grabCursor: true,
-
-        allowTouchMove: true,
-
-        simulateTouch: true,
-
-        on: {
-
-            slideChange(swiper) {
-
-                const index = swiper.realIndex;
-
-                thumbnails.forEach((thumbnail) => {
-
-                    thumbnail.classList.toggle(
-                        'is-active',
-                        Number(thumbnail.dataset.galleryIndex) === index
-                    );
-
-                });
-
-            },
-
-        },
-
-    });
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Previous
-    |--------------------------------------------------------------------------
-    */
-
-    prevButton?.addEventListener('click', (event) => {
-
-        event.preventDefault();
-
-        gallerySwiper.slidePrev();
-
-    });
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Next
-    |--------------------------------------------------------------------------
-    */
-
-    nextButton?.addEventListener('click', (event) => {
-
-        event.preventDefault();
-
-        gallerySwiper.slideNext();
-
-    });
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Thumbnail Click
-    |--------------------------------------------------------------------------
-    */
-
-    thumbnails.forEach((thumbnail) => {
-
-        thumbnail.addEventListener('click', () => {
-
-            const index =
-                Number(thumbnail.dataset.galleryIndex);
-
-            gallerySwiper.slideToLoop(index);
-
-        });
-
-    });
-
-});
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -330,3 +213,191 @@ setTimeout(() => {
     }
 
 }, 5000);
+
+
+
+/* =====================================================
+   PROJECT GALLERY LIGHTBOX
+===================================================== */
+
+const galleryItems = Array.from(
+    document.querySelectorAll('.landing-project-gallery-item')
+);
+
+const galleryLightbox = document.getElementById(
+    'landingGalleryLightbox'
+);
+
+const galleryLightboxImage = document.getElementById(
+    'landingGalleryLightboxImage'
+);
+
+const galleryLightboxCounter = document.getElementById(
+    'landingGalleryLightboxCounter'
+);
+
+const galleryLightboxClose = document.getElementById(
+    'landingGalleryLightboxClose'
+);
+
+const galleryLightboxPrev = document.getElementById(
+    'landingGalleryLightboxPrev'
+);
+
+const galleryLightboxNext = document.getElementById(
+    'landingGalleryLightboxNext'
+);
+
+let currentGalleryIndex = 0;
+
+
+function showGalleryImage(index) {
+
+    if (!galleryItems.length) {
+        return;
+    }
+
+    if (index < 0) {
+        index = galleryItems.length - 1;
+    }
+
+    if (index >= galleryItems.length) {
+        index = 0;
+    }
+
+    currentGalleryIndex = index;
+
+    const item = galleryItems[index];
+    const image = item.querySelector('img');
+
+    galleryLightboxImage.src = item.dataset.gallerySrc;
+
+    galleryLightboxImage.alt =
+        image?.alt || 'Project gallery image';
+
+    if (galleryLightboxCounter) {
+        galleryLightboxCounter.textContent =
+            `${index + 1} / ${galleryItems.length}`;
+    }
+
+}
+
+
+function openGallery(index) {
+
+    if (!galleryLightbox) {
+        return;
+    }
+
+    showGalleryImage(index);
+
+    galleryLightbox.classList.add('is-open');
+
+    galleryLightbox.setAttribute(
+        'aria-hidden',
+        'false'
+    );
+
+    document.body.classList.add(
+        'landing-gallery-lightbox-open'
+    );
+
+}
+
+
+function closeGallery() {
+
+    if (!galleryLightbox) {
+        return;
+    }
+
+    galleryLightbox.classList.remove('is-open');
+
+    galleryLightbox.setAttribute(
+        'aria-hidden',
+        'true'
+    );
+
+    document.body.classList.remove(
+        'landing-gallery-lightbox-open'
+    );
+
+}
+
+
+galleryItems.forEach((item, index) => {
+
+    item.addEventListener('click', () => {
+
+        openGallery(index);
+
+    });
+
+});
+
+
+galleryLightboxPrev?.addEventListener('click', () => {
+
+    showGalleryImage(
+        currentGalleryIndex - 1
+    );
+
+});
+
+
+galleryLightboxNext?.addEventListener('click', () => {
+
+    showGalleryImage(
+        currentGalleryIndex + 1
+    );
+
+});
+
+
+galleryLightboxClose?.addEventListener('click', () => {
+
+    closeGallery();
+
+});
+
+
+galleryLightbox?.addEventListener('click', (event) => {
+
+    if (event.target === galleryLightbox) {
+        closeGallery();
+    }
+
+});
+
+
+document.addEventListener('keydown', (event) => {
+
+    if (
+        !galleryLightbox?.classList.contains('is-open')
+    ) {
+        return;
+    }
+
+    if (event.key === 'Escape') {
+
+        closeGallery();
+
+    }
+
+    if (event.key === 'ArrowLeft') {
+
+        showGalleryImage(
+            currentGalleryIndex - 1
+        );
+
+    }
+
+    if (event.key === 'ArrowRight') {
+
+        showGalleryImage(
+            currentGalleryIndex + 1
+        );
+
+    }
+
+});
