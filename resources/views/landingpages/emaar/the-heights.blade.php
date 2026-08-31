@@ -840,7 +840,7 @@ route('properties.show', $property->slug)
                                             @endforeach
 
 
-                                            <div class="landing-plan-container space" id="about">
+                                            <div class="landing-plan-container space-top" id="about">
 
                                                 <div class="landing-plan-heading">
 
