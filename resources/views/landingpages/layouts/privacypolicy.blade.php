@@ -1,217 +1,476 @@
-@extends('landingpages.layouts.landing')
+@extends('landingpages.layouts.mavera-landing')
 @push('styles')
-@vite('resources/css/vendor/privacy.css')
+    @vite('resources/css/landingpages/privacy-policy.css')
 @endpush
-@section('content')
-<section class="space-top avanor-terms-page">
-    <div class="container">
+@section('title', 'Privacy Policy | Avanor Capital')
 
-        <div class="avanor-terms-header">
+@section(
+    'meta_description',
+    'Read the Avanor Capital Privacy Policy to understand how we collect, use, store and protect information submitted through our website and property enquiry forms.'
+)
 
-            <span class="sub-title brand-black">
-                LEGAL
-            </span>
+@section('robots', 'index,follow')
 
-            <h1 class="sec-title text-theme">
-                Terms & Conditions
-            </h1>
+    @section('content')
 
-            <p class="avanor-terms-updated">
-                Last Updated: August 2026
-            </p>
+        <section class="avanor-privacy-hero">
 
-        </div>
+            <div class="avanor-privacy-container">
+                <a
+                    href="{{ url()->previous() }}"
+                    class="avanor-privacy-back"
+                    aria-label="Back to landing page">
 
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M19 12H5"/>
+                        <path d="M11 18L5 12L11 6"/>
+                    </svg>
 
-        <div class="avanor-terms-content">
+                    <span>BACK</span>
 
-            <div class="avanor-terms-block">
-                <h2>Acceptance of Terms</h2>
+                </a>
+        <span class="avanor-privacy-eyebrow">
+            AVANOR CAPITAL
+        </span>
 
-                <p>
-                    By accessing and using the Avanor Capital website, you agree to
-                    these Terms & Conditions. These terms govern your use of the
-                    website, its content, property information, and related services.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>Property Information</h2>
-
-                <p>
-                    Avanor Capital provides information about properties, projects,
-                    developers, communities, and real estate opportunities across the
-                    UAE. We aim to keep this information accurate and current; however,
-                    property details may change without prior notice.
-                </p>
+                <h1>
+                    Privacy <em>Policy</em>
+                </h1>
 
                 <p>
-                    Prices, availability, payment plans, completion dates,
-                    specifications, amenities, and other property information should
-                    be confirmed before making a property or investment decision.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>Images & Marketing Materials</h2>
-
-                <p>
-                    Images, videos, floor plans, maps, renders, brochures, and other
-                    materials displayed on this website may be supplied by property
-                    developers or other relevant sources. Visual representations are
-                    for illustrative purposes and may differ from the completed
-                    property or development.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>No Investment Guarantee</h2>
-
-                <p>
-                    Information provided on the Avanor Capital website is for general
-                    informational purposes and should not be considered financial,
-                    legal, or investment advice. Market performance, rental yields,
-                    capital appreciation, or other projections do not guarantee future
-                    results.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>Website Use</h2>
-
-                <p>
-                    You agree to use this website only for lawful purposes. You must
-                    not interfere with the operation of the website, attempt
-                    unauthorised access, misuse its content, or use the website in a
-                    manner that may cause damage to Avanor Capital or other users.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>Intellectual Property</h2>
-
-                <p>
-                    Unless otherwise stated, the Avanor Capital name, website design,
-                    branding, written content, graphics, and original materials are
-                    protected by applicable intellectual property rights.
-                    Third-party developer logos, project materials, and property
-                    images remain the property of their respective owners where
-                    applicable.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>Third-Party Links</h2>
-
-                <p>
-                    Our website may contain links to developer websites, social media
-                    platforms, maps, or other external services. Avanor Capital is not
-                    responsible for the content, security, availability, or privacy
-                    practices of third-party websites.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>Limitation of Liability</h2>
-
-                <p>
-                    Avanor Capital makes reasonable efforts to provide reliable
-                    information but does not guarantee that all website content will
-                    always be complete, accurate, or current. Users should verify
-                    important information before relying on it for property or
-                    investment decisions.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>Privacy</h2>
-
-                <p>
-                    Personal information submitted through this website is handled in
-                    accordance with our
-                    <a href="{{ route('privacy-policy') }}">
-                        Privacy & Cookies Policy
-                    </a>.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block">
-                <h2>Changes to These Terms</h2>
-
-                <p>
-                    Avanor Capital may update these Terms & Conditions from time to
-                    time to reflect changes to our website, services, business
-                    practices, or applicable requirements. The latest version will be
-                    published on this page.
-                </p>
-            </div>
-
-
-            <div class="avanor-terms-block avanor-terms-contact">
-                <h2>Contact Us</h2>
-
-                <p>
-                    If you have any questions regarding these Terms & Conditions,
-                    please contact Avanor Capital.
+                    Your privacy matters to us. This policy explains how Avanor Capital
+                    collects, uses and protects information when you use our website
+                    or submit a property enquiry.
                 </p>
 
-                @if (!empty($siteSettings['phone']))
-                <p>
-                    <strong>Phone:</strong>
-
-                    <a href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}">
-                        {{ $siteSettings['phone'] }}
-                    </a>
-                </p>
-                @endif
-
-                @if (!empty($siteSettings['email']))
-                <p>
-                    <strong>Email:</strong>
-
-                    <a href="mailto:{{ $siteSettings['email'] }}">
-                        {{ $siteSettings['email'] }}
-                    </a>
-                </p>
-                @endif
+                <div class="avanor-privacy-updated">
+                    Last updated: September 2026
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
-</section>
 
-<div class="landing-footer-bottom">
+        <section class="avanor-privacy-content">
 
-    <div class="landing-footer-bottom-inner">
+            <div class="avanor-privacy-container">
 
-        <p class="landing-footer-copyright">
-            © {{ date('Y') }} Avanor Capital. All rights reserved.
-        </p>
+                <div class="avanor-privacy-layout">
 
-        <div class="landing-footer-legal-links">
+                    {{-- LEFT NAVIGATION --}}
+                    <aside class="avanor-privacy-nav">
 
-            <a href="{{ route('privacy-policy') }}">
-                Privacy Policy
-            </a>
+                <span class="avanor-privacy-nav-title">
+                    ON THIS PAGE
+                </span>
 
-            <a href="{{ route('terms-and-conditions') }}">
-                Terms & Conditions
-            </a>
+                        <nav>
+                            <a href="#overview">Overview</a>
+                            <a href="#information">Information We Collect</a>
+                            <a href="#usage">How We Use Information</a>
+                            <a href="#cookies">Cookies & Tracking</a>
+                            <a href="#sharing">Information Sharing</a>
+                            <a href="#retention">Data Retention</a>
+                            <a href="#rights">Your Rights</a>
+                            <a href="#security">Data Security</a>
+                            <a href="#third-party">Third-Party Websites</a>
+                            <a href="#changes">Policy Changes</a>
+                            <a href="#contact">Contact Us</a>
+                        </nav>
 
-        </div>
+                    </aside>
 
-    </div>
 
-</div>
-@endsection
+                    {{-- MAIN CONTENT --}}
+                    <article class="avanor-privacy-body">
+
+
+                        {{-- OVERVIEW --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="overview">
+
+                    <span class="avanor-privacy-number">
+                        01
+                    </span>
+
+                            <h2>
+                                Overview
+                            </h2>
+
+                            <p>
+                                This Privacy Policy explains how Avanor Capital
+                                ("Avanor", "we", "us" or "our") collects, uses,
+                                stores and handles information when you visit our
+                                website, interact with our property pages or submit
+                                an enquiry.
+                            </p>
+
+                            <p>
+                                By using our website or providing your information,
+                                you acknowledge the practices described in this
+                                Privacy Policy.
+                            </p>
+
+                        </section>
+
+
+                        {{-- INFORMATION --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="information">
+
+                    <span class="avanor-privacy-number">
+                        02
+                    </span>
+
+                            <h2>
+                                Information We Collect
+                            </h2>
+
+                            <p>
+                                We may collect information that you voluntarily
+                                provide when requesting property details,
+                                downloading brochures, arranging a consultation
+                                or contacting us.
+                            </p>
+
+                            <ul>
+                                <li>Name</li>
+                                <li>Email address</li>
+                                <li>Phone or WhatsApp number</li>
+                                <li>Property preferences</li>
+                                <li>Budget or investment preferences</li>
+                                <li>Information included in your enquiry</li>
+                            </ul>
+
+                            <h3>
+                                Usage Information
+                            </h3>
+
+                            <p>
+                                When you use our website, certain technical
+                                information may be collected automatically,
+                                including your IP address, browser type, device
+                                information, pages visited, approximate location,
+                                referral source and interaction with the website.
+                            </p>
+
+                        </section>
+
+
+                        {{-- USE --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="usage">
+
+                    <span class="avanor-privacy-number">
+                        03
+                    </span>
+
+                            <h2>
+                                How We Use Your Information
+                            </h2>
+
+                            <p>
+                                Information collected through Avanor Capital may
+                                be used to:
+                            </p>
+
+                            <ul>
+                                <li>
+                                    Respond to property enquiries and requests.
+                                </li>
+
+                                <li>
+                                    Provide project details, pricing, floor plans
+                                    and availability.
+                                </li>
+
+                                <li>
+                                    Arrange consultations, calls or property
+                                    viewings.
+                                </li>
+
+                                <li>
+                                    Improve our website and user experience.
+                                </li>
+
+                                <li>
+                                    Measure advertising and marketing performance.
+                                </li>
+
+                                <li>
+                                    Protect our website against fraud, abuse or
+                                    security threats.
+                                </li>
+
+                                <li>
+                                    Communicate relevant property opportunities
+                                    where appropriate.
+                                </li>
+                            </ul>
+
+                        </section>
+
+
+                        {{-- COOKIES --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="cookies">
+
+                    <span class="avanor-privacy-number">
+                        04
+                    </span>
+
+                            <h2>
+                                Cookies & Tracking Technologies
+                            </h2>
+
+                            <p>
+                                Our website may use cookies, pixels and similar
+                                technologies to understand website usage,
+                                remember preferences, measure advertising
+                                performance and improve our services.
+                            </p>
+
+                            <p>
+                                These technologies may include analytics and
+                                advertising services such as Google Analytics,
+                                Google Ads, Meta and other tools configured on
+                                our website.
+                            </p>
+
+                            <div class="avanor-privacy-note">
+
+                        <span>
+                            COOKIE NOTICE
+                        </span>
+
+                                <p>
+                                    You can control or disable cookies through
+                                    your browser settings. Disabling certain
+                                    cookies may affect some website functionality.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+
+                        {{-- SHARING --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="sharing">
+
+                    <span class="avanor-privacy-number">
+                        05
+                    </span>
+
+                            <h2>
+                                How Information May Be Shared
+                            </h2>
+
+                            <p>
+                                We may share information with trusted service
+                                providers where necessary to operate our website,
+                                process enquiries, communicate with you or provide
+                                relevant property services.
+                            </p>
+
+                            <p>
+                                Information may also be disclosed when required
+                                by applicable law, regulation or a valid request
+                                from an authorised public authority.
+                            </p>
+
+                            <p>
+                                We do not sell personal information as a standalone
+                                commercial product.
+                            </p>
+
+                        </section>
+
+
+                        {{-- RETENTION --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="retention">
+
+                    <span class="avanor-privacy-number">
+                        06
+                    </span>
+
+                            <h2>
+                                Data Retention
+                            </h2>
+
+                            <p>
+                                Personal information is retained only for as long
+                                as reasonably necessary for the purpose for which
+                                it was collected, to manage your enquiry, maintain
+                                business records and meet applicable legal or
+                                regulatory obligations.
+                            </p>
+
+                        </section>
+
+
+                        {{-- RIGHTS --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="rights">
+
+                    <span class="avanor-privacy-number">
+                        07
+                    </span>
+
+                            <h2>
+                                Your Privacy Choices
+                            </h2>
+
+                            <p>
+                                Depending on applicable requirements, you may
+                                contact us to request access to, correction of or
+                                deletion of personal information that you have
+                                provided to us.
+                            </p>
+
+                            <p>
+                                You may also ask us to stop sending marketing
+                                communications to you.
+                            </p>
+
+                        </section>
+
+
+                        {{-- SECURITY --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="security">
+
+                    <span class="avanor-privacy-number">
+                        08
+                    </span>
+
+                            <h2>
+                                Data Security
+                            </h2>
+
+                            <p>
+                                We take reasonable administrative and technical
+                                measures intended to protect information against
+                                unauthorised access, loss, misuse, alteration or
+                                disclosure.
+                            </p>
+
+                            <p>
+                                However, no internet transmission or electronic
+                                storage system can be guaranteed to be completely
+                                secure.
+                            </p>
+
+                        </section>
+
+
+                        {{-- THIRD PARTY --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="third-party">
+
+                    <span class="avanor-privacy-number">
+                        09
+                    </span>
+
+                            <h2>
+                                Third-Party Websites
+                            </h2>
+
+                            <p>
+                                Avanor Capital pages may contain links to developer,
+                                mapping, social media or other third-party websites.
+                                We are not responsible for the privacy practices or
+                                content of websites operated by third parties.
+                            </p>
+
+                            <p>
+                                We recommend reviewing the privacy policy of any
+                                external website that you visit.
+                            </p>
+
+                        </section>
+
+
+                        {{-- CHANGES --}}
+                        <section
+                            class="avanor-privacy-section"
+                            id="changes">
+
+                    <span class="avanor-privacy-number">
+                        10
+                    </span>
+
+                            <h2>
+                                Changes to This Privacy Policy
+                            </h2>
+
+                            <p>
+                                We may update this Privacy Policy from time to time
+                                to reflect changes to our website, services,
+                                technology or operational requirements.
+                            </p>
+
+                            <p>
+                                The latest version will always be published on
+                                this page together with its updated date.
+                            </p>
+
+                        </section>
+
+
+                        {{-- CONTACT --}}
+                        <section
+                            class="avanor-privacy-section avanor-privacy-contact"
+                            id="contact">
+
+                    <span class="avanor-privacy-number">
+                        11
+                    </span>
+
+                            <h2>
+                                Questions About Your Privacy?
+                            </h2>
+
+                            <p>
+                                If you have a question regarding this Privacy
+                                Policy or information you have submitted through
+                                Avanor Capital, please contact our team.
+                            </p>
+
+                            <a
+                                href="{{ url('/') }}"
+                                class="avanor-privacy-contact-btn">
+
+                                CONTACT AVANOR CAPITAL
+
+                            </a>
+
+                        </section>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    @endsection

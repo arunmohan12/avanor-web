@@ -54,7 +54,17 @@ Route::post('/enquiry', [LeadController::class, 'store'])
 Route::get('/communities/{slug}', [CommunityController::class, 'show'])
     ->name('communities.show');
 
-// landing pages
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////landing pages///////////////////////////////////////////////////////////////////////
 
 Route::get('/landing/{slug}', [LandingPageController::class, 'show'])
     ->name('landing.show');
@@ -79,3 +89,11 @@ Route::domain('theheights.avanorcap.com')->group(function () {
     });
 
 });
+
+Route::get('/MaveraByOasis', [LandingPageController::class, 'showMaveraByOasis']);
+Route::get('/privacy-policies', function () {
+    return view('landingpages.layouts.privacypolicy');
+})->name('landing.privacy-policy');
+Route::get('/terms-and-condition', function () {
+    return view('landingpages.layouts.termsandconditions');
+})->name('landing.terms-and-conditions');

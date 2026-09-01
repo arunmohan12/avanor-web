@@ -173,10 +173,12 @@
                 required
             >
 
+
+
             @error('phone')
-                <span class="avanor-lead-error">
-                    {{ $message }}
-                </span>
+            <span class="avanor-lead-error">
+            {{ $message }}
+        </span>
             @enderror
 
         </div>

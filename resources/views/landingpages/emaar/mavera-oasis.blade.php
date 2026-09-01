@@ -1,4 +1,4 @@
-@extends('landingpages.layouts.landing')
+@extends('landingpages.layouts.mavera-landing')
 
 
 {{-- =====================================================
@@ -94,10 +94,12 @@ route('properties.show', $property->slug)
 
 @push('structured-data')
     <script type="application/ld+json">
-        {!! json_encode(
-            $propertySchema,
-            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
-        ) !!}
+        {
+            !!json_encode(
+                $propertySchema,
+                JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+            ) !!
+        }
     </script>
 @endpush
 
@@ -110,29 +112,31 @@ route('properties.show', $property->slug)
             <div class="landing-header-brand">
 
                 <div class="landing-project-brand">
-                    THE HEIGHTS COUNTRY
-                    <br>
-                    CLUB &amp; WELLNESS
+                    <a href="#home" class="landing-logo">
+                        <img
+                            src="{{ asset('assets/img/landing/logoMareva.png') }}"
+                            alt="Avanor">
+                    </a>
                 </div>
 
                 <span class="landing-brand-divider"></span>
 
                 {{-- Existing Avanor logo --}}
 
-                    <a href="#home" class="landing-logo">
-                        <img
-                            src="{{ asset('assets/img/Avanor-lp.png') }}"
-                            alt="Avanor">
-                    </a>
+                <a href="#home" class="landing-logo">
+                    <img
+                        src="{{ asset('assets/img/Avanor-lp.png') }}"
+                        alt="Avanor">
+                </a>
 
 
             </div>
 
-{{--            <a href="#home" class="landing-logo">--}}
-{{--                <img--}}
-{{--                    src="{{ asset('assets/img/Avanor-lp.png') }}"--}}
-{{--                    alt="Avanor">--}}
-{{--            </a>--}}
+            {{-- <a href="#home" class="landing-logo">--}}
+            {{-- <img--}}
+            {{-- src="{{ asset('assets/img/Avanor-lp.png') }}"--}}
+            {{-- alt="Avanor">--}}
+            {{-- </a>--}}
             <nav class="landing-nav">
 
 
@@ -205,7 +209,6 @@ route('properties.show', $property->slug)
                 <a href="#about">About</a>
 
 
-
                 <a href="#location">Location</a>
 
                 <a href="#downloads">
@@ -269,17 +272,16 @@ route('properties.show', $property->slug)
                     {{-- HERO CONTENT --}}
                     <div class="avanor-property-slide-content-landing">
 
-            <span class="avanor-property-slide-eyebrow">
-                EMAAR PROPERTIES
-            </span>
+                <span class="avanor-property-slide-eyebrow">
+                    EMAAR PROPERTIES
+                </span>
 
                         <h1 class="avanor-property-slide-title">
                             {{ $property->title }} - New Launch Villas for Sale in Dubai
                         </h1>
 
                         <p class="avanor-property-slide-description">
-                            Luxury 3, 4 & 5 Bedroom Villas at The Heights Country Club & Wellness by Emaar. Explore latest prices, payment plans, floor plans and available units.
-
+                            Luxury Villas and Mansions at Mareva, The Oasis by Emaar. Explore latest prices, payment plans, floor plans and available units.
                         </p>
 
 
@@ -297,14 +299,14 @@ route('properties.show', $property->slug)
                                     {{-- Starting Price --}}
                                     <div class="landing-hero-offer-price">
 
-                                                 <span>
-                                                     STARTING FROM
-                                                     </span>
+                            <span>
+                                STARTING FROM
+                            </span>
 
                                         <strong>
                                             {{ \App\Support\PriceFormatter::aed(
-                                                $property->project->starting_price
-                                            ) }}
+                                                            $property->project->starting_price
+                                                        ) }}
                                         </strong>
 
                                     </div>
@@ -316,13 +318,12 @@ route('properties.show', $property->slug)
 
                                     {{-- Payment Plan --}}
                                     <div class="landing-hero-offer-payment">
-                                                    <span>
-                                                  PAYMENT PLAN
-                                         </span>
+                            <span>
+                                PAYMENT PLAN
+                            </span>
                                         <strong>
                                             80/20
                                         </strong>
-
 
 
                                     </div>
@@ -339,7 +340,7 @@ route('properties.show', $property->slug)
 
                                         <span>WHATSAPP</span>
 
-                                        <x-landing-icon name="whatsapp" />
+                                        <x-landing-icon name="whatsapp"/>
 
                                     </a>
 
@@ -350,13 +351,13 @@ route('properties.show', $property->slug)
 
                                         <span>CALL</span>
 
-                                        <x-landing-icon name="phone" />
+                                        <x-landing-icon name="phone"/>
 
                                     </a>
 
                                 </div>
 
-                                </fieldset>
+                            </fieldset>
 
                         @endif
 
@@ -415,8 +416,8 @@ route('properties.show', $property->slug)
 
 
                     {{-- =====================================================
-                    PROPERTY OVERVIEW
-                ===================================================== --}}
+                        PROPERTY OVERVIEW
+                    ===================================================== --}}
                     <div class="col-xxl-8 col-lg-7" id="property-details">
 
                         <div class="property-page-single">
@@ -424,7 +425,7 @@ route('properties.show', $property->slug)
                             <div class="page-content">
 
                                 <h2 class="page-title">
-                                  ABOUT  {{ $property->title }}
+                                    ABOUT {{ $property->title }}
                                 </h2>
 
 
@@ -439,8 +440,8 @@ route('properties.show', $property->slug)
 
 
                                 {{-- =============================================
-                                PROPERTY FACTS
-                            ============================================= --}}
+                                    PROPERTY FACTS
+                                ============================================= --}}
                                 @if ($hasFacts)
 
                                     <section class="avanor-property-facts">
@@ -545,10 +546,10 @@ route('properties.show', $property->slug)
 
                                                     <h3 class="avanor-property-fact-value">
                                                         {{ trim(
-                                                                ($property->handover_quarter ?? '') .
-                                                                ' ' .
-                                                                ($property->handover_year ?? '')
-                                                            ) }}
+                                                                            ($property->handover_quarter ?? '') .
+                                                                            ' ' .
+                                                                            ($property->handover_year ?? '')
+                                                                        ) }}
                                                     </h3>
 
                                                 </div>
@@ -589,8 +590,8 @@ route('properties.show', $property->slug)
 
 
                     {{-- =====================================================
-                    REGISTER INTEREST FORM
-                ===================================================== --}}
+                        REGISTER INTEREST FORM
+                    ===================================================== --}}
                     <div class="col-xxl-4 col-lg-5">
 
                         <aside class="sidebar-area">
@@ -691,17 +692,17 @@ route('properties.show', $property->slug)
 
 
                     {{-- =====================================================
-                    CONTENT AREA
-                ===================================================== --}}
+                        CONTENT AREA
+                    ===================================================== --}}
 
 
                     <div class="landing-plan-container space-top" id="downloads">
 
                         <div class="landing-plan-heading">
 
-                                                         <span class="landing-plan-eyebrow">
-                                                            BED ROOM PLANS
-                                                             </span>
+                        <span class="landing-plan-eyebrow">
+                            BED ROOM PLANS
+                        </span>
 
                             <h2>
                                 BED ROOM PLANS & FLOOR LAYOUTS
@@ -734,8 +735,8 @@ route('properties.show', $property->slug)
                                     <span class="landing-plan-overlay"></span>
 
                                     <span class="landing-plan-overlay-text">
-                                                        SHOW 3BR VILLA GROUND FlOOR PLAN
-                                                    </span>
+                                    SHOW 3BR VILLA GROUND FlOOR PLAN
+                                </span>
 
                                 </button>
 
@@ -749,7 +750,6 @@ route('properties.show', $property->slug)
                                         BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
 
                                     </p>
-
 
 
                                 </div>
@@ -774,8 +774,8 @@ route('properties.show', $property->slug)
                                     <span class="landing-plan-overlay"></span>
 
                                     <span class="landing-plan-overlay-text">
-                                                          SHOW 3BR VILLA UPPER FlOOR PLAN
-                                                    </span>
+                                    SHOW 3BR VILLA UPPER FlOOR PLAN
+                                </span>
 
                                 </button>
 
@@ -789,7 +789,6 @@ route('properties.show', $property->slug)
                                         BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
 
                                     </p>
-
 
 
                                 </div>
@@ -812,8 +811,8 @@ route('properties.show', $property->slug)
                                     <span class="landing-plan-overlay"></span>
 
                                     <span class="landing-plan-overlay-text">
-                                                          SHOW 4 BR VILLA GROUND FlOOR PLAN
-                                                    </span>
+                                    SHOW 4 BR VILLA GROUND FlOOR PLAN
+                                </span>
 
                                 </button>
 
@@ -827,7 +826,6 @@ route('properties.show', $property->slug)
                                         BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
 
                                     </p>
-
 
 
                                 </div>
@@ -858,8 +856,8 @@ route('properties.show', $property->slug)
                                             class="row gy-40 property-detail-row justify-content-between align-items-center">
 
                                             {{-- =====================================
-                                         DYNAMIC CONTENT SECTIONS
-                                            ===================================== --}}
+                                                 DYNAMIC CONTENT SECTIONS
+                                                    ===================================== --}}
                                             @foreach ($activeSections as $section)
 
                                                 @php
@@ -1058,9 +1056,9 @@ route('properties.show', $property->slug)
 
                                                 <div class="landing-plan-heading">
 
-                                                         <span class="landing-plan-eyebrow">
-                                                            PROJECT PLANS
-                                                             </span>
+                                            <span class="landing-plan-eyebrow">
+                                                PROJECT PLANS
+                                            </span>
 
                                                     <h2>
                                                         MASTER PLAN & UNIT LAYOUTS
@@ -1173,8 +1171,8 @@ route('properties.show', $property->slug)
 
 
                                             {{-- =====================================
-                                                ABOUT PROJECT
-                                            ===================================== --}}
+                                                        ABOUT PROJECT
+                                                    ===================================== --}}
                                             @if ($hasProjectDescription)
 
                                                 <div class="col-lg-12">
@@ -1219,12 +1217,9 @@ route('properties.show', $property->slug)
         </section>
 
 
-
-
         <section class="landing-gallery-section " id="gallery">
 
             <div class="landing-gallery-container">
-
 
 
                 @if ($galleryImages->isNotEmpty())
@@ -1233,9 +1228,9 @@ route('properties.show', $property->slug)
 
                         <div class="landing-project-gallery-heading">
 
-            <span class="landing-project-gallery-eyebrow">
-                COMMUNITY RENDERS
-            </span>
+                    <span class="landing-project-gallery-eyebrow">
+                        COMMUNITY RENDERS
+                    </span>
 
                             <h2>
                                 Project <em>Gallery</em>
@@ -1254,13 +1249,13 @@ route('properties.show', $property->slug)
 
                                 @php
                                     $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
-                                        $image,
-                                        'gallery_tablet_avif'
+                                    $image,
+                                    'gallery_tablet_avif'
                                     );
 
                                     $fullImageUrl = \App\Support\MediaUrl::fromMedia(
-                                        $image,
-                                        'gallery_avif'
+                                    $image,
+                                    'gallery_avif'
                                     );
                                 @endphp
 
@@ -1298,8 +1293,8 @@ route('properties.show', $property->slug)
 
 
                     {{-- =====================================================
-                        GALLERY LIGHTBOX
-                    ===================================================== --}}
+                                GALLERY LIGHTBOX
+                            ===================================================== --}}
 
                     <div
                         class="landing-gallery-lightbox"
@@ -1382,8 +1377,8 @@ route('properties.show', $property->slug)
 
 
                 {{-- =====================================
-                                            AMENITIES
-                                        ===================================== --}}
+                                                AMENITIES
+                                            ===================================== --}}
                 @if ($amenities->isNotEmpty())
 
                     <div class="col-lg-12">
@@ -1405,11 +1400,11 @@ route('properties.show', $property->slug)
 
                                     @php
                                         $amenityIcon = match ($amenity->icon) {
-                                            'fa-solid fa-child' => 'child',
-                                            'fa-solid fa-person-swimming' => 'swimming',
-                                            'fa-solid fa-dumbbell' => 'dumbbell',
-                                            'fa-solid fa-utensils' => 'utensils',
-                                            default => 'check',
+                                        'fa-solid fa-child' => 'child',
+                                        'fa-solid fa-person-swimming' => 'swimming',
+                                        'fa-solid fa-dumbbell' => 'dumbbell',
+                                        'fa-solid fa-utensils' => 'utensils',
+                                        default => 'check',
                                         };
                                     @endphp
 
@@ -1441,8 +1436,8 @@ route('properties.show', $property->slug)
 
 
                 {{-- =====================================
-                                            LOCATION
-                                        ===================================== --}}
+                                                LOCATION
+                                            ===================================== --}}
                 @if (filled($property->map_url))
 
                     <div class="col-lg-12 minus-text-area" id="location">
@@ -1454,18 +1449,18 @@ route('properties.show', $property->slug)
                                 {{-- LEFT SIDE --}}
                                 <div class="landing-location-content">
 
-                <span class="sub-title-dark project-about-heading">
-                    LOCATION
-                </span>
+                            <span class="sub-title-dark project-about-heading">
+                                LOCATION
+                            </span>
 
                                     <h2 class="landing-location-title">
-                                        Dubai South, UAE
+                                        Me'aisem Second , UAE
 
                                     </h2>
 
 
                                     <p class="landing-location-description">
-                                        Ideally positioned in Dubai South with convenient access
+                                        Ideally positioned in Me'aisem Second with convenient access
                                         to major destinations, business districts and lifestyle
                                         landmarks across Dubai.
                                     </p>
@@ -1476,12 +1471,12 @@ route('properties.show', $property->slug)
                                         <div class="landing-location-item">
 
                                             <div class="landing-location-time">
-                                                <strong>10</strong>
+                                                <strong>28</strong>
                                                 <span>MINS</span>
                                             </div>
 
                                             <div class="landing-location-destination">
-                                                <span>Expo City Dubai</span>
+                                                <span>Dubai Marina & Dubai Marina Mall</span>
                                             </div>
 
                                         </div>
@@ -1490,7 +1485,7 @@ route('properties.show', $property->slug)
                                         <div class="landing-location-item">
 
                                             <div class="landing-location-time">
-                                                <strong>10</strong>
+                                                <strong>18</strong>
                                                 <span>MINS</span>
                                             </div>
 
@@ -1518,7 +1513,7 @@ route('properties.show', $property->slug)
                                         <div class="landing-location-item">
 
                                             <div class="landing-location-time">
-                                                <strong>30</strong>
+                                                <strong>35</strong>
                                                 <span>MINS</span>
                                             </div>
 
@@ -1542,7 +1537,7 @@ route('properties.show', $property->slug)
 
                                             <iframe
                                                 src="{{ $property->map_url }}"
-                                                title="Map showing The Heights location in Dubai South"
+                                                title="Map showing Mareva At the oasis location "
                                                 allowfullscreen
                                                 loading="lazy"
                                                 referrerpolicy="no-referrer-when-downgrade">
@@ -1587,20 +1582,25 @@ route('properties.show', $property->slug)
                 <div class="wellness-copy">
 
                     <div class="wellness-eyebrow">
-                        DESTINATION DESIGNED FOR WELLNESS AND BELONGING
+                        Modern Waterfront Living Redefined at The Oasis by Emaar
                     </div>
 
                     <h2>
-                        THE HEIGHTS<br>
-                        COUNTRY CLUB<br>
-                        AND WELLNESS
+                        THE OASIS BY<br>
+
+                        EMAAR
                     </h2>
 
                     <p>
-                        Imagined as an exclusive retreat-style community, The Heights brings together lush green
-                        landscapes to create a vibrant, sustainable way of living. Inspired by nature-led design, the
-                        masterplan flows through winding pathways, expansive green spaces, peaceful courtyards, and
-                        calming water features, forming a harmonious environment throughout.
+                        Emaar’s latest masterpiece, The Oasis, redefines high-end residential living through a seamless
+                        blend of natural beauty and architectural mastery. Set against peaceful canals and vibrant
+                        landscapes, this exclusive community features bespoke villas and expansive mansions tailored for
+                        the discerning buyer.
+
+                        Every residence prioritizes fluid indoor-outdoor spaces, combining high-end interior craft with
+                        resort-style, personalized concierge service. Whether relaxing along the waterfront or taking
+                        advantage of the community's private wellness amenities, everyday life here feels like an
+                        effortless retreat.
 
                     </p>
 
@@ -1608,53 +1608,42 @@ route('properties.show', $property->slug)
                     <ul class="landing-lifestyle-features">
 
                         <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="spa"/>
-        </span>
-                            <span>Wellness Centre</span>
+                        <span class="landing-feature-icon">
+                            <x-landing-icon name="spa"/>
+                        </span>
+                            <span>100 million sq ft
+                            Total Land Area</span>
                         </li>
 
                         <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="leaf"/>
-        </span>
-                            <span>Meditation Garden</span>
+                        <span class="landing-feature-icon">
+                            <x-landing-icon name="leaf"/>
+                        </span>
+                            <span>2600
+                            Villas</span>
                         </li>
 
                         <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="water"/>
-        </span>
-                            <span>Wellness Lake & Promenade</span>
+                        <span class="landing-feature-icon">
+                            <x-landing-icon name="water"/>
+                        </span>
+                            <span>25% of the Land
+                                Open Spaces + Amenities
+                                    </span>
                         </li>
 
                         <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="beach"/>
-        </span>
-                            <span>Private Beach</span>
+                        <span class="landing-feature-icon">
+                            <x-landing-icon name="beach"/>
+                        </span>
+                            <span>
+                                4 International Golf Courses
+                                In Close Proximity</span>
                         </li>
 
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="dumbbell"/>
-        </span>
-                            <span>Fitness Area</span>
-                        </li>
 
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="pool"/>
-        </span>
-                            <span>Yoga Lake</span>
-                        </li>
 
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="users"/>
-        </span>
-                            <span>Social Terrace</span>
-                        </li>
+
 
                     </ul>
 
@@ -1667,9 +1656,9 @@ route('properties.show', $property->slug)
 
                 {{-- CENTER TOP --}}
                 <div class="wellness-item wellness-main">
-                    <img src="{{ asset('assets/img/property/heightswellness1.avif') }}"
+                    <img src="{{ asset('assets/img/property/mareva-1.avif') }}"
                          alt=" {{ $property->project?->name ?? $property->title }}">
-                    <div class="wellness-caption">WELLNESS CENTRE</div>
+                    <div class="wellness-caption">Waterfront Living</div>
                 </div>
 
 
@@ -1677,15 +1666,15 @@ route('properties.show', $property->slug)
                 <div class="wellness-right-top">
 
                     <div class="wellness-item">
-                        <img src="{{ asset('assets/img/property/heightswellness2.avif') }}"
+                        <img src="{{ asset('assets/img/property/mareva-2.avif') }}"
                              alt=" {{ $property->project?->name ?? $property->title }}">
-                        <div class="wellness-caption">FITNESS AREA</div>
+                        <div class="wellness-caption">Gated Community</div>
                     </div>
 
                     <div class="wellness-item">
-                        <img src="{{ asset('assets/img/property/heightswellness3.avif') }}"
+                        <img src="{{ asset('assets/img/property/mareva-3.avif') }}"
                              alt=" {{ $property->project?->name ?? $property->title }}">
-                        <div class="wellness-caption">YOGA LAKE</div>
+                        <div class="wellness-caption">Private Beach</div>
                     </div>
 
                 </div>
@@ -1693,17 +1682,17 @@ route('properties.show', $property->slug)
 
                 {{-- BOTTOM CENTER --}}
                 <div class="wellness-item wellness-bottom-center">
-                    <img src="{{ asset('assets/img/property/heightswellness5.avif') }}"
+                    <img src="{{ asset('assets/img/property/mareva-4.avif') }}"
                          alt=" {{ $property->project?->name ?? $property->title }}">
-                    <div class="wellness-caption">PRIVATE BEACH</div>
+                    <div class="wellness-caption">Seamless Indoor-Outdoor Flow</div>
                 </div>
 
 
                 {{-- BOTTOM RIGHT --}}
                 <div class="wellness-item wellness-bottom-right">
-                    <img src="{{ asset('assets/img/property/heightswellness4.avif') }}"
+                    <img src="{{ asset('assets/img/property/mareva-5.avif') }}"
                          alt=" {{ $property->project?->name ?? $property->title }}">
-                    <div class="wellness-caption">MEDITATION GARDEN</div>
+                    <div class="wellness-caption">World-Class Architecture</div>
                 </div>
 
             </div>
@@ -1711,8 +1700,8 @@ route('properties.show', $property->slug)
         </section>
 
         {{-- =====================================================
-            FAQ SECTION
-        ===================================================== --}}
+                FAQ SECTION
+            ===================================================== --}}
 
         <section class="landing-faq-section" id="faq">
 
@@ -1722,8 +1711,8 @@ route('properties.show', $property->slug)
                 <div class="landing-faq-intro">
 
 
-                    <span class="sub-title-dark project-about-heading">
-                      COMMON QUESTIONS
+                <span class="sub-title-dark project-about-heading">
+                    COMMON QUESTIONS
                 </span>
                     <h2 class="landing-faq-title">
                         Frequently
@@ -1731,9 +1720,8 @@ route('properties.show', $property->slug)
                     </h2>
 
 
-
                     <p class="landing-faq-description">
-                        Have a question about The Heights by Emaar?
+                        Have a question about The Mareva by Emaar?
                         We're here to help.
                     </p>
 
@@ -1753,17 +1741,20 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        What is The Heights by Emaar?
-                    </span>
+            <span>
+                What is Mareva at The Oasis by Emaar?
+            </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
 
                         <div class="landing-faq-answer">
                             <p>
-                                The Heights by Emaar is a premium villa community focused on wellness, nature, and family living, offering spacious 3, 4 and 5-bedroom villas with world-class amenities.
-
+                                Mareva at The Oasis by Emaar is a luxury residential development
+                                within The Oasis master community in Dubai. It offers premium
+                                villas designed for spacious family living, privacy and a
+                                resort-inspired lifestyle surrounded by landscaped green spaces
+                                and water features.
                             </p>
                         </div>
 
@@ -1773,17 +1764,19 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        What is the payment plan for The Heights by Emaar?
-                    </span>
+            <span>
+                Where is Mareva at The Oasis located in Dubai?
+            </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
 
                         <div class="landing-faq-answer">
                             <p>
-                                The Heights offers an 80/20 payment plan, with payments structured throughout construction and the remaining 20% due upon handover.
-
+                                Mareva is located within The Oasis by Emaar in Dubai. The
+                                community is positioned to provide convenient access to major
+                                roads, business districts, lifestyle destinations and key areas
+                                across Dubai while maintaining a private residential setting.
                             </p>
                         </div>
 
@@ -1793,17 +1786,20 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        How large is the Emaar Heights community?
-                    </span>
+            <span>
+                What types of villas are available at Mareva at The Oasis?
+            </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
 
                         <div class="landing-faq-answer">
                             <p>
-                                The Heights spans approximately 81 million sq. ft., featuring expansive green spaces, parks, wellness facilities, and community amenities.
-
+                                Mareva at The Oasis features a collection of luxury villas with
+                                spacious layouts, contemporary architecture, private outdoor
+                                areas and premium finishes. Buyers can contact Avanor Capital
+                                for the latest villa configurations, available units and floor
+                                plans.
                             </p>
                         </div>
 
@@ -1813,17 +1809,19 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        Is The Heights by Emaar a good investment?
-                    </span>
+            <span>
+                What is the starting price of villas at Mareva at The Oasis?
+            </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
 
                         <div class="landing-faq-answer">
                             <p>
-                                The Heights offers strong long-term potential due to its Emaar brand, strategic location, premium villas, and wellness-focused community concept.
-
+                                Villa prices at Mareva at The Oasis vary depending on the
+                                property type, size, plot and availability. Contact Avanor
+                                Capital for the latest Mareva price list, current availability
+                                and booking information directly from the project inventory.
                             </p>
                         </div>
 
@@ -1833,21 +1831,91 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        When is The Heights expected to be handed over?
-                    </span>
+            <span>
+                What is the Mareva at The Oasis payment plan?
+            </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
 
                         <div class="landing-faq-answer">
                             <p>
-                                The Heights by Emaar is currently an off-plan project, with expected handover is 2030.
+                                Mareva at The Oasis offers a structured payment plan designed
+                                for off-plan property buyers. Payment schedules may depend on
+                                the current release, so buyers should request the latest Emaar
+                                payment plan, booking amount and instalment schedule before
+                                reserving a villa.
                             </p>
                         </div>
 
                     </details>
 
+
+                    <details class="landing-faq-item">
+
+                        <summary>
+            <span>
+                Are Mareva at The Oasis floor plans available?
+            </span>
+
+                            <span class="landing-faq-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="landing-faq-answer">
+                            <p>
+                                Yes. Mareva floor plans are available for the different villa
+                                layouts released within the project. Contact Avanor Capital to
+                                receive the latest floor plans, villa sizes, plot details and
+                                currently available units.
+                            </p>
+                        </div>
+
+                    </details>
+
+
+                    <details class="landing-faq-item">
+
+                        <summary>
+            <span>
+                When is the handover for Mareva at The Oasis?
+            </span>
+
+                            <span class="landing-faq-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="landing-faq-answer">
+                            <p>
+                                Mareva is an off-plan development within The Oasis by Emaar.
+                                Buyers should confirm the latest expected handover date and
+                                construction schedule for their selected unit before booking.
+                            </p>
+                        </div>
+
+                    </details>
+
+
+                    <details class="landing-faq-item">
+
+                        <summary>
+            <span>
+                Is Mareva at The Oasis a good property investment in Dubai?
+            </span>
+
+                            <span class="landing-faq-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="landing-faq-answer">
+                            <p>
+                                Mareva may appeal to investors looking for luxury Emaar villas
+                                in Dubai within a large master-planned community. Its premium
+                                villa concept, spacious homes, Emaar branding and location
+                                within The Oasis can make it attractive for long-term ownership,
+                                although buyers should evaluate pricing, market conditions and
+                                individual investment goals before purchasing.
+                            </p>
+                        </div>
+
+                    </details>
 
                 </div>
 
@@ -1883,7 +1951,7 @@ route('properties.show', $property->slug)
                 'heading' => 'Register Your Interest',
                 'description' => 'Share your details and our property advisor will contact you with pricing, availability and project information.',
                 'buttonText' => 'Submit Enquiry',
-                'source' => 'the_heights_popup',
+                'source' => 'mareva_popup',
                 'propertyId' => $property->id,
                 'developerId' => $property->developer_id,
                 'action' => route('landing.leads.store'),
@@ -1924,14 +1992,14 @@ route('properties.show', $property->slug)
                             {{-- Phone + WhatsApp --}}
                             <div class="landing-footer-contact-item">
 
-        <span class="landing-footer-contact-icon">
-            <x-landing-icon name="phone"/>
-        </span>
+                            <span class="landing-footer-contact-icon">
+                                <x-landing-icon name="phone"/>
+                            </span>
 
                                 <div>
-            <span class="landing-footer-contact-label">
-                PHONE & WHATSAPP
-            </span>
+                                <span class="landing-footer-contact-label">
+                                    PHONE & WHATSAPP
+                                </span>
 
                                     <a href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}">
                                         {{ $siteSettings['phone'] }}
@@ -1944,14 +2012,14 @@ route('properties.show', $property->slug)
                             {{-- Alternate --}}
                             <div class="landing-footer-contact-item">
 
-        <span class="landing-footer-contact-icon">
-            <x-landing-icon name="phone"/>
-        </span>
+                            <span class="landing-footer-contact-icon">
+                                <x-landing-icon name="phone"/>
+                            </span>
 
                                 <div>
-            <span class="landing-footer-contact-label">
-                ALTERNATE
-            </span>
+                                <span class="landing-footer-contact-label">
+                                    ALTERNATE
+                                </span>
 
                                     <a href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}">
                                         {{ $siteSettings['phone'] }}
@@ -1964,28 +2032,28 @@ route('properties.show', $property->slug)
                             {{-- Website --}}
                             <div class="landing-footer-contact-item">
 
-        <span class="landing-footer-contact-icon">
+                            <span class="landing-footer-contact-icon">
 
-            <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                aria-hidden="true">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    aria-hidden="true">
 
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M3 12h18"/>
-                <path d="M12 3c3 3.5 4.5 6.5 4.5 9S15 17.5 12 21"/>
-                <path d="M12 3C9 6.5 7.5 9.5 7.5 12S9 17.5 12 21"/>
+                                    <circle cx="12" cy="12" r="9"/>
+                                    <path d="M3 12h18"/>
+                                    <path d="M12 3c3 3.5 4.5 6.5 4.5 9S15 17.5 12 21"/>
+                                    <path d="M12 3C9 6.5 7.5 9.5 7.5 12S9 17.5 12 21"/>
 
-            </svg>
+                                </svg>
 
-        </span>
+                            </span>
 
                                 <div>
-            <span class="landing-footer-contact-label">
-                WEBSITE
-            </span>
+                                <span class="landing-footer-contact-label">
+                                    WEBSITE
+                                </span>
 
                                     <a
                                         href="https://avanorcap.com"
@@ -2068,7 +2136,7 @@ route('properties.show', $property->slug)
                             'heading' => 'Register Your Interest',
                             'description' => 'Share your details and our property advisor will contact you with pricing, availability and project information.',
                             'buttonText' => 'Submit Enquiry',
-                            'source' => 'the_heights_footer',
+                            'source' => 'the_oasis_footer',
                             'propertyId' => $property->id,
                             'developerId' => $property->developer_id,
                             'action' => route('landing.leads.store'),

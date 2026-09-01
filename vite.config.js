@@ -19,19 +19,22 @@ export default defineConfig({
                 'resources/css/components/leadform.css',
                 'resources/css/vendor/communities.css',
                 'resources/css/vendor/communitiesdetailed.css',
-               
+
                'resources/css/vendor/devdetails.css',
                 'resources/js/pages/contact.js',
                 'resources/js/pages/propertydetails.js',
                 'resources/js/pages/devdetails.js',
                 'resources/js/pages/partners.js',
                 'resources/js/app.js',
-            
 
-                
+
+
                 'resources/css/landingpages/the-heightsv2.css',
+                'resources/css/landingpages/mavera.css',
+                'resources/css/landingpages/privacy-policy.css',
+                'resources/css/landingpages/terms-conditions.css',
                 'resources/js/landingpages/the-heights.js',
-            
+
             ],
             refresh: true,
             fonts: [
@@ -39,9 +42,9 @@ export default defineConfig({
                     weights: [400, 500, 600],
                 }),
             ],
-            
+
         }),
-     
+
     ],
     server: {
         watch: {

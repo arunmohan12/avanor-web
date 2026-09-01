@@ -1,0 +1,458 @@
+/* =====================================================
+   AVANOR PRIVACY POLICY
+===================================================== */
+
+.avanor-privacy-container {
+    width: min(1280px, calc(100% - 64px));
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.avanor-privacy-hero {
+    padding: 170px 0 100px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #101b2a 0%,
+            #17283e 70%,
+            #1d3047 100%
+        );
+
+    color: #fff;
+}
+
+.avanor-privacy-eyebrow {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: #c4a158;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+.avanor-privacy-hero h1 {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: #fff;
+
+    font-family: var(--font-optima);
+    font-size: clamp(52px, 7vw, 92px);
+    font-weight: 400;
+
+    line-height: 0.95;
+}
+
+.avanor-privacy-hero h1 em {
+    color: #c4a158;
+    font-weight: 400;
+}
+
+.avanor-privacy-hero > .avanor-privacy-container > p {
+    max-width: 660px;
+
+    margin: 32px 0 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.avanor-privacy-updated {
+    margin-top: 42px;
+
+    color: rgba(255, 255, 255, 0.46);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.avanor-privacy-content {
+    padding: 100px 0 130px;
+
+    background: #f8f6f2;
+}
+
+.avanor-privacy-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 760px);
+
+    justify-content: space-between;
+
+    gap: 90px;
+}
+
+
+/* =====================================================
+   SIDE NAV
+===================================================== */
+
+.avanor-privacy-nav {
+    position: sticky;
+    top: 120px;
+
+    height: fit-content;
+}
+
+.avanor-privacy-nav-title {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: #b38c40;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.avanor-privacy-nav nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.avanor-privacy-nav a {
+    padding: 11px 0;
+
+    border-bottom: 1px solid #ddd7cc;
+
+    color: #626a75;
+
+    font-size: 13px;
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.avanor-privacy-nav a:hover {
+    padding-left: 6px;
+    color: #b38c40;
+}
+
+
+/* =====================================================
+   POLICY SECTIONS
+===================================================== */
+
+.avanor-privacy-section {
+    position: relative;
+
+    padding: 0 0 64px;
+    margin-bottom: 64px;
+
+    border-bottom: 1px solid #ded9cf;
+
+    scroll-margin-top: 120px;
+}
+
+.avanor-privacy-number {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #b38c40;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.avanor-privacy-section h2 {
+    margin: 0 0 28px;
+
+    color: #182335;
+
+    font-family: var(--font-optima);
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+.avanor-privacy-section h3 {
+    margin: 34px 0 15px;
+
+    color: #182335;
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.avanor-privacy-section p {
+    margin: 0 0 18px;
+
+    color: #5e6672;
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.avanor-privacy-section ul {
+    margin: 26px 0 30px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.avanor-privacy-section li {
+    position: relative;
+
+    margin-bottom: 13px;
+    padding-left: 25px;
+
+    color: #515966;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.avanor-privacy-section li::before {
+    content: "";
+
+    position: absolute;
+
+    top: 11px;
+    left: 0;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #b38c40;
+}
+
+
+/* =====================================================
+   NOTE
+===================================================== */
+
+.avanor-privacy-note {
+    margin-top: 34px;
+
+    padding: 27px 30px;
+
+    border-left: 2px solid #b38c40;
+
+    background: #fff;
+}
+
+.avanor-privacy-note > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #b38c40;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.avanor-privacy-note p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.avanor-privacy-contact {
+    margin-bottom: 0;
+
+    padding: 48px;
+
+    border: 0;
+
+    background: #17283e;
+}
+
+.avanor-privacy-contact h2 {
+    color: #fff;
+}
+
+.avanor-privacy-contact p {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.avanor-privacy-contact-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 55px;
+
+    margin-top: 15px;
+    padding: 0 28px;
+
+    border: 1px solid #c4a158;
+
+    color: #c4a158;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.avanor-privacy-contact-btn:hover {
+    background: #c4a158;
+    color: #17283e;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .avanor-privacy-container {
+        width: calc(100% - 48px);
+    }
+
+    .avanor-privacy-hero {
+        padding: 140px 0 80px;
+    }
+
+    .avanor-privacy-content {
+        padding: 75px 0 100px;
+    }
+
+    .avanor-privacy-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .avanor-privacy-nav {
+        position: static;
+    }
+
+    .avanor-privacy-nav nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 25px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 575px) {
+
+    .avanor-privacy-container {
+        width: calc(100% - 32px);
+    }
+
+    .avanor-privacy-hero {
+        padding: 120px 0 60px;
+    }
+
+    .avanor-privacy-hero h1 {
+        font-size: 48px;
+    }
+
+    .avanor-privacy-hero > .avanor-privacy-container > p {
+        margin-top: 24px;
+
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .avanor-privacy-content {
+        padding: 55px 0 75px;
+    }
+
+    .avanor-privacy-nav {
+        display: none;
+    }
+
+    .avanor-privacy-section {
+        padding-bottom: 45px;
+        margin-bottom: 45px;
+    }
+
+    .avanor-privacy-section h2 {
+        font-size: 32px;
+    }
+
+    .avanor-privacy-section p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .avanor-privacy-contact {
+        padding: 32px 22px;
+    }
+
+    .avanor-privacy-contact-btn {
+        width: 100%;
+    }
+
+}
+.avanor-privacy-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 45px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.avanor-privacy-back svg {
+    width: 20px;
+    height: 20px;
+}
+
+.avanor-privacy-back:hover {
+    color: #c4a158;
+    transform: translateX(-4px);
+}

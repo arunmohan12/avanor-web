@@ -180,8 +180,50 @@
     "src": "resources/css/components/leadform.css",
     "isEntry": true
   },
+  "resources/css/landingpages/mavera.css": {
+    "file": "assets/mavera-C0GSGL8i.css",
+    "name": "mavera",
+    "names": [
+      "mavera.css"
+    ],
+    "src": "resources/css/landingpages/mavera.css",
+    "isEntry": true,
+    "assets": [
+      "assets/lato-latin-ext-400-normal-CK4GAP86.woff2",
+      "assets/lato-latin-ext-400-normal-NoO0okhb.woff",
+      "assets/lato-latin-400-normal-BEhtfm5r.woff2",
+      "assets/lato-latin-400-normal-B11PyLys.woff",
+      "assets/lato-latin-ext-700-normal-C6gwlRgY.woff2",
+      "assets/lato-latin-ext-700-normal-oVW-9CSr.woff",
+      "assets/lato-latin-700-normal-BUGMgin4.woff2",
+      "assets/lato-latin-700-normal-DAdL7O4w.woff",
+      "assets/optima_lt_pro_n4-CR_umPCx.woff2",
+      "assets/optima_lt_pro_n7-DjMDkqcH.woff2",
+      "assets/optima_lt_pro_i4-DPP4vEV9.woff2",
+      "assets/optima_lt_pro_i7-PDqk5eIp.woff2",
+      "assets/aed-Regular-lH271UDw.otf"
+    ]
+  },
+  "resources/css/landingpages/privacy-policy.css": {
+    "file": "assets/privacy-policy-CA2ga8Lq.css",
+    "name": "privacy-policy",
+    "names": [
+      "privacy-policy.css"
+    ],
+    "src": "resources/css/landingpages/privacy-policy.css",
+    "isEntry": true
+  },
+  "resources/css/landingpages/terms-conditions.css": {
+    "file": "assets/terms-conditions-PH4QC-Dp.css",
+    "name": "terms-conditions",
+    "names": [
+      "terms-conditions.css"
+    ],
+    "src": "resources/css/landingpages/terms-conditions.css",
+    "isEntry": true
+  },
   "resources/css/landingpages/the-heightsv2.css": {
-    "file": "assets/the-heightsv2-CRqpXbwq.css",
+    "file": "assets/the-heightsv2-IlTyCIuJ.css",
     "name": "the-heightsv2",
     "names": [
       "the-heightsv2.css"
@@ -371,7 +413,7 @@
     "isEntry": true
   },
   "resources/js/landingpages/the-heights.js": {
-    "file": "assets/the-heights-CPvS7WnX.js",
+    "file": "assets/the-heights-CEycH0Fj.js",
     "name": "the-heights",
     "src": "resources/js/landingpages/the-heights.js",
     "isEntry": true,
@@ -380,7 +422,7 @@
     ]
   },
   "resources/js/pages/contact.js": {
-    "file": "assets/contact-D-XQP-LS.js",
+    "file": "assets/contact-CJu1cfqb.js",
     "name": "contact",
     "src": "resources/js/pages/contact.js",
     "isEntry": true,

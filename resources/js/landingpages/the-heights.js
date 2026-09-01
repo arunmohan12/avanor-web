@@ -5,21 +5,14 @@ import 'intl-tel-input/styles';
 document.addEventListener('DOMContentLoaded', () => {
 
     const propertyBar = document.getElementById('landingPropertyBar');
-    const footer = document.getElementById('landingFooter');
+    const footer = document.querySelector('.landing-enquiry-footer');
 
     if (!propertyBar || !footer) {
-        console.log('Missing:', {
-            propertyBar,
-            footer
-        });
-
         return;
     }
 
     const observer = new IntersectionObserver(
         ([entry]) => {
-
-            console.log('Footer intersection:', entry.isIntersecting);
 
             if (entry.isIntersecting) {
                 propertyBar.classList.add('is-hidden');
@@ -153,10 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPhoneInputs() {
 
     const phoneInputs = document.querySelectorAll(
-        'input[type="tel"]'
+        'input[type="tel"][name="phone"]'
     );
 
     phoneInputs.forEach((input) => {
@@ -179,9 +172,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         input.dataset.intlInitialized = 'true';
+
+        const form = input.closest('form');
+
+        if (!form) {
+            return;
+        }
+
+        form.addEventListener('submit', () => {
+
+            const wrapper = input.closest('.iti');
+
+            const dialCode = wrapper
+                ?.querySelector('.iti__selected-dial-code')
+                ?.textContent
+                ?.trim();
+
+            let number = input.value
+                .trim()
+                .replace(/\D/g, '')
+                .replace(/^0+/, '');
+
+            if (!dialCode || !number) {
+                return;
+            }
+
+            /*
+             * +91 + 7902723790
+             * becomes
+             * +917902723790
+             */
+            input.value = `${dialCode}${number}`;
+
+        }, true);
+
     });
 
-});
+}
+
+
+if (document.readyState === 'loading') {
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        initPhoneInputs
+    );
+
+} else {
+
+    initPhoneInputs();
+
+}
+/*
+ * Works whether this JS executes before
+ * or after DOMContentLoaded.
+ */
+if (document.readyState === 'loading') {
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        initPhoneInputs
+    );
+
+} else {
+
+    initPhoneInputs();
+
+}
 /* =====================================================
    AUTO OPEN LEAD POPUP
    Opens once after 5 seconds

@@ -1,0 +1,399 @@
+/* =====================================================
+   TERMS & CONDITIONS
+===================================================== */
+
+.avanor-terms-container {
+    width: min(1280px, calc(100% - 64px));
+    margin: 0 auto;
+}
+
+
+/* HERO */
+
+.avanor-terms-hero {
+    padding: 150px 0 100px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #101b2a 0%,
+            #17283e 70%,
+            #1d3047 100%
+        );
+
+    color: #fff;
+}
+
+.avanor-terms-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 48px;
+
+    color: rgba(255,255,255,.7);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.avanor-terms-back svg {
+    width: 20px;
+    height: 20px;
+}
+
+.avanor-terms-back:hover {
+    color: #c4a158;
+    transform: translateX(-4px);
+}
+
+
+.avanor-terms-eyebrow {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: #c4a158;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+
+.avanor-terms-hero h1 {
+    max-width: 900px;
+
+    margin: 0;
+
+    color: #fff;
+
+    font-family: var(--font-optima);
+    font-size: clamp(52px, 7vw, 90px);
+    font-weight: 400;
+    line-height: .98;
+}
+
+.avanor-terms-hero h1 em {
+    color: #c4a158;
+    font-weight: 400;
+}
+
+
+.avanor-terms-hero p {
+    max-width: 680px;
+
+    margin: 32px 0 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+.avanor-terms-updated {
+    margin-top: 40px;
+
+    color: rgba(255,255,255,.45);
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* CONTENT */
+
+.avanor-terms-content {
+    padding: 100px 0 130px;
+    background: #f8f6f2;
+}
+
+
+.avanor-terms-layout {
+    display: grid;
+
+    grid-template-columns:
+        270px
+        minmax(0, 760px);
+
+    justify-content: space-between;
+
+    gap: 90px;
+}
+
+
+/* NAV */
+
+.avanor-terms-nav {
+    position: sticky;
+    top: 120px;
+
+    height: fit-content;
+}
+
+
+.avanor-terms-nav-title {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #b38c40;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+
+.avanor-terms-nav nav {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.avanor-terms-nav a {
+    padding: 11px 0;
+
+    border-bottom: 1px solid #ddd7cc;
+
+    color: #626a75;
+
+    font-size: 13px;
+    line-height: 1.35;
+
+    text-decoration: none;
+
+    transition:
+        color .2s ease,
+        padding-left .2s ease;
+}
+
+
+.avanor-terms-nav a:hover {
+    padding-left: 6px;
+    color: #b38c40;
+}
+
+
+/* SECTIONS */
+
+.avanor-terms-section {
+    padding-bottom: 62px;
+    margin-bottom: 62px;
+
+    border-bottom: 1px solid #ded9cf;
+
+    scroll-margin-top: 120px;
+}
+
+
+.avanor-terms-number {
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: #b38c40;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+
+.avanor-terms-section h2 {
+    margin: 0 0 27px;
+
+    color: #182335;
+
+    font-family: var(--font-optima);
+    font-size: clamp(32px, 4vw, 45px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+
+.avanor-terms-section p {
+    margin: 0 0 18px;
+
+    color: #5e6672;
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* IMPORTANT NOTE */
+
+.avanor-terms-note {
+    margin-top: 32px;
+
+    padding: 27px 30px;
+
+    border-left: 2px solid #b38c40;
+
+    background: #fff;
+}
+
+
+.avanor-terms-note > span {
+    display: block;
+
+    margin-bottom: 11px;
+
+    color: #b38c40;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+
+.avanor-terms-note p {
+    margin: 0;
+}
+
+
+/* CONTACT */
+
+.avanor-terms-contact {
+    margin-bottom: 0;
+
+    padding: 48px;
+
+    border: 0;
+
+    background: #17283e;
+}
+
+
+.avanor-terms-contact h2 {
+    color: #fff;
+}
+
+
+.avanor-terms-contact p {
+    color: rgba(255,255,255,.7);
+}
+
+
+.avanor-terms-contact-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 55px;
+
+    margin-top: 15px;
+    padding: 0 28px;
+
+    border: 1px solid #c4a158;
+
+    color: #c4a158;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease;
+}
+
+
+.avanor-terms-contact-btn:hover {
+    background: #c4a158;
+    color: #17283e;
+}
+
+
+/* TABLET */
+
+@media (max-width: 991px) {
+
+    .avanor-terms-container {
+        width: calc(100% - 48px);
+    }
+
+    .avanor-terms-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .avanor-terms-nav {
+        position: static;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 575px) {
+
+    .avanor-terms-container {
+        width: calc(100% - 32px);
+    }
+
+    .avanor-terms-hero {
+        padding: 110px 0 60px;
+    }
+
+    .avanor-terms-back {
+        margin-bottom: 38px;
+    }
+
+    .avanor-terms-hero h1 {
+        font-size: 46px;
+    }
+
+    .avanor-terms-hero p {
+        margin-top: 24px;
+
+        font-size: 15px;
+    }
+
+    .avanor-terms-content {
+        padding: 55px 0 75px;
+    }
+
+    .avanor-terms-nav {
+        display: none;
+    }
+
+    .avanor-terms-section {
+        padding-bottom: 44px;
+        margin-bottom: 44px;
+    }
+
+    .avanor-terms-section h2 {
+        font-size: 31px;
+    }
+
+    .avanor-terms-section p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .avanor-terms-contact {
+        padding: 32px 22px;
+    }
+
+    .avanor-terms-contact-btn {
+        width: 100%;
+    }
+
+}
