@@ -8367,7 +8367,7 @@ font-size: 12px;
 }
 @media (width <= 767px) {
     .area-hardcoded {
-        font-size: 20px;
+        font-size: 20px !important;
     }
     .fs-4{
         font-size: 12px;
