@@ -94,10 +94,12 @@ route('properties.show', $property->slug)
 
 @push('structured-data')
     <script type="application/ld+json">
-        {!! json_encode(
-            $propertySchema,
-            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
-        ) !!}
+        {
+            !!json_encode(
+                $propertySchema,
+                JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+            ) !!
+        }
     </script>
 @endpush
 
@@ -119,20 +121,20 @@ route('properties.show', $property->slug)
 
                 {{-- Existing Avanor logo --}}
 
-                    <a href="#home" class="landing-logo">
-                        <img
-                            src="{{ asset('assets/img/Avanor-lp.png') }}"
-                            alt="Avanor">
-                    </a>
+                <a href="#home" class="landing-logo">
+                    <img
+                        src="{{ asset('assets/img/Avanor-lp.png') }}"
+                        alt="Avanor">
+                </a>
 
 
             </div>
 
-{{--            <a href="#home" class="landing-logo">--}}
-{{--                <img--}}
-{{--                    src="{{ asset('assets/img/Avanor-lp.png') }}"--}}
-{{--                    alt="Avanor">--}}
-{{--            </a>--}}
+            {{-- <a href="#home" class="landing-logo">--}}
+            {{-- <img--}}
+            {{-- src="{{ asset('assets/img/Avanor-lp.png') }}"--}}
+            {{-- alt="Avanor">--}}
+            {{-- </a>--}}
             <nav class="landing-nav">
 
 
@@ -269,9 +271,9 @@ route('properties.show', $property->slug)
                     {{-- HERO CONTENT --}}
                     <div class="avanor-property-slide-content-landing">
 
-            <span class="avanor-property-slide-eyebrow">
-                EMAAR PROPERTIES
-            </span>
+                <span class="avanor-property-slide-eyebrow">
+                    EMAAR PROPERTIES
+                </span>
 
                         <h1 class="avanor-property-slide-title">
                             {{ $property->title }} - New Launch Villas for Sale in Dubai
@@ -297,14 +299,14 @@ route('properties.show', $property->slug)
                                     {{-- Starting Price --}}
                                     <div class="landing-hero-offer-price">
 
-                                                 <span>
-                                                     STARTING FROM
-                                                     </span>
+                            <span>
+                                STARTING FROM
+                            </span>
 
                                         <strong>
                                             {{ \App\Support\PriceFormatter::aed(
-                                                $property->project->starting_price
-                                            ) }}
+                                                            $property->project->starting_price
+                                                        ) }}
                                         </strong>
 
                                     </div>
@@ -316,9 +318,9 @@ route('properties.show', $property->slug)
 
                                     {{-- Payment Plan --}}
                                     <div class="landing-hero-offer-payment">
-                                                    <span>
-                                                  PAYMENT PLAN
-                                         </span>
+                            <span>
+                                PAYMENT PLAN
+                            </span>
                                         <strong>
                                             80/20
                                         </strong>
@@ -356,7 +358,7 @@ route('properties.show', $property->slug)
 
                                 </div>
 
-                                </fieldset>
+                            </fieldset>
 
                         @endif
 
@@ -407,444 +409,411 @@ route('properties.show', $property->slug)
 
         </div>
 
-        <section class="space ">
+
+        <section class="landing-about-v2" id="about">
 
             <div class="landing-gallery-container">
+
+                <div class="landing-about-v2-layout">
+
+
+                    {{-- =====================================================
+                                ABOUT CONTENT
+                            ===================================================== --}}
+
+                    <div class="landing-about-v2-content">
+
+                    <span class="landing-about-v2-eyebrow">
+                        DISCOVER THE COMMUNITY
+                    </span>
+
+                        <h2 class="landing-about-v2-title">
+                            About {{ $property->title }}
+                        </h2>
+
+                        <span class="landing-about-v2-line"></span>
+
+
+
+
+
+
+                        @if (filled($property->description))
+                            <p class="landing-about-v2-description">
+                                {!! $property->description !!}
+                            </p>
+                        @endif
+
+                        {{-- PRICE + HANDOVER --}}
+                        <div class="landing-about-v2-property-info">
+
+                            <div class="landing-about-v2-info-card">
+
+                                <div class="landing-about-v2-info-icon">
+
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="1.5">
+
+                                        <path d="M3 7h15a2 2 0 0 1 2 2v10H5a2 2 0 0 1-2-2V7Z" />
+                                        <path d="M3 7l3-3h11" />
+                                        <path d="M16 12h6v4h-6a2 2 0 0 1 0-4Z" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div>
+
+                                <span>
+                                    PROPERTY PRICE
+                                </span>
+
+                                    <strong>
+                                        {{ \App\Support\PriceFormatter::aed(
+                                                    $property->project->starting_price
+                                                ) }}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="landing-about-v2-info-card">
+
+                                <div class="landing-about-v2-info-icon">
+
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="1.5">
+
+                                        <rect x="3" y="5" width="18" height="16" rx="1" />
+                                        <path d="M7 3v4M17 3v4M3 10h18" />
+                                        <path d="M8 14h2M14 14h2M8 18h2M14 18h2" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div>
+
+                                <span>
+                                    HANDOVER DATE
+                                </span>
+
+                                    <strong>
+                                        Q3 2029
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- CTA --}}
+                        <div class="landing-about-v2-actions">
+
+                            <button
+                                type="button"
+                                class="landing-about-v2-btn landing-about-v2-btn-primary"
+                                data-lead-popup-open
+                                data-request-type="register-interest">
+
+                                REGISTER YOUR INTEREST
+
+                                <span>→</span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="landing-about-v2-btn landing-about-v2-btn-outline"
+                                data-lead-popup-open
+                                data-request-type="brochure">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.6">
+
+                                    <path d="M12 3v12" />
+                                    <path d="m7 10 5 5 5-5" />
+                                    <path d="M5 20h14" />
+
+                                </svg>
+
+                                REQUEST BROCHURE
+
+                            </button>
+
+                        </div>
+
+
+                        {{-- =====================================================
+                                    CONNECTIVITY
+                                ===================================================== --}}
+
+                        <div class="landing-about-v2-connectivity">
+
+                        <span class="landing-about-v2-section-label">
+                            PRIME CONNECTIVITY
+                        </span>
+
+                            <h3>
+                                Everything within reach
+                            </h3>
+
+
+                            <div class="landing-about-v2-connectivity-grid">
+
+                                {{-- Expo City Dubai --}}
+                                <div class="landing-about-v2-location">
+
+                                    <strong class="landing-about-v2-time-number">
+                                        10
+                                    </strong>
+
+                                    <div class="landing-about-v2-location-name">
+                                        <x-landing-icon name="location" />
+
+                                        <strong>
+                                            Expo City Dubai
+                                        </strong>
+                                    </div>
+
+                                    <span class="landing-about-v2-time-label">
+            MINS
+        </span>
+
+                                    <p class="landing-about-v2-location-description">
+                                        A global hub for innovation, events and culture.
+                                    </p>
+
+                                </div>
+
+
+                                {{-- Al Maktoum International Airport --}}
+                                <div class="landing-about-v2-location">
+
+                                    <strong class="landing-about-v2-time-number">
+                                        10
+                                    </strong>
+
+                                    <div class="landing-about-v2-location-name">
+                                        <x-landing-icon name="location" />
+
+                                        <strong>
+                                            Al Maktoum Int’l Airport
+                                        </strong>
+                                    </div>
+
+                                    <span class="landing-about-v2-time-label">
+            MINS
+        </span>
+
+                                    <p class="landing-about-v2-location-description">
+                                        Future-ready airport just minutes away.
+                                    </p>
+
+                                </div>
+
+
+                                {{-- Dubai Hills Estate --}}
+                                <div class="landing-about-v2-location">
+
+                                    <strong class="landing-about-v2-time-number">
+                                        20
+                                    </strong>
+
+                                    <div class="landing-about-v2-location-name">
+                                        <x-landing-icon name="location" />
+
+                                        <strong>
+                                            Dubai Hills Estate
+                                        </strong>
+                                    </div>
+
+                                    <span class="landing-about-v2-time-label">
+            MINS
+        </span>
+
+                                    <p class="landing-about-v2-location-description">
+                                        Premium master community with world-class amenities.
+                                    </p>
+
+                                </div>
+
+
+                                {{-- Downtown Dubai --}}
+                                <div class="landing-about-v2-location">
+
+                                    <strong class="landing-about-v2-time-number">
+                                        30
+                                    </strong>
+
+                                    <div class="landing-about-v2-location-name">
+                                        <x-landing-icon name="location" />
+
+                                        <strong>
+                                            Downtown Dubai
+                                        </strong>
+                                    </div>
+
+                                    <span class="landing-about-v2-time-label">
+            MINS
+        </span>
+
+                                    <p class="landing-about-v2-location-description">
+                                        Iconic destination with unmatched experiences.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- =====================================================
+                                    ENGAGEMENT INFORMATION
+                                ===================================================== --}}
+
+                        <div class="landing-about-v2-highlights">
+
+                            <div class="landing-about-v2-highlight">
+
+                                <strong>
+                                    81M+ SQ. FT.
+                                </strong>
+
+                                <span>
+                                Expansive gated community
+                            </span>
+
+                            </div>
+
+
+                            <div class="landing-about-v2-highlight">
+
+                                <strong>
+                                    COUNTRY CLUB LIFESTYLE
+                                </strong>
+
+                                <span>
+                                Premium leisure &amp; recreation
+                            </span>
+
+                            </div>
+
+
+                            <div class="landing-about-v2-highlight">
+
+                                <strong>
+                                    WELLNESS FIRST
+                                </strong>
+
+                                <span>
+                                Wellness-focused living
+                            </span>
+
+                            </div>
+
+
+                            <div class="landing-about-v2-highlight">
+
+                                <strong>
+                                    EMAAR QUALITY
+                                </strong>
+
+                                <span>
+                                Trusted developer excellence
+                            </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    {{-- =====================================================
+                                REGISTER FORM
+                            ===================================================== --}}
+
+                    <aside class="landing-about-v2-form">
+
+                        <div class="landing-about-v2-form-inner">
+
+                            <h3>
+                                REGISTER YOUR INTEREST
+                            </h3>
+
+                            <span class="landing-about-v2-form-line"></span>
+
+
+                            @include('partials.lead-form', [
+                            'formId' => 'landing-about-form'
+                            ])
+
+
+                            <div class="landing-about-v2-form-brochure">
+
+                                <button
+                                    type="button"
+                                    data-lead-popup-open
+                                    data-request-type="brochure">
+
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.6">
+
+                                        <path d="M12 3v12" />
+                                        <path d="m7 10 5 5 5-5" />
+                                        <path d="M5 20h14" />
+
+                                    </svg>
+
+                                    REQUEST BROCHURE
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <section >
+
+            <div class="landing-gallery-container" id="downloads">
 
                 <div class="row gx-30">
 
 
-                    {{-- =====================================================
-                    PROPERTY OVERVIEW
-                ===================================================== --}}
-                    <div class="col-xxl-8 col-lg-7" id="property-details">
-
-                        <div class="property-page-single">
-
-                            <div class="page-content">
-
-                                <h2 class="page-title">
-                                  ABOUT  {{ $property->title }}
-                                </h2>
-
-
-                                @if (filled($property->description))
-
-                                    <div class="text-theme">
-                                        {!! $property->description !!}
-                                    </div>
-
-                                @endif
-
-
-
-                                {{-- =============================================
-                                PROPERTY FACTS
-                            ============================================= --}}
-                                @if ($hasFacts)
-
-                                    <section class="avanor-property-facts">
-
-                                        <div class="avanor-property-facts-grid">
-
-
-                                            {{-- Starting Price --}}
-                                            @if (filled($property->starting_price))
-
-                                                <div class="avanor-property-fact-card">
-
-                                        <span class="avanor-property-fact-label">
-                                            Starting Price
-                                        </span>
-
-                                                    <h3 class="avanor-property-fact-value">
-                                                        AED {{ number_format($property->starting_price) }}
-                                                    </h3>
-
-                                                </div>
-
-                                            @elseif (filled($property->price))
-
-                                                <div class="avanor-property-fact-card">
-
-                                        <span class="avanor-property-fact-label">
-                                            Property Price
-                                        </span>
-
-                                                    <h3 class="avanor-property-fact-value">
-                                                        AED {{ number_format($property->price) }}
-                                                    </h3>
-
-                                                </div>
-
-                                            @endif
-
-
-
-                                            {{-- Unit Types --}}
-                                            @foreach ($unitTypes as $unitType)
-
-                                                @php
-                                                    $typeName = $unitType->propertyType?->name;
-
-                                                    if (
-                                                    $unitType->bedrooms_from !== null &&
-                                                    $unitType->bedrooms_to !== null
-                                                    ) {
-                                                    $bedroomLabel =
-                                                    $unitType->bedrooms_from == $unitType->bedrooms_to
-                                                    ? $unitType->bedrooms_from . ' BR'
-                                                    : $unitType->bedrooms_from . ' - ' . $unitType->bedrooms_to . ' BR';
-                                                    } elseif ($unitType->bedrooms_from !== null) {
-                                                    $bedroomLabel = $unitType->bedrooms_from . ' BR';
-                                                    } else {
-                                                    $bedroomLabel = null;
-                                                    }
-                                                @endphp
-
-
-                                                @if ($typeName || $bedroomLabel)
-
-                                                    <div class="avanor-property-fact-card">
-
-                                        <span class="avanor-property-fact-label">
-                                            Unit Type
-                                        </span>
-
-                                                        <h3 class="avanor-property-fact-value">
-
-                                                            @if ($bedroomLabel)
-                                                                {{ $bedroomLabel }}
-                                                            @endif
-
-                                                            @if ($typeName)
-                                                                {{ $typeName }}
-                                                            @endif
-
-                                                        </h3>
-
-                                                    </div>
-
-                                                @endif
-
-                                            @endforeach
-
-
-
-                                            {{-- Handover --}}
-                                            @if (
-                                            filled($property->handover_quarter) ||
-                                            filled($property->handover_year)
-                                            )
-
-                                                <div class="avanor-property-fact-card">
-
-                                        <span class="avanor-property-fact-label">
-                                            Handover Date
-                                        </span>
-
-                                                    <h3 class="avanor-property-fact-value">
-                                                        {{ trim(
-                                                                ($property->handover_quarter ?? '') .
-                                                                ' ' .
-                                                                ($property->handover_year ?? '')
-                                                            ) }}
-                                                    </h3>
-
-                                                </div>
-
-                                            @endif
-
-
-
-                                            {{-- Payment Plan --}}
-                                            @if (filled($property->payment_plan))
-
-                                                <div class="avanor-property-fact-card">
-
-                                        <span class="avanor-property-fact-label">
-                                            Payment Plan
-                                        </span>
-
-                                                    <h3 class="avanor-property-fact-value">
-                                                        {{ $property->payment_plan }}
-                                                    </h3>
-
-                                                </div>
-
-                                            @endif
-
-
-                                        </div>
-
-                                    </section>
-
-                                @endif
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    {{-- =====================================================
-                    REGISTER INTEREST FORM
-                ===================================================== --}}
-                    <div class="col-xxl-4 col-lg-5">
-
-                        <aside class="sidebar-area">
-
-                            <div class="widget widget-property-contact">
-
-                                <p class="widget_text">
-                                    Register Your Interest
-                                </p>
-                                @if (session('lead_success'))
-                                    <div class="alert alert-success mb-3">
-                                        {{ session('lead_success') }}
-                                    </div>
-                                @endif
-
-                                @if ($errors->any())
-                                    <div class="alert alert-danger mb-3">
-                                        {{ $errors->first() }}
-                                    </div>
-                                @endif
-                                <form
-                                    action="{{ route('landing.leads.store') }}"
-                                    method="POST"
-                                    class="widget-property-contact-form">
-
-                                    @csrf
-
-                                    <input
-                                        type="hidden"
-                                        name="property_id"
-                                        value="{{ $property->id }}">
-
-                                    <input
-                                        type="hidden"
-                                        name="developer_id"
-                                        value="{{ $property->developer_id }}">
-
-                                    <input
-                                        type="hidden"
-                                        name="source"
-                                        value="property_form">
-
-                                    <input
-                                        type="hidden"
-                                        name="page_url"
-                                        value="{{ url()->current() }}">
-
-                                    <div class="form-group">
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            class="form-control style-border"
-                                            placeholder="FULL NAME"
-                                            value="{{ old('name') }}"
-                                            required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            class="form-control style-border"
-                                            placeholder="EMAIL ADDRESS"
-                                            value="{{ old('email') }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input
-                                            type="text"
-                                            class="form-control style-border"
-                                            placeholder="PREFERRED BUDGET (E.G AED 2M - 5M)">
-                                    </div>
-
-                                    <div class="form-group style-border3 col-md-12">
-                                        <input
-                                            type="tel"
-                                            id="contact_phone"
-                                            name="phone"
-                                            class="form-control"
-                                            placeholder="Phone Number*"
-                                            value="{{ old('phone') }}"
-                                            required>
-                                    </div>
-
-                                    <button
-                                        type="submit"
-                                        class="th-btn style-white th-btn-icon mt-15 avanor-register-btn">
-                                        REGISTER YOUR INTEREST
-                                    </button>
-
-                                </form>
-
-                            </div>
-
-                        </aside>
-
-                    </div>
-
-
-                    {{-- =====================================================
-                    CONTENT AREA
-                ===================================================== --}}
-
-
-                    <div class="landing-plan-container space-top" id="downloads">
-
-                        <div class="landing-plan-heading">
-
-                                                         <span class="landing-plan-eyebrow">
-                                                            BED ROOM PLANS
-                                                             </span>
-
-                            <h2>
-                                BED ROOM PLANS & FLOOR LAYOUTS
-                            </h2>
-
-                            <p>
-                                Request detailed project layouts and unit plans for
-                                {{ $property->title }}.
-                            </p>
-
-                        </div>
-
-
-                        <div class="landing-plan-grid-br">
-
-                            {{-- MASTER PLAN --}}
-                            <article class="landing-plan-card">
-
-                                <button
-                                    type="button"
-                                    class="landing-plan-image-wrap"
-                                    data-lead-popup-open
-                                    data-request-type="master_plan">
-
-                                    <img
-                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
-                                        alt=" {{ $property->project?->name ?? $property->title }}"
-                                        class="landing-plan-image">
-
-                                    <span class="landing-plan-overlay"></span>
-
-                                    <span class="landing-plan-overlay-text">
-                                                        SHOW 3BR VILLA GROUND FlOOR PLAN
-                                                    </span>
-
-                                </button>
-
-                                <div class="landing-plan-card-footer">
-
-                                    <h3>
-                                        3 Bedroom Villa - Ground Floor
-                                    </h3>
-
-                                    <p>
-                                        BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
-
-                                    </p>
-
-
-
-                                </div>
-
-                            </article>
-
-
-                            {{-- UNIT PLAN --}}
-                            <article class="landing-plan-card">
-
-                                <button
-                                    type="button"
-                                    class="landing-plan-image-wrap"
-                                    data-lead-popup-open
-                                    data-request-type="unit_plan">
-
-                                    <img
-                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
-                                        alt=" {{ $property->project?->name ?? $property->title }}"
-                                        class="landing-plan-image">
-
-                                    <span class="landing-plan-overlay"></span>
-
-                                    <span class="landing-plan-overlay-text">
-                                                          SHOW 3BR VILLA UPPER FlOOR PLAN
-                                                    </span>
-
-                                </button>
-
-                                <div class="landing-plan-card-footer">
-
-                                    <h3>
-                                        3 Bedroom Villa - Upper Floor
-                                    </h3>
-
-                                    <p>
-                                        BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
-
-                                    </p>
-
-
-
-                                </div>
-
-                            </article>
-
-                            <article class="landing-plan-card">
-
-                                <button
-                                    type="button"
-                                    class="landing-plan-image-wrap"
-                                    data-lead-popup-open
-                                    data-request-type="unit_plan">
-
-                                    <img
-                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
-                                        alt=" {{ $property->project?->name ?? $property->title }}"
-                                        class="landing-plan-image">
-
-                                    <span class="landing-plan-overlay"></span>
-
-                                    <span class="landing-plan-overlay-text">
-                                                          SHOW 4 BR VILLA GROUND FlOOR PLAN
-                                                    </span>
-
-                                </button>
-
-                                <div class="landing-plan-card-footer">
-
-                                    <h3>
-                                        4 Bedroom Villa - Ground Floor
-                                    </h3>
-
-                                    <p>
-                                        BUA: 3,404 Sq.ft | Plot: 4,847 S1.ft
-
-                                    </p>
-
-
-
-                                </div>
-
-                            </article>
-                        </div>
-
-                    </div>
-
-
                     @if (
-                    $activeSections->isNotEmpty() ||
-                    $hasProjectDescription ||
-                    $galleryImages->isNotEmpty() ||
-                    $amenities->isNotEmpty() ||
-                    filled($property->map_url)
-                    )
+                        $activeSections->isNotEmpty() ||
+                        $hasProjectDescription ||
+                        $galleryImages->isNotEmpty() ||
+                        $amenities->isNotEmpty() ||
+                        filled($property->map_url)
+                        )
 
                         <div class="col-xxl-12">
 
@@ -858,8 +827,8 @@ route('properties.show', $property->slug)
                                             class="row gy-40 property-detail-row justify-content-between align-items-center">
 
                                             {{-- =====================================
-                                         DYNAMIC CONTENT SECTIONS
-                                            ===================================== --}}
+                                                 DYNAMIC CONTENT SECTIONS
+                                                    ===================================== --}}
                                             @foreach ($activeSections as $section)
 
                                                 @php
@@ -1054,127 +1023,11 @@ route('properties.show', $property->slug)
                                             @endforeach
 
 
-                                            <div class="landing-plan-container space-top" id="about">
-
-                                                <div class="landing-plan-heading">
-
-                                                         <span class="landing-plan-eyebrow">
-                                                            PROJECT PLANS
-                                                             </span>
-
-                                                    <h2>
-                                                        MASTER PLAN & UNIT LAYOUTS
-                                                    </h2>
-
-                                                    <p>
-                                                        Request detailed project layouts and unit plans for
-                                                        {{ $property->title }}.
-                                                    </p>
-
-                                                </div>
-
-
-                                                <div class="landing-plan-grid">
-
-                                                    {{-- MASTER PLAN --}}
-                                                    <article class="landing-plan-card">
-
-                                                        <button
-                                                            type="button"
-                                                            class="landing-plan-image-wrap"
-                                                            data-lead-popup-open
-                                                            data-request-type="master_plan">
-
-                                                            <img
-                                                                src="{{ asset('assets/img/landing/masterplan.webp') }}"
-                                                                alt=" {{ $property->project?->name ?? $property->title }}"
-                                                                class="landing-plan-image">
-
-                                                            <span class="landing-plan-overlay"></span>
-
-                                                            <span class="landing-plan-overlay-text">
-                                                        REQUEST MASTER PLAN
-                                                    </span>
-
-                                                        </button>
-
-                                                        <div class="landing-plan-card-footer">
-
-                                                            <h3>
-                                                                Master Plan Layout
-                                                            </h3>
-
-                                                            <p>
-                                                                Explore the complete community layout,
-                                                                connectivity and key destinations.
-                                                            </p>
-
-                                                            <button
-                                                                type="button"
-                                                                class="landing-plan-button"
-                                                                data-lead-popup-open
-                                                                data-request-type="master_plan">
-                                                                REQUEST MASTER PLAN
-                                                            </button>
-
-                                                        </div>
-
-                                                    </article>
-
-
-                                                    {{-- UNIT PLAN --}}
-                                                    <article class="landing-plan-card">
-
-                                                        <button
-                                                            type="button"
-                                                            class="landing-plan-image-wrap"
-                                                            data-lead-popup-open
-                                                            data-request-type="unit_plan">
-
-                                                            <img
-                                                                src="{{ asset('assets/img/landing/fp1.webp') }}"
-                                                                alt=" {{ $property->project?->name ?? $property->title }}"
-                                                                class="landing-plan-image">
-
-                                                            <span class="landing-plan-overlay"></span>
-
-                                                            <span class="landing-plan-overlay-text">
-                                                        REQUEST UNIT PLAN
-                                                    </span>
-
-                                                        </button>
-
-                                                        <div class="landing-plan-card-footer">
-
-                                                            <h3>
-                                                                Unit Plan Layout
-                                                            </h3>
-
-                                                            <p>
-                                                                Request detailed layouts for available
-                                                                villas and residential configurations.
-                                                            </p>
-
-                                                            <button
-                                                                type="button"
-                                                                class="landing-plan-button"
-                                                                data-lead-popup-open
-                                                                data-request-type="unit_plan">
-                                                                REQUEST UNIT PLAN
-                                                            </button>
-
-                                                        </div>
-
-                                                    </article>
-
-                                                </div>
-
-                                            </div>
 
 
                                             {{-- =====================================
-                                                ABOUT PROJECT
-                                            ===================================== --}}
+                                                        ABOUT PROJECT
+                                                    ===================================== --}}
                                             @if ($hasProjectDescription)
 
                                                 <div class="col-lg-12">
@@ -1211,6 +1064,149 @@ route('properties.show', $property->slug)
 
                     @endif
 
+                        <div class="landing-plan-heading">
+
+                        <span class="landing-plan-eyebrow">
+                            PLANS
+                        </span>
+
+                            <h2>
+                                FLOOR PlANS
+                            </h2>
+                            <span class="landing-about-v2-line"></span>
+                            <p>
+                                Request detailed project layouts and unit plans for
+                                {{ $property->title }}.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-plan-grid-br">
+
+                            {{-- MASTER PLAN --}}
+                            <article class="landing-plan-card">
+
+                                <button
+                                    type="button"
+                                    class="landing-plan-image-wrap"
+                                    data-lead-popup-open
+                                    data-request-type="master_plan">
+
+                                    <img
+                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                        alt=" {{ $property->project?->name ?? $property->title }}"
+                                        class="landing-plan-image">
+
+                                    <span class="landing-plan-overlay"></span>
+
+                                    <span class="landing-plan-overlay-text">
+                                    SHOW 3BR FlOOR PLAN
+                                </span>
+
+                                </button>
+
+                                <div class="landing-plan-card-footer">
+
+                                    <h3>
+                                        3 Bedroom Villa
+                                    </h3>
+
+                                    <p>
+                                        BUA: 3463.07 Sq.ft | Plot: 4,500 Sq.ft
+
+                                    </p>
+
+
+
+                                </div>
+
+                            </article>
+
+
+                            {{-- UNIT PLAN --}}
+                            <article class="landing-plan-card">
+
+                                <button
+                                    type="button"
+                                    class="landing-plan-image-wrap"
+                                    data-lead-popup-open
+                                    data-request-type="unit_plan">
+
+                                    <img
+                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                        alt=" {{ $property->project?->name ?? $property->title }}"
+                                        class="landing-plan-image">
+
+                                    <span class="landing-plan-overlay"></span>
+
+                                    <span class="landing-plan-overlay-text">
+                                    SHOW 4BR VILLA FlOOR PLAN
+                                </span>
+
+                                </button>
+
+                                <div class="landing-plan-card-footer">
+
+                                    <h3>
+                                        4 Bedroom Villa
+                                    </h3>
+
+                                    <p>
+                                        BUA: 4,312.45 Sq.ft | Plot: 4,500 Sq.ft
+
+                                    </p>
+
+
+
+                                </div>
+
+                            </article>
+
+                            <article class="landing-plan-card">
+
+                                <button
+                                    type="button"
+                                    class="landing-plan-image-wrap"
+                                    data-lead-popup-open
+                                    data-request-type="unit_plan">
+
+                                    <img
+                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                        alt=" {{ $property->project?->name ?? $property->title }}"
+                                        class="landing-plan-image">
+
+                                    <span class="landing-plan-overlay"></span>
+
+                                    <span class="landing-plan-overlay-text">
+                                    SHOW 5 BR VILLA FlOOR PLAN
+                                </span>
+
+                                </button>
+
+                                <div class="landing-plan-card-footer">
+
+                                    <h3>
+                                        5 Bedroom Villa
+                                    </h3>
+
+                                    <p>
+                                        BUA: 5,884.30 Sq.ft | Plot: 5,500 S1.ft
+
+                                    </p>
+
+
+
+                                </div>
+
+                            </article>
+                        </div>
+
+
+
+
+
+
 
                 </div>
 
@@ -1219,7 +1215,265 @@ route('properties.show', $property->slug)
         </section>
 
 
+            <section class="landing-amenities-v2" id="amenities">
 
+                <div class="landing-gallery-container">
+
+                    {{-- Heading --}}
+                    <div class="landing-amenities-v2-heading">
+
+            <span class="landing-amenities-v2-eyebrow">
+                AMENITIES
+            </span>
+
+                        <span class="landing-amenities-v2-line"></span>
+
+                        <h2>
+                            Designed for a life of well-being
+                        </h2>
+
+                        <p>
+                            From active lifestyles to family moments, every amenity is
+                            thoughtfully curated for your comfort and convenience.
+                        </p>
+
+                    </div>
+
+
+                    {{-- Amenities Grid --}}
+                    <div class="landing-amenities-v2-grid">
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="kids-play" />
+                            </div>
+
+                            <h3>
+                                Kids Play Area
+                            </h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                Safe and engaging spaces for children to play and grow.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="pool" />
+                            </div>
+
+                            <h3>
+                                Swimming Pool
+                            </h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                Resort-style pools for relaxation and leisure.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="dumbbell" />
+                            </div>
+
+                            <h3>
+                                Gymnasium
+                            </h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                Modern fitness facilities for an active lifestyle.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="dining" />
+                            </div>
+
+                            <h3>
+                                Dining Outlets
+                            </h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                A variety of dining experiences right at your doorstep.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="cycling" />
+                            </div>
+
+                            <h3>
+                                Cycling Track
+                            </h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                Scenic tracks designed for cycling and healthy living.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="jogging" />
+                            </div>
+
+                            <h3>
+                                Jogging Trails
+                            </h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                Landscaped trails to refresh your body and mind.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="park" />
+                            </div>
+
+                            <h3>
+                                Landscaped Parks
+                            </h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                Lush green spaces to unwind and reconnect with nature.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="shield" />
+                            </div>
+
+                            <h3>
+                                24/7 Security
+                            </h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                A secure residential environment designed for peace of mind.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    {{-- Bottom Highlights --}}
+                    <div class="landing-amenities-v2-highlights">
+
+
+                        <div class="landing-amenities-v2-highlight">
+
+                            <div class="landing-amenities-v2-highlight-icon">
+                                <x-landing-icon name="shield" />
+                            </div>
+
+                            <div>
+                                <strong>SAFE &amp; SECURE</strong>
+
+                                <span>
+                        Gated community living
+                    </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-highlight">
+
+                            <div class="landing-amenities-v2-highlight-icon">
+                                <x-landing-icon name="leaf" />
+                            </div>
+
+                            <div>
+                                <strong>SUSTAINABLE LIVING</strong>
+
+                                <span>
+                        Green spaces &amp; wellness
+                    </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-highlight">
+
+                            <div class="landing-amenities-v2-highlight-icon">
+                                <x-landing-icon name="users" />
+                            </div>
+
+                            <div>
+                                <strong>COMMUNITY LIVING</strong>
+
+                                <span>
+                        Spaces that bring people together
+                    </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-highlight">
+
+                            <div class="landing-amenities-v2-highlight-icon">
+                                <x-landing-icon name="star" />
+                            </div>
+
+                            <div>
+                                <strong>PREMIUM LIFESTYLE</strong>
+
+                                <span>
+                        World-class community amenities
+                    </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
 
         <section class="landing-gallery-section " id="gallery">
 
@@ -1233,9 +1487,9 @@ route('properties.show', $property->slug)
 
                         <div class="landing-project-gallery-heading">
 
-            <span class="landing-project-gallery-eyebrow">
-                COMMUNITY RENDERS
-            </span>
+                    <span class="landing-project-gallery-eyebrow">
+                        COMMUNITY RENDERS
+                    </span>
 
                             <h2>
                                 Project <em>Gallery</em>
@@ -1254,13 +1508,13 @@ route('properties.show', $property->slug)
 
                                 @php
                                     $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
-                                        $image,
-                                        'gallery_tablet_avif'
+                                    $image,
+                                    'gallery_tablet_avif'
                                     );
 
                                     $fullImageUrl = \App\Support\MediaUrl::fromMedia(
-                                        $image,
-                                        'gallery_avif'
+                                    $image,
+                                    'gallery_avif'
                                     );
                                 @endphp
 
@@ -1298,8 +1552,8 @@ route('properties.show', $property->slug)
 
 
                     {{-- =====================================================
-                        GALLERY LIGHTBOX
-                    ===================================================== --}}
+                                GALLERY LIGHTBOX
+                            ===================================================== --}}
 
                     <div
                         class="landing-gallery-lightbox"
@@ -1326,7 +1580,7 @@ route('properties.show', $property->slug)
                                 id="landingGalleryLightboxPrev"
                                 aria-label="Previous image">
 
-                                <x-landing-icon name="chevron-left"/>
+                                <x-landing-icon name="chevron-left" />
 
                             </button>
 
@@ -1356,7 +1610,7 @@ route('properties.show', $property->slug)
                                 id="landingGalleryLightboxNext"
                                 aria-label="Next image">
 
-                                <x-landing-icon name="chevron-right"/>
+                                <x-landing-icon name="chevron-right" />
 
                             </button>
 
@@ -1382,67 +1636,67 @@ route('properties.show', $property->slug)
 
 
                 {{-- =====================================
-                                            AMENITIES
-                                        ===================================== --}}
-                @if ($amenities->isNotEmpty())
+                                                AMENITIES
+                                            ===================================== --}}
+{{--                @if ($amenities->isNotEmpty())--}}
 
-                    <div class="col-lg-12">
+{{--                    <div class="col-lg-12">--}}
 
-                        <div class="title-area mb-0">
+{{--                        <div class="title-area mb-0">--}}
 
-                            <div>
+{{--                            <div>--}}
 
-                        <span class="sub-title-dark project-about-heading">
-                            Amenities
-                        </span>
+{{--                        <span class="sub-title-dark project-about-heading">--}}
+{{--                            Amenities--}}
+{{--                        </span>--}}
 
-                            </div>
+{{--                            </div>--}}
 
 
-                            <div class="row gy-3">
+{{--                            <div class="row gy-3">--}}
 
-                                @foreach ($amenities as $amenity)
+{{--                                @foreach ($amenities as $amenity)--}}
 
-                                    @php
-                                        $amenityIcon = match ($amenity->icon) {
-                                            'fa-solid fa-child' => 'child',
-                                            'fa-solid fa-person-swimming' => 'swimming',
-                                            'fa-solid fa-dumbbell' => 'dumbbell',
-                                            'fa-solid fa-utensils' => 'utensils',
-                                            default => 'check',
-                                        };
-                                    @endphp
+{{--                                    @php--}}
+{{--                                        $amenityIcon = match ($amenity->icon) {--}}
+{{--                                        'fa-solid fa-child' => 'child',--}}
+{{--                                        'fa-solid fa-person-swimming' => 'swimming',--}}
+{{--                                        'fa-solid fa-dumbbell' => 'dumbbell',--}}
+{{--                                        'fa-solid fa-utensils' => 'utensils',--}}
+{{--                                        default => 'check',--}}
+{{--                                        };--}}
+{{--                                    @endphp--}}
 
-                                    <div class="col-xxl-3 col-sm-6">
+{{--                                    <div class="col-xxl-3 col-sm-6">--}}
 
-                                        <div class="checklist">
+{{--                                        <div class="checklist">--}}
 
-                                            <ul>
-                                                <li>
-                                                    <x-landing-icon :name="$amenityIcon"/>
-                                                    {{ $amenity->name }}
-                                                </li>
-                                            </ul>
+{{--                                            <ul>--}}
+{{--                                                <li>--}}
+{{--                                                    <x-landing-icon :name="$amenityIcon" />--}}
+{{--                                                    {{ $amenity->name }}--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
 
-                                        </div>
+{{--                                        </div>--}}
 
-                                    </div>
+{{--                                    </div>--}}
 
-                                @endforeach
+{{--                                @endforeach--}}
 
-                            </div>
+{{--                            </div>--}}
 
-                        </div>
+{{--                        </div>--}}
 
-                    </div>
+{{--                    </div>--}}
 
-                @endif
+{{--                @endif--}}
 
 
 
                 {{-- =====================================
-                                            LOCATION
-                                        ===================================== --}}
+                                                LOCATION
+                                            ===================================== --}}
                 @if (filled($property->map_url))
 
                     <div class="col-lg-12 minus-text-area" id="location">
@@ -1454,9 +1708,9 @@ route('properties.show', $property->slug)
                                 {{-- LEFT SIDE --}}
                                 <div class="landing-location-content">
 
-                <span class="sub-title-dark project-about-heading">
-                    LOCATION
-                </span>
+                            <span class="sub-title-dark project-about-heading">
+                                LOCATION
+                            </span>
 
                                     <h2 class="landing-location-title">
                                         Dubai South, UAE
@@ -1471,64 +1725,7 @@ route('properties.show', $property->slug)
                                     </p>
 
 
-                                    <div class="landing-location-list">
 
-                                        <div class="landing-location-item">
-
-                                            <div class="landing-location-time">
-                                                <strong>10</strong>
-                                                <span>MINS</span>
-                                            </div>
-
-                                            <div class="landing-location-destination">
-                                                <span>Expo City Dubai</span>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="landing-location-item">
-
-                                            <div class="landing-location-time">
-                                                <strong>10</strong>
-                                                <span>MINS</span>
-                                            </div>
-
-                                            <div class="landing-location-destination">
-                                                <span>Al Maktoum Int’l Airport</span>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="landing-location-item">
-
-                                            <div class="landing-location-time">
-                                                <strong>20</strong>
-                                                <span>MINS</span>
-                                            </div>
-
-                                            <div class="landing-location-destination">
-                                                <span>Dubai Hills Estate</span>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="landing-location-item">
-
-                                            <div class="landing-location-time">
-                                                <strong>30</strong>
-                                                <span>MINS</span>
-                                            </div>
-
-                                            <div class="landing-location-destination">
-                                                <span>Downtown Dubai</span>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
 
                                 </div>
 
@@ -1579,140 +1776,10 @@ route('properties.show', $property->slug)
         </section>
 
 
-        <section class="wellness-section space-bottom">
-
-            <div class="wellness-wrap">
-
-                {{-- LEFT --}}
-                <div class="wellness-copy">
-
-                    <div class="wellness-eyebrow">
-                        DESTINATION DESIGNED FOR WELLNESS AND BELONGING
-                    </div>
-
-                    <h2>
-                        THE HEIGHTS<br>
-                        COUNTRY CLUB<br>
-                        AND WELLNESS
-                    </h2>
-
-                    <p>
-                        Imagined as an exclusive retreat-style community, The Heights brings together lush green
-                        landscapes to create a vibrant, sustainable way of living. Inspired by nature-led design, the
-                        masterplan flows through winding pathways, expansive green spaces, peaceful courtyards, and
-                        calming water features, forming a harmonious environment throughout.
-
-                    </p>
-
-
-                    <ul class="landing-lifestyle-features">
-
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="spa"/>
-        </span>
-                            <span>Wellness Centre</span>
-                        </li>
-
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="leaf"/>
-        </span>
-                            <span>Meditation Garden</span>
-                        </li>
-
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="water"/>
-        </span>
-                            <span>Wellness Lake & Promenade</span>
-                        </li>
-
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="beach"/>
-        </span>
-                            <span>Private Beach</span>
-                        </li>
-
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="dumbbell"/>
-        </span>
-                            <span>Fitness Area</span>
-                        </li>
-
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="pool"/>
-        </span>
-                            <span>Yoga Lake</span>
-                        </li>
-
-                        <li>
-        <span class="landing-feature-icon">
-            <x-landing-icon name="users"/>
-        </span>
-                            <span>Social Terrace</span>
-                        </li>
-
-                    </ul>
-
-                    <a href="#register-interest" class="wellness-btn" data-lead-popup-open>
-                        GET PAYMENT PLAN
-                    </a>
-
-                </div>
-
-
-                {{-- CENTER TOP --}}
-                <div class="wellness-item wellness-main">
-                    <img src="{{ asset('assets/img/property/heightswellness1.avif') }}"
-                         alt=" {{ $property->project?->name ?? $property->title }}">
-                    <div class="wellness-caption">WELLNESS CENTRE</div>
-                </div>
-
-
-                {{-- RIGHT TOP --}}
-                <div class="wellness-right-top">
-
-                    <div class="wellness-item">
-                        <img src="{{ asset('assets/img/property/heightswellness2.avif') }}"
-                             alt=" {{ $property->project?->name ?? $property->title }}">
-                        <div class="wellness-caption">FITNESS AREA</div>
-                    </div>
-
-                    <div class="wellness-item">
-                        <img src="{{ asset('assets/img/property/heightswellness3.avif') }}"
-                             alt=" {{ $property->project?->name ?? $property->title }}">
-                        <div class="wellness-caption">YOGA LAKE</div>
-                    </div>
-
-                </div>
-
-
-                {{-- BOTTOM CENTER --}}
-                <div class="wellness-item wellness-bottom-center">
-                    <img src="{{ asset('assets/img/property/heightswellness5.avif') }}"
-                         alt=" {{ $property->project?->name ?? $property->title }}">
-                    <div class="wellness-caption">PRIVATE BEACH</div>
-                </div>
-
-
-                {{-- BOTTOM RIGHT --}}
-                <div class="wellness-item wellness-bottom-right">
-                    <img src="{{ asset('assets/img/property/heightswellness4.avif') }}"
-                         alt=" {{ $property->project?->name ?? $property->title }}">
-                    <div class="wellness-caption">MEDITATION GARDEN</div>
-                </div>
-
-            </div>
-
-        </section>
-
+        
         {{-- =====================================================
-            FAQ SECTION
-        ===================================================== --}}
+                FAQ SECTION
+            ===================================================== --}}
 
         <section class="landing-faq-section" id="faq">
 
@@ -1722,8 +1789,8 @@ route('properties.show', $property->slug)
                 <div class="landing-faq-intro">
 
 
-                    <span class="sub-title-dark project-about-heading">
-                      COMMON QUESTIONS
+                <span class="sub-title-dark project-about-heading">
+                    COMMON QUESTIONS
                 </span>
                     <h2 class="landing-faq-title">
                         Frequently
@@ -1753,9 +1820,9 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        What is The Heights by Emaar?
-                    </span>
+                        <span>
+                            What is The Heights by Emaar?
+                        </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
@@ -1773,9 +1840,9 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        What is the payment plan for The Heights by Emaar?
-                    </span>
+                        <span>
+                            What is the payment plan for The Heights by Emaar?
+                        </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
@@ -1793,9 +1860,9 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        How large is the Emaar Heights community?
-                    </span>
+                        <span>
+                            How large is the Emaar Heights community?
+                        </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
@@ -1813,9 +1880,9 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        Is The Heights by Emaar a good investment?
-                    </span>
+                        <span>
+                            Is The Heights by Emaar a good investment?
+                        </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
@@ -1833,9 +1900,9 @@ route('properties.show', $property->slug)
                     <details class="landing-faq-item">
 
                         <summary>
-                    <span>
-                        When is The Heights expected to be handed over?
-                    </span>
+                        <span>
+                            When is The Heights expected to be handed over?
+                        </span>
 
                             <span class="landing-faq-toggle" aria-hidden="true"></span>
                         </summary>
@@ -1924,14 +1991,14 @@ route('properties.show', $property->slug)
                             {{-- Phone + WhatsApp --}}
                             <div class="landing-footer-contact-item">
 
-        <span class="landing-footer-contact-icon">
-            <x-landing-icon name="phone"/>
-        </span>
+                            <span class="landing-footer-contact-icon">
+                                <x-landing-icon name="phone" />
+                            </span>
 
                                 <div>
-            <span class="landing-footer-contact-label">
-                PHONE & WHATSAPP
-            </span>
+                                <span class="landing-footer-contact-label">
+                                    PHONE & WHATSAPP
+                                </span>
 
                                     <a href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}">
                                         {{ $siteSettings['phone'] }}
@@ -1944,14 +2011,14 @@ route('properties.show', $property->slug)
                             {{-- Alternate --}}
                             <div class="landing-footer-contact-item">
 
-        <span class="landing-footer-contact-icon">
-            <x-landing-icon name="phone"/>
-        </span>
+                            <span class="landing-footer-contact-icon">
+                                <x-landing-icon name="phone" />
+                            </span>
 
                                 <div>
-            <span class="landing-footer-contact-label">
-                ALTERNATE
-            </span>
+                                <span class="landing-footer-contact-label">
+                                    ALTERNATE
+                                </span>
 
                                     <a href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}">
                                         {{ $siteSettings['phone'] }}
@@ -1964,28 +2031,28 @@ route('properties.show', $property->slug)
                             {{-- Website --}}
                             <div class="landing-footer-contact-item">
 
-        <span class="landing-footer-contact-icon">
+                            <span class="landing-footer-contact-icon">
 
-            <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                aria-hidden="true">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    aria-hidden="true">
 
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M3 12h18"/>
-                <path d="M12 3c3 3.5 4.5 6.5 4.5 9S15 17.5 12 21"/>
-                <path d="M12 3C9 6.5 7.5 9.5 7.5 12S9 17.5 12 21"/>
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M3 12h18" />
+                                    <path d="M12 3c3 3.5 4.5 6.5 4.5 9S15 17.5 12 21" />
+                                    <path d="M12 3C9 6.5 7.5 9.5 7.5 12S9 17.5 12 21" />
 
-            </svg>
+                                </svg>
 
-        </span>
+                            </span>
 
                                 <div>
-            <span class="landing-footer-contact-label">
-                WEBSITE
-            </span>
+                                <span class="landing-footer-contact-label">
+                                    WEBSITE
+                                </span>
 
                                     <a
                                         href="https://avanorcap.com"
@@ -2012,7 +2079,7 @@ route('properties.show', $property->slug)
                                         fill="currentColor"
                                         aria-hidden="true">
                                         <path
-                                            d="M13.5 8H16V4.5h-2.5C10.7 4.5 9 6.2 9 9v2H6v3.5h3V21h3.5v-6.5H16L16.5 11h-4V9c0-.7.3-1 1-1Z"/>
+                                            d="M13.5 8H16V4.5h-2.5C10.7 4.5 9 6.2 9 9v2H6v3.5h3V21h3.5v-6.5H16L16.5 11h-4V9c0-.7.3-1 1-1Z" />
                                     </svg>
 
                                 </a>
@@ -2030,9 +2097,9 @@ route('properties.show', $property->slug)
                                         stroke-width="1.8"
                                         aria-hidden="true">
 
-                                        <rect x="3" y="3" width="18" height="18" rx="5"/>
-                                        <circle cx="12" cy="12" r="4"/>
-                                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                                        <rect x="3" y="3" width="18" height="18" rx="5" />
+                                        <circle cx="12" cy="12" r="4" />
+                                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
 
                                     </svg>
 

@@ -323,4 +323,150 @@
 
         </svg>
         @break
+
+    @case('location')
+        <svg
+            class="landing-about-v2-location-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+
+        </svg>
+        @break
+
+
+    @case('kids-play')
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.6"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <circle cx="7" cy="5" r="2"/>
+            <path d="M7 7v6"/>
+            <path d="M4 10l3 3 3-3"/>
+            <path d="M14 5h5v15"/>
+            <path d="M14 5v5h5"/>
+            <path d="M14 10l-4 10"/>
+
+        </svg>
+        @break
+
+
+    @case('dining')
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.6"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <path d="M7 3v8"/>
+            <path d="M4 3v5c0 2 6 2 6 0V3"/>
+            <path d="M7 11v10"/>
+            <path d="M17 3v18"/>
+            <path d="M17 3c-3 3-3 8 0 9"/>
+
+        </svg>
+        @break
+
+
+    @case('cycling')
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.6"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <circle cx="6" cy="17" r="4"/>
+            <circle cx="18" cy="17" r="4"/>
+
+            <path d="M6 17l4-8 4 8"/>
+            <path d="M10 9h5"/>
+            <path d="M14 17h4"/>
+            <path d="M9 6h3"/>
+
+        </svg>
+        @break
+
+
+    @case('jogging')
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.6"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <circle cx="15" cy="4" r="2"/>
+
+            <path d="M10 9l3-2 3 3"/>
+            <path d="M13 7l-2 6"/>
+            <path d="M11 13l-4 4"/>
+            <path d="M12 13l4 6"/>
+            <path d="M9 9l-3 2"/>
+
+        </svg>
+        @break
+
+
+    @case('park')
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.6"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <path d="M12 3c-4 0-7 3-7 6 0 3 3 5 7 5s7-2 7-5c0-3-3-6-7-6Z"/>
+
+            <path d="M12 14v7"/>
+
+            <path d="M4 18h16"/>
+
+            <path d="M16 16h5"/>
+            <path d="M17 19v-3"/>
+            <path d="M20 19v-3"/>
+
+        </svg>
+        @break
+
+
+    @case('shield')
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.6"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"/>
+
+            <path d="m9 12 2 2 4-4"/>
+
+        </svg>
+        @break
+
+
+    @case('star')
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.6"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"/>
+
+        </svg>
+        @break
 @endswitch
