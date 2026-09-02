@@ -869,13 +869,15 @@ route('properties.show', $property->slug)
                                                         <div class="{{ $sectionImageUrl ? 'col-lg-6' : 'col-lg-12' }}">
 
                                                             <div class="title-area mb-0">
-
+                                                                        <h2>
                                                                 @if (filled($section->title))
-
+                                                                        </h2>
                                                                     <div>
-                                                <span class="sub-title-dark">
-                                                    {{ $section->title }}
-                                                </span>
+                                                                        <h3>
+                                                                                <span class="sub-title-dark">
+                                                                                     {{ $section->title }}
+                                                                            </span>
+                                                                        </h3>
                                                                     </div>
 
                                                                 @endif
@@ -916,13 +918,16 @@ route('properties.show', $property->slug)
                                                         <div class="{{ $sectionImageUrl ? 'col-lg-6' : 'col-lg-12' }}">
 
                                                             <div class="title-area mb-0">
+                                                                <h2>
 
                                                                 @if (filled($section->title))
-
+                                                                </h2>
                                                                     <div>
+                                                                        <h3>
                                                 <span class="sub-title-dark">
                                                     {{ $section->title }}
                                                 </span>
+                                                                        </h3>
                                                                     </div>
 
                                                                 @endif
