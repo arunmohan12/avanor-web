@@ -1094,7 +1094,7 @@ route('properties.show', $property->slug)
                     </span>
 
                         <h2>
-                            FLOOR PlANS
+                            FLOOR PLANS
                         </h2>
                         <span class="landing-about-v2-line"></span>
                         <p>
@@ -1584,7 +1584,7 @@ route('properties.show', $property->slug)
                         data-lead-popup-open
                         data-request-type="payment-plan">
 
-                        REQUEST PAYMENT PLAN
+                        GET PAYMENT PLAN
 
                     </button>
 
