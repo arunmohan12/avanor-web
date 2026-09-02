@@ -826,7 +826,7 @@ route('properties.show', $property->slug)
                                                             ===================================== --}}
 
 
-                                            <div class="landing-plan-heading" >
+                                            <div class="landing-plan-heading top-space-30-minus" >
 
                     <span class="landing-plan-eyebrow">
                         THE COLLECTION
@@ -1254,8 +1254,7 @@ route('properties.show', $property->slug)
                     </h2>
 
                     <p>
-                        A structured payment schedule designed to make your
-                        investment journey seamless.
+                        Seamless payment plan for a smooth investment journey.
                     </p>
 
                 </div>
@@ -1588,15 +1587,7 @@ route('properties.show', $property->slug)
 
                     </button>
 
-                    <button
-                        type="button"
-                        class="landing-payment-btn landing-payment-btn-primary"
-                        data-lead-popup-open
-                        data-request-type="register-interest">
 
-                        GET LATEST PRICES
-
-                    </button>
 
                 </div>
 
@@ -1674,7 +1665,7 @@ route('properties.show', $property->slug)
                             <x-landing-icon name="hospital" />
                         </div>
 
-                        <h3>Healthcare Facilities</h3>
+                        <h3>Hospital and Clinics</h3>
 
                         <span class="landing-amenities-v2-card-line"></span>
 
@@ -1692,7 +1683,7 @@ route('properties.show', $property->slug)
                             <x-landing-icon name="retail" />
                         </div>
 
-                        <h3>Retail Outlets</h3>
+                        <h3>Shopping Malls</h3>
 
                         <span class="landing-amenities-v2-card-line"></span>
 
@@ -2001,7 +1992,7 @@ route('properties.show', $property->slug)
                 @endif
 
 
-                <div class="landing-section-ct space-bottom">
+                <div class="landing-section-ct ">
 
 
                     <button

@@ -5071,7 +5071,7 @@ li {
 
 .landing-faq-section {
     background: #f7f5f1;
-    padding: 110px 0;
+    padding: 30px 0;
 }
 
 .landing-faq-container {
@@ -5495,7 +5495,7 @@ li {
 
 .landing-location-section {
     width: 100%;
-    padding: 90px 0;
+    padding: 30px 0;
 }
 
 .landing-location-grid {
@@ -5793,7 +5793,7 @@ li {
 ===================================================== */
 
 .landing-project-gallery {
-    padding: 60px 0;
+    padding: 30px 0;
     background: #fff;
 }
 
@@ -6582,7 +6582,7 @@ font-size: 12px;
 ===================================================== */
 
 .landing-about-v2 {
-    padding: 100px 0 110px;
+    padding: 60px 0 60px;
     background: #fff;
 }
 
@@ -7389,7 +7389,7 @@ font-size: 12px;
 ===================================================== */
 
 .landing-amenities-v2 {
-    padding: 0px 0 110px;
+    padding: 0px 0 30px;
 
     background: #fbfbfa;
 }
@@ -7798,7 +7798,7 @@ font-size: 12px;
 ===================================================== */
 
 .landing-payment-plan {
-    padding: 100px 0 110px;
+    padding: 60px 0 60px;
     background: #fbfaf8;
 }
 
@@ -8711,7 +8711,7 @@ font-size: 12px;
 @media (max-width: 767px) {
 
     .landing-developer-community {
-        padding: 60px 0;
+        padding: 30px 0;
     }
 
 
@@ -8842,7 +8842,7 @@ font-size: 12px;
 ===================================================== */
 
 .landing-developer-community {
-    padding: 105px 0;
+    padding: 30px 0;
 
     background: #fbfaf8;
 }
@@ -9213,7 +9213,7 @@ font-size: 12px;
 @media (max-width: 1100px) {
 
     .landing-developer-community {
-        padding: 80px 0;
+        padding: 30px 0;
     }
 
     .landing-developer-community-grid {
@@ -9589,4 +9589,7 @@ font-size: 12px;
 li {
     list-style: disc;
     color: #b59450;
+}
+.top-space-30-minus{
+    margin-bottom: -20px;
 }
