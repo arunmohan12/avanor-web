@@ -305,8 +305,8 @@ route('properties.show', $property->slug)
 
                                         <strong>
                                             {{ \App\Support\PriceFormatter::aed(
-                                                            $property->project->starting_price
-                                                        ) }}
+                                                                        $property->project->starting_price
+                                                                    ) }}
                                         </strong>
 
                                     </div>
@@ -418,8 +418,8 @@ route('properties.show', $property->slug)
 
 
                     {{-- =====================================================
-                                ABOUT CONTENT
-                            ===================================================== --}}
+                                    ABOUT CONTENT
+                                ===================================================== --}}
 
                     <div class="landing-about-v2-content">
 
@@ -471,8 +471,8 @@ route('properties.show', $property->slug)
 
                                     <strong>
                                         {{ \App\Support\PriceFormatter::aed(
-                                                    $property->project->starting_price
-                                                ) }}
+                                                        $property->project->starting_price
+                                                    ) }}
                                     </strong>
 
                                 </div>
@@ -555,8 +555,8 @@ route('properties.show', $property->slug)
 
 
                         {{-- =====================================================
-                                    CONNECTIVITY
-                                ===================================================== --}}
+                                        CONNECTIVITY
+                                    ===================================================== --}}
 
                         <div class="landing-about-v2-connectivity">
 
@@ -587,8 +587,8 @@ route('properties.show', $property->slug)
                                     </div>
 
                                     <span class="landing-about-v2-time-label">
-            MINS
-        </span>
+                                    MINS
+                                </span>
 
                                     <p class="landing-about-v2-location-description">
                                         A global hub for innovation, events and culture.
@@ -613,8 +613,8 @@ route('properties.show', $property->slug)
                                     </div>
 
                                     <span class="landing-about-v2-time-label">
-            MINS
-        </span>
+                                    MINS
+                                </span>
 
                                     <p class="landing-about-v2-location-description">
                                         Future-ready airport just minutes away.
@@ -639,8 +639,8 @@ route('properties.show', $property->slug)
                                     </div>
 
                                     <span class="landing-about-v2-time-label">
-            MINS
-        </span>
+                                    MINS
+                                </span>
 
                                     <p class="landing-about-v2-location-description">
                                         Premium master community with world-class amenities.
@@ -665,8 +665,8 @@ route('properties.show', $property->slug)
                                     </div>
 
                                     <span class="landing-about-v2-time-label">
-            MINS
-        </span>
+                                    MINS
+                                </span>
 
                                     <p class="landing-about-v2-location-description">
                                         Iconic destination with unmatched experiences.
@@ -680,8 +680,8 @@ route('properties.show', $property->slug)
 
 
                         {{-- =====================================================
-                                    ENGAGEMENT INFORMATION
-                                ===================================================== --}}
+                                        ENGAGEMENT INFORMATION
+                                    ===================================================== --}}
 
                         <div class="landing-about-v2-highlights">
 
@@ -742,8 +742,8 @@ route('properties.show', $property->slug)
 
 
                     {{-- =====================================================
-                                REGISTER FORM
-                            ===================================================== --}}
+                                    REGISTER FORM
+                                ===================================================== --}}
 
                     <aside class="landing-about-v2-form">
 
@@ -795,20 +795,20 @@ route('properties.show', $property->slug)
 
 
 
-        <section >
+        <section>
 
-            <div class="landing-gallery-container" >
+            <div class="landing-gallery-container">
 
                 <div class="row gx-30">
 
 
                     @if (
-                        $activeSections->isNotEmpty() ||
-                        $hasProjectDescription ||
-                        $galleryImages->isNotEmpty() ||
-                        $amenities->isNotEmpty() ||
-                        filled($property->map_url)
-                        )
+                    $activeSections->isNotEmpty() ||
+                    $hasProjectDescription ||
+                    $galleryImages->isNotEmpty() ||
+                    $amenities->isNotEmpty() ||
+                    filled($property->map_url)
+                    )
 
                         <div class="col-xxl-12">
 
@@ -822,8 +822,33 @@ route('properties.show', $property->slug)
                                             class="row gy-40 property-detail-row justify-content-between align-items-center">
 
                                             {{-- =====================================
-                                                 DYNAMIC CONTENT SECTIONS
-                                                    ===================================== --}}
+                                                         DYNAMIC CONTENT SECTIONS
+                                                            ===================================== --}}
+
+
+                                            <div class="landing-plan-heading" >
+
+                    <span class="landing-plan-eyebrow">
+                        THE COLLECTION
+                    </span>
+
+                                                <h2 class="area-hardcoded ">
+                                                    Discover Three Elegant Villa Clusters
+                                                </h2>
+                                                <span class="landing-about-v2-line"></span>
+                                                <p>
+                                                <h3 class="fs-4" >
+                                                    Serro 2 brings a new rhythm to modern living — one shaped by wellness and effortless flow.
+                                                    Boundaries give way to open landscapes, daily routines turn into mindful walks, and outdoor
+                                                    spaces become sanctuaries of renewal. Here, life moves in harmony, balanced and beautifully connected.
+                                                </h3>
+
+
+                                            </div>
+
+
+
+
                                             @foreach ($activeSections as $section)
 
                                                 @php
@@ -869,16 +894,16 @@ route('properties.show', $property->slug)
                                                         <div class="{{ $sectionImageUrl ? 'col-lg-6' : 'col-lg-12' }}">
 
                                                             <div class="title-area mb-0">
-                                                                        <h2>
-                                                                @if (filled($section->title))
-                                                                        </h2>
-                                                                    <div>
-                                                                        <h3>
-                                                                                <span class="sub-title-dark">
-                                                                                     {{ $section->title }}
-                                                                            </span>
-                                                                        </h3>
-                                                                    </div>
+                                                                <h4>
+                                                                    @if (filled($section->title))
+                                                                </h4>
+                                                                <div>
+
+                                                    <span class="sub-title-dark">
+                                                        {{ $section->title }}
+                                                    </span>
+
+                                                                </div>
 
                                                                 @endif
 
@@ -918,17 +943,17 @@ route('properties.show', $property->slug)
                                                         <div class="{{ $sectionImageUrl ? 'col-lg-6' : 'col-lg-12' }}">
 
                                                             <div class="title-area mb-0">
-                                                                <h2>
+                                                                <h4>
 
-                                                                @if (filled($section->title))
-                                                                </h2>
-                                                                    <div>
-                                                                        <h3>
-                                                <span class="sub-title-dark">
-                                                    {{ $section->title }}
-                                                </span>
-                                                                        </h3>
-                                                                    </div>
+                                                                    @if (filled($section->title))
+                                                                </h4>
+                                                                <div>
+
+                                                    <span class="sub-title-dark">
+                                                        {{ $section->title }}
+                                                    </span>
+
+                                                                </div>
 
                                                                 @endif
 
@@ -1026,8 +1051,8 @@ route('properties.show', $property->slug)
 
 
                                             {{-- =====================================
-                                                        ABOUT PROJECT
-                                                    ===================================== --}}
+                                                                ABOUT PROJECT
+                                                            ===================================== --}}
                                             @if ($hasProjectDescription)
 
                                                 <div class="col-lg-12">
@@ -1064,143 +1089,143 @@ route('properties.show', $property->slug)
 
                     @endif
 
-                        <div class="landing-plan-heading" id="downloads">
+                    <div class="landing-plan-heading" id="downloads">
 
-                        <span class="landing-plan-eyebrow">
-                            PLANS
-                        </span>
+                    <span class="landing-plan-eyebrow">
+                        PLANS
+                    </span>
 
-                            <h2>
-                                FLOOR PlANS
-                            </h2>
-                            <span class="landing-about-v2-line"></span>
-                            <p>
-                                Request detailed project layouts and unit plans for
-                                {{ $property->title }}.
-                            </p>
+                        <h2>
+                            FLOOR PlANS
+                        </h2>
+                        <span class="landing-about-v2-line"></span>
+                        <p>
+                            Request detailed project layouts and unit plans for
+                            {{ $property->title }}.
+                        </p>
 
-                        </div>
-
-
-                        <div class="landing-plan-grid-br">
-
-                            {{-- MASTER PLAN --}}
-                            <article class="landing-plan-card">
-
-                                <button
-                                    type="button"
-                                    class="landing-plan-image-wrap"
-                                    data-lead-popup-open
-                                    data-request-type="master_plan">
-
-                                    <img
-                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
-                                        alt=" {{ $property->project?->name ?? $property->title }}"
-                                        class="landing-plan-image">
-
-                                    <span class="landing-plan-overlay"></span>
-
-                                    <span class="landing-plan-overlay-text">
-                                    SHOW 3BR FlOOR PLAN
-                                </span>
-
-                                </button>
-
-                                <div class="landing-plan-card-footer">
-
-                                    <h3>
-                                        3 Bedroom Villa
-                                    </h3>
-
-                                    <p>
-                                        BUA: 3463.07 Sq.ft | Plot: 4,500 Sq.ft
-
-                                    </p>
+                    </div>
 
 
+                    <div class="landing-plan-grid-br">
 
-                                </div>
+                        {{-- MASTER PLAN --}}
+                        <article class="landing-plan-card">
 
-                            </article>
+                            <button
+                                type="button"
+                                class="landing-plan-image-wrap"
+                                data-lead-popup-open
+                                data-request-type="master_plan">
 
+                                <img
+                                    src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                    alt=" {{ $property->project?->name ?? $property->title }}"
+                                    class="landing-plan-image">
 
-                            {{-- UNIT PLAN --}}
-                            <article class="landing-plan-card">
+                                <span class="landing-plan-overlay"></span>
 
-                                <button
-                                    type="button"
-                                    class="landing-plan-image-wrap"
-                                    data-lead-popup-open
-                                    data-request-type="unit_plan">
+                                <span class="landing-plan-overlay-text">
+                                SHOW 3BR FlOOR PLAN
+                            </span>
 
-                                    <img
-                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
-                                        alt=" {{ $property->project?->name ?? $property->title }}"
-                                        class="landing-plan-image">
+                            </button>
 
-                                    <span class="landing-plan-overlay"></span>
+                            <div class="landing-plan-card-footer">
 
-                                    <span class="landing-plan-overlay-text">
-                                    SHOW 4BR VILLA FlOOR PLAN
-                                </span>
+                                <h3>
+                                    3 Bedroom Villa
+                                </h3>
 
-                                </button>
+                                <p>
+                                    BUA: 3463.07 Sq.ft | Plot: 4,500 Sq.ft
 
-                                <div class="landing-plan-card-footer">
-
-                                    <h3>
-                                        4 Bedroom Villa
-                                    </h3>
-
-                                    <p>
-                                        BUA: 4,312.45 Sq.ft | Plot: 4,500 Sq.ft
-
-                                    </p>
+                                </p>
 
 
 
-                                </div>
+                            </div>
 
-                            </article>
-
-                            <article class="landing-plan-card">
-
-                                <button
-                                    type="button"
-                                    class="landing-plan-image-wrap"
-                                    data-lead-popup-open
-                                    data-request-type="unit_plan">
-
-                                    <img
-                                        src="{{ asset('assets/img/landing/br-plans.webp') }}"
-                                        alt=" {{ $property->project?->name ?? $property->title }}"
-                                        class="landing-plan-image">
-
-                                    <span class="landing-plan-overlay"></span>
-
-                                    <span class="landing-plan-overlay-text">
-                                    SHOW 5 BR VILLA FlOOR PLAN
-                                </span>
-
-                                </button>
-
-                                <div class="landing-plan-card-footer">
-
-                                    <h3>
-                                        5 Bedroom Villa
-                                    </h3>
-
-                                    <p>
-                                        BUA: 5,884.30 Sq.ft | Plot: 5,500 S1.ft
-
-                                    </p>
+                        </article>
 
 
+                        {{-- UNIT PLAN --}}
+                        <article class="landing-plan-card">
 
-                                </div>
+                            <button
+                                type="button"
+                                class="landing-plan-image-wrap"
+                                data-lead-popup-open
+                                data-request-type="unit_plan">
 
-                            </article>
-                        </div>
+                                <img
+                                    src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                    alt=" {{ $property->project?->name ?? $property->title }}"
+                                    class="landing-plan-image">
+
+                                <span class="landing-plan-overlay"></span>
+
+                                <span class="landing-plan-overlay-text">
+                                SHOW 4BR VILLA FlOOR PLAN
+                            </span>
+
+                            </button>
+
+                            <div class="landing-plan-card-footer">
+
+                                <h3>
+                                    4 Bedroom Villa
+                                </h3>
+
+                                <p>
+                                    BUA: 4,312.45 Sq.ft | Plot: 4,500 Sq.ft
+
+                                </p>
+
+
+
+                            </div>
+
+                        </article>
+
+                        <article class="landing-plan-card">
+
+                            <button
+                                type="button"
+                                class="landing-plan-image-wrap"
+                                data-lead-popup-open
+                                data-request-type="unit_plan">
+
+                                <img
+                                    src="{{ asset('assets/img/landing/br-plans.webp') }}"
+                                    alt=" {{ $property->project?->name ?? $property->title }}"
+                                    class="landing-plan-image">
+
+                                <span class="landing-plan-overlay"></span>
+
+                                <span class="landing-plan-overlay-text">
+                                SHOW 5 BR VILLA FlOOR PLAN
+                            </span>
+
+                            </button>
+
+                            <div class="landing-plan-card-footer">
+
+                                <h3>
+                                    5 Bedroom Villa
+                                </h3>
+
+                                <p>
+                                    BUA: 5,884.30 Sq.ft | Plot: 5,500 S1.ft
+
+                                </p>
+
+
+
+                            </div>
+
+                        </article>
+                    </div>
 
 
 
@@ -1214,623 +1239,623 @@ route('properties.show', $property->slug)
 
         </section>
 
-            <section class="landing-payment-plan" id="payment-plan">
+        <section class="landing-payment-plan" id="payment-plan">
 
-                <div class="landing-gallery-container">
+            <div class="landing-gallery-container">
 
-                    <div class="landing-payment-heading">
+                <div class="landing-payment-heading">
 
-            <span class="landing-payment-eyebrow">
-                PAYMENT PLAN
-            </span>
+                <span class="landing-payment-eyebrow">
+                    PAYMENT PLAN
+                </span>
 
-                        <span class="landing-payment-heading-line"></span>
+                    <span class="landing-payment-heading-line"></span>
 
-                        <h2>
-                            Flexible Payment Plan
-                        </h2>
+                    <h2>
+                        Flexible Payment Plan
+                    </h2>
 
-                        <p>
-                            A structured payment schedule designed to make your
-                            investment journey seamless.
-                        </p>
+                    <p>
+                        A structured payment schedule designed to make your
+                        investment journey seamless.
+                    </p>
+
+                </div>
+
+
+                <div class="landing-payment-list">
+
+
+                    {{-- 01 --}}
+                    <div class="landing-payment-item">
+
+                        <span class="landing-payment-dot"></span>
+
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="calendar" />
+                        </div>
+
+                        <span class="landing-payment-number">
+                        01
+                    </span>
+
+                        <div class="landing-payment-content">
+
+                            <strong>
+                                1st Installment
+                            </strong>
+
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-10"></span>
+                            </div>
+
+                        </div>
+
+                        <strong class="landing-payment-percentage">
+                            10.00%
+                        </strong>
 
                     </div>
 
 
-                    <div class="landing-payment-list">
+                    {{-- 02 --}}
+                    <div class="landing-payment-item">
 
+                        <span class="landing-payment-dot"></span>
 
-                        {{-- 01 --}}
-                        <div class="landing-payment-item">
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="calendar" />
+                        </div>
 
-                            <span class="landing-payment-dot"></span>
+                        <span class="landing-payment-number">
+                        02
+                    </span>
 
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="calendar" />
-                            </div>
+                        <div class="landing-payment-content">
 
-                            <span class="landing-payment-number">
-                    01
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    1st Installment
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-10"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                10.00%
+                            <strong>
+                                2nd Installment
                             </strong>
+
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-20"></span>
+                            </div>
 
                         </div>
 
-
-                        {{-- 02 --}}
-                        <div class="landing-payment-item">
-
-                            <span class="landing-payment-dot"></span>
-
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="calendar" />
-                            </div>
-
-                            <span class="landing-payment-number">
-                    02
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    2nd Installment
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-20"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                10.00%
-                            </strong>
-
-                        </div>
-
-
-                        {{-- 03 --}}
-                        <div class="landing-payment-item">
-
-                            <span class="landing-payment-dot"></span>
-
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="calendar" />
-                            </div>
-
-                            <span class="landing-payment-number">
-                    03
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    3rd Installment
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-30"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                10.00%
-                            </strong>
-
-                        </div>
-
-
-                        {{-- 04 --}}
-                        <div class="landing-payment-item">
-
-                            <span class="landing-payment-dot"></span>
-
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="calendar" />
-                            </div>
-
-                            <span class="landing-payment-number">
-                    04
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    4th Installment
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-40"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                10.00%
-                            </strong>
-
-                        </div>
-
-
-                        {{-- 05 --}}
-                        <div class="landing-payment-item">
-
-                            <span class="landing-payment-dot"></span>
-
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="calendar" />
-                            </div>
-
-                            <span class="landing-payment-number">
-                    05
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    5th Installment
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-50"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                10.00%
-                            </strong>
-
-                        </div>
-
-
-                        {{-- 06 --}}
-                        <div class="landing-payment-item">
-
-                            <span class="landing-payment-dot"></span>
-
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="construction" />
-                            </div>
-
-                            <span class="landing-payment-number">
-                    06
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    40% Construction
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-60"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                10.00%
-                            </strong>
-
-                        </div>
-
-
-                        {{-- 07 --}}
-                        <div class="landing-payment-item">
-
-                            <span class="landing-payment-dot"></span>
-
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="construction" />
-                            </div>
-
-                            <span class="landing-payment-number">
-                    07
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    60% Construction
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-70"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                10.00%
-                            </strong>
-
-                        </div>
-
-
-                        {{-- 08 --}}
-                        <div class="landing-payment-item">
-
-                            <span class="landing-payment-dot"></span>
-
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="construction" />
-                            </div>
-
-                            <span class="landing-payment-number">
-                    08
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    80% Construction
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-80"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                10.00%
-                            </strong>
-
-                        </div>
-
-
-                        {{-- 09 --}}
-                        <div class="landing-payment-item landing-payment-item-final">
-
-                            <span class="landing-payment-dot"></span>
-
-                            <div class="landing-payment-icon">
-                                <x-landing-icon name="home" />
-                            </div>
-
-                            <span class="landing-payment-number">
-                    09
-                </span>
-
-                            <div class="landing-payment-content">
-
-                                <strong>
-                                    100% Construction &amp; Handover
-                                </strong>
-
-                                <div class="landing-payment-progress">
-                                    <span class="payment-progress-100"></span>
-                                </div>
-
-                            </div>
-
-                            <strong class="landing-payment-percentage">
-                                20.00%
-                            </strong>
-
-                        </div>
+                        <strong class="landing-payment-percentage">
+                            10.00%
+                        </strong>
 
                     </div>
 
 
-                    {{-- SUMMARY --}}
-                    <div class="landing-payment-summary">
+                    {{-- 03 --}}
+                    <div class="landing-payment-item">
 
-            <span>
-                <strong>9</strong>
-                Structured Milestones
-            </span>
+                        <span class="landing-payment-dot"></span>
 
-                        <span>
-                <strong>80%</strong>
-                During Construction
-            </span>
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="calendar" />
+                        </div>
 
-                        <span>
-                <strong>20%</strong>
-                On Handover
-            </span>
+                        <span class="landing-payment-number">
+                        03
+                    </span>
+
+                        <div class="landing-payment-content">
+
+                            <strong>
+                                3rd Installment
+                            </strong>
+
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-30"></span>
+                            </div>
+
+                        </div>
+
+                        <strong class="landing-payment-percentage">
+                            10.00%
+                        </strong>
 
                     </div>
 
 
-                    {{-- CTA --}}
-                    <div class="landing-payment-actions">
+                    {{-- 04 --}}
+                    <div class="landing-payment-item">
 
-                        <button
-                            type="button"
-                            class="landing-payment-btn landing-payment-btn-outline"
-                            data-lead-popup-open
-                            data-request-type="payment-plan">
+                        <span class="landing-payment-dot"></span>
 
-                            REQUEST PAYMENT PLAN
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="calendar" />
+                        </div>
 
-                        </button>
+                        <span class="landing-payment-number">
+                        04
+                    </span>
 
-                        <button
-                            type="button"
-                            class="landing-payment-btn landing-payment-btn-primary"
-                            data-lead-popup-open
-                            data-request-type="register-interest">
+                        <div class="landing-payment-content">
 
-                            GET LATEST PRICES
+                            <strong>
+                                4th Installment
+                            </strong>
 
-                        </button>
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-40"></span>
+                            </div>
+
+                        </div>
+
+                        <strong class="landing-payment-percentage">
+                            10.00%
+                        </strong>
+
+                    </div>
+
+
+                    {{-- 05 --}}
+                    <div class="landing-payment-item">
+
+                        <span class="landing-payment-dot"></span>
+
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="calendar" />
+                        </div>
+
+                        <span class="landing-payment-number">
+                        05
+                    </span>
+
+                        <div class="landing-payment-content">
+
+                            <strong>
+                                5th Installment
+                            </strong>
+
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-50"></span>
+                            </div>
+
+                        </div>
+
+                        <strong class="landing-payment-percentage">
+                            10.00%
+                        </strong>
+
+                    </div>
+
+
+                    {{-- 06 --}}
+                    <div class="landing-payment-item">
+
+                        <span class="landing-payment-dot"></span>
+
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="construction" />
+                        </div>
+
+                        <span class="landing-payment-number">
+                        06
+                    </span>
+
+                        <div class="landing-payment-content">
+
+                            <strong>
+                                40% Construction
+                            </strong>
+
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-60"></span>
+                            </div>
+
+                        </div>
+
+                        <strong class="landing-payment-percentage">
+                            10.00%
+                        </strong>
+
+                    </div>
+
+
+                    {{-- 07 --}}
+                    <div class="landing-payment-item">
+
+                        <span class="landing-payment-dot"></span>
+
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="construction" />
+                        </div>
+
+                        <span class="landing-payment-number">
+                        07
+                    </span>
+
+                        <div class="landing-payment-content">
+
+                            <strong>
+                                60% Construction
+                            </strong>
+
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-70"></span>
+                            </div>
+
+                        </div>
+
+                        <strong class="landing-payment-percentage">
+                            10.00%
+                        </strong>
+
+                    </div>
+
+
+                    {{-- 08 --}}
+                    <div class="landing-payment-item">
+
+                        <span class="landing-payment-dot"></span>
+
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="construction" />
+                        </div>
+
+                        <span class="landing-payment-number">
+                        08
+                    </span>
+
+                        <div class="landing-payment-content">
+
+                            <strong>
+                                80% Construction
+                            </strong>
+
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-80"></span>
+                            </div>
+
+                        </div>
+
+                        <strong class="landing-payment-percentage">
+                            10.00%
+                        </strong>
+
+                    </div>
+
+
+                    {{-- 09 --}}
+                    <div class="landing-payment-item landing-payment-item-final">
+
+                        <span class="landing-payment-dot"></span>
+
+                        <div class="landing-payment-icon">
+                            <x-landing-icon name="home" />
+                        </div>
+
+                        <span class="landing-payment-number">
+                        09
+                    </span>
+
+                        <div class="landing-payment-content">
+
+                            <strong>
+                                100% Construction &amp; Handover
+                            </strong>
+
+                            <div class="landing-payment-progress">
+                                <span class="payment-progress-100"></span>
+                            </div>
+
+                        </div>
+
+                        <strong class="landing-payment-percentage">
+                            20.00%
+                        </strong>
 
                     </div>
 
                 </div>
 
-            </section>
-            <section class="landing-amenities-v2" id="amenities">
 
-                <div class="landing-gallery-container">
+                {{-- SUMMARY --}}
+                <div class="landing-payment-summary">
 
-                    {{-- Heading --}}
-                    <div class="landing-amenities-v2-heading">
+                <span>
+                    <strong>9</strong>
+                    Structured Milestones
+                </span>
 
-            <span class="landing-amenities-v2-eyebrow">
-                AMENITIES
-            </span>
+                    <span>
+                    <strong>80%</strong>
+                    During Construction
+                </span>
 
-                        <span class="landing-amenities-v2-line"></span>
+                    <span>
+                    <strong>20%</strong>
+                    On Handover
+                </span>
 
-                        <h2>
-                            Designed for a life of well-being
-                        </h2>
+                </div>
+
+
+                {{-- CTA --}}
+                <div class="landing-payment-actions">
+
+                    <button
+                        type="button"
+                        class="landing-payment-btn landing-payment-btn-outline"
+                        data-lead-popup-open
+                        data-request-type="payment-plan">
+
+                        REQUEST PAYMENT PLAN
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="landing-payment-btn landing-payment-btn-primary"
+                        data-lead-popup-open
+                        data-request-type="register-interest">
+
+                        GET LATEST PRICES
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="landing-amenities-v2" id="amenities">
+
+            <div class="landing-gallery-container">
+
+                {{-- Heading --}}
+                <div class="landing-amenities-v2-heading">
+
+                <span class="landing-amenities-v2-eyebrow">
+                    AMENITIES
+                </span>
+
+                    <span class="landing-amenities-v2-line"></span>
+
+                    <h2>
+                        Designed for a life of well-being
+                    </h2>
+
+                    <p>
+                        From active lifestyles to family moments, every amenity is
+                        thoughtfully curated for your comfort and convenience.
+                    </p>
+
+                </div>
+
+
+                {{-- Amenities Grid --}}
+                <div class="landing-amenities-v2-grid">
+
+
+                    <div class="landing-amenities-v2-card">
+
+                        <div class="landing-amenities-v2-icon">
+                            <x-landing-icon name="beach" />
+                        </div>
+
+                        <h3>Beach Clubhouse</h3>
+
+                        <span class="landing-amenities-v2-card-line"></span>
 
                         <p>
-                            From active lifestyles to family moments, every amenity is
-                            thoughtfully curated for your comfort and convenience.
+                            An exclusive beachfront clubhouse designed for leisure,
+                            relaxation and social experiences.
                         </p>
 
                     </div>
 
 
-                    {{-- Amenities Grid --}}
-                    <div class="landing-amenities-v2-grid">
+                    <div class="landing-amenities-v2-card">
 
-
-                        <div class="landing-amenities-v2-card">
-
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="beach" />
-                            </div>
-
-                            <h3>Beach Clubhouse</h3>
-
-                            <span class="landing-amenities-v2-card-line"></span>
-
-                            <p>
-                                An exclusive beachfront clubhouse designed for leisure,
-                                relaxation and social experiences.
-                            </p>
-
+                        <div class="landing-amenities-v2-icon">
+                            <x-landing-icon name="farm-cafe" />
                         </div>
 
+                        <h3>Farm-to-Table Café</h3>
 
-                        <div class="landing-amenities-v2-card">
+                        <span class="landing-amenities-v2-card-line"></span>
 
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="farm-cafe" />
-                            </div>
+                        <p>
+                            Fresh dining experiences inspired by locally sourced
+                            ingredients and healthy living.
+                        </p>
 
-                            <h3>Farm-to-Table Café</h3>
+                    </div>
 
-                            <span class="landing-amenities-v2-card-line"></span>
 
-                            <p>
-                                Fresh dining experiences inspired by locally sourced
-                                ingredients and healthy living.
-                            </p>
+                    <div class="landing-amenities-v2-card">
 
+                        <div class="landing-amenities-v2-icon">
+                            <x-landing-icon name="hospital" />
                         </div>
 
+                        <h3>Healthcare Facilities</h3>
 
-                        <div class="landing-amenities-v2-card">
+                        <span class="landing-amenities-v2-card-line"></span>
 
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="hospital" />
-                            </div>
+                        <p>
+                            Convenient access to healthcare facilities within
+                            the community.
+                        </p>
 
-                            <h3>Healthcare Facilities</h3>
+                    </div>
 
-                            <span class="landing-amenities-v2-card-line"></span>
 
-                            <p>
-                                Convenient access to healthcare facilities within
-                                the community.
-                            </p>
+                    <div class="landing-amenities-v2-card">
 
+                        <div class="landing-amenities-v2-icon">
+                            <x-landing-icon name="retail" />
                         </div>
 
+                        <h3>Retail Outlets</h3>
 
-                        <div class="landing-amenities-v2-card">
+                        <span class="landing-amenities-v2-card-line"></span>
 
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="retail" />
-                            </div>
+                        <p>
+                            Everyday shopping and lifestyle conveniences
+                            located close to home.
+                        </p>
 
-                            <h3>Retail Outlets</h3>
+                    </div>
 
-                            <span class="landing-amenities-v2-card-line"></span>
 
-                            <p>
-                                Everyday shopping and lifestyle conveniences
-                                located close to home.
-                            </p>
+                    <div class="landing-amenities-v2-card">
 
+                        <div class="landing-amenities-v2-icon">
+                            <x-landing-icon name="sports-court" />
                         </div>
 
+                        <h3>Sports Courts</h3>
 
-                        <div class="landing-amenities-v2-card">
+                        <span class="landing-amenities-v2-card-line"></span>
 
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="sports-court" />
-                            </div>
+                        <p>
+                            Dedicated courts for recreational activities,
+                            fitness and active community living.
+                        </p>
 
-                            <h3>Sports Courts</h3>
+                    </div>
 
-                            <span class="landing-amenities-v2-card-line"></span>
 
-                            <p>
-                                Dedicated courts for recreational activities,
-                                fitness and active community living.
-                            </p>
+                    <div class="landing-amenities-v2-card">
 
+                        <div class="landing-amenities-v2-icon">
+                            <x-landing-icon name="garden" />
                         </div>
 
+                        <h3>Landscaped Gardens</h3>
 
-                        <div class="landing-amenities-v2-card">
+                        <span class="landing-amenities-v2-card-line"></span>
 
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="garden" />
-                            </div>
+                        <p>
+                            Beautifully landscaped green spaces for relaxation,
+                            walking and outdoor moments.
+                        </p>
 
-                            <h3>Landscaped Gardens</h3>
+                    </div>
 
-                            <span class="landing-amenities-v2-card-line"></span>
 
-                            <p>
-                                Beautifully landscaped green spaces for relaxation,
-                                walking and outdoor moments.
-                            </p>
+                    <div class="landing-amenities-v2-card">
 
+                        <div class="landing-amenities-v2-icon">
+                            <x-landing-icon name="cycling" />
                         </div>
 
+                        <h3>Cycling Tracks</h3>
 
-                        <div class="landing-amenities-v2-card">
+                        <span class="landing-amenities-v2-card-line"></span>
 
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="cycling" />
-                            </div>
+                        <p>
+                            Dedicated cycling routes designed for an active
+                            and healthy lifestyle.
+                        </p>
 
-                            <h3>Cycling Tracks</h3>
+                    </div>
 
-                            <span class="landing-amenities-v2-card-line"></span>
 
-                            <p>
-                                Dedicated cycling routes designed for an active
-                                and healthy lifestyle.
-                            </p>
+                    <div class="landing-amenities-v2-card">
 
+                        <div class="landing-amenities-v2-icon">
+                            <x-landing-icon name="water" />
                         </div>
 
+                        <h3>Lakes &amp; Water Features</h3>
 
-                        <div class="landing-amenities-v2-card">
+                        <span class="landing-amenities-v2-card-line"></span>
 
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="water" />
-                            </div>
+                        <p>
+                            Scenic lakes and water features creating a calm
+                            and refreshing community environment.
+                        </p>
 
-                            <h3>Lakes &amp; Water Features</h3>
+                    </div>
 
-                            <span class="landing-amenities-v2-card-line"></span>
+                </div>
 
-                            <p>
-                                Scenic lakes and water features creating a calm
-                                and refreshing community environment.
-                            </p>
 
+                {{-- Bottom Highlights --}}
+                <div class="landing-amenities-v2-highlights">
+
+
+                    <div class="landing-amenities-v2-highlight">
+
+                        <div class="landing-amenities-v2-highlight-icon">
+                            <x-landing-icon name="shield" />
+                        </div>
+
+                        <div>
+                            <strong>SAFE &amp; SECURE</strong>
+
+                            <span>
+                            Gated community living
+                        </span>
                         </div>
 
                     </div>
 
 
-                    {{-- Bottom Highlights --}}
-                    <div class="landing-amenities-v2-highlights">
+                    <div class="landing-amenities-v2-highlight">
 
-
-                        <div class="landing-amenities-v2-highlight">
-
-                            <div class="landing-amenities-v2-highlight-icon">
-                                <x-landing-icon name="shield" />
-                            </div>
-
-                            <div>
-                                <strong>SAFE &amp; SECURE</strong>
-
-                                <span>
-                        Gated community living
-                    </span>
-                            </div>
-
+                        <div class="landing-amenities-v2-highlight-icon">
+                            <x-landing-icon name="leaf" />
                         </div>
 
+                        <div>
+                            <strong>SUSTAINABLE LIVING</strong>
 
-                        <div class="landing-amenities-v2-highlight">
-
-                            <div class="landing-amenities-v2-highlight-icon">
-                                <x-landing-icon name="leaf" />
-                            </div>
-
-                            <div>
-                                <strong>SUSTAINABLE LIVING</strong>
-
-                                <span>
-                        Green spaces &amp; wellness
-                    </span>
-                            </div>
-
+                            <span>
+                            Green spaces &amp; wellness
+                        </span>
                         </div>
 
+                    </div>
 
-                        <div class="landing-amenities-v2-highlight">
 
-                            <div class="landing-amenities-v2-highlight-icon">
-                                <x-landing-icon name="users" />
-                            </div>
+                    <div class="landing-amenities-v2-highlight">
 
-                            <div>
-                                <strong>COMMUNITY LIVING</strong>
-
-                                <span>
-                        Spaces that bring people together
-                    </span>
-                            </div>
-
+                        <div class="landing-amenities-v2-highlight-icon">
+                            <x-landing-icon name="users" />
                         </div>
 
+                        <div>
+                            <strong>COMMUNITY LIVING</strong>
 
-                        <div class="landing-amenities-v2-highlight">
+                            <span>
+                            Spaces that bring people together
+                        </span>
+                        </div>
 
-                            <div class="landing-amenities-v2-highlight-icon">
-                                <x-landing-icon name="star" />
-                            </div>
+                    </div>
 
-                            <div>
-                                <strong>PREMIUM LIFESTYLE</strong>
 
-                                <span>
-                        World-class community amenities
-                    </span>
-                            </div>
+                    <div class="landing-amenities-v2-highlight">
 
+                        <div class="landing-amenities-v2-highlight-icon">
+                            <x-landing-icon name="star" />
+                        </div>
+
+                        <div>
+                            <strong>PREMIUM LIFESTYLE</strong>
+
+                            <span>
+                            World-class community amenities
+                        </span>
                         </div>
 
                     </div>
 
                 </div>
 
-            </section>
+            </div>
+
+        </section>
 
         <section class="landing-gallery-section " id="gallery">
 
@@ -1909,8 +1934,8 @@ route('properties.show', $property->slug)
 
 
                     {{-- =====================================================
-                                GALLERY LIGHTBOX
-                            ===================================================== --}}
+                                        GALLERY LIGHTBOX
+                                    ===================================================== --}}
 
                     <div
                         class="landing-gallery-lightbox"
@@ -1993,67 +2018,67 @@ route('properties.show', $property->slug)
 
 
                 {{-- =====================================
-                                                AMENITIES
-                                            ===================================== --}}
-{{--                @if ($amenities->isNotEmpty())--}}
+                                                    AMENITIES
+                                                ===================================== --}}
+                {{-- @if ($amenities->isNotEmpty())--}}
 
-{{--                    <div class="col-lg-12">--}}
+                {{-- <div class="col-lg-12">--}}
 
-{{--                        <div class="title-area mb-0">--}}
+                {{-- <div class="title-area mb-0">--}}
 
-{{--                            <div>--}}
+                {{-- <div>--}}
 
-{{--                        <span class="sub-title-dark project-about-heading">--}}
-{{--                            Amenities--}}
-{{--                        </span>--}}
+                {{-- <span class="sub-title-dark project-about-heading">--}}
+                {{-- Amenities--}}
+                {{-- </span>--}}
 
-{{--                            </div>--}}
+                {{-- </div>--}}
 
 
-{{--                            <div class="row gy-3">--}}
+                {{-- <div class="row gy-3">--}}
 
-{{--                                @foreach ($amenities as $amenity)--}}
+                {{-- @foreach ($amenities as $amenity)--}}
 
-{{--                                    @php--}}
-{{--                                        $amenityIcon = match ($amenity->icon) {--}}
-{{--                                        'fa-solid fa-child' => 'child',--}}
-{{--                                        'fa-solid fa-person-swimming' => 'swimming',--}}
-{{--                                        'fa-solid fa-dumbbell' => 'dumbbell',--}}
-{{--                                        'fa-solid fa-utensils' => 'utensils',--}}
-{{--                                        default => 'check',--}}
-{{--                                        };--}}
-{{--                                    @endphp--}}
+                {{-- @php--}}
+                {{-- $amenityIcon = match ($amenity->icon) {--}}
+                {{-- 'fa-solid fa-child' => 'child',--}}
+                {{-- 'fa-solid fa-person-swimming' => 'swimming',--}}
+                {{-- 'fa-solid fa-dumbbell' => 'dumbbell',--}}
+                {{-- 'fa-solid fa-utensils' => 'utensils',--}}
+                {{-- default => 'check',--}}
+                {{-- };--}}
+                {{-- @endphp--}}
 
-{{--                                    <div class="col-xxl-3 col-sm-6">--}}
+                {{-- <div class="col-xxl-3 col-sm-6">--}}
 
-{{--                                        <div class="checklist">--}}
+                {{-- <div class="checklist">--}}
 
-{{--                                            <ul>--}}
-{{--                                                <li>--}}
-{{--                                                    <x-landing-icon :name="$amenityIcon" />--}}
-{{--                                                    {{ $amenity->name }}--}}
-{{--                                                </li>--}}
-{{--                                            </ul>--}}
+                {{-- <ul>--}}
+                {{-- <li>--}}
+                {{-- <x-landing-icon :name="$amenityIcon" />--}}
+                {{-- {{ $amenity->name }}--}}
+                {{-- </li>--}}
+                {{-- </ul>--}}
 
-{{--                                        </div>--}}
+                {{-- </div>--}}
 
-{{--                                    </div>--}}
+                {{-- </div>--}}
 
-{{--                                @endforeach--}}
+                {{-- @endforeach--}}
 
-{{--                            </div>--}}
+                {{-- </div>--}}
 
-{{--                        </div>--}}
+                {{-- </div>--}}
 
-{{--                    </div>--}}
+                {{-- </div>--}}
 
-{{--                @endif--}}
+                {{-- @endif--}}
 
 
 
                 {{-- =====================================
-                                                LOCATION
-                                            ===================================== --}}
+                                                    LOCATION
+                                                ===================================== --}}
                 @if (filled($property->map_url))
 
                     <div class="col-lg-12 minus-text-area" id="location">
@@ -2135,8 +2160,8 @@ route('properties.show', $property->slug)
 
 
         {{-- =====================================================
-                FAQ SECTION
-            ===================================================== --}}
+                    FAQ SECTION
+                ===================================================== --}}
 
         <section class="landing-faq-section" id="faq">
 

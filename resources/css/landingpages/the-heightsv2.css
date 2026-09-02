@@ -8354,3 +8354,13 @@ font-size: 12px;
         width: 100%;
     }
 }
+.area-hardcoded {
+
+    text-transform: uppercase;
+}
+
+.fs-4{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-optima);
+}
