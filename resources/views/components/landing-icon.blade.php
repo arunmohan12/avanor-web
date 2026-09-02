@@ -621,4 +621,60 @@
 
         </svg>
         @break
+
+    @case('masterplan')
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M5 19V8l5-4 4 3 5-1v12l-5 2-4-3-5 2Z"/>
+            <path d="M10 4v13"/>
+            <path d="M14 7v13"/>
+
+        </svg>
+        @break
+
+
+    @case('coins')
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <ellipse cx="8" cy="6" rx="5" ry="2.5"/>
+            <path d="M3 6v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V6"/>
+            <path d="M3 10v4c0 1.4 2.2 2.5 5 2.5"/>
+
+            <ellipse cx="16" cy="14" rx="5" ry="2.5"/>
+            <path d="M11 14v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4"/>
+
+        </svg>
+        @break
+
+
+    @case('diamond')
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M4 8 7 4h10l3 4-8 12L4 8Z"/>
+            <path d="M4 8h16"/>
+            <path d="m8 4 4 16 4-16"/>
+
+        </svg>
+        @break
 @endswitch

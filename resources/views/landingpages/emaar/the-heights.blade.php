@@ -2341,220 +2341,446 @@ route('properties.show', $property->slug)
         </div>
 
 
-        <footer class="landing-enquiry-footer" id="contact">
+            {{-- =====================================================
+        DEVELOPER + COMMUNITY
+    ===================================================== --}}
+            <section class="landing-developer-community">
 
-            <div class="landing-enquiry-container">
+                <div class="landing-gallery-container">
 
-                <div class="landing-enquiry-grid">
+                    <div class="landing-developer-community-grid">
 
-                    {{-- LEFT CONTENT --}}
-                    <div class="landing-enquiry-copy">
+                        {{-- =====================================================
+                            LEFT — DEVELOPER
+                        ===================================================== --}}
 
-                        <div class="landing-enquiry-heading">
+                        <div class="landing-developer-panel">
 
-                        <span class="landing-enquiry-eyebrow">
-                            REQUEST PROPERTY DETAILS
-                        </span>
+                <span class="landing-developer-eyebrow">
+                    ABOUT THE DEVELOPER
+                </span>
 
-                            <h2>
-                                Get Pricing, Availability & Project Details
+                            <span class="landing-developer-eyebrow-line"></span>
+
+                            <h2 class="landing-developer-title">
+                                About Emaar Properties
                             </h2>
 
+                            <div class="landing-developer-copy">
+
+                                <p>
+                                    Emaar Properties is one of Dubai’s leading real estate
+                                    developers, known for creating master-planned communities,
+                                    premium residences and landmark destinations across the UAE.
+                                </p>
+
+                                <p>
+                                    The Heights Country Club &amp; Wellness is an Emaar
+                                    development in Dubai focused on wellness-led living,
+                                    luxury villas, landscaped green spaces and an exclusive
+                                    country club lifestyle.
+                                </p>
+
+                            </div>
+
+
+                            {{-- Developer Highlights --}}
+                            <div class="landing-developer-highlights">
+
+                                <div class="landing-developer-highlight">
+
+                                    <div class="landing-developer-highlight-icon">
+                                        <x-landing-icon name="home" />
+                                    </div>
+
+                                    <strong>Global Leader</strong>
+
+                                    <span>in Real Estate</span>
+
+                                </div>
+
+
+                                <div class="landing-developer-highlight">
+
+                                    <div class="landing-developer-highlight-icon">
+                                        <x-landing-icon name="shield" />
+                                    </div>
+
+                                    <strong>Proven</strong>
+
+                                    <span>Track Record</span>
+
+                                </div>
+
+
+                                <div class="landing-developer-highlight">
+
+                                    <div class="landing-developer-highlight-icon">
+                                        <x-landing-icon name="users" />
+                                    </div>
+
+                                    <strong>Premium</strong>
+
+                                    <span>Communities</span>
+
+                                </div>
+
+
+                                <div class="landing-developer-highlight">
+
+                                    <div class="landing-developer-highlight-icon">
+                                        <x-landing-icon name="calendar" />
+                                    </div>
+
+                                    <strong>40+ Years</strong>
+
+                                    <span>of Excellence</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- =====================================================
+                            RIGHT — COMMUNITY
+                        ===================================================== --}}
+
+                        <div class="landing-community-panel">
+
+                            <div class="landing-community-heading">
+
+                                <span class="landing-community-heading-line"></span>
+
+                                <div>
+
+                                    <h3>
+                                        THE HEIGHTS COUNTRY CLUB &amp; WELLNESS
+                                    </h3>
+
+                                    <span>
+                            BY EMAAR
+                        </span>
+
+                                </div>
+
+                                <span class="landing-community-heading-line"></span>
+
+                            </div>
+
+
+                            <div class="landing-community-stats">
+
+
+                                {{-- 81M --}}
+                                <div class="landing-community-stat">
+
+                                    <div class="landing-community-stat-icon">
+                                        <x-landing-icon name="masterplan" />
+                                    </div>
+
+                                    <strong class="landing-community-stat-value">
+                                        81M+
+                                    </strong>
+
+                                    <span class="landing-community-stat-rule"></span>
+
+                                    <strong class="landing-community-stat-label">
+                                        SQ. FT.
+                                    </strong>
+
+                                    <span class="landing-community-stat-description">
+                            Total Development
+                        </span>
+
+                                </div>
+
+
+                                {{-- AED 55B --}}
+                                <div class="landing-community-stat">
+
+                                    <div class="landing-community-stat-icon">
+                                        <x-landing-icon name="coins" />
+                                    </div>
+
+                                    <strong class="landing-community-stat-value">
+                                        AED 55B+
+                                    </strong>
+
+                                    <span class="landing-community-stat-rule"></span>
+
+                                    <strong class="landing-community-stat-label">
+                                        DEVELOPMENT VALUE
+                                    </strong>
+
+                                    <span class="landing-community-stat-description">
+                            Total Project Value
+                        </span>
+
+                                </div>
+
+
+                                {{-- Exclusive --}}
+                                <div class="landing-community-stat">
+
+                                    <div class="landing-community-stat-icon">
+                                        <x-landing-icon name="diamond" />
+                                    </div>
+
+                                    <strong class="landing-community-stat-value">
+                                        1
+                                    </strong>
+
+                                    <span class="landing-community-stat-rule"></span>
+
+                                    <strong class="landing-community-stat-label">
+                                        EXCLUSIVE
+                                    </strong>
+
+                                    <span class="landing-community-stat-description">
+                            Wellness Community
+                        </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            {{-- =====================================================
+                MAIN FOOTER
+            ===================================================== --}}
+
+            <footer
+                class="landing-main-footer landing-enquiry-footer"
+                id="landingFooter">
+
+                <div class="landing-gallery-container">
+
+
+                    <div class="landing-main-footer-grid">
+
+
+                        {{-- =====================================================
+                            COMMUNITY
+                        ===================================================== --}}
+
+                        <div class="landing-footer-brand">
+
+                            <img
+                                src="{{ asset('assets/img/landing/community-the-heights.png') }}"
+                                alt="The Heights Country Club & Wellness"
+                                loading="lazy">
+
                             <p>
-                                Speak with our property advisor for current availability, pricing, payment plans and
-                                complete project information for {{ $property->title }}.
+                                The Heights Country Club &amp; Wellness by Emaar brings
+                                together nature, well-being and premium community living
+                                in one of Dubai's most anticipated residential destinations.
                             </p>
 
+
+
+
+
+
                         </div>
-                        <div class="landing-footer-contact-details">
-
-                            {{-- Phone + WhatsApp --}}
-                            <div class="landing-footer-contact-item">
-
-                            <span class="landing-footer-contact-icon">
-                                <x-landing-icon name="phone" />
-                            </span>
-
-                                <div>
-                                <span class="landing-footer-contact-label">
-                                    PHONE & WHATSAPP
-                                </span>
-
-                                    <a href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}">
-                                        {{ $siteSettings['phone'] }}
-                                    </a>
-                                </div>
-
-                            </div>
 
 
-                            {{-- Alternate --}}
-                            <div class="landing-footer-contact-item">
+                        {{-- =====================================================
+                            DISCOVER
+                        ===================================================== --}}
 
-                            <span class="landing-footer-contact-icon">
-                                <x-landing-icon name="phone" />
-                            </span>
+                        <div class="landing-footer-column landing-footer-discover">
 
-                                <div>
-                                <span class="landing-footer-contact-label">
-                                    ALTERNATE
-                                </span>
+                            <h3>
+                                DISCOVER
+                            </h3>
 
-                                    <a href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}">
-                                        {{ $siteSettings['phone'] }}
-                                    </a>
-                                </div>
+                            <nav>
 
-                            </div>
+                                <a href="#about">
+                                    About the Community
+                                </a>
 
+                                <a href="#amenities">
+                                    Amenities
+                                </a>
 
-                            {{-- Website --}}
-                            <div class="landing-footer-contact-item">
+                                <a href="#gallery">
+                                    Gallery
+                                </a>
 
-                            <span class="landing-footer-contact-icon">
+                                <a href="#location">
+                                    Location
+                                </a>
 
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.8"
-                                    aria-hidden="true">
+                            </nav>
 
-                                    <circle cx="12" cy="12" r="9" />
-                                    <path d="M3 12h18" />
-                                    <path d="M12 3c3 3.5 4.5 6.5 4.5 9S15 17.5 12 21" />
-                                    <path d="M12 3C9 6.5 7.5 9.5 7.5 12S9 17.5 12 21" />
-
-                                </svg>
-
-                            </span>
-
-                                <div>
-                                <span class="landing-footer-contact-label">
-                                    WEBSITE
-                                </span>
-
-                                    <a
-                                        href="https://avanorcap.com"
-                                        target="_blank"
-                                        rel="noopener">
-                                        avanorcap.com
-                                    </a>
-                                </div>
-
-                            </div>
+                        </div>
 
 
-                            {{-- Social --}}
-                            <div class="landing-footer-socials">
+                        {{-- =====================================================
+                            PROPERTY
+                        ===================================================== --}}
 
-                                <a
-                                    href="https://www.facebook.com/profile.php?id=61592465175120"
-                                    target="_blank"
-                                    rel="noopener"
-                                    aria-label="Facebook">
+                        <div class="landing-footer-column landing-footer-property">
 
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                        aria-hidden="true">
-                                        <path
-                                            d="M13.5 8H16V4.5h-2.5C10.7 4.5 9 6.2 9 9v2H6v3.5h3V21h3.5v-6.5H16L16.5 11h-4V9c0-.7.3-1 1-1Z" />
-                                    </svg>
+                            <h3>
+                                PROPERTY
+                            </h3>
 
+                            <nav>
+
+                                <a href="#home">
+                                    Property Overview
+                                </a>
+
+                                <a href="#payment-plan">
+                                    Payment Plan
                                 </a>
 
                                 <a
-                                    href="https://www.instagram.com/avanorcapital/"
-                                    target="_blank"
-                                    rel="noopener"
-                                    aria-label="Instagram">
-
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.8"
-                                        aria-hidden="true">
-
-                                        <rect x="3" y="3" width="18" height="18" rx="5" />
-                                        <circle cx="12" cy="12" r="4" />
-                                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-
-                                    </svg>
-
+                                    href="#"
+                                    data-lead-popup-open
+                                    data-request-type="floor-plans">
+                                    Floor Plans
                                 </a>
 
-                            </div>
+                                <a
+                                    href="#"
+                                    data-lead-popup-open
+                                    data-request-type="brochure">
+                                    Brochure
+                                </a>
+
+                            </nav>
 
                         </div>
-                        @if (session('lead_success'))
-                            <div class="landing-enquiry-alert landing-enquiry-alert-success">
-                                {{ session('lead_success') }}
-                            </div>
-                        @endif
 
-                        @if ($errors->any())
-                            <div class="landing-enquiry-alert landing-enquiry-alert-error">
-                                {{ $errors->first() }}
-                            </div>
-                        @endif
+
+                        {{-- =====================================================
+                            SUPPORT
+                        ===================================================== --}}
+
+                        <div class="landing-footer-column landing-footer-support">
+
+                            <h3>
+                                SUPPORT
+                            </h3>
+
+                            <nav>
+
+                                <a href="#faq">
+                                    FAQs
+                                </a>
+
+                                <a data-lead-popup-open href="#contact">
+                                    Contact Us
+                                </a>
+
+                                <a href="{{ route('landing.privacy-policy') }}">
+                                    Privacy Policy
+                                </a>
+
+                                <a href="{{ route('landing.terms-and-conditions') }}">
+                                    Terms &amp; Conditions
+                                </a>
+
+                            </nav>
+
+                        </div>
+
+
+                        {{-- =====================================================
+                            CTA
+                        ===================================================== --}}
+
+                        <div class="landing-footer-cta">
+
+                <span>
+                    INTERESTED IN THE HEIGHTS?
+                </span>
+
+                            <p>
+                                Get the latest prices, availability and project details.
+                            </p>
+
+                            <button
+                                type="button"
+                                data-lead-popup-open
+                                data-request-type="latest-prices">
+
+                                GET LATEST PRICES
+
+                                <span aria-hidden="true">
+                        →
+                    </span>
+
+                            </button>
+
+                        </div>
 
                     </div>
 
 
-                    {{-- RIGHT FORM --}}
-                    <div class="landing-enquiry-form-column">
+                    {{-- =====================================================
+                        DISCLAIMER
+                    ===================================================== --}}
 
-                        <div
-                            class="landing-enquiry-form-card"
-                            aria-label="Register Your Interest">
+                    <div class="landing-footer-disclaimer">
 
-                            @include('partials.lead-form', [
-                            'formId' => 'landing-footer-form',
-                            'heading' => 'Register Your Interest',
-                            'description' => 'Share your details and our property advisor will contact you with pricing, availability and project information.',
-                            'buttonText' => 'Submit Enquiry',
-                            'source' => 'the_heights_footer',
-                            'propertyId' => $property->id,
-                            'developerId' => $property->developer_id,
-                            'action' => route('landing.leads.store'),
-                            ])
+                        <strong>
+                            DISCLAIMER
+                        </strong>
 
+                        <p>
+                            Images, renderings, floor plans, layouts, dimensions,
+                            specifications, prices, payment plans and other project
+                            information displayed on this website are provided for
+                            general information and illustrative purposes only.
+                            Information may change without prior notice and should be
+                            independently verified before making a purchase decision.
+                            Avanor Capital is not the developer of this project.
+                        </p>
+
+                    </div>
+
+
+                    {{-- =====================================================
+                        BOTTOM
+                    ===================================================== --}}
+
+                    <div class="landing-footer-bottom">
+
+            <span>
+                © {{ date('Y') }} Avanor Capital. All Rights Reserved.
+            </span>
+
+                        <div>
+                            <a href="{{ route('landing.privacy-policy') }}">
+                                Privacy Policy
+                            </a>
+
+                            <a href="{{ route('landing.terms-and-conditions') }}">
+                                Terms &amp; Conditions
+                            </a>
                         </div>
 
                     </div>
 
                 </div>
 
+            </footer>
 
-            </div>
-
-
-        </footer>
-        <div class="landing-footer-bottom">
-
-            <div class="landing-footer-bottom-inner">
-
-                <p class="landing-footer-copyright">
-                    © {{ date('Y') }} Avanor Capital. All rights reserved.
-                </p>
-
-                <div class="landing-footer-legal-links">
-
-                    <a href="{{ route('landing.privacy-policy') }}">
-                        Privacy Policy
-                    </a>
-
-                    <a href="{{ route('landing.terms-and-conditions') }}">
-                        Terms & Conditions
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
     </main>
 
 @endsection
