@@ -9586,27 +9586,7 @@ font-size: 12px;
     }
 
 }
-.landing-about-v2-description ul {
-    margin: 18px 0 0;
-    padding-left: 22px;
-
+li {
     list-style: disc;
-}
-
-.landing-about-v2-description li {
-    margin-bottom: 8px;
-
-    color: #6d6d6d;
-
-    list-style: disc;
-}
-
-.landing-about-v2-description li::marker {
-    color: #ad8144;
-}
-
-.landing-about-v2-description li p {
-    display: inline;
-
-    margin: 0;
+    color: #b59450;
 }

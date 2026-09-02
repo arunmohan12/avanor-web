@@ -514,44 +514,44 @@ route('properties.show', $property->slug)
 
 
                         {{-- CTA --}}
-                        <div class="landing-about-v2-actions">
+{{--                        <div class="landing-about-v2-actions">--}}
 
-                            <button
-                                type="button"
-                                class="landing-about-v2-btn landing-about-v2-btn-primary"
-                                data-lead-popup-open
-                                data-request-type="register-interest">
+{{--                            <button--}}
+{{--                                type="button"--}}
+{{--                                class="landing-about-v2-btn landing-about-v2-btn-primary"--}}
+{{--                                data-lead-popup-open--}}
+{{--                                data-request-type="register-interest">--}}
 
-                                CHECK AVAILABLE UNITS
+{{--                                CHECK AVAILABLE UNITS--}}
 
-                                <span>→</span>
+{{--                                <span>→</span>--}}
 
-                            </button>
+{{--                            </button>--}}
 
 
-                            <button
-                                type="button"
-                                class="landing-about-v2-btn landing-about-v2-btn-outline"
-                                data-lead-popup-open
-                                data-request-type="brochure">
+{{--                            <button--}}
+{{--                                type="button"--}}
+{{--                                class="landing-about-v2-btn landing-about-v2-btn-outline"--}}
+{{--                                data-lead-popup-open--}}
+{{--                                data-request-type="brochure">--}}
 
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.6">
+{{--                                <svg--}}
+{{--                                    viewBox="0 0 24 24"--}}
+{{--                                    fill="none"--}}
+{{--                                    stroke="currentColor"--}}
+{{--                                    stroke-width="1.6">--}}
 
-                                    <path d="M12 3v12" />
-                                    <path d="m7 10 5 5 5-5" />
-                                    <path d="M5 20h14" />
+{{--                                    <path d="M12 3v12" />--}}
+{{--                                    <path d="m7 10 5 5 5-5" />--}}
+{{--                                    <path d="M5 20h14" />--}}
 
-                                </svg>
+{{--                                </svg>--}}
 
-                                REQUEST BROCHURE
+{{--                                REQUEST BROCHURE--}}
 
-                            </button>
+{{--                            </button>--}}
 
-                        </div>
+{{--                        </div>--}}
 
 
                         {{-- =====================================================
@@ -756,30 +756,30 @@ route('properties.show', $property->slug)
                             ])
 
 
-                            <div class="landing-about-v2-form-brochure">
+{{--                            <div class="landing-about-v2-form-brochure">--}}
 
-                                <button
-                                    type="button"
-                                    data-lead-popup-open
-                                    data-request-type="brochure">
+{{--                                <button--}}
+{{--                                    type="button"--}}
+{{--                                    data-lead-popup-open--}}
+{{--                                    data-request-type="brochure">--}}
 
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.6">
+{{--                                    <svg--}}
+{{--                                        viewBox="0 0 24 24"--}}
+{{--                                        fill="none"--}}
+{{--                                        stroke="currentColor"--}}
+{{--                                        stroke-width="1.6">--}}
 
-                                        <path d="M12 3v12" />
-                                        <path d="m7 10 5 5 5-5" />
-                                        <path d="M5 20h14" />
+{{--                                        <path d="M12 3v12" />--}}
+{{--                                        <path d="m7 10 5 5 5-5" />--}}
+{{--                                        <path d="M5 20h14" />--}}
 
-                                    </svg>
+{{--                                    </svg>--}}
 
-                                    REQUEST BROCHURE
+{{--                                    REQUEST BROCHURE--}}
 
-                                </button>
+{{--                                </button>--}}
 
-                            </div>
+{{--                            </div>--}}
 
                         </div>
 
