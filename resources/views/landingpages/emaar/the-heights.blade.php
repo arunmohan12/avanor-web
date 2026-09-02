@@ -1214,7 +1214,7 @@ route('properties.show', $property->slug)
                                 </h3>
 
                                 <p>
-                                    BUA: 5,884.30 Sq.ft | Plot: 5,500 S1.ft
+                                    BUA: 5,884.30 Sq.ft | Plot: 5,500 Sq.ft
 
                                 </p>
 
