@@ -1214,7 +1214,372 @@ route('properties.show', $property->slug)
 
         </section>
 
+            <section class="landing-payment-plan" id="payment-plan">
 
+                <div class="landing-gallery-container">
+
+                    <div class="landing-payment-heading">
+
+            <span class="landing-payment-eyebrow">
+                PAYMENT PLAN
+            </span>
+
+                        <span class="landing-payment-heading-line"></span>
+
+                        <h2>
+                            Flexible Payment Plan
+                        </h2>
+
+                        <p>
+                            A structured payment schedule designed to make your
+                            investment journey seamless.
+                        </p>
+
+                    </div>
+
+
+                    <div class="landing-payment-list">
+
+
+                        {{-- 01 --}}
+                        <div class="landing-payment-item">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="calendar" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    01
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    1st Installment
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-10"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                10.00%
+                            </strong>
+
+                        </div>
+
+
+                        {{-- 02 --}}
+                        <div class="landing-payment-item">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="calendar" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    02
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    2nd Installment
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-20"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                10.00%
+                            </strong>
+
+                        </div>
+
+
+                        {{-- 03 --}}
+                        <div class="landing-payment-item">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="calendar" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    03
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    3rd Installment
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-30"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                10.00%
+                            </strong>
+
+                        </div>
+
+
+                        {{-- 04 --}}
+                        <div class="landing-payment-item">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="calendar" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    04
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    4th Installment
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-40"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                10.00%
+                            </strong>
+
+                        </div>
+
+
+                        {{-- 05 --}}
+                        <div class="landing-payment-item">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="calendar" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    05
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    5th Installment
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-50"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                10.00%
+                            </strong>
+
+                        </div>
+
+
+                        {{-- 06 --}}
+                        <div class="landing-payment-item">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="construction" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    06
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    40% Construction
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-60"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                10.00%
+                            </strong>
+
+                        </div>
+
+
+                        {{-- 07 --}}
+                        <div class="landing-payment-item">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="construction" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    07
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    60% Construction
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-70"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                10.00%
+                            </strong>
+
+                        </div>
+
+
+                        {{-- 08 --}}
+                        <div class="landing-payment-item">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="construction" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    08
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    80% Construction
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-80"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                10.00%
+                            </strong>
+
+                        </div>
+
+
+                        {{-- 09 --}}
+                        <div class="landing-payment-item landing-payment-item-final">
+
+                            <span class="landing-payment-dot"></span>
+
+                            <div class="landing-payment-icon">
+                                <x-landing-icon name="home" />
+                            </div>
+
+                            <span class="landing-payment-number">
+                    09
+                </span>
+
+                            <div class="landing-payment-content">
+
+                                <strong>
+                                    100% Construction &amp; Handover
+                                </strong>
+
+                                <div class="landing-payment-progress">
+                                    <span class="payment-progress-100"></span>
+                                </div>
+
+                            </div>
+
+                            <strong class="landing-payment-percentage">
+                                20.00%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    {{-- SUMMARY --}}
+                    <div class="landing-payment-summary">
+
+            <span>
+                <strong>9</strong>
+                Structured Milestones
+            </span>
+
+                        <span>
+                <strong>80%</strong>
+                During Construction
+            </span>
+
+                        <span>
+                <strong>20%</strong>
+                On Handover
+            </span>
+
+                    </div>
+
+
+                    {{-- CTA --}}
+                    <div class="landing-payment-actions">
+
+                        <button
+                            type="button"
+                            class="landing-payment-btn landing-payment-btn-outline"
+                            data-lead-popup-open
+                            data-request-type="payment-plan">
+
+                            REQUEST PAYMENT PLAN
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="landing-payment-btn landing-payment-btn-primary"
+                            data-lead-popup-open
+                            data-request-type="register-interest">
+
+                            REGISTER YOUR INTEREST
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
             <section class="landing-amenities-v2" id="amenities">
 
                 <div class="landing-gallery-container">
@@ -1776,7 +2141,7 @@ route('properties.show', $property->slug)
         </section>
 
 
-        
+
         {{-- =====================================================
                 FAQ SECTION
             ===================================================== --}}
