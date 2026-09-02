@@ -838,9 +838,7 @@ route('properties.show', $property->slug)
                                                 <span class="landing-about-v2-line"></span>
                                                 <p>
                                                 <h3 class="fs-4" >
-                                                    Serro 2 brings a new rhythm to modern living — one shaped by wellness and effortless flow.
-                                                    Boundaries give way to open landscapes, daily routines turn into mindful walks, and outdoor
-                                                    spaces become sanctuaries of renewal. Here, life moves in harmony, balanced and beautifully connected.
+                                                    A visionary master community inspired by holistic luxury living, where nature, wellness and thoughtful design come together in perfect harmony at The Heights Country Club & Wellness.
                                                 </h3>
 
 
