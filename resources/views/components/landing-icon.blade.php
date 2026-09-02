@@ -519,4 +519,106 @@
 
         </svg>
         @break
+
+    @case('farm-cafe')
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M4 11h12v2a6 6 0 0 1-6 6 6 6 0 0 1-6-6v-2Z"/>
+            <path d="M16 12h2a2.5 2.5 0 0 1 0 5h-2"/>
+            <path d="M7 7c0-2 2-2 2-4"/>
+            <path d="M11 7c0-2 2-2 2-4"/>
+            <path d="M6 21h12"/>
+
+        </svg>
+        @break
+
+
+    @case('hospital')
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M4 21V6h16v15"/>
+            <path d="M9 6V3h6v3"/>
+            <path d="M12 9v7"/>
+            <path d="M8.5 12.5h7"/>
+            <path d="M8 21v-3h8v3"/>
+            <path d="M2 21h20"/>
+
+        </svg>
+        @break
+
+
+    @case('retail')
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M4 9h16l-1-5H5L4 9Z"/>
+            <path d="M5 9v11h14V9"/>
+            <path d="M9 20v-6h6v6"/>
+            <path d="M4 9c0 1.5 1 2.5 2.5 2.5S9 10.5 9 9"/>
+            <path d="M9 9c0 1.5 1 2.5 3 2.5S15 10.5 15 9"/>
+            <path d="M15 9c0 1.5 1 2.5 2.5 2.5S20 10.5 20 9"/>
+
+        </svg>
+        @break
+
+
+    @case('sports-court')
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <path d="M12 5v14"/>
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M3 9h3"/>
+            <path d="M3 15h3"/>
+            <path d="M18 9h3"/>
+            <path d="M18 15h3"/>
+
+        </svg>
+        @break
+
+
+    @case('garden')
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <path d="M12 21V10"/>
+            <path d="M12 13c-4 0-7-2.5-7-6 4 0 7 2.5 7 6Z"/>
+            <path d="M12 16c4 0 7-2.5 7-6-4 0-7 2.5-7 6Z"/>
+            <path d="M4 21h16"/>
+
+        </svg>
+        @break
 @endswitch

@@ -138,7 +138,7 @@ route('properties.show', $property->slug)
             <nav class="landing-nav">
 
 
-                <a href="#property-details">
+                <a href="#about">
                     Property Details
                 </a>
 
@@ -173,7 +173,7 @@ route('properties.show', $property->slug)
                 <a
                     href="#"
                     class="landing-header-btn " data-lead-popup-open>
-                    REGISTER YOUR INTEREST
+                    GET LATEST PRICES
                 </a>
                 <button
                     type="button"
@@ -200,11 +200,11 @@ route('properties.show', $property->slug)
 
                 <a href="#home">Home</a>
 
-                <a href="#property-details">
+                <a href="#about">
                     Property Details
                 </a>
 
-                <a href="#about">About</a>
+
 
 
 
@@ -223,7 +223,7 @@ route('properties.show', $property->slug)
                 <a
                     href="#"
                     class="landing-mobile-contact " data-lead-popup-open>
-                    Register Now
+                    GET LATEST PRICES
 
 
                 </a>
@@ -522,7 +522,7 @@ route('properties.show', $property->slug)
                                 data-lead-popup-open
                                 data-request-type="register-interest">
 
-                                REGISTER YOUR INTEREST
+                                CHECK AVAILABLE UNITS
 
                                 <span>→</span>
 
@@ -749,11 +749,6 @@ route('properties.show', $property->slug)
 
                         <div class="landing-about-v2-form-inner">
 
-                            <h3>
-                                REGISTER YOUR INTEREST
-                            </h3>
-
-                            <span class="landing-about-v2-form-line"></span>
 
 
                             @include('partials.lead-form', [
@@ -802,7 +797,7 @@ route('properties.show', $property->slug)
 
         <section >
 
-            <div class="landing-gallery-container" id="downloads">
+            <div class="landing-gallery-container" >
 
                 <div class="row gx-30">
 
@@ -1064,7 +1059,7 @@ route('properties.show', $property->slug)
 
                     @endif
 
-                        <div class="landing-plan-heading">
+                        <div class="landing-plan-heading" id="downloads">
 
                         <span class="landing-plan-eyebrow">
                             PLANS
@@ -1571,7 +1566,7 @@ route('properties.show', $property->slug)
                             data-lead-popup-open
                             data-request-type="register-interest">
 
-                            REGISTER YOUR INTEREST
+                            GET LATEST PRICES
 
                         </button>
 
@@ -1612,17 +1607,16 @@ route('properties.show', $property->slug)
                         <div class="landing-amenities-v2-card">
 
                             <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="kids-play" />
+                                <x-landing-icon name="beach" />
                             </div>
 
-                            <h3>
-                                Kids Play Area
-                            </h3>
+                            <h3>Beach Clubhouse</h3>
 
                             <span class="landing-amenities-v2-card-line"></span>
 
                             <p>
-                                Safe and engaging spaces for children to play and grow.
+                                An exclusive beachfront clubhouse designed for leisure,
+                                relaxation and social experiences.
                             </p>
 
                         </div>
@@ -1631,17 +1625,16 @@ route('properties.show', $property->slug)
                         <div class="landing-amenities-v2-card">
 
                             <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="pool" />
+                                <x-landing-icon name="farm-cafe" />
                             </div>
 
-                            <h3>
-                                Swimming Pool
-                            </h3>
+                            <h3>Farm-to-Table Café</h3>
 
                             <span class="landing-amenities-v2-card-line"></span>
 
                             <p>
-                                Resort-style pools for relaxation and leisure.
+                                Fresh dining experiences inspired by locally sourced
+                                ingredients and healthy living.
                             </p>
 
                         </div>
@@ -1650,17 +1643,16 @@ route('properties.show', $property->slug)
                         <div class="landing-amenities-v2-card">
 
                             <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="dumbbell" />
+                                <x-landing-icon name="hospital" />
                             </div>
 
-                            <h3>
-                                Gymnasium
-                            </h3>
+                            <h3>Healthcare Facilities</h3>
 
                             <span class="landing-amenities-v2-card-line"></span>
 
                             <p>
-                                Modern fitness facilities for an active lifestyle.
+                                Convenient access to healthcare facilities within
+                                the community.
                             </p>
 
                         </div>
@@ -1669,17 +1661,52 @@ route('properties.show', $property->slug)
                         <div class="landing-amenities-v2-card">
 
                             <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="dining" />
+                                <x-landing-icon name="retail" />
                             </div>
 
-                            <h3>
-                                Dining Outlets
-                            </h3>
+                            <h3>Retail Outlets</h3>
 
                             <span class="landing-amenities-v2-card-line"></span>
 
                             <p>
-                                A variety of dining experiences right at your doorstep.
+                                Everyday shopping and lifestyle conveniences
+                                located close to home.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="sports-court" />
+                            </div>
+
+                            <h3>Sports Courts</h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                Dedicated courts for recreational activities,
+                                fitness and active community living.
+                            </p>
+
+                        </div>
+
+
+                        <div class="landing-amenities-v2-card">
+
+                            <div class="landing-amenities-v2-icon">
+                                <x-landing-icon name="garden" />
+                            </div>
+
+                            <h3>Landscaped Gardens</h3>
+
+                            <span class="landing-amenities-v2-card-line"></span>
+
+                            <p>
+                                Beautifully landscaped green spaces for relaxation,
+                                walking and outdoor moments.
                             </p>
 
                         </div>
@@ -1691,14 +1718,13 @@ route('properties.show', $property->slug)
                                 <x-landing-icon name="cycling" />
                             </div>
 
-                            <h3>
-                                Cycling Track
-                            </h3>
+                            <h3>Cycling Tracks</h3>
 
                             <span class="landing-amenities-v2-card-line"></span>
 
                             <p>
-                                Scenic tracks designed for cycling and healthy living.
+                                Dedicated cycling routes designed for an active
+                                and healthy lifestyle.
                             </p>
 
                         </div>
@@ -1707,55 +1733,16 @@ route('properties.show', $property->slug)
                         <div class="landing-amenities-v2-card">
 
                             <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="jogging" />
+                                <x-landing-icon name="water" />
                             </div>
 
-                            <h3>
-                                Jogging Trails
-                            </h3>
+                            <h3>Lakes &amp; Water Features</h3>
 
                             <span class="landing-amenities-v2-card-line"></span>
 
                             <p>
-                                Landscaped trails to refresh your body and mind.
-                            </p>
-
-                        </div>
-
-
-                        <div class="landing-amenities-v2-card">
-
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="park" />
-                            </div>
-
-                            <h3>
-                                Landscaped Parks
-                            </h3>
-
-                            <span class="landing-amenities-v2-card-line"></span>
-
-                            <p>
-                                Lush green spaces to unwind and reconnect with nature.
-                            </p>
-
-                        </div>
-
-
-                        <div class="landing-amenities-v2-card">
-
-                            <div class="landing-amenities-v2-icon">
-                                <x-landing-icon name="shield" />
-                            </div>
-
-                            <h3>
-                                24/7 Security
-                            </h3>
-
-                            <span class="landing-amenities-v2-card-line"></span>
-
-                            <p>
-                                A secure residential environment designed for peace of mind.
+                                Scenic lakes and water features creating a calm
+                                and refreshing community environment.
                             </p>
 
                         </div>
@@ -2312,7 +2299,7 @@ route('properties.show', $property->slug)
 
                 @include('partials.lead-form', [
                 'formId' => 'landing-popup-form',
-                'heading' => 'Register Your Interest',
+                'heading' => 'GET PROJECT DETAILS',
                 'description' => 'Share your details and our property advisor will contact you with pricing, availability and project information.',
                 'buttonText' => 'Submit Enquiry',
                 'source' => 'the_heights_popup',

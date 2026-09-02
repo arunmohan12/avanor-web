@@ -6077,14 +6077,15 @@ body.landing-gallery-lightbox-open {
         padding: 70px 0;
     }
 
-    .landing-project-gallery-grid {
-        width: calc(100% - 32px);
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
 }
-
+@media (max-width: 767px) {
+    .landing-project-gallery-grid {
+        width: calc(100% - 32px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
 
 /* =====================================================
    MOBILE
@@ -6101,11 +6102,9 @@ body.landing-gallery-lightbox-open {
     }
 
     .landing-project-gallery-grid {
-        width: calc(100% - 24px);
-
-        grid-template-columns: 1fr;
-
-        gap: 5px;
+        width: calc(100% - 0px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
     }
 
     .landing-project-gallery-item {

@@ -269,7 +269,7 @@ setTimeout(() => {
         popupTrigger.click();
     }
 
-}, 5000);
+}, 10000);
 
 
 
