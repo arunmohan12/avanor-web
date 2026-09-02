@@ -8365,3 +8365,11 @@ font-size: 12px;
     font-family: var(--font-optima);
     width: 700px;
 }
+@media (width <= 767px) {
+    .area-hardcoded {
+        font-size: 20px;
+    }
+    .fs-4{
+        font-size: 12px;
+    }
+}
