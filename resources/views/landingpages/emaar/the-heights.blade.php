@@ -153,7 +153,7 @@ route('properties.show', $property->slug)
                 <a href="#location">
                     Location
                 </a>
-                <a href="#contact">contact</a>
+                <a href="#" data-lead-popup-open >contact</a>
             </nav>
             <div class="landing-header-actions">
 
@@ -218,7 +218,7 @@ route('properties.show', $property->slug)
                     Gallery
                 </a>
 
-                <a href="#contact">contact</a>
+                <a href="#" data-lead-popup-open >contact</a>
 
                 <a
                     href="#"
@@ -2051,7 +2051,7 @@ route('properties.show', $property->slug)
                     FAQ SECTION
                 ===================================================== --}}
 
-            <section class="landing-faq-section landing-about-v2" id="faq">
+            <section class="landing-faq-section landing-about-v2" id="location">
 
                 <div class="landing-gallery-container">
 
