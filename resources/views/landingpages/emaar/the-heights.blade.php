@@ -2288,7 +2288,6 @@ route('properties.show', $property->slug)
                 @include('partials.lead-form', [
                 'formId' => 'landing-popup-form',
                 'heading' => 'GET PROJECT DETAILS',
-                'description' => 'Share your details and our property advisor will contact you with pricing, availability and project information.',
                 'buttonText' => 'Submit Enquiry',
                 'source' => 'the_heights_popup',
                 'propertyId' => $property->id,

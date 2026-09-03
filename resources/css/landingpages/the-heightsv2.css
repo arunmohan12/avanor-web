@@ -3829,6 +3829,7 @@ body.landing-popup-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    z-index: 999;
 }
 
 .landing-lead-popup-backdrop {
@@ -9958,3 +9959,15 @@ font-family: var(--font-optima);
     }
 
 }
+
+.iti__search-input {
+    width: 100%;
+    min-height: 46px;
+
+    padding: 10px 14px 10px 42px !important;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+}
+

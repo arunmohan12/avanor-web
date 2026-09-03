@@ -7,7 +7,7 @@
     $heading = $heading ?? 'Get Property Details';
 
     $description = $description
-        ?? 'Share your details and our advisor will contact you with availability, pricing and payment plan information.';
+        ?? '';
 
     $buttonText = $buttonText ?? 'Request Details';
 
