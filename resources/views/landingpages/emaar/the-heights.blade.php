@@ -2288,7 +2288,7 @@ route('properties.show', $property->slug)
                 @include('partials.lead-form', [
                 'formId' => 'landing-popup-form',
                 'heading' => 'GET PROJECT DETAILS',
-                'buttonText' => 'Submit Enquiry',
+                'buttonText' => 'DOWNLOAD PDF',
                 'source' => 'the_heights_popup',
                 'propertyId' => $property->id,
                 'developerId' => $property->developer_id,
