@@ -512,227 +512,236 @@ route('properties.show', $property->slug)
 
                         </div>
 
-
-                        {{-- CTA --}}
-{{--                        <div class="landing-about-v2-actions">--}}
-
-{{--                            <button--}}
-{{--                                type="button"--}}
-{{--                                class="landing-about-v2-btn landing-about-v2-btn-primary"--}}
-{{--                                data-lead-popup-open--}}
-{{--                                data-request-type="register-interest">--}}
-
-{{--                                CHECK AVAILABLE UNITS--}}
-
-{{--                                <span>→</span>--}}
-
-{{--                            </button>--}}
-
-
-{{--                            <button--}}
-{{--                                type="button"--}}
-{{--                                class="landing-about-v2-btn landing-about-v2-btn-outline"--}}
-{{--                                data-lead-popup-open--}}
-{{--                                data-request-type="brochure">--}}
-
-{{--                                <svg--}}
-{{--                                    viewBox="0 0 24 24"--}}
-{{--                                    fill="none"--}}
-{{--                                    stroke="currentColor"--}}
-{{--                                    stroke-width="1.6">--}}
-
-{{--                                    <path d="M12 3v12" />--}}
-{{--                                    <path d="m7 10 5 5 5-5" />--}}
-{{--                                    <path d="M5 20h14" />--}}
-
-{{--                                </svg>--}}
-
-{{--                                REQUEST BROCHURE--}}
-
-{{--                            </button>--}}
-
-{{--                        </div>--}}
-
-
                         {{-- =====================================================
-                                        CONNECTIVITY
-                                    ===================================================== --}}
+         PRIME CONNECTIVITY / PROJECT HIGHLIGHTS
+     ===================================================== --}}
 
-                        <div class="landing-about-v2-connectivity">
+                        <div class="landing-reach">
 
-                        <span class="landing-about-v2-section-label">
-                            PRIME CONNECTIVITY
-                        </span>
+                            {{-- Heading --}}
+                            <div class="landing-reach__heading">
 
-                            <h3>
-                                Everything within reach
-                            </h3>
+        <span class="landing-reach__eyebrow">
+            WHY THE HEIGHTS
+        </span>
+
+                                <h3 class="landing-reach__title">
+                                    A Community Designed Around You
+                                </h3>
+
+                            </div>
 
 
-                            <div class="landing-about-v2-connectivity-grid">
+                            {{-- =====================================================
+                                6 PROJECT HIGHLIGHTS
+                            ===================================================== --}}
 
-                                {{-- Expo City Dubai --}}
-                                <div class="landing-about-v2-location">
+                            <div class="landing-reach__features">
 
-                                    <strong class="landing-about-v2-time-number">
-                                        10
-                                    </strong>
 
-                                    <div class="landing-about-v2-location-name">
+                                {{-- 1 --}}
+                                <div class="landing-reach__feature">
+
+                                    <div class="landing-reach__feature-icon">
+                                        <x-landing-icon name="masterplan" />
+                                    </div>
+
+                                    <h4>
+                                        AED 55 Billion Masterplan
+                                    </h4>
+
+                                    <p>
+                                        A landmark 81 million sq. ft. Emaar community shaped
+                                        around wellness, nature and refined living.
+                                    </p>
+
+                                </div>
+
+
+                                {{-- 2 --}}
+                                <div class="landing-reach__feature">
+
+                                    <div class="landing-reach__feature-icon">
+                                        <x-landing-icon name="beach" />
+                                    </div>
+
+                                    <h4>
+                                        Private Beach &amp; Country Club Lifestyle
+                                    </h4>
+
+                                    <p>
+                                        Exclusive wellness, leisure, fitness and social
+                                        amenities within the community.
+                                    </p>
+
+                                </div>
+
+
+                                {{-- 3 --}}
+                                <div class="landing-reach__feature">
+
+                                    <div class="landing-reach__feature-icon">
+                                        <x-landing-icon name="home" />
+                                    </div>
+
+                                    <h4>
+                                        3, 4, &amp; 5 Bedroom Luxury Villas
+                                    </h4>
+
+                                    <p>
+                                        Large plot sizes and contemporary independent villas
+                                        designed for premium family living.
+                                    </p>
+
+                                </div>
+
+
+                                {{-- 4 --}}
+                                <div class="landing-reach__feature">
+
+                                    <div class="landing-reach__feature-icon">
+                                        <x-landing-icon name="garden" />
+                                    </div>
+
+                                    <h4>
+                                        Nature-First Community
+                                    </h4>
+
+                                    <p>
+                                        14 million sq. ft. of open space featuring extensive
+                                        parks, a beachside clubhouse, landscaped greenways,
+                                        lakes, cycling and jogging tracks.
+                                    </p>
+
+                                </div>
+
+
+                                {{-- 5 --}}
+                                <div class="landing-reach__feature">
+
+                                    <div class="landing-reach__feature-icon">
                                         <x-landing-icon name="location" />
+                                    </div>
+
+                                    <h4>
+                                        Prime Dubai Location
+                                    </h4>
+
+                                    <p>
+                                        Direct access to Al Maktoum International Airport,
+                                        Expo City and key destinations across Dubai.
+                                    </p>
+
+                                </div>
+
+
+                                {{-- 6 --}}
+                                <div class="landing-reach__feature">
+
+                                    <div class="landing-reach__feature-icon">
+                                        <x-landing-icon name="diamond" />
+                                    </div>
+
+                                    <h4>
+                                        Attractive Price per Sq. Ft.
+                                    </h4>
+
+                                    <p>
+                                        A highly attractive entry point into a premium
+                                        Emaar villa community.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            {{-- =====================================================
+                                LOCATION BOXES
+                            ===================================================== --}}
+
+                            <div class="landing-reach__locations">
+
+
+                                {{-- Expo --}}
+                                <div class="landing-reach__location">
+
+                                    <div class="landing-reach__location-time">
+                                        <strong>10</strong>
+                                        <span>MINS</span>
+                                    </div>
+
+                                    <div class="landing-reach__location-place">
+
 
                                         <strong>
                                             Expo City Dubai
                                         </strong>
+
                                     </div>
-
-                                    <span class="landing-about-v2-time-label">
-                                    MINS
-                                </span>
-
-                                    <p class="landing-about-v2-location-description">
-                                        A global hub for innovation, events and culture.
-                                    </p>
 
                                 </div>
 
 
-                                {{-- Al Maktoum International Airport --}}
-                                <div class="landing-about-v2-location">
+                                {{-- Airport --}}
+                                <div class="landing-reach__location">
 
-                                    <strong class="landing-about-v2-time-number">
-                                        10
-                                    </strong>
+                                    <div class="landing-reach__location-time">
+                                        <strong>10</strong>
+                                        <span>MINS</span>
+                                    </div>
 
-                                    <div class="landing-about-v2-location-name">
-                                        <x-landing-icon name="location" />
+                                    <div class="landing-reach__location-place">
+
 
                                         <strong>
                                             Al Maktoum Int’l Airport
                                         </strong>
+
                                     </div>
-
-                                    <span class="landing-about-v2-time-label">
-                                    MINS
-                                </span>
-
-                                    <p class="landing-about-v2-location-description">
-                                        Future-ready airport just minutes away.
-                                    </p>
 
                                 </div>
 
 
-                                {{-- Dubai Hills Estate --}}
-                                <div class="landing-about-v2-location">
+                                {{-- Dubai Hills --}}
+                                <div class="landing-reach__location">
 
-                                    <strong class="landing-about-v2-time-number">
-                                        20
-                                    </strong>
+                                    <div class="landing-reach__location-time">
+                                        <strong>20</strong>
+                                        <span>MINS</span>
+                                    </div>
 
-                                    <div class="landing-about-v2-location-name">
-                                        <x-landing-icon name="location" />
+                                    <div class="landing-reach__location-place">
+
+
 
                                         <strong>
                                             Dubai Hills Estate
                                         </strong>
+
                                     </div>
-
-                                    <span class="landing-about-v2-time-label">
-                                    MINS
-                                </span>
-
-                                    <p class="landing-about-v2-location-description">
-                                        Premium master community with world-class amenities.
-                                    </p>
 
                                 </div>
 
 
-                                {{-- Downtown Dubai --}}
-                                <div class="landing-about-v2-location">
+                                {{-- Downtown --}}
+                                <div class="landing-reach__location">
 
-                                    <strong class="landing-about-v2-time-number">
-                                        30
-                                    </strong>
+                                    <div class="landing-reach__location-time">
+                                        <strong>30</strong>
+                                        <span>MINS</span>
+                                    </div>
 
-                                    <div class="landing-about-v2-location-name">
-                                        <x-landing-icon name="location" />
+                                    <div class="landing-reach__location-place">
+
 
                                         <strong>
                                             Downtown Dubai
                                         </strong>
+
                                     </div>
 
-                                    <span class="landing-about-v2-time-label">
-                                    MINS
-                                </span>
-
-                                    <p class="landing-about-v2-location-description">
-                                        Iconic destination with unmatched experiences.
-                                    </p>
-
                                 </div>
-
-                            </div>
-
-                        </div>
-
-
-                        {{-- =====================================================
-                                        ENGAGEMENT INFORMATION
-                                    ===================================================== --}}
-
-                        <div class="landing-about-v2-highlights">
-
-                            <div class="landing-about-v2-highlight">
-
-                                <strong>
-                                    81M+ SQ. FT.
-                                </strong>
-
-                                <span>
-                                Expansive gated community
-                            </span>
-
-                            </div>
-
-
-                            <div class="landing-about-v2-highlight">
-
-                                <strong>
-                                    COUNTRY CLUB LIFESTYLE
-                                </strong>
-
-                                <span>
-                                Premium leisure &amp; recreation
-                            </span>
-
-                            </div>
-
-
-                            <div class="landing-about-v2-highlight">
-
-                                <strong>
-                                    WELLNESS FIRST
-                                </strong>
-
-                                <span>
-                                Wellness-focused living
-                            </span>
-
-                            </div>
-
-
-                            <div class="landing-about-v2-highlight">
-
-                                <strong>
-                                    EMAAR QUALITY
-                                </strong>
-
-                                <span>
-                                Trusted developer excellence
-                            </span>
 
                             </div>
 
@@ -756,30 +765,6 @@ route('properties.show', $property->slug)
                             ])
 
 
-{{--                            <div class="landing-about-v2-form-brochure">--}}
-
-{{--                                <button--}}
-{{--                                    type="button"--}}
-{{--                                    data-lead-popup-open--}}
-{{--                                    data-request-type="brochure">--}}
-
-{{--                                    <svg--}}
-{{--                                        viewBox="0 0 24 24"--}}
-{{--                                        fill="none"--}}
-{{--                                        stroke="currentColor"--}}
-{{--                                        stroke-width="1.6">--}}
-
-{{--                                        <path d="M12 3v12" />--}}
-{{--                                        <path d="m7 10 5 5 5-5" />--}}
-{{--                                        <path d="M5 20h14" />--}}
-
-{{--                                    </svg>--}}
-
-{{--                                    REQUEST BROCHURE--}}
-
-{{--                                </button>--}}
-
-{{--                            </div>--}}
 
                         </div>
 
@@ -795,9 +780,28 @@ route('properties.show', $property->slug)
 
 
 
-        <section>
+        <section class="landing-about-v2">
 
             <div class="landing-gallery-container">
+
+                <div class="landing-plan-heading " >
+
+                                                             <span class=" landing-about-v2-eyebrow">
+                                                                   THE COLLECTION
+                                                                         </span>
+
+                    <h2 class="area-hardcoded landing-about-v2-title">
+                        Discover Three Elegant Villa Clusters
+                    </h2>
+                    <span class="landing-about-v2-line"></span>
+                    <p class="landing-about-v2-description">
+
+                    <h3 class="fs-4" >
+                        A visionary master community inspired by holistic luxury living, where nature, wellness and thoughtful design come together in perfect harmony at The Heights Country Club & Wellness.
+                    </h3>
+
+
+                </div>
 
                 <div class="row gx-30">
 
@@ -812,40 +816,13 @@ route('properties.show', $property->slug)
 
                         <div class="col-xxl-12">
 
-                            <div class="overflow-hidden space" id="about-sec">
+                            <div class="overflow-hidden" id="about-sec">
 
-                                <div class="containe custom-containerr">
+
 
                                     <div class="about-page-wrap">
 
-                                        <div
-                                            class="row gy-40 property-detail-row justify-content-between align-items-center">
-
-                                            {{-- =====================================
-                                                         DYNAMIC CONTENT SECTIONS
-                                                            ===================================== --}}
-
-
-                                            <div class="landing-plan-heading top-space-30-minus" >
-
-                    <span class="landing-plan-eyebrow">
-                        THE COLLECTION
-                    </span>
-
-                                                <h2 class="area-hardcoded ">
-                                                    Discover Three Elegant Villa Clusters
-                                                </h2>
-                                                <span class="landing-about-v2-line"></span>
-                                                <p>
-                                                <h3 class="fs-4" >
-                                                    A visionary master community inspired by holistic luxury living, where nature, wellness and thoughtful design come together in perfect harmony at The Heights Country Club & Wellness.
-                                                </h3>
-
-
-                                            </div>
-
-
-
+                                        <div class="row gy-40 property-detail-row justify-content-between align-items-center landing-collection-desktop">
 
                                             @foreach ($activeSections as $section)
 
@@ -853,11 +830,11 @@ route('properties.show', $property->slug)
                                                     $sectionImage = $section->getFirstMedia('section_image');
 
                                                     $sectionImageUrl = $sectionImage
-                                                    ? \App\Support\MediaUrl::fromMedia(
-                                                    $sectionImage,
-                                                    'section_image_avif'
-                                                    )
-                                                    : null;
+                                                        ? \App\Support\MediaUrl::fromMedia(
+                                                            $sectionImage,
+                                                            'section_image_avif'
+                                                        )
+                                                        : null;
                                                 @endphp
 
 
@@ -874,7 +851,7 @@ route('properties.show', $property->slug)
 
                                                                     <img
                                                                         src="{{ $sectionImageUrl }}"
-                                                                        alt=" {{ $property->project?->name ?? $property->title }}"
+                                                                        alt="{{ $property->project?->name ?? $property->title }}"
                                                                         loading="lazy"
                                                                         decoding="async">
 
@@ -892,16 +869,14 @@ route('properties.show', $property->slug)
                                                         <div class="{{ $sectionImageUrl ? 'col-lg-6' : 'col-lg-12' }}">
 
                                                             <div class="title-area mb-0">
-                                                                <h4>
-                                                                    @if (filled($section->title))
-                                                                </h4>
-                                                                <div>
 
-                                                    <span class="sub-title-dark">
-                                                        {{ $section->title }}
-                                                    </span>
+                                                                @if (filled($section->title))
 
-                                                                </div>
+                                                                    <div>
+                                <span class="sub-title-dark">
+                                    {{ $section->title }}
+                                </span>
+                                                                    </div>
 
                                                                 @endif
 
@@ -915,22 +890,25 @@ route('properties.show', $property->slug)
                                                                 @endif
 
                                                             </div>
-                                                            <div class="landing-section-cta cta-browse-project">
 
+
+                                                            <div class="landing-section-cta cta-browse-project">
 
                                                                 <button
                                                                     type="button"
                                                                     class="landing-plan-button"
                                                                     data-lead-popup-open
                                                                     data-request-type="location-details">
+
                                                                     GET EARLY ACCESS
+
                                                                 </button>
 
                                                             </div>
+
                                                         </div>
 
                                                     @endif
-
 
 
                                                     {{-- TEXT LEFT / IMAGE RIGHT --}}
@@ -941,17 +919,14 @@ route('properties.show', $property->slug)
                                                         <div class="{{ $sectionImageUrl ? 'col-lg-6' : 'col-lg-12' }}">
 
                                                             <div class="title-area mb-0">
-                                                                <h4>
 
-                                                                    @if (filled($section->title))
-                                                                </h4>
-                                                                <div>
+                                                                @if (filled($section->title))
 
-                                                    <span class="sub-title-dark">
-                                                        {{ $section->title }}
-                                                    </span>
-
-                                                                </div>
+                                                                    <div>
+                                <span class="sub-title-dark">
+                                    {{ $section->title }}
+                                </span>
+                                                                    </div>
 
                                                                 @endif
 
@@ -965,15 +940,18 @@ route('properties.show', $property->slug)
                                                                 @endif
 
                                                             </div>
-                                                            <div class="landing-section-cta cta-browse-project">
 
+
+                                                            <div class="landing-section-cta cta-browse-project">
 
                                                                 <button
                                                                     type="button"
                                                                     class="landing-plan-button"
                                                                     data-lead-popup-open
                                                                     data-request-type="location-details">
+
                                                                     GET EARLY ACCESS
+
                                                                 </button>
 
                                                             </div>
@@ -993,7 +971,7 @@ route('properties.show', $property->slug)
 
                                                                     <img
                                                                         src="{{ $sectionImageUrl }}"
-                                                                        alt=" {{ $property->project?->name ?? $property->title }}"
+                                                                        alt="{{ $property->project?->name ?? $property->title }}"
                                                                         loading="lazy"
                                                                         decoding="async">
 
@@ -1004,7 +982,6 @@ route('properties.show', $property->slug)
                                                         </div>
 
                                                     @endif
-
 
 
                                                     {{-- FULL WIDTH --}}
@@ -1019,9 +996,9 @@ route('properties.show', $property->slug)
                                                                 @if (filled($section->title))
 
                                                                     <div>
-                                                <span class="sub-title-dark project-about-heading">
-                                                    {{ $section->title }}
-                                                </span>
+                                <span class="sub-title-dark project-about-heading">
+                                    {{ $section->title }}
+                                </span>
                                                                     </div>
 
                                                                 @endif
@@ -1045,41 +1022,95 @@ route('properties.show', $property->slug)
 
                                             @endforeach
 
+                                        </div>
 
 
 
-                                            {{-- =====================================
-                                                                ABOUT PROJECT
-                                                            ===================================== --}}
-                                            @if ($hasProjectDescription)
+                                        <div class="landing-collection-mobile">
 
-                                                <div class="col-lg-12">
+                                            @foreach ($activeSections as $section)
 
-                                                    <div class="title-area mb-0">
+                                                @php
+                                                    $sectionImage = $section->getFirstMedia('section_image');
 
-                                                        <div>
+                                                    $sectionImageUrl = $sectionImage
+                                                        ? \App\Support\MediaUrl::fromMedia(
+                                                            $sectionImage,
+                                                            'section_image_avif'
+                                                        )
+                                                        : null;
+                                                @endphp
 
-                                                <span class="sub-title-dark project-about-heading">
-                                                    ABOUT PROJECT
-                                                </span>
+                                                <div class="landing-mobile-collection-item">
+
+                                                    {{-- IMAGE --}}
+                                                    @if ($sectionImageUrl)
+
+                                                        <div class="landing-mobile-collection-image">
+
+                                                            <img
+                                                                src="{{ $sectionImageUrl }}"
+                                                                alt="{{ $property->project?->name ?? $property->title }}"
+                                                                loading="lazy"
+                                                                decoding="async">
 
                                                         </div>
 
-                                                        <div class="text-theme">
-                                                            {!! $property->project->description !!}
+                                                    @endif
+
+
+                                                    {{-- HEADING --}}
+                                                    @if (filled($section->title))
+
+                                                        <div class="landing-mobile-collection-heading">
+
+                    <span class="sub-title-dark">
+                        {{ $section->title }}
+                    </span>
+
                                                         </div>
 
-                                                    </div>
+                                                    @endif
+
+
+                                                    {{-- CONTENT --}}
+                                                    @if (filled($section->content))
+
+                                                        <div class="landing-mobile-collection-content">
+                                                            {!! $section->content !!}
+                                                        </div>
+
+                                                    @endif
+
+
+                                                    {{-- BUTTON --}}
+                                                    @if ($section->layout !== 'full_width')
+
+                                                        <div class="landing-mobile-collection-cta">
+
+                                                            <button
+                                                                type="button"
+                                                                class="landing-plan-button"
+                                                                data-lead-popup-open
+                                                                data-request-type="location-details">
+
+                                                                GET EARLY ACCESS
+
+                                                            </button>
+
+                                                        </div>
+
+                                                    @endif
 
                                                 </div>
 
-                                            @endif
+                                            @endforeach
 
                                         </div>
 
                                     </div>
 
-                                </div>
+
 
                             </div>
 
@@ -1087,17 +1118,28 @@ route('properties.show', $property->slug)
 
                     @endif
 
-                    <div class="landing-plan-heading" id="downloads">
+                </div>
 
-                    <span class="landing-plan-eyebrow">
+            </div>
+
+        </section>
+
+
+            <section class="landing-payment-plan landing-about-v2" id="downloads" >
+
+                <div class="landing-gallery-container">
+
+                    <div class="landing-plan-heading" >
+
+                    <span class="landing-reach__eyebrow">
                         PLANS
                     </span>
 
-                        <h2>
+                        <h2 class="landing-about-v2-title">
                             FLOOR PLANS
                         </h2>
                         <span class="landing-about-v2-line"></span>
-                        <p>
+                        <p class="landing-about-v2-description mb-lg">
                             Request detailed project layouts and unit plans for
                             {{ $property->title }}.
                         </p>
@@ -1225,35 +1267,27 @@ route('properties.show', $property->slug)
                         </article>
                     </div>
 
-
-
-
-
-
-
                 </div>
+            </section>
 
-            </div>
-
-        </section>
-
-        <section class="landing-payment-plan" id="payment-plan">
+        <section class="landing-payment-plan landing-about-v2" id="payment-plan">
 
             <div class="landing-gallery-container">
 
                 <div class="landing-payment-heading">
 
-                <span class="landing-payment-eyebrow">
+                <span class=" landing-about-v2-eyebrow">
                     PAYMENT PLAN
                 </span>
 
-                    <span class="landing-payment-heading-line"></span>
 
-                    <h2>
+
+                    <h2 class=" landing-about-v2-title">
                         Flexible Payment Plan
                     </h2>
+                    <span class="landing-about-v2-line"></span>
 
-                    <p>
+                    <p class="landing-about-v2-description mb-lg">
                         Seamless payment plan for a smooth investment journey.
                     </p>
 
@@ -1594,26 +1628,26 @@ route('properties.show', $property->slug)
             </div>
 
         </section>
-        <section class="landing-amenities-v2" id="amenities">
+        <section class="landing-amenities-v2 landing-about-v2" id="amenities">
 
             <div class="landing-gallery-container">
 
                 {{-- Heading --}}
                 <div class="landing-amenities-v2-heading">
 
-                <span class="landing-amenities-v2-eyebrow">
+                <span class="  landing-about-v2-eyebrow">
                     AMENITIES
                 </span>
 
-                    <span class="landing-amenities-v2-line"></span>
 
-                    <h2>
+
+                    <h2 class=" landing-about-v2-title">
                         Designed for a life of well-being
                     </h2>
+                    <span class="landing-about-v2-line"></span>
 
-                    <p>
-                        From active lifestyles to family moments, every amenity is
-                        thoughtfully curated for your comfort and convenience.
+                    <p class="landing-about-v2-description mb-lg">
+                        From active living to family time, every amenity enhances comfort and convenience.
                     </p>
 
                 </div>
@@ -1846,7 +1880,7 @@ route('properties.show', $property->slug)
 
         </section>
 
-        <section class="landing-gallery-section " id="gallery">
+        <section class="landing-gallery-section landing-about-v2" id="gallery">
 
             <div class="landing-gallery-container">
 
@@ -1862,8 +1896,8 @@ route('properties.show', $property->slug)
                         COMMUNITY RENDERS
                     </span>
 
-                            <h2>
-                                Project <em>Gallery</em>
+                            <h2 class="landing-about-v2-title">
+                                Project Gallery
                             </h2>
 
                             <span class="landing-project-gallery-line"></span>
@@ -1992,157 +2026,22 @@ route('properties.show', $property->slug)
                 @endif
 
 
-                <div class="landing-section-ct ">
+                    <div class="landing-payment-actions">
+
+                        <button
+                            type="button"
+                            class="landing-payment-btn landing-payment-btn-outline"
+                            data-lead-popup-open
+                            data-request-type="payment-plan">
+
+                            DOWNLOAD GALLERY
+
+                        </button>
 
 
-                    <button
-                        type="button"
-                        class="landing-plan-button"
-                        data-lead-popup-open
-                        data-request-type="gallery">
-                        DOWNLOAD GALLERY
-                    </button>
-
-                </div>
-
-
-                {{-- =====================================
-                                                    AMENITIES
-                                                ===================================== --}}
-                {{-- @if ($amenities->isNotEmpty())--}}
-
-                {{-- <div class="col-lg-12">--}}
-
-                {{-- <div class="title-area mb-0">--}}
-
-                {{-- <div>--}}
-
-                {{-- <span class="sub-title-dark project-about-heading">--}}
-                {{-- Amenities--}}
-                {{-- </span>--}}
-
-                {{-- </div>--}}
-
-
-                {{-- <div class="row gy-3">--}}
-
-                {{-- @foreach ($amenities as $amenity)--}}
-
-                {{-- @php--}}
-                {{-- $amenityIcon = match ($amenity->icon) {--}}
-                {{-- 'fa-solid fa-child' => 'child',--}}
-                {{-- 'fa-solid fa-person-swimming' => 'swimming',--}}
-                {{-- 'fa-solid fa-dumbbell' => 'dumbbell',--}}
-                {{-- 'fa-solid fa-utensils' => 'utensils',--}}
-                {{-- default => 'check',--}}
-                {{-- };--}}
-                {{-- @endphp--}}
-
-                {{-- <div class="col-xxl-3 col-sm-6">--}}
-
-                {{-- <div class="checklist">--}}
-
-                {{-- <ul>--}}
-                {{-- <li>--}}
-                {{-- <x-landing-icon :name="$amenityIcon" />--}}
-                {{-- {{ $amenity->name }}--}}
-                {{-- </li>--}}
-                {{-- </ul>--}}
-
-                {{-- </div>--}}
-
-                {{-- </div>--}}
-
-                {{-- @endforeach--}}
-
-                {{-- </div>--}}
-
-                {{-- </div>--}}
-
-                {{-- </div>--}}
-
-                {{-- @endif--}}
-
-
-
-                {{-- =====================================
-                                                    LOCATION
-                                                ===================================== --}}
-                @if (filled($property->map_url))
-
-                    <div class="col-lg-12 minus-text-area" id="location">
-
-                        <section class="landing-location-section">
-
-                            <div class="landing-location-grid">
-
-                                {{-- LEFT SIDE --}}
-                                <div class="landing-location-content">
-
-                            <span class="sub-title-dark project-about-heading">
-                                LOCATION
-                            </span>
-
-                                    <h2 class="landing-location-title">
-                                        Dubai South, UAE
-
-                                    </h2>
-
-
-                                    <p class="landing-location-description">
-                                        Ideally positioned in Dubai South with convenient access
-                                        to major destinations, business districts and lifestyle
-                                        landmarks across Dubai.
-                                    </p>
-
-
-
-
-                                </div>
-
-
-                                {{-- RIGHT SIDE --}}
-                                <div class="landing-location-map-column">
-
-                                    <div class="location-map">
-
-                                        <div class="contact-map">
-
-                                            <iframe
-                                                src="{{ $property->map_url }}"
-                                                title="Map showing The Heights location in Dubai South"
-                                                allowfullscreen
-                                                loading="lazy"
-                                                referrerpolicy="no-referrer-when-downgrade">
-                                            </iframe>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="landing-location-map-footer">
-
-
-                                        <button
-                                            type="button"
-                                            class="landing-plan-button"
-                                            data-lead-popup-open
-                                            data-request-type="location-details">
-                                            GET LOCATION DETAILS
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </section>
 
                     </div>
 
-                @endif
             </div>
         </section>
 
@@ -2152,146 +2051,216 @@ route('properties.show', $property->slug)
                     FAQ SECTION
                 ===================================================== --}}
 
-        <section class="landing-faq-section" id="faq">
+            <section class="landing-faq-section landing-about-v2" id="faq">
 
-            <div class="landing-faq-container">
+                <div class="landing-gallery-container">
 
-                {{-- Left --}}
-                <div class="landing-faq-intro">
+                    <div class="row g-5 align-items-stretch">
+
+                        {{-- =====================================================
+                            LEFT — FAQ
+                        ===================================================== --}}
+
+                        <div class="col-lg-6 d-flex">
+
+                            <div class="landing-faq-intro">
+
+                    <span class="   landing-about-v2-title">
+                        FAQ
+                    </span>
+                                <span class="landing-about-v2-line mb-lg"></span>
+
+                                <details class="landing-faq-item">
+
+                                    <summary>
+                            <span>
+                                What is The Heights by Emaar?
+                            </span>
+
+                                        <span
+                                            class="landing-faq-toggle"
+                                            aria-hidden="true">
+                            </span>
+                                    </summary>
+
+                                    <div class="landing-faq-answer">
+
+                                        <p>
+                                            The Heights by Emaar is a premium villa
+                                            community focused on wellness, nature, and
+                                            family living, offering spacious 3, 4 and
+                                            5-bedroom villas with world-class amenities.
+                                        </p>
+
+                                    </div>
+
+                                </details>
 
 
-                <span class="sub-title-dark project-about-heading">
-                    COMMON QUESTIONS
-                </span>
-                    <h2 class="landing-faq-title">
-                        Frequently
-                        <em>Asked</em>
-                    </h2>
+                                <details class="landing-faq-item">
+
+                                    <summary>
+                            <span>
+                                What is the payment plan for The Heights by Emaar?
+                            </span>
+
+                                        <span
+                                            class="landing-faq-toggle"
+                                            aria-hidden="true">
+                            </span>
+                                    </summary>
+
+                                    <div class="landing-faq-answer">
+
+                                        <p>
+                                            The Heights offers an 80/20 payment plan,
+                                            with payments structured throughout
+                                            construction and the remaining 20% due
+                                            upon handover.
+                                        </p>
+
+                                    </div>
+
+                                </details>
 
 
+                                <details class="landing-faq-item">
 
-                    <p class="landing-faq-description">
-                        Have a question about The Heights by Emaar?
-                        We're here to help.
-                    </p>
+                                    <summary>
+                            <span>
+                                How large is the Emaar Heights community?
+                            </span>
 
-                    <button
-                        type="button"
-                        class="landing-faq-contact"
-                        data-lead-popup-open>
-                        TALK TO AN EXPERT
-                    </button>
+                                        <span
+                                            class="landing-faq-toggle"
+                                            aria-hidden="true">
+                            </span>
+                                    </summary>
+
+                                    <div class="landing-faq-answer">
+
+                                        <p>
+                                            The Heights spans approximately 81 million
+                                            sq. ft., featuring expansive green spaces,
+                                            parks, wellness facilities, and community
+                                            amenities.
+                                        </p>
+
+                                    </div>
+
+                                </details>
+
+
+                                <details class="landing-faq-item">
+
+                                    <summary>
+                            <span>
+                                Is The Heights by Emaar a good investment?
+                            </span>
+
+                                        <span
+                                            class="landing-faq-toggle"
+                                            aria-hidden="true">
+                            </span>
+                                    </summary>
+
+                                    <div class="landing-faq-answer">
+
+                                        <p>
+                                            The Heights offers strong long-term potential
+                                            due to its Emaar brand, strategic location,
+                                            premium villas, and wellness-focused community
+                                            concept.
+                                        </p>
+
+                                    </div>
+
+                                </details>
+
+
+                                <details class="landing-faq-item">
+
+                                    <summary>
+                            <span>
+                                When is The Heights expected to be handed over?
+                            </span>
+
+                                        <span
+                                            class="landing-faq-toggle"
+                                            aria-hidden="true">
+                            </span>
+                                    </summary>
+
+                                    <div class="landing-faq-answer">
+
+                                        <p>
+                                            The Heights by Emaar is currently an off-plan
+                                            project, with expected handover in 2030.
+                                        </p>
+
+                                    </div>
+
+                                </details>
+
+                            </div>
+
+                        </div>
+
+
+                        {{-- =====================================================
+                            RIGHT — LOCATION
+                        ===================================================== --}}
+
+                        <div class="col-lg-6 d-flex">
+
+                            <div class="landing-location-map-column">
+
+                    <span class="landing-about-v2-title">
+                        LOCATION
+                    </span>
+                                <span class="landing-about-v2-line mb-lg"></span>
+
+
+                                <div class="location-map">
+
+                                    <div class="contact-map">
+
+                                        <iframe
+                                            src="{{ $property->map_url }}"
+                                            title="Map showing The Heights location in Dubai South"
+                                            allowfullscreen
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade">
+                                        </iframe>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="landing-location-map-footer">
+
+                                    <button
+                                        type="button"
+                                        class="landing-plan-button"
+                                        data-lead-popup-open
+                                        data-request-type="location-details">
+
+                                        GET LOCATION DETAILS
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
-
-                {{-- Right --}}
-                <div class="landing-faq-list">
-
-                    <details class="landing-faq-item">
-
-                        <summary>
-                        <span>
-                            What is The Heights by Emaar?
-                        </span>
-
-                            <span class="landing-faq-toggle" aria-hidden="true"></span>
-                        </summary>
-
-                        <div class="landing-faq-answer">
-                            <p>
-                                The Heights by Emaar is a premium villa community focused on wellness, nature, and family living, offering spacious 3, 4 and 5-bedroom villas with world-class amenities.
-
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="landing-faq-item">
-
-                        <summary>
-                        <span>
-                            What is the payment plan for The Heights by Emaar?
-                        </span>
-
-                            <span class="landing-faq-toggle" aria-hidden="true"></span>
-                        </summary>
-
-                        <div class="landing-faq-answer">
-                            <p>
-                                The Heights offers an 80/20 payment plan, with payments structured throughout construction and the remaining 20% due upon handover.
-
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="landing-faq-item">
-
-                        <summary>
-                        <span>
-                            How large is the Emaar Heights community?
-                        </span>
-
-                            <span class="landing-faq-toggle" aria-hidden="true"></span>
-                        </summary>
-
-                        <div class="landing-faq-answer">
-                            <p>
-                                The Heights spans approximately 81 million sq. ft., featuring expansive green spaces, parks, wellness facilities, and community amenities.
-
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="landing-faq-item">
-
-                        <summary>
-                        <span>
-                            Is The Heights by Emaar a good investment?
-                        </span>
-
-                            <span class="landing-faq-toggle" aria-hidden="true"></span>
-                        </summary>
-
-                        <div class="landing-faq-answer">
-                            <p>
-                                The Heights offers strong long-term potential due to its Emaar brand, strategic location, premium villas, and wellness-focused community concept.
-
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="landing-faq-item">
-
-                        <summary>
-                        <span>
-                            When is The Heights expected to be handed over?
-                        </span>
-
-                            <span class="landing-faq-toggle" aria-hidden="true"></span>
-                        </summary>
-
-                        <div class="landing-faq-answer">
-                            <p>
-                                The Heights by Emaar is currently an off-plan project, with expected handover is 2030.
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                </div>
-
-            </div>
-
-        </section>
+            </section>
         <div
             class="landing-lead-popup"
             id="landingLeadPopup"
@@ -2335,28 +2304,36 @@ route('properties.show', $property->slug)
             {{-- =====================================================
         DEVELOPER + COMMUNITY
     ===================================================== --}}
-            <section class="landing-developer-community">
+            <section class="landing-developer-community landing-about-v2">
 
                 <div class="landing-gallery-container">
 
                     <div class="landing-developer-community-grid">
 
-                        {{-- =====================================================
+                        {{-- =================@media (max-width: 991px) {
+    .landing-about-v2 > .landing-gallery-container {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 575px) {
+    .landing-about-v2 > .landing-gallery-container {
+        width: calc(100% - 32px);
+    }
+}====================================
                             LEFT — DEVELOPER
                         ===================================================== --}}
 
                         <div class="landing-developer-panel">
 
-                <span class="landing-developer-eyebrow">
+                <span class="  landing-about-v2-eyebrow">
                     ABOUT THE DEVELOPER
                 </span>
 
-                            <span class="landing-developer-eyebrow-line"></span>
-
-                            <h2 class="landing-developer-title">
-                                About Emaar Properties
+                            <h2 class=" landing-about-v2-title">
+                                Emaar Properties
                             </h2>
-
+                            <span class="landing-about-v2-line"></span>
                             <div class="landing-developer-copy">
 
                                 <p>
@@ -2552,7 +2529,7 @@ route('properties.show', $property->slug)
             ===================================================== --}}
 
             <footer
-                class="landing-main-footer landing-enquiry-footer"
+                class="landing-main-footer landing-enquiry-footer landing-about-v2"
                 id="landingFooter">
 
                 <div class="landing-gallery-container">

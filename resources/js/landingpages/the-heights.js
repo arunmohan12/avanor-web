@@ -264,10 +264,21 @@ setTimeout(() => {
         '[data-lead-popup-open]'
     );
 
-    if (popupTrigger) {
-        leadPopupOpened = true;
-        popupTrigger.click();
+    if (!popupTrigger) {
+        return;
     }
+
+    // First popup - 10 seconds
+    leadPopupOpened = true;
+    popupTrigger.click();
+
+
+    // Second popup - 25 seconds after first popup
+    setTimeout(() => {
+
+        popupTrigger.click();
+
+    }, 25000);
 
 }, 10000);
 
