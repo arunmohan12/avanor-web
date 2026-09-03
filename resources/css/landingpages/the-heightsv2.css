@@ -9936,3 +9936,25 @@ font-family: var(--font-optima);
     }
 
 }
+@media (max-width: 767px) {
+
+    .landing-plan-heading {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .landing-plan-heading h3,
+    .landing-plan-heading .fs-4 {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin-left: 0;
+        margin-right: 0;
+
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+}
