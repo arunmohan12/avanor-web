@@ -210,18 +210,18 @@
         </div>
 
 
+
+
         <button
             type="submit"
-            class="avanor-lead-submit"
-        >
-            {{ strtoupper($buttonText) }}
+            id="{{ $formId }}-submit"
+            data-lead-popup-submit
+            class="avanor-lead-submit">
 
-{{--            <i class="far fa-arrow-right"></i>--}}
+            {{ strtoupper($buttonText) }}
 
             <x-landing-icon name="arrow-right" />
         </button>
-
-
         <p class="avanor-lead-consent">
 
             By submitting this form, you agree to be contacted by

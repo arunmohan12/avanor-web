@@ -393,7 +393,7 @@ route('properties.show', $property->slug)
 
                     <a
                         href="#"
-                        class="landing-property-btn landing-property-btn-outline" data-lead-popup-open>
+                        class="landing-property-btn landing-property-btn-outline" data-lead-popup-open  data-button-text="DOWNLOAD BROCHURE">
                         DOWNLOAD BROCHURE
                     </a>
 
@@ -2288,7 +2288,7 @@ route('properties.show', $property->slug)
                 @include('partials.lead-form', [
                 'formId' => 'landing-popup-form',
                 'heading' => 'GET PROJECT DETAILS',
-                'buttonText' => 'DOWNLOAD PDF',
+                'buttonText' => 'SUBMIT',
                 'source' => 'the_heights_popup',
                 'propertyId' => $property->id,
                 'developerId' => $property->developer_id,

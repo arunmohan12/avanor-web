@@ -88,6 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
         '[data-lead-popup-close]'
     );
 
+    const submitButton = popup.querySelector(
+        '[data-lead-popup-submit]'
+    );
+
     const openPopup = () => {
 
         popup.classList.add('is-open');
@@ -121,6 +125,20 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (event) => {
 
             event.preventDefault();
+
+            /*
+             * Get the text from the button that opened
+             * the popup.
+             */
+            const buttonText =
+                button.dataset.buttonText || 'SUBMIT';
+
+            /*
+             * Change popup submit button text.
+             */
+            if (submitButton) {
+                submitButton.textContent = buttonText;
+            }
 
             openPopup();
         });
