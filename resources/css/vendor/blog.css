@@ -161,3 +161,11 @@ height: 450px;
 .iti__selected-dial-code {
 color: var(--brand-dark) !important;
 }
+
+.blog-text-content a {
+    color: #007bff;
+}
+.blog-text-content a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
