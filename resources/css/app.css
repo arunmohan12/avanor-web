@@ -168,6 +168,7 @@ body {
 @media (max-width: 767px) {
     .avanor-breadcrumb .active {
         font-size: 10px;
+        line-height: 15px;
     }
 
     .avanor-breadcrumb a {

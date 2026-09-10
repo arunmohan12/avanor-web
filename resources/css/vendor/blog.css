@@ -149,6 +149,21 @@ height: 450px;
         height: 240px !important;
         display: block;
     }
+    .blog-heading-det {
+        font-size: 20px;
+    }
+
+    .sub-title-dark{
+        font-size: 14px;
+    }
+
+    .blog-single .blog-img img {
+        min-height: 250px;
+    }
+
+    .blog-single .blog-img img {
+        height: 220px;
+    }
 }
 .blog-text-content h2{
     font-size: 24px;
