@@ -115,7 +115,10 @@
     .button-group .th-btn {
         width: 220px;
     }
-
+.sec-title-font44 {
+    font-size: 24px;
+    font-family: var(--font-optima), serif;
+}
 
 }
 
@@ -167,4 +170,8 @@ color: var(--brand-light);
 
 .avanor-mobile-menu-open {
     color: var(--brand-dark) !important;
+}
+.sec-title{
+    font-family: var(--font-optima), serif;
+    font-size: 24px;
 }
