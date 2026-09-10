@@ -162,7 +162,12 @@ font-family: var(--font-primary);
     .avanor-seo-card {
         min-height: 260px;
     }
-
+.text-theme {
+    font-size: 14px !important;
+}
+    .title-area .sec-title {
+        font-size: 24px;
+    }
 }
 
 
