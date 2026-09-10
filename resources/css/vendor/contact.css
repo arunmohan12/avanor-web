@@ -93,6 +93,17 @@
         font-size: 32px;
         line-height: 1.50;
     }
+
+    .contact-title{
+        font-size: 24px;
+    }
+    .about-contact-details-title{
+        font-size: 16px;
+    }
+
+    .about-contact-details-text{
+        font-size: 14px;
+    }
 }
 @media (max-width: 991px) {
     .button-group {
