@@ -35,7 +35,7 @@ Version: 1.0.0
     3.8. Text Color
     3.9. Overlay
     3.10. Animation
-    
+
 04. Template Style
     4.1. Widget
     4.2. Header
@@ -45,7 +45,7 @@ Version: 1.0.0
     4.6. Blog
     4.7. Comments
     4.8. Hero Area
-    4.9. Error    
+    4.9. Error
     4.00. Popup Search
     4.00. Popup Side Menu
     4.00. Wocommerce
@@ -26888,7 +26888,7 @@ span.select2-selection.select2-selection--single:focus {
 
 @media (max-width: 991px) {
   .property-card3 .property-card-thumb img {
-    height: 350px;
+    height: 100px;
   }
 }
 
@@ -33036,7 +33036,7 @@ margin-bottom: 13px;;
 }
 
 /* ---------------------------------- */
-/* Home 12 
+/* Home 12
 /* ---------------------------------- */
 /* hero area 12 ---------------------------------- */
 .hero-12 {
@@ -33964,7 +33964,7 @@ margin-bottom: 13px;;
 }
 
 /* ---------------------------------- */
-/* Home 13 
+/* Home 13
 /* ---------------------------------- */
 /* hero area 13 ---------------------------------- */
 .hero-13 .property-search-form {
@@ -35472,7 +35472,7 @@ margin-bottom: 13px;;
 }
 
 /* ---------------------------------- */
-/* Home 14 
+/* Home 14
 /* ---------------------------------- */
 .hero-14 {
   position: relative;
@@ -37059,7 +37059,7 @@ margin-bottom: 13px;;
 }
 
 /* ---------------------------------- */
-/* Home 15 
+/* Home 15
 /* ---------------------------------- */
 .hero-15 {
   position: relative;
@@ -38147,7 +38147,7 @@ margin-bottom: 13px;;
 }
 
 /* ---------------------------------- */
-/* Home 16 
+/* Home 16
 /* ---------------------------------- */
 .hero-16 {
   position: relative;
