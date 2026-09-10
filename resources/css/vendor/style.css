@@ -21002,6 +21002,7 @@ span.select2-selection.select2-selection--single:focus {
   border-bottom: 1px solid var(--th-border-color);
   padding-bottom: 13px;
   margin-bottom: 13px;
+    font-family: var(--font-optima);
 }
 
 .why-feature-list .why-feature-list-wrap .feature-text {
@@ -21124,6 +21125,10 @@ span.select2-selection.select2-selection--single:focus {
     font-size: 20px;
     min-height: 70px;
   }
+
+.why-feature-list .why-feature-list-wrap .feature-title {
+    font-size: 16px;
+}
 }
 
 /* Extra small devices */
