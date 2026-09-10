@@ -569,7 +569,12 @@
 
         font-size: 15px;
     }
-
+    .title-area {
+        font-size: 24px;
+    }
+    .sec-text {
+        font-size: 14px;
+    }
 }
 .avanor-mobile-menu-open {
     color: var(--brand-dark) !important;

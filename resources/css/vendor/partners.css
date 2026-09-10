@@ -163,6 +163,12 @@ font-family: var(--font-optima);
         max-width: 145px;
         max-height: 62px;
     }
+    .sec-text {
+        font-size: 14px;
+    }
+    .title-area {
+        font-size: 24px;
+    }
 }
 
 .avanor-mobile-menu-open {

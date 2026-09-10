@@ -138,6 +138,13 @@ Version: 1.0.0
   --ripple-ani-duration: 5s;
   --th-body-background: #ffffff;
   --content-spacing: 26px;
+
+    --font-xs: 8px;
+    --font-sm: 10px;
+    --font-md: 12px;
+    --font-lg: 14px;
+    --font-xl: 16px;
+    --font-2xl: 18px;
 }
 
 /*------------------- 1.5. Typography -------------------*/
@@ -22695,6 +22702,15 @@ span.select2-selection.select2-selection--single:focus {
     width: 100%;
     border-radius: 20px 0 20px 20px;
   }
+
+
+    .title-area {
+        font-size: 24px !important;
+    }
+
+    .sec-text {
+        font-size: 14px !important;
+    }
 }
 
 @media (max-width: 575px) {
