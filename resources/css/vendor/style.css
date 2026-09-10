@@ -29435,6 +29435,9 @@ margin-bottom: 13px;;
   .service-card.style5 {
     padding: 40px 22px;
   }
+    .service-card.style5 .box-title a {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 767px) {

@@ -9,53 +9,72 @@
                 </div>
             </div>
             <div class="row gy-30">
-                <div class="col-md-6 col-xl-4">
+
+                <div class="col-6 col-md-6 col-xl-4">
                     <div class="service-card style5">
                         <div class="service-card-icon">
-                            <img src="assets/img/icon/service-icon5-1.svg" alt="Icon">
+                            <img src="assets/img/icon/service-icon5-1.svg" alt="Property Valuation">
                         </div>
-                        <h3 class="box-title"><a href="javascript:void(0)">Property Valuation</a></h3>
+                        <h3 class="box-title">
+                            <a href="javascript:void(0)">Property Valuation</a>
+                        </h3>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4">
+
+                <div class="col-6 col-md-6 col-xl-4">
                     <div class="service-card style5">
                         <div class="service-card-icon">
-                            <img src="assets/img/icon/service-icon5-2.svg" alt="Icon">
+                            <img src="assets/img/icon/service-icon5-2.svg" alt="Legal Assistance">
                         </div>
-                        <h3 class="box-title"><a href="javascript:void(0)">Legal Assistance</a></h3>
+                        <h3 class="box-title">
+                            <a href="javascript:void(0)">Legal Assistance</a>
+                        </h3>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4">
+
+                <div class="col-6 col-md-6 col-xl-4">
                     <div class="service-card style5">
                         <div class="service-card-icon">
-                            <img src="assets/img/icon/service-icon5-3.svg" alt="Icon">
+                            <img src="assets/img/icon/service-icon5-3.svg" alt="Mortgage Services">
                         </div>
-                        <h3 class="box-title"><a href="javascript:void(0)">Mortgage Services</a></h3>
+                        <h3 class="box-title">
+                            <a href="javascript:void(0)">Mortgage Services</a>
+                        </h3>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4">
+
+                <div class="col-6 col-md-6 col-xl-4">
                     <div class="service-card style5">
                         <div class="service-card-icon">
-                            <img src="assets/img/icon/service-icon5-4.svg" alt="Icon">
+                            <img src="assets/img/icon/service-icon5-4.svg" alt="Home Inspection">
                         </div>
-                        <h3 class="box-title"><a href="javascript:void(0)">Home Inspection</a></h3>
+                        <h3 class="box-title">
+                            <a href="javascript:void(0)">Home Inspection</a>
+                        </h3>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4">
+
+                <div class="col-6 col-md-6 col-xl-4">
                     <div class="service-card style5">
                         <div class="service-card-icon">
-                            <img src="assets/img/icon/service-icon5-5.svg" alt="Icon">
+                            <img src="assets/img/icon/service-icon5-5.svg" alt="Escrow Services">
                         </div>
-                        <h3 class="box-title"><a href="javascript:void(0)">Escrow Services</a></h3>
+                        <h3 class="box-title">
+                            <a href="javascript:void(0)">Escrow Services</a>
+                        </h3>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4">
+
+                <div class="col-6 col-md-6 col-xl-4">
                     <div class="service-card style5">
                         <div class="service-card-icon">
-                            <img src="assets/img/icon/service-icon5-6.svg" alt="Icon">
+                            <img src="assets/img/icon/service-icon5-6.svg" alt="Property Management">
                         </div>
-                        <h3 class="box-title"><a href="javascript:void(0)">Property Management</a></h3>
+                        <h3 class="box-title">
+                            <a href="javascript:void(0)">Property Management</a>
+                        </h3>
                     </div>
                 </div>
+
             </div>
         </div>
