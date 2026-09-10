@@ -571,3 +571,6 @@
     }
 
 }
+.avanor-mobile-menu-open {
+    color: var(--brand-dark) !important;
+}

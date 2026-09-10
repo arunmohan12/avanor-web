@@ -164,6 +164,10 @@ height: 450px;
     .blog-single .blog-img img {
         height: 220px;
     }
+
+    .blog-heading {
+        font-size: 30px;
+    }
 }
 .blog-text-content h2{
     font-size: 24px;
@@ -183,4 +187,7 @@ color: var(--brand-dark) !important;
 .blog-text-content a:hover {
     color: #0056b3;
     text-decoration: underline;
+}
+.avanor-mobile-menu-open {
+    color: var(--brand-dark) !important;
 }

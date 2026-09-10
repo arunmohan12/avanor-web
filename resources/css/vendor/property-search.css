@@ -515,3 +515,6 @@ color: var(--brand-light)
 height: 384px;
 width: 526px;
 }
+.sticky-wrapper.sticky .avanor-mobile-menu-open {
+    color: var(--brand-light) !important;
+}

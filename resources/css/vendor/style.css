@@ -23961,7 +23961,7 @@ span.select2-selection.select2-selection--single:focus {
 
 @media (max-width: 991px) {
   .property-card2 .property-card-thumb img {
-    height: 350px;
+    height: 100%;
   }
 }
 
@@ -26268,7 +26268,7 @@ span.select2-selection.select2-selection--single:focus {
 @media (max-width: 991px) {
   .space,
   .space-top {
-    padding-top: var(--section-space-mobile);
+    padding-top: calc(var(--section-space-mobile) - 30px);
   }
   .space,
   .space-bottom {

@@ -164,3 +164,7 @@ font-family: var(--font-optima);
         max-height: 62px;
     }
 }
+
+.avanor-mobile-menu-open {
+    color: var(--brand-dark) !important;
+}

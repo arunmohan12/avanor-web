@@ -151,3 +151,7 @@
 .iti__selected-dial-code {
 color: var(--brand-light);
 }
+
+.avanor-mobile-menu-open {
+    color: var(--brand-dark) !important;
+}

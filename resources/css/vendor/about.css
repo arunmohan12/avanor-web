@@ -225,3 +225,7 @@ font-family: var(--font-primary);
 .th-btn:hover{
     border: 1px solid var(--brand-dark);
 }
+
+.avanor-mobile-menu-open {
+    color: var(--brand-dark) !important;
+}
