@@ -26904,7 +26904,7 @@ span.select2-selection.select2-selection--single:focus {
 
 @media (max-width: 991px) {
   .property-card3 .property-card-thumb img {
-    height: 100px;
+    height: 100%;
   }
 }
 

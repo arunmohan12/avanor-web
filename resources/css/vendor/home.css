@@ -36,7 +36,7 @@
 .header-layout3 .sticky-wrapper.sticky {
     background: var(  --brand-light);
   }
-  
+
 .th-hero-wrapper.hero-3 {
     position: relative;
     width: 100%;
@@ -172,14 +172,14 @@
         }
     }
 
- 
+
     /* .sticky-wrapper.sticky  {
         height: 90px;
     } */
     .sticky-wrapper.sticky .main-menu > ul > li > a {
         color: var(--brand-dark);
     }
-    
+
 
     .sticky-wrapper.sticky .main-menu ul li.menu-item-has-children > a:after {
     color: var(--brand-dark)
@@ -300,7 +300,7 @@
 }
 
 .destination-card .card-details .box-title {
-  
+
     border-bottom: 1px solid #f3eae62f; /* white line */
 }
 
@@ -964,7 +964,7 @@ font-family: var(--font-optima);
 
 .service-card.style5 {
     border: 0px;
-    padding: 10px 
+    padding: 10px
 }
 /* .property-slider2 {
     max-width: 94%;
@@ -990,3 +990,4 @@ font-family: var(--font-optima);
     margin-bottom: calc(var(--section-title-space) - 26px);
 
 }
+
