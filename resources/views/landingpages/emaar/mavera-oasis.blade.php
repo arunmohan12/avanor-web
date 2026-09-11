@@ -618,6 +618,7 @@ route('properties.show', $property->slug)
                                     class="widget-property-contact-form">
 
                                     @csrf
+                                    @include('partials.lead-antispam')
 
                                     <input
                                         type="hidden"

@@ -124,6 +124,7 @@
     class="appointment-form me-xl-5">
 
     @csrf
+    @include('partials.lead-antispam')
 
     <input
         type="hidden"

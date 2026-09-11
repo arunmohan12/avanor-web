@@ -310,6 +310,7 @@ route('developers.show', $developer->slug)
                             class="widget-property-contact-form">
 
                             @csrf
+                            @include('partials.lead-antispam')
 
                             <input
                                 type="hidden"

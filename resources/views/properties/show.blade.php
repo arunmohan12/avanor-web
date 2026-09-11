@@ -419,6 +419,7 @@ $hasProjectDescription = filled($property->project?->description);
                             class="widget-property-contact-form">
 
                             @csrf
+                            @include('partials.lead-antispam')
 
                             <input
                                 type="hidden"

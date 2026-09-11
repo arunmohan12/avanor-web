@@ -48,7 +48,7 @@ Route::view('/enquiry', 'leads.form')
     ->name('leads.showform');
 
 Route::post('/enquiry', [LeadController::class, 'store'])
-    ->middleware('throttle:10,1')
+    ->middleware('throttle:5,10')
     ->name('leads.store');
 
 Route::get('/communities/{slug}', [CommunityController::class, 'show'])
@@ -72,7 +72,7 @@ Route::get('/landing/{slug}', [LandingPageController::class, 'show'])
 Route::post(
     '/landing-leads',
     [LeadController::class, 'storeLanding']
-)->name('landing.leads.store');
+)->middleware('throttle:5,10')->name('landing.leads.store');
 
 Route::get('/thank-you', function () {
     return view('landingpages.thank-you');

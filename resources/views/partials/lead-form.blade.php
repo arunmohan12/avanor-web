@@ -49,6 +49,7 @@
     >
 
         @csrf
+        @include('partials.lead-antispam')
 
 
         {{-- Context --}}
@@ -199,6 +200,7 @@
                 value="{{ old('email') }}"
                 placeholder="Enter your email address"
                 autocomplete="email"
+                required
             >
 
             @error('email')
