@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InternalLeadNotificationController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\PropertyController;
@@ -66,34 +67,13 @@ Route::get('/communities/{slug}', [CommunityController::class, 'show'])
 
 /////////////////////////////////////////////////////////////////////landing pages///////////////////////////////////////////////////////////////////////
 
-Route::get('/landing/{slug}', [LandingPageController::class, 'show'])
-    ->name('landing.show');
 
 Route::post(
-    '/landing-leads',
-    [LeadController::class, 'storeLanding']
-)->middleware('throttle:5,10')->name('landing.leads.store');
+    '/internal/leads/{lead}/notify',
+    [InternalLeadNotificationController::class, 'notify']
+);
 
-Route::get('/thank-you', function () {
-    return view('landingpages.thank-you');
-})->name('landing.thank-you');
 
-Route::domain('theheights.avanorcap.com')->group(function () {
 
-    Route::get('/', function (LandingPageController $controller) {
 
-        return $controller->show(
-            'the-heights-by-emaar'
-        );
 
-    });
-
-});
-
-Route::get('/MaveraByOasis', [LandingPageController::class, 'showMaveraByOasis']);
-Route::get('/privacy-policies', function () {
-    return view('landingpages.layouts.privacypolicy');
-})->name('landing.privacy-policy');
-Route::get('/terms-and-condition', function () {
-    return view('landingpages.layouts.termsandconditions');
-})->name('landing.terms-and-conditions');
