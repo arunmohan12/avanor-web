@@ -404,7 +404,7 @@ class PropertyForm
                         TextInput::make('meta_title')
                             ->label('Meta Title')
                             ->maxLength(200)
-                            ->helperText('Recommended: up to 60 characters.')
+                            ->helperText('Recommended: up to 200 characters.')
                             ->columnSpanFull(),
 
                         Textarea::make('meta_description')
