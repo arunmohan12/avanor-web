@@ -403,7 +403,7 @@ class PropertyForm
 
                         TextInput::make('meta_title')
                             ->label('Meta Title')
-                            ->maxLength(60)
+                            ->maxLength(200)
                             ->helperText('Recommended: up to 60 characters.')
                             ->columnSpanFull(),
 
