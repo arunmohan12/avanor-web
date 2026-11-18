@@ -456,7 +456,7 @@ route('developers.show', $developer->slug)
 
                     <h3 class="avanor-project-card-title">
 
-                        <a href="#">
+                        <a href="{{ route('communities.show', $community->slug) }}">
                             {{ $community->name }}
                         </a>
 
@@ -490,7 +490,7 @@ route('developers.show', $developer->slug)
 
 
                     <a
-                        href="#"
+                        href="{{ route('communities.show', $community->slug) }}"
                         class="avanor-community-card-button">
 
                         VIEW COMMUNITY

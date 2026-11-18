@@ -55,8 +55,8 @@ body {
 /* Large screens only */
 @media (min-width: 1200px) {
     .header-custom {
-        margin-left: 80px !important;
-        margin-right: 80px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
         /* margin-top: -7px; */
     }
 }
@@ -64,8 +64,7 @@ body {
 /* Everything below 1200px */
 @media (max-width: 1199.98px) {
     .header-custom {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+
         margin-top: -7px;
     }
 }

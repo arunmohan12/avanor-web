@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Community;
 use App\Models\Emirate;
-use App\Models\Project;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class CommunityController extends Controller
@@ -58,29 +58,45 @@ class CommunityController extends Controller
     }
 
     public function show(string $slug)
-    {
-        $community = Community::query()
-            ->with([
-                'emirate',
-            ])
-            ->withCount([
-                'properties' => function ($query) {
-                    $query->where('is_active', true);
-                },
-            ])
-            ->where('slug', $slug)
-            ->where('is_active', true)
-            ->firstOrFail();
+{
+    $community = Community::query()
+        ->with(['emirate'])
+        ->where('slug', $slug)
+        ->where('is_active', true)
+        ->firstOrFail();
 
-        $newLaunches = Project::query()
-            ->with('developer')
-            ->where('community_id', $community->id)
-            ->where('is_active', true)
-    // ->where('status', 'off-plan')
-            ->latest()
-            ->limit(4)
-            ->get();
+    $properties = Property::query()
+    ->where('community_id', $community->id)
+    ->where('is_active', true)
+    ->with([
+        'developer',
+        'community',
+        'propertyType',
+        'project',
+        'media',
+    ])
+    ->latest()
+    ->get();
 
-        return view('communities.detailed', compact('community', 'newLaunches'));
-    }
+
+    $newLaunches = Property::query()
+    ->with([
+        'developer',
+        'community',
+        'project',
+        'media',
+    ])
+    ->where('community_id', $community->id)
+    ->where('developer_id', $community->developer_id)
+    ->where('is_active', true)
+    ->latest()
+    ->take(5)
+    ->get();
+
+    return view('communities.detailed', compact(
+        'community',
+        'properties',
+        'newLaunches'
+    ));
+}
 }
