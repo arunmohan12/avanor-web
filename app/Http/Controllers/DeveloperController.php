@@ -41,7 +41,7 @@ class DeveloperController extends Controller
                 'description',
             ])
             ->where('is_active', true)
-            ->where('is_featured', true)
+          
 
             // Only communities having properties from this developer
             ->whereHas('properties', function ($query) use ($developer) {

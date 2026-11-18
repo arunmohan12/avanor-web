@@ -398,7 +398,7 @@ route('developers.show', $developer->slug)
                     Discover Exceptional Communities Featuring Properties by {{ $developer->name }} </h2>
 
                 <p class="avanor-project-listing-count">
-                    {{ $properties->count() }} listings
+                    {{ $communities->count() }} listings
                 </p>
             </div>
 
