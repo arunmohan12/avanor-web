@@ -66,9 +66,7 @@
 
                 <div class="card-thumb">
 
-                    <a href="{{ route('properties.index', [
-                            'community' => $community->id,
-                        ]) }}">
+                    <a href="{{ route('communities.show', $community->slug) }}">
 
                         @php
                         $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
@@ -93,9 +91,7 @@
 
                     <h4 class="box-title">
 
-                        <a href="{{ route('properties.index', [
-                                'community' => $community->id,
-                            ]) }}">
+                        <a href="{{ route('communities.show', $community->slug) }}">
 
                             {{ $community->name }}
 
