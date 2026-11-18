@@ -11,6 +11,7 @@ class PropertySearchService
     public function search(array $filters): LengthAwarePaginator
     {
         $query = Property::query()
+           ->where('is_active', true)
             ->with([
                 'developer',
                 'community',
