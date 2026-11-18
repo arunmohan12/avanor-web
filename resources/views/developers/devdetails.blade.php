@@ -54,10 +54,12 @@ route('developers.show', $developer->slug)
 
 @push('structured-data')
 <script type="application/ld+json">
-{!! json_encode(
-    $developerSchema,
-    JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
-) !!}
+    {
+        !!json_encode(
+            $developerSchema,
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+        ) !!
+    }
 </script>
 @endpush
 
@@ -393,7 +395,7 @@ route('developers.show', $developer->slug)
 
             <div>
                 <h2 class="avanor-project-listing-title">
-                Discover Exceptional Communities Featuring Properties by {{ $developer->name }}                </h2>
+                    Discover Exceptional Communities Featuring Properties by {{ $developer->name }} </h2>
 
                 <p class="avanor-project-listing-count">
                     {{ $properties->count() }} listings
@@ -402,12 +404,12 @@ route('developers.show', $developer->slug)
 
             <div class="avanor-project-listing-actions">
 
-                <button type="button" class="avanor-view-toggle">
+                <a href="{{ route('communities.index') }}" class="avanor-view-toggle">
                     <i class=""></i>
-                   VIEW ALL COMMUNITIES
-                </button>
+                    VIEW ALL COMMUNITIES
+                </a>
 
-              
+
 
             </div>
 
@@ -479,7 +481,7 @@ route('developers.show', $developer->slug)
 
                     <p class="avanor-project-card-description">
 
-                    {{ \Illuminate\Support\Str::limit(
+                        {{ \Illuminate\Support\Str::limit(
                             html_entity_decode(strip_tags($community->description)),
                             135
                                         ) }}
@@ -520,7 +522,7 @@ route('developers.show', $developer->slug)
 
             <div>
                 <h2 class="avanor-project-listing-title">
-                Projects and New Developments by {{ $developer->name }}
+                    Projects and New Developments by {{ $developer->name }}
                 </h2>
 
                 <p class="avanor-project-listing-count">
@@ -530,13 +532,13 @@ route('developers.show', $developer->slug)
 
             <div class="avanor-project-listing-actions">
 
-                <button type="button" class="avanor-view-toggle">
+                <a href="{{ route('properties.index') }}" class="avanor-view-toggle">
                     <i class=""></i>
                     EXPLORE MORE
-                </button>
+                </a>
 
-             
-             
+
+
 
             </div>
 
@@ -547,165 +549,165 @@ route('developers.show', $developer->slug)
 
             @foreach ($properties as $property)
 
-                @php
-                    $coverMedia = $property->getFirstMedia('cover');
+            @php
+            $coverMedia = $property->getFirstMedia('cover');
 
-                    $coverUrl = $coverMedia
-                        ? \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_avif')
-                        : asset('assets/img/property/property-placeholder.webp');
+            $coverUrl = $coverMedia
+            ? \App\Support\MediaUrl::fromMedia($coverMedia, 'cover_avif')
+            : asset('assets/img/property/property-placeholder.webp');
 
-                    $displayPrice = $property->price
-                        ?: $property->starting_price
-                        ?: $property->project?->starting_price;
-                @endphp
-
-
-                <article class="avanor-project-card">
-
-                    {{-- IMAGE --}}
-                    <div class="avanor-project-card-image">
-
-                        <img
-                            src="{{ $coverUrl }}"
-                            alt="{{ $property->title }}"
-                            loading="lazy"
-                            decoding="async">
+            $displayPrice = $property->price
+            ?: $property->starting_price
+            ?: $property->project?->starting_price;
+            @endphp
 
 
-                        {{-- PROPERTY TYPE --}}
-                        @if ($property->propertyType)
-                            <span class="avanor-project-card-type">
-                                {{ $property->propertyType->name }}
-                            </span>
+            <article class="avanor-project-card">
+
+                {{-- IMAGE --}}
+                <div class="avanor-project-card-image">
+
+                    <img
+                        src="{{ $coverUrl }}"
+                        alt="{{ $property->title }}"
+                        loading="lazy"
+                        decoding="async">
+
+
+                    {{-- PROPERTY TYPE --}}
+                    @if ($property->propertyType)
+                    <span class="avanor-project-card-type">
+                        {{ $property->propertyType->name }}
+                    </span>
+                    @endif
+
+
+                    {{-- HANDOVER --}}
+                    @if ($property->handover_year)
+                    <span class="avanor-project-card-handover">
+                        {{ $property->handover_year }}
+                    </span>
+                    @endif
+
+                </div>
+
+
+                {{-- CONTENT --}}
+                <div class="avanor-project-card-content">
+
+                    <h3 class="avanor-project-card-title">
+
+                        <a href="{{ route('properties.show', $property->slug) }}">
+                            {{ $property->title }}
+                        </a>
+
+                    </h3>
+
+
+                    @if ($property->developer)
+                    <div class="avanor-project-card-developer">
+                        by
+                        <strong>
+                            {{ $property->developer->name }}
+                        </strong>
+                    </div>
+                    @endif
+
+
+                    @if ($displayPrice)
+
+                    <div class="avanor-project-card-price">
+
+                        <span>Starting Price</span>
+
+                        <strong>
+                            {{ \App\Support\PriceFormatter::aed($displayPrice) }}
+                        </strong>
+
+                    </div>
+
+                    @endif
+
+
+                    <div class="avanor-project-card-meta">
+
+                        @if ($property->community)
+
+                        <span>
+                            <i class="far fa-map-marker-alt"></i>
+                            {{ $property->community->name }}
+                        </span>
+
                         @endif
 
 
-                        {{-- HANDOVER --}}
-                        @if ($property->handover_year)
-                            <span class="avanor-project-card-handover">
-                                {{ $property->handover_year }}
-                            </span>
+                        @if ($property->bedrooms)
+
+                        <span>
+                            <i class="far fa-bed"></i>
+                            {{ $property->bedrooms }}
+                        </span>
+
                         @endif
 
                     </div>
 
 
-                    {{-- CONTENT --}}
-                    <div class="avanor-project-card-content">
+                    @if ($property->short_description)
 
-                        <h3 class="avanor-project-card-title">
-
-                            <a href="{{ route('properties.show', $property->slug) }}">
-                                {{ $property->title }}
-                            </a>
-
-                        </h3>
-
-
-                        @if ($property->developer)
-                            <div class="avanor-project-card-developer">
-                                by
-                                <strong>
-                                    {{ $property->developer->name }}
-                                </strong>
-                            </div>
-                        @endif
-
-
-                        @if ($displayPrice)
-
-                            <div class="avanor-project-card-price">
-
-                                <span>Starting Price</span>
-
-                                <strong>
-                                    {{ \App\Support\PriceFormatter::aed($displayPrice) }}
-                                </strong>
-
-                            </div>
-
-                        @endif
-
-
-                        <div class="avanor-project-card-meta">
-
-                            @if ($property->community)
-
-                                <span>
-                                    <i class="far fa-map-marker-alt"></i>
-                                    {{ $property->community->name }}
-                                </span>
-
-                            @endif
-
-
-                            @if ($property->bedrooms)
-
-                                <span>
-                                    <i class="far fa-bed"></i>
-                                    {{ $property->bedrooms }}
-                                </span>
-
-                            @endif
-
-                        </div>
-
-
-                        @if ($property->short_description)
-
-                            <p class="avanor-project-card-description">
-                                {{ \Illuminate\Support\Str::limit(
+                    <p class="avanor-project-card-description">
+                        {{ \Illuminate\Support\Str::limit(
                                     strip_tags($property->short_description),
                                     135
                                 ) }}
 
-                                <a href="{{ route('properties.show', $property->slug) }}">
-                                    ...more
-                                </a>
-                            </p>
+                        <a href="{{ route('properties.show', $property->slug) }}">
+                            ...more
+                        </a>
+                    </p>
 
-                        @endif
-
-
-                        {{-- ACTIONS --}}
-                        <div class="avanor-project-card-actions">
-
-                            <a
-                                href="mailto:{{ $siteSettings['email'] }}"
-                                class="avanor-project-action">
-
-                                <i class="far fa-envelope"></i>
-                                Email
-
-                            </a>
+                    @endif
 
 
-                            <a
-                                href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}"
-                                class="avanor-project-action">
+                    {{-- ACTIONS --}}
+                    <div class="avanor-project-card-actions">
 
-                                <i class="far fa-phone"></i>
-                                Call
+                        <a
+                            href="mailto:{{ $siteSettings['email'] }}"
+                            class="avanor-project-action">
 
-                            </a>
+                            <i class="far fa-envelope"></i>
+                            Email
+
+                        </a>
 
 
-                            <a
-                                href="https://wa.me/{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}"
-                                target="_blank"
-                                rel="noopener"
-                                class="avanor-project-action">
+                        <a
+                            href="tel:{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}"
+                            class="avanor-project-action">
 
-                                <i class="fab fa-whatsapp"></i>
-                                WhatsApp
+                            <i class="far fa-phone"></i>
+                            Call
 
-                            </a>
+                        </a>
 
-                        </div>
+
+                        <a
+                            href="https://wa.me/{{ preg_replace('/\s+/', '', $siteSettings['phone']) }}"
+                            target="_blank"
+                            rel="noopener"
+                            class="avanor-project-action">
+
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+
+                        </a>
 
                     </div>
 
-                </article>
+                </div>
+
+            </article>
 
             @endforeach
 
