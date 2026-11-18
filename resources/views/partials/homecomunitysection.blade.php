@@ -66,7 +66,7 @@
 
                 <div class="card-thumb">
 
-                    <a href="{{ route('communities.show', $community->slug) }}">
+                    <a href="{{ route('communities.show', $community->slug) }">
 
                         @php
                         $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
@@ -131,13 +131,9 @@
 
                 <div class="card-thumb">
 
-                    <a href="{{ route('properties.index', [
-                            'community' => $community->id,
-                        ]) }}">
+                    <a href="{{ route('communities.show', $community->slug) }}">
 
-                        <a href="{{ route('properties.index', [
-                            'community' => $community->id,
-                        ]) }}">
+                        <a href="{{ route('communities.show', $community->slug) }}">
 
                             @php
                             $thumbnailUrl = \App\Support\MediaUrl::fromMedia(
@@ -162,9 +158,7 @@
 
                     <h4 class="box-title">
 
-                        <a href="{{ route('properties.index', [
-                                'community' => $community->id,
-                            ]) }}">
+                        <a href="{{ route('communities.show', $community->slug) }}">
 
                             {{ $community->name }}
 
@@ -195,7 +189,7 @@
         <div class="sec-btn sec-btn-mb-remv btn-mob">
 
             <a
-                href="{{ route('properties.index') }}"
+                href="{{ route('communities.index') }}"
                 class=" community-btn  ">
 
                 SHOW MORE
