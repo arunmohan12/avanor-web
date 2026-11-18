@@ -94,8 +94,8 @@ class DeveloperForm
 
                         TextInput::make('meta_title')
                             ->label('Meta Title')
-                            ->maxLength(60)
-                            ->helperText('Recommended: 50–60 characters'),
+                            ->maxLength(150)
+                            ->helperText('Recommended: 150 characters'),
 
                         Textarea::make('meta_description')
                             ->label('Meta Description')
