@@ -237,7 +237,7 @@
 
             <div>
                 <h2 class="avanor-project-listing-title">
-                Properties by {{ $community ->name }}
+                Properties in {{ $community ->name }}
                 </h2>
 
                 <p class="avanor-project-listing-count">
