@@ -15,7 +15,7 @@
 
                 <p>
                     Premium properties, trusted developers and curated
-                    opportunities across the UAE (RERA: 63012, ORN: 63296).
+                    opportunities across the UAE <br>( RERA: 63012, ORN: 63296).
                 </p>
 
                 @php
