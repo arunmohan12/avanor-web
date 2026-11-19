@@ -1010,3 +1010,10 @@ body {
 .iti__selected-dial-code{
     color: var(--brand-dark);
 }
+.avanor-footer-license {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 10px;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
+}

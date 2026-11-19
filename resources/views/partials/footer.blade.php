@@ -7,16 +7,21 @@
             {{-- Brand --}}
             <div class="avanor-footer-brand">
 
-                <a href="{{ url('/') }}" class="avanor-footer-logo">
-                    <img
-                        src="{{ asset('assets/img/logo-white2.svg') }}"
-                        alt="Avanor Capital">
-                </a>
+               <a href="{{ url('/') }}" class="avanor-footer-logo">
+    <img
+        src="{{ asset('assets/img/logo-white2.svg') }}"
+        alt="Avanor Capital – Dubai Real Estate"
+    >
+</a>
 
-                <p>
-                    Premium properties, trusted developers and curated
-                    opportunities across the UAE <br>( RERA: 63012, ORN: 63296).
-                </p>
+<p>
+    Premium properties, trusted developers and curated
+    real estate investment opportunities across the UAE.
+</p>
+
+<p class="avanor-footer-license">
+    RERA: 63012 | ORN: 63296
+</p>
 
                 @php
                 $socials = [
